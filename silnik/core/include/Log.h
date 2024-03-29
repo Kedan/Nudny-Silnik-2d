@@ -17,14 +17,15 @@ namespace n2d {
 			std::ostringstream m_buffer;
 			std::string m_filename = "./logs/log";
 		public:
+			std::ostringstream out;
 			Logger();
-			void setFile( std::string );
-			void log( const std::string& t_s );
-			void time();
-			void open();
-			void close();
-			void flush();
-			void clear();
+			void SetFile( std::string );
+			Logger& Log( const std::string& t_s );
+			void Time();
+			void Open();
+			void Close();
+			void Flush();
+			void Clear();
 	}; // class Logger
 }; // namespace 
 

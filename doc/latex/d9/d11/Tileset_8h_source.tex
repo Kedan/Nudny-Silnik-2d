@@ -11,39 +11,42 @@
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <tileson/tileson.h>}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Interfaces.h>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Resources.h>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Sprite.h>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Entity.h>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}}\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_grid\_size;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}*\ \ \ \ \ mp\_resources;}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<int,Sprite>\ \ \ \ m\_sprites;\ \ }
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//glm::vec2\ \ \ \ \ tilesize;}}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}();}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}(\ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}\&\ )\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}\&\ )\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ SetResources(\ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\&\ t\_resources\ )\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mp\_resources\ =\ \&t\_resources;}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ Load(\ tson::Tileset\&,\ std::string=\textcolor{stringliteral}{"{}"{}}\ );}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ Load(\ std::string,\ std::string\ );}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}}*\ \ \ GetTile(\ \textcolor{keywordtype}{int}\ );}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ IsTileExists(\ \textcolor{keywordtype}{int}\ );}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ Free();\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ SetGridSize(\ glm::vec2\ );}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset_ad840d4c40d84641b796c8aa651b4d96f}{Draw}}(sf::RenderWindow\&\ );}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset_ad840d4c40d84641b796c8aa651b4d96f}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec4\ GetCorrectedDrawingRect(\ tson::Rect,\ glm::vec2\ );}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ GetCorrectTileSize(\ tson::Rect,\ tson::Vector2i\ );}
-\DoxyCodeLine{00040\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Tileset}}
-\DoxyCodeLine{00041\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Log.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Resources.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Sprite.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <Entity.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_grid\_size;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}*\ \ \ \ \ mp\_resources;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<int,Sprite>\ \ \ \ m\_sprites;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Logger}{Logger}}\ \ \ \ \ \ \ \ \ \ \ \ log;\ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//glm::vec2\ \ \ \ \ tilesize;}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}(\ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}\&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset}{\string~Tileset}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}\&\ )\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ SetResources(\ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\&\ t\_resources\ )\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mp\_resources\ =\ \&t\_resources;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Load(\ tson::Tileset\&,\ std::string=\textcolor{stringliteral}{"{}"{}}\ );}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Load(\ std::string,\ std::string\ );}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}}*\ \ \ \ \ \ \ GetTile(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ IsTileExists(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Free();\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetGridSize(\ glm::vec2\ );}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset_ad840d4c40d84641b796c8aa651b4d96f}{Draw}}(sf::RenderWindow\&\ );}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset_ad840d4c40d84641b796c8aa651b4d96f}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ tson::Rect\ \ GetCorrectedDrawingRect(\ tson::Rect\ );}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ GetCorrectTileSize(\ tson::Rect,\ tson::Vector2i\ );}
+\DoxyCodeLine{00043\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Tileset}}
+\DoxyCodeLine{00044\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

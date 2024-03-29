@@ -5,20 +5,20 @@
 using namespace n2d;
 
 App::App(){
-	log.setFile( "./logs/App.log" );
-	log.open();
+	log.SetFile( "./logs/App.log" );
+	log.Open();
 }
 
 App::App( std::string t_name ) {
-	log.setFile( "./logs/App.log" );
-	log.open();
+	log.SetFile( "./logs/App.log" );
+	log.Open();
 	m_name = t_name;
 }
 
 void App::Load( std::string t_conf_file ) {
 
-	log.time();	
-	log.log("App Load ");
+	log.Time();	
+	log.Log("App Load ");
 
 	JSONLoader loader( t_conf_file );
 	m_conf = loader.GetData();
@@ -32,15 +32,15 @@ void App::Load( std::string t_conf_file ) {
 	SetGravity( m_conf["physics"]["gravity"][0], m_conf["physics"]["gravity"][1] );
 	SetDefaultFont( m_conf["default_font"] );
 
-	log.log(" - ok\n");
-	log.flush();
+	log.Log(" - ok\n");
+	log.Flush();
 
 	Reset();
 }
 
 void App::Reset() {
-	log.time();
-	log.log("App Reset");
+	log.Time();
+	log.Log("App Reset");
 	m_time_step = 1/60.0f;
 	m_clock.restart();
 	m_view.setViewport( sf::FloatRect( 0.0f, 0.0f, 1.0f, 1.0f ));
@@ -55,22 +55,22 @@ void App::Reset() {
 	}
 	m_window.setView( m_view );	
 	world.SetGravity( m_gravity );
-	log.log(" - ok\n");
-	log.flush();
+	log.Log(" - ok\n");
+	log.Flush();
 }
 
 int App::AddUpdatable( Updatable* t_p_obj ) {
-	log.time();
-	log.log("App AddUpdatable\n");
-	log.flush();
+	log.Time();
+	log.Log("App AddUpdatable\n");
+	log.Flush();
 	m_update_list.push_back( t_p_obj );
 	return m_update_list.size() - 1;
 }
 
 int App::AddDrawable( Drawable* t_p_obj ) {
-	log.time();
-	log.log("App AddDrawable\n");
-	log.flush();
+	log.Time();
+	log.Log("App AddDrawable\n");
+	log.Flush();
 	m_draw_list.push_back( t_p_obj );
 	return m_draw_list.size() - 1;
 }
@@ -99,8 +99,8 @@ const sf::Texture* App::GetTexturePtr( int t_texture_id ) {
 }	
 
 int App::Run() {
-	log.time();
-	log.log("App is running...");
+	log.Time();
+	log.Log("App is running...");
 	while( m_window.isOpen() && !m_exit ) {
 		m_time = m_clock.restart();
 		while( m_window.pollEvent( m_event )) {
@@ -125,8 +125,8 @@ int App::Run() {
 		m_window.display();
 	}
 	m_window.close();
-	log.log(" - done\n\nExiting app\n");
-	log.close();
+	log.Log(" - done\n\nExiting app\n");
+	log.Close();
 	return EXIT_SUCCESS;
 }
 

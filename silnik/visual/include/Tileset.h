@@ -7,6 +7,7 @@
 #include <map>
 #include <tileson/tileson.h>
 #include <Interfaces.h>
+#include <Log.h>
 #include <Resources.h>
 #include <Sprite.h>
 #include <Entity.h>
@@ -16,27 +17,29 @@ namespace n2d {
 		protected:
 			glm::vec2		m_grid_size;
 			Resources*		mp_resources;
-			std::map<int,Sprite> 	m_sprites;	
+			std::map<int,Sprite> 	m_sprites;
 		public:
+			Logger			log;	
 			//glm::vec2		tilesize;
 			Tileset();
 			Tileset( Tileset& ) = delete;
+			~Tileset();
 			void operator=( const Tileset& ) = delete;
 			
 			void 	SetResources( Resources& t_resources ) {
 				mp_resources = &t_resources;
 			}	
-			void	Load( tson::Tileset&, std::string="" );
-			void	Load( std::string, std::string );
-			Sprite*	GetTile( int );
-			bool	IsTileExists( int );
-			void	Free();	
-			void	SetGridSize( glm::vec2 );
-			void 	Draw(sf::RenderWindow& );
-			void	Draw( sf::RenderWindow&, sf::Transform& );
+			void		Load( tson::Tileset&, std::string="" );
+			void		Load( std::string, std::string );
+			Sprite*		GetTile( int );
+			bool		IsTileExists( int );
+			void		Free();	
+			void		SetGridSize( glm::vec2 );
+			void 		Draw(sf::RenderWindow& );
+			void		Draw( sf::RenderWindow&, sf::Transform& );
 		protected:
-			glm::vec4 GetCorrectedDrawingRect( tson::Rect, glm::vec2 );
-			glm::vec2 GetCorrectTileSize( tson::Rect, tson::Vector2i );
+			tson::Rect	GetCorrectedDrawingRect( tson::Rect );
+			glm::vec2 	GetCorrectTileSize( tson::Rect, tson::Vector2i );
 	}; // class Tileset
 }; // namespace n2d
 

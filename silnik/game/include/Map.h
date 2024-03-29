@@ -30,9 +30,11 @@ namespace n2d {
 			glm::vec2			position;
 			Resources			src;
 			Tileset				tileset;
+			Logger				log;
 		public:
 			Map();
 			Map( std::string );
+			~Map();
 			bool Load();
 			bool Load( std::string );
 			bool LoadAssets();
