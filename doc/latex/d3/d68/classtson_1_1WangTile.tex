@@ -1,0 +1,93 @@
+\doxysection{tson\+::Wang\+Tile Class Reference}
+\hypertarget{classtson_1_1WangTile}{}\label{classtson_1_1WangTile}\index{tson::WangTile@{tson::WangTile}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1WangTile_ac55b51e3733e5e05628b69d1e358cadf}\label{classtson_1_1WangTile_ac55b51e3733e5e05628b69d1e358cadf} 
+{\bfseries Wang\+Tile} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+bool \mbox{\hyperlink{classtson_1_1WangTile_adaa29301f974c813a60d9d9e63614570}{parse}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+bool \mbox{\hyperlink{classtson_1_1WangTile_a90f90d24a6a3cf1108935da9d895c705}{has\+DFlip}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1WangTile_a48c4973ec700d342d91f9bb2abe23597}{has\+HFlip}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classtson_1_1WangTile_ac233392d977810cc1f5347fde4d8dac5}{get\+Tileid}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1WangTile_add4f356ec08dd3cc7c839c79b29391d6}{has\+VFlip}} () const
+\item 
+const std\+::vector$<$ uint32\+\_\+t $>$ \& \mbox{\hyperlink{classtson_1_1WangTile_ae6c7e18459b6255b8ea7530abc32a5c2}{get\+Wang\+Ids}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1WangTile_ac233392d977810cc1f5347fde4d8dac5}\label{classtson_1_1WangTile_ac233392d977810cc1f5347fde4d8dac5} 
+\index{tson::WangTile@{tson::WangTile}!getTileid@{getTileid}}
+\index{getTileid@{getTileid}!tson::WangTile@{tson::WangTile}}
+\doxysubsubsection{\texorpdfstring{getTileid()}{getTileid()}}
+{\footnotesize\ttfamily uint32\+\_\+t tson\+::\+Wang\+Tile\+::get\+Tileid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}tileid\textquotesingle{}\+: Local ID of tile \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangTile_ae6c7e18459b6255b8ea7530abc32a5c2}\label{classtson_1_1WangTile_ae6c7e18459b6255b8ea7530abc32a5c2} 
+\index{tson::WangTile@{tson::WangTile}!getWangIds@{getWangIds}}
+\index{getWangIds@{getWangIds}!tson::WangTile@{tson::WangTile}}
+\doxysubsubsection{\texorpdfstring{getWangIds()}{getWangIds()}}
+{\footnotesize\ttfamily const std\+::vector$<$ uint32\+\_\+t $>$ \& tson\+::\+Wang\+Tile\+::get\+Wang\+Ids (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}wangid\textquotesingle{}\+: Array of Wang color indexes (uchar\mbox{[}8\mbox{]}) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangTile_a90f90d24a6a3cf1108935da9d895c705}\label{classtson_1_1WangTile_a90f90d24a6a3cf1108935da9d895c705} 
+\index{tson::WangTile@{tson::WangTile}!hasDFlip@{hasDFlip}}
+\index{hasDFlip@{hasDFlip}!tson::WangTile@{tson::WangTile}}
+\doxysubsubsection{\texorpdfstring{hasDFlip()}{hasDFlip()}}
+{\footnotesize\ttfamily bool tson\+::\+Wang\+Tile\+::has\+DFlip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}dflip\textquotesingle{}\+: \doxylink{classtson_1_1Tile}{Tile} is flipped diagonally
+
+NB! This property got removed in Tiled v1.\+5 \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangTile_a48c4973ec700d342d91f9bb2abe23597}\label{classtson_1_1WangTile_a48c4973ec700d342d91f9bb2abe23597} 
+\index{tson::WangTile@{tson::WangTile}!hasHFlip@{hasHFlip}}
+\index{hasHFlip@{hasHFlip}!tson::WangTile@{tson::WangTile}}
+\doxysubsubsection{\texorpdfstring{hasHFlip()}{hasHFlip()}}
+{\footnotesize\ttfamily bool tson\+::\+Wang\+Tile\+::has\+HFlip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}hflip\textquotesingle{}\+: \doxylink{classtson_1_1Tile}{Tile} is flipped horizontally
+
+NB! This property got removed in Tiled v1.\+5 \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangTile_add4f356ec08dd3cc7c839c79b29391d6}\label{classtson_1_1WangTile_add4f356ec08dd3cc7c839c79b29391d6} 
+\index{tson::WangTile@{tson::WangTile}!hasVFlip@{hasVFlip}}
+\index{hasVFlip@{hasVFlip}!tson::WangTile@{tson::WangTile}}
+\doxysubsubsection{\texorpdfstring{hasVFlip()}{hasVFlip()}}
+{\footnotesize\ttfamily bool tson\+::\+Wang\+Tile\+::has\+VFlip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}vflip\textquotesingle{}\+: \doxylink{classtson_1_1Tile}{Tile} is flipped vertically
+
+NB! This property got removed in Tiled v1.\+5 \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangTile_adaa29301f974c813a60d9d9e63614570}\label{classtson_1_1WangTile_adaa29301f974c813a60d9d9e63614570} 
+\index{tson::WangTile@{tson::WangTile}!parse@{parse}}
+\index{parse@{parse}!tson::WangTile@{tson::WangTile}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool tson\+::\+Wang\+Tile\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses a wang tile from Tiled json. 
+\begin{DoxyParams}{Parameters}
+{\em json} & A Tiled json file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all mandatory fields were found. False otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Wang\+Tile.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,83 @@
+\doxysection{tson\+::Decompressor\+Container Class Reference}
+\hypertarget{classtson_1_1DecompressorContainer}{}\label{classtson_1_1DecompressorContainer}\index{tson::DecompressorContainer@{tson::DecompressorContainer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1DecompressorContainer_a5d13e3f29f043acc9f6622743d136cd9}\label{classtson_1_1DecompressorContainer_a5d13e3f29f043acc9f6622743d136cd9} 
+{\footnotesize template$<$typename T , typename... Args$>$ }\\void {\bfseries add} (Args \&\&... args)
+\item 
+void \mbox{\hyperlink{classtson_1_1DecompressorContainer_a5409d867cb2c54efd7894641b01ea6b0}{remove}} (std\+::string\+\_\+view name)
+\item 
+bool \mbox{\hyperlink{classtson_1_1DecompressorContainer_a218f4840b3bdb07614b03c19899e7eaa}{contains}} (std\+::string\+\_\+view name) const
+\item 
+bool \mbox{\hyperlink{classtson_1_1DecompressorContainer_a6eccf2e0ea18e56b0e2bd1c09fcc347d}{empty}} () const
+\item 
+\Hypertarget{classtson_1_1DecompressorContainer_ac9d3d5fe080d63295be67b626f094f8e}\label{classtson_1_1DecompressorContainer_ac9d3d5fe080d63295be67b626f094f8e} 
+size\+\_\+t {\bfseries size} () const
+\item 
+void \mbox{\hyperlink{classtson_1_1DecompressorContainer_ab35ffe4f4f79101b8ea095f99e897f8d}{clear}} ()
+\item 
+\mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}$<$ std\+::string\+\_\+view, std\+::string $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1DecompressorContainer_a810c7f3cf62c78083246545a9d7fbe83}{get}} (std\+::string\+\_\+view name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1DecompressorContainer_ab35ffe4f4f79101b8ea095f99e897f8d}\label{classtson_1_1DecompressorContainer_ab35ffe4f4f79101b8ea095f99e897f8d} 
+\index{tson::DecompressorContainer@{tson::DecompressorContainer}!clear@{clear}}
+\index{clear@{clear}!tson::DecompressorContainer@{tson::DecompressorContainer}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void tson\+::\+Decompressor\+Container\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears all \doxylink{classtson_1_1IDecompressor}{IDecompressor} elements in the container \Hypertarget{classtson_1_1DecompressorContainer_a218f4840b3bdb07614b03c19899e7eaa}\label{classtson_1_1DecompressorContainer_a218f4840b3bdb07614b03c19899e7eaa} 
+\index{tson::DecompressorContainer@{tson::DecompressorContainer}!contains@{contains}}
+\index{contains@{contains}!tson::DecompressorContainer@{tson::DecompressorContainer}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool tson\+::\+Decompressor\+Container\+::contains (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the decompressor to check whether exists. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether a decompressor with the given name exists or not. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1DecompressorContainer_a6eccf2e0ea18e56b0e2bd1c09fcc347d}\label{classtson_1_1DecompressorContainer_a6eccf2e0ea18e56b0e2bd1c09fcc347d} 
+\index{tson::DecompressorContainer@{tson::DecompressorContainer}!empty@{empty}}
+\index{empty@{empty}!tson::DecompressorContainer@{tson::DecompressorContainer}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool tson\+::\+Decompressor\+Container\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if container is empty \begin{DoxyReturn}{Returns}
+Whether or not the container is empty 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1DecompressorContainer_a810c7f3cf62c78083246545a9d7fbe83}\label{classtson_1_1DecompressorContainer_a810c7f3cf62c78083246545a9d7fbe83} 
+\index{tson::DecompressorContainer@{tson::DecompressorContainer}!get@{get}}
+\index{get@{get}!tson::DecompressorContainer@{tson::DecompressorContainer}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}$<$ std\+::string\+\_\+view, std\+::string $>$ \texorpdfstring{$\ast$}{*} tson\+::\+Decompressor\+Container\+::get (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the container \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An ICompressor pointer if it exists. nullptr otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1DecompressorContainer_a5409d867cb2c54efd7894641b01ea6b0}\label{classtson_1_1DecompressorContainer_a5409d867cb2c54efd7894641b01ea6b0} 
+\index{tson::DecompressorContainer@{tson::DecompressorContainer}!remove@{remove}}
+\index{remove@{remove}!tson::DecompressorContainer@{tson::DecompressorContainer}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void tson\+::\+Decompressor\+Container\+::remove (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Removed an element with the given name. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the decompressor \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/common/Decompressor\+Container.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,165 @@
+\doxysection{json11\+::Json Class Reference}
+\hypertarget{classjson11_1_1Json}{}\label{classjson11_1_1Json}\index{json11::Json@{json11::Json}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classjson11_1_1Json_a51a2f5c0508c32c3336bcf42ae0233e5}\label{classjson11_1_1Json_a51a2f5c0508c32c3336bcf42ae0233e5} 
+enum {\bfseries Type} \{ \newline
+{\bfseries NUL}
+, {\bfseries NUMBER}
+, {\bfseries BOOL}
+, {\bfseries STRING}
+, \newline
+{\bfseries ARRAY}
+, {\bfseries OBJECT}
+ \}
+\item 
+\Hypertarget{classjson11_1_1Json_a49b4ee0f14b89b219955f50d272ebe5b}\label{classjson11_1_1Json_a49b4ee0f14b89b219955f50d272ebe5b} 
+typedef std\+::vector$<$ \mbox{\hyperlink{classjson11_1_1Json}{Json}} $>$ {\bfseries array}
+\item 
+\Hypertarget{classjson11_1_1Json_ac0ca9db68797b45adcd175359425590d}\label{classjson11_1_1Json_ac0ca9db68797b45adcd175359425590d} 
+typedef std\+::map$<$ std\+::string, \mbox{\hyperlink{classjson11_1_1Json}{Json}} $>$ {\bfseries object}
+\item 
+\Hypertarget{classjson11_1_1Json_ae90d6d518b325943ab2ed472efd00e83}\label{classjson11_1_1Json_ae90d6d518b325943ab2ed472efd00e83} 
+typedef std\+::initializer\+\_\+list$<$ std\+::pair$<$ std\+::string, Type $>$ $>$ {\bfseries shape}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classjson11_1_1Json_a5c9ebb114542d45840876ec1b9785adb}\label{classjson11_1_1Json_a5c9ebb114542d45840876ec1b9785adb} 
+{\bfseries Json} (std\+::nullptr\+\_\+t) noexcept
+\item 
+\Hypertarget{classjson11_1_1Json_aa3ada8b1d684b2491025ce177cd78a74}\label{classjson11_1_1Json_aa3ada8b1d684b2491025ce177cd78a74} 
+{\bfseries Json} (double value)
+\item 
+\Hypertarget{classjson11_1_1Json_a57f7fa34ef7bd11e9e02078eb62f371d}\label{classjson11_1_1Json_a57f7fa34ef7bd11e9e02078eb62f371d} 
+{\bfseries Json} (int value)
+\item 
+\Hypertarget{classjson11_1_1Json_a3983a96e0690d20c3599c0680be64711}\label{classjson11_1_1Json_a3983a96e0690d20c3599c0680be64711} 
+{\bfseries Json} (bool value)
+\item 
+\Hypertarget{classjson11_1_1Json_a369e51068a0619ef40bb591b08a158c3}\label{classjson11_1_1Json_a369e51068a0619ef40bb591b08a158c3} 
+{\bfseries Json} (const std\+::string \&value)
+\item 
+\Hypertarget{classjson11_1_1Json_a9e296e1e948d122644ca589f5a2ee8e7}\label{classjson11_1_1Json_a9e296e1e948d122644ca589f5a2ee8e7} 
+{\bfseries Json} (std\+::string \&\&value)
+\item 
+\Hypertarget{classjson11_1_1Json_a3929d4218558acec8a0ff7db45a79129}\label{classjson11_1_1Json_a3929d4218558acec8a0ff7db45a79129} 
+{\bfseries Json} (const char \texorpdfstring{$\ast$}{*}value)
+\item 
+\Hypertarget{classjson11_1_1Json_a0a29e383d62ebc0f2073dc0b1c25c7f5}\label{classjson11_1_1Json_a0a29e383d62ebc0f2073dc0b1c25c7f5} 
+{\bfseries Json} (const array \&values)
+\item 
+\Hypertarget{classjson11_1_1Json_af8d64a61eb4df43bd0cd5d495a78c9dc}\label{classjson11_1_1Json_af8d64a61eb4df43bd0cd5d495a78c9dc} 
+{\bfseries Json} (array \&\&values)
+\item 
+\Hypertarget{classjson11_1_1Json_a2c178480d5854bcd615b99e87814bf4e}\label{classjson11_1_1Json_a2c178480d5854bcd615b99e87814bf4e} 
+{\bfseries Json} (const object \&values)
+\item 
+\Hypertarget{classjson11_1_1Json_a2e09039acf3d560149b588709da6b74d}\label{classjson11_1_1Json_a2e09039acf3d560149b588709da6b74d} 
+{\bfseries Json} (object \&\&values)
+\item 
+\Hypertarget{classjson11_1_1Json_a68428d2973dd0f8329e76cf8671ac2ee}\label{classjson11_1_1Json_a68428d2973dd0f8329e76cf8671ac2ee} 
+{\footnotesize template$<$class T , class  = decltype(\&\+T\+::to\+\_\+json)$>$ }\\{\bfseries Json} (const T \&t)
+\item 
+\Hypertarget{classjson11_1_1Json_a20d8f60a90ab242542fd220d610a0d46}\label{classjson11_1_1Json_a20d8f60a90ab242542fd220d610a0d46} 
+{\footnotesize template$<$class M , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+constructible$<$ std\+::string, decltype(std\+::declval$<$ M $>$().begin() -\/$>$first)$>$\+::value \&\&std\+::is\+\_\+constructible$<$ \mbox{\hyperlink{classjson11_1_1Json}{Json}}, decltype(std\+::declval$<$ M $>$().begin() -\/$>$second)$>$\+::value , int , \+::type  = 0$>$ }\\{\bfseries Json} (const M \&m)
+\item 
+\Hypertarget{classjson11_1_1Json_a5560f92305d64e7d6ed34f72a6a92146}\label{classjson11_1_1Json_a5560f92305d64e7d6ed34f72a6a92146} 
+{\footnotesize template$<$class V , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+constructible$<$ \mbox{\hyperlink{classjson11_1_1Json}{Json}}, decltype(\texorpdfstring{$\ast$}{*}std\+::declval$<$ V $>$().begin())$>$\+::value , int , \+::type  = 0$>$ }\\{\bfseries Json} (const V \&v)
+\item 
+\Hypertarget{classjson11_1_1Json_ae567780835b2ac8514786277cc27bd1c}\label{classjson11_1_1Json_ae567780835b2ac8514786277cc27bd1c} 
+{\bfseries Json} (void \texorpdfstring{$\ast$}{*})=delete
+\item 
+\Hypertarget{classjson11_1_1Json_aa9c2e69e711a000bdbd424e6b2f06139}\label{classjson11_1_1Json_aa9c2e69e711a000bdbd424e6b2f06139} 
+Type {\bfseries type} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a4ae030733f6ebd910882afb9e2364b1a}\label{classjson11_1_1Json_a4ae030733f6ebd910882afb9e2364b1a} 
+bool {\bfseries is\+\_\+null} () const
+\item 
+\Hypertarget{classjson11_1_1Json_ad93187192190f5aa497bea86afc1717f}\label{classjson11_1_1Json_ad93187192190f5aa497bea86afc1717f} 
+bool {\bfseries is\+\_\+number} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a58226c2f5b5a69c5492de0add2ebb569}\label{classjson11_1_1Json_a58226c2f5b5a69c5492de0add2ebb569} 
+bool {\bfseries is\+\_\+bool} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a38aaf68782261bb98ec34524c09c2752}\label{classjson11_1_1Json_a38aaf68782261bb98ec34524c09c2752} 
+bool {\bfseries is\+\_\+string} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a19bae712f89c9bd771fead54b447611a}\label{classjson11_1_1Json_a19bae712f89c9bd771fead54b447611a} 
+bool {\bfseries is\+\_\+array} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a8bc1877dd93ffa5457c214308e0cf472}\label{classjson11_1_1Json_a8bc1877dd93ffa5457c214308e0cf472} 
+bool {\bfseries is\+\_\+object} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a735c0d270710c51ba06627c328a58138}\label{classjson11_1_1Json_a735c0d270710c51ba06627c328a58138} 
+double {\bfseries number\+\_\+value} () const
+\item 
+\Hypertarget{classjson11_1_1Json_af7093e5034daa0e138be9013440292c9}\label{classjson11_1_1Json_af7093e5034daa0e138be9013440292c9} 
+int {\bfseries int\+\_\+value} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a23ccdd948ff1738a61d416d89d3a80b0}\label{classjson11_1_1Json_a23ccdd948ff1738a61d416d89d3a80b0} 
+bool {\bfseries bool\+\_\+value} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a7054ba4a8432d19386e0d16cd69219f0}\label{classjson11_1_1Json_a7054ba4a8432d19386e0d16cd69219f0} 
+const std\+::string \& {\bfseries string\+\_\+value} () const
+\item 
+\Hypertarget{classjson11_1_1Json_aee966f000b422ae22f33d70dab73f524}\label{classjson11_1_1Json_aee966f000b422ae22f33d70dab73f524} 
+const array \& {\bfseries array\+\_\+items} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a6658c06954b8bc9b59cf615dfb87b52c}\label{classjson11_1_1Json_a6658c06954b8bc9b59cf615dfb87b52c} 
+const object \& {\bfseries object\+\_\+items} () const
+\item 
+\Hypertarget{classjson11_1_1Json_a27be11485819f6556791ef5b37c63fe6}\label{classjson11_1_1Json_a27be11485819f6556791ef5b37c63fe6} 
+const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const
+\item 
+\Hypertarget{classjson11_1_1Json_a6e133c5bf6f709baadcac34b3e5e35c2}\label{classjson11_1_1Json_a6e133c5bf6f709baadcac34b3e5e35c2} 
+const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (const std\+::string \&key) const
+\item 
+\Hypertarget{classjson11_1_1Json_a6b92b393846c9e01f77be6401978eb03}\label{classjson11_1_1Json_a6b92b393846c9e01f77be6401978eb03} 
+void {\bfseries dump} (std\+::string \&out) const
+\item 
+\Hypertarget{classjson11_1_1Json_a65aad4271963eeb2688ebdbd152ea307}\label{classjson11_1_1Json_a65aad4271963eeb2688ebdbd152ea307} 
+std\+::string {\bfseries dump} () const
+\item 
+\Hypertarget{classjson11_1_1Json_aad1799d488dab7f0851f7bce9c86799f}\label{classjson11_1_1Json_aad1799d488dab7f0851f7bce9c86799f} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \&rhs) const
+\item 
+\Hypertarget{classjson11_1_1Json_a24c4567a90be32f09b4d50b1eb03f718}\label{classjson11_1_1Json_a24c4567a90be32f09b4d50b1eb03f718} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \&rhs) const
+\item 
+\Hypertarget{classjson11_1_1Json_ae616cea26e94189e92a8497cc0a0b344}\label{classjson11_1_1Json_ae616cea26e94189e92a8497cc0a0b344} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \&rhs) const
+\item 
+\Hypertarget{classjson11_1_1Json_a919b9365d6a28290d7c1414224138350}\label{classjson11_1_1Json_a919b9365d6a28290d7c1414224138350} 
+bool {\bfseries operator$<$=} (const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \&rhs) const
+\item 
+\Hypertarget{classjson11_1_1Json_a85add86873a842bce861badecfeff652}\label{classjson11_1_1Json_a85add86873a842bce861badecfeff652} 
+bool {\bfseries operator$>$} (const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \&rhs) const
+\item 
+\Hypertarget{classjson11_1_1Json_aa39a4415c003f166ed03753cd2ba0731}\label{classjson11_1_1Json_aa39a4415c003f166ed03753cd2ba0731} 
+bool {\bfseries operator$>$=} (const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \&rhs) const
+\item 
+\Hypertarget{classjson11_1_1Json_ac556cd94b6c2e30fcb35714cc42ac47e}\label{classjson11_1_1Json_ac556cd94b6c2e30fcb35714cc42ac47e} 
+bool {\bfseries has\+\_\+shape} (const shape \&types, std\+::string \&err) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classjson11_1_1Json_a328337347162b928d9575bc57b3d20da}\label{classjson11_1_1Json_a328337347162b928d9575bc57b3d20da} 
+static \mbox{\hyperlink{classjson11_1_1Json}{Json}} {\bfseries parse} (const std\+::string \&in, std\+::string \&err, Json\+Parse strategy=Json\+Parse\+::\+STANDARD)
+\item 
+\Hypertarget{classjson11_1_1Json_a9bed3f84db6e24947ea4d17cb67292fc}\label{classjson11_1_1Json_a9bed3f84db6e24947ea4d17cb67292fc} 
+static \mbox{\hyperlink{classjson11_1_1Json}{Json}} {\bfseries parse} (const char \texorpdfstring{$\ast$}{*}in, std\+::string \&err, Json\+Parse strategy=Json\+Parse\+::\+STANDARD)
+\item 
+\Hypertarget{classjson11_1_1Json_ada11e79d24bd8a21869f8c3e36ad9c54}\label{classjson11_1_1Json_ada11e79d24bd8a21869f8c3e36ad9c54} 
+static std\+::vector$<$ \mbox{\hyperlink{classjson11_1_1Json}{Json}} $>$ {\bfseries parse\+\_\+multi} (const std\+::string \&in, std\+::string\+::size\+\_\+type \&parser\+\_\+stop\+\_\+pos, std\+::string \&err, Json\+Parse strategy=Json\+Parse\+::\+STANDARD)
+\item 
+\Hypertarget{classjson11_1_1Json_a7bbedb3125d6b451a2b0e364da2477fe}\label{classjson11_1_1Json_a7bbedb3125d6b451a2b0e364da2477fe} 
+static std\+::vector$<$ \mbox{\hyperlink{classjson11_1_1Json}{Json}} $>$ {\bfseries parse\+\_\+multi} (const std\+::string \&in, std\+::string \&err, Json\+Parse strategy=Json\+Parse\+::\+STANDARD)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/external/json11.\+hpp\end{DoxyCompactItemize}

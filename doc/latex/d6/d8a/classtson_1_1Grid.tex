@@ -1,0 +1,67 @@
+\doxysection{tson\+::Grid Class Reference}
+\hypertarget{classtson_1_1Grid}{}\label{classtson_1_1Grid}\index{tson::Grid@{tson::Grid}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtson_1_1Grid_a208866afc1b3313dbf6dfb45050d31fa}{Grid}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+bool \mbox{\hyperlink{classtson_1_1Grid_a07ed782351604add041be6d659d7a9f4}{parse}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Grid_adc321890fe76f2fe81a39c5006285fda}{get\+Orientation}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Grid_a2d76dc0a69b034a1e28bf3141010e818}{get\+Size}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtson_1_1Grid_a208866afc1b3313dbf6dfb45050d31fa}\label{classtson_1_1Grid_a208866afc1b3313dbf6dfb45050d31fa} 
+\index{tson::Grid@{tson::Grid}!Grid@{Grid}}
+\index{Grid@{Grid}!tson::Grid@{tson::Grid}}
+\doxysubsubsection{\texorpdfstring{Grid()}{Grid()}}
+{\footnotesize\ttfamily tson\+::\+Grid\+::\+Grid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Parses Tiled grid data from json 
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Grid_adc321890fe76f2fe81a39c5006285fda}\label{classtson_1_1Grid_adc321890fe76f2fe81a39c5006285fda} 
+\index{tson::Grid@{tson::Grid}!getOrientation@{getOrientation}}
+\index{getOrientation@{getOrientation}!tson::Grid@{tson::Grid}}
+\doxysubsubsection{\texorpdfstring{getOrientation()}{getOrientation()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Grid\+::get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}orientation\textquotesingle{}\+: Orientation of the grid for the tiles in this tileset (orthogonal or isometric) \begin{DoxyReturn}{Returns}
+orientation as string 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Grid_a2d76dc0a69b034a1e28bf3141010e818}\label{classtson_1_1Grid_a2d76dc0a69b034a1e28bf3141010e818} 
+\index{tson::Grid@{tson::Grid}!getSize@{getSize}}
+\index{getSize@{getSize}!tson::Grid@{tson::Grid}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Grid\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}width\textquotesingle{} and \textquotesingle{}height\textquotesingle{}\+: Size. \begin{DoxyReturn}{Returns}
+size as int 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Grid_a07ed782351604add041be6d659d7a9f4}\label{classtson_1_1Grid_a07ed782351604add041be6d659d7a9f4} 
+\index{tson::Grid@{tson::Grid}!parse@{parse}}
+\index{parse@{parse}!tson::Grid@{tson::Grid}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool tson\+::\+Grid\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses Tiled grid data from json 
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all mandatory fields was found. false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Grid.\+hpp\end{DoxyCompactItemize}

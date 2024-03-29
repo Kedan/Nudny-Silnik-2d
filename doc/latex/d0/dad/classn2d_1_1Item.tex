@@ -1,0 +1,98 @@
+\doxysection{n2d\+::Item Class Reference}
+\hypertarget{classn2d_1_1Item}{}\label{classn2d_1_1Item}\index{n2d::Item@{n2d::Item}}
+Inheritance diagram for n2d\+::Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d0/dad/classn2d_1_1Item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Item_ab88c526b67b12b7dcbc9b0731433760a}\label{classn2d_1_1Item_ab88c526b67b12b7dcbc9b0731433760a} 
+int {\bfseries Get\+Capacity} ()
+\item 
+\Hypertarget{classn2d_1_1Item_abace99fe1b473e5db7db813419a6a681}\label{classn2d_1_1Item_abace99fe1b473e5db7db813419a6a681} 
+bool {\bfseries Is\+Usable} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Entity}{n2d\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Add} (\mbox{\hyperlink{classn2d_1_1Body}{Body}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_ad1a70a6e105d0f0343fc7a6cf1f37456}{Draw}} (sf\+::\+Render\+Window \&w)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_abec79b028e5a1ceee4b50da603aae696}{Draw}} (sf\+::\+Render\+Window \&w, sf\+::\+Transform \&t)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_ad1ae33462762e798d68a4e6f216ceb17}{Update}} (float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_a4472cab45f62816550b634681d4a2074}{Events}} (sf\+::\+Event \&)
+\item 
+void {\bfseries Create} (b2\+World \&world)
+\item 
+void {\bfseries Set\+Rotation} (float)
+\item 
+void {\bfseries Set\+Velocity} (float, float)
+\item 
+void {\bfseries Set\+Type} (b2\+Body\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Item_a99e199b423cfc84338ef7404455f8c7a}\label{classn2d_1_1Item_a99e199b423cfc84338ef7404455f8c7a} 
+int {\bfseries m\+\_\+value}
+\item 
+\Hypertarget{classn2d_1_1Item_a31cf6cd9b797e310a2273f609824348e}\label{classn2d_1_1Item_a31cf6cd9b797e310a2273f609824348e} 
+float {\bfseries m\+\_\+volume}
+\item 
+\Hypertarget{classn2d_1_1Item_ad7d4911d89fb92ce4bdf13e5a1057a9e}\label{classn2d_1_1Item_ad7d4911d89fb92ce4bdf13e5a1057a9e} 
+float {\bfseries m\+\_\+weight}
+\item 
+\Hypertarget{classn2d_1_1Item_ac93a5f18b57dc9c6721a0bb5d3cb783f}\label{classn2d_1_1Item_ac93a5f18b57dc9c6721a0bb5d3cb783f} 
+bool {\bfseries m\+\_\+usable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1Entity}{n2d\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries id}
+\item 
+std\+::string {\bfseries name}
+\item 
+glm\+::vec2 {\bfseries position}
+\item 
+float {\bfseries rotation}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classn2d_1_1Body}{Body}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries bodies}
+\item 
+\mbox{\hyperlink{classn2d_1_1Text}{Text}} {\bfseries text}
+\item 
+bool {\bfseries show\+\_\+text} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Entity}{n2d\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Load\+Text} (tson\+::\+Object \&)
+\item 
+void {\bfseries Load\+Template} (tson\+::\+Object \&)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/game/include/Item.\+h\end{DoxyCompactItemize}

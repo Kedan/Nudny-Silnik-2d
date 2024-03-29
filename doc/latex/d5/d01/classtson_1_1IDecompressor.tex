@@ -1,0 +1,110 @@
+\doxysection{tson\+::IDecompressor\texorpdfstring{$<$}{<} TIn, TOut \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtson_1_1IDecompressor}{}\label{classtson_1_1IDecompressor}\index{tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const std\+::string \& \mbox{\hyperlink{classtson_1_1IDecompressor_a7c42337c5d957585be515952209c1317}{name}} () const =0
+\item 
+virtual TOut \mbox{\hyperlink{classtson_1_1IDecompressor_a77349ae9cf9e1338196dc21169448c4f}{decompress}} (const TIn \&input)=0
+\item 
+virtual TOut \mbox{\hyperlink{classtson_1_1IDecompressor_a2d1bed552a2305ac98aceb96eb897deb}{decompress\+File}} (const fs\+::path \&path)=0
+\item 
+virtual TOut \mbox{\hyperlink{classtson_1_1IDecompressor_a82aa4c374737ef3533831f2c6d803a15}{decompress}} (const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t size)=0
+\item 
+virtual \mbox{\hyperlink{classtson_1_1IDecompressor_af4018046a1c549fc53e7150306a1f44c}{\texorpdfstring{$\sim$}{\string~}\+IDecompressor}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtson_1_1IDecompressor_af4018046a1c549fc53e7150306a1f44c}\label{classtson_1_1IDecompressor_af4018046a1c549fc53e7150306a1f44c} 
+\index{tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}!````~IDecompressor@{\texorpdfstring{$\sim$}{\string~}IDecompressor}}
+\index{````~IDecompressor@{\texorpdfstring{$\sim$}{\string~}IDecompressor}!tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IDecompressor()}{\string~IDecompressor()}}
+{\footnotesize\ttfamily template$<$class TIn , class TOut $>$ \\
+virtual \mbox{\hyperlink{classtson_1_1IDecompressor}{tson\+::\+IDecompressor}}$<$ TIn, TOut $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Pure virtual class needs virtual destructor so derived classes can call their own destructors 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1IDecompressor_a77349ae9cf9e1338196dc21169448c4f}\label{classtson_1_1IDecompressor_a77349ae9cf9e1338196dc21169448c4f} 
+\index{tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}!decompress@{decompress}}
+\index{decompress@{decompress}!tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class TIn , class TOut $>$ \\
+virtual TOut \mbox{\hyperlink{classtson_1_1IDecompressor}{tson\+::\+IDecompressor}}$<$ TIn, TOut $>$\+::decompress (\begin{DoxyParamCaption}\item[{const TIn \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Used primarily for Tiled related decompression. 
+\begin{DoxyParams}{Parameters}
+{\em input} & Input data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decompressed data 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df}{tson\+::\+Base64\+Decompressor}}.
+
+\Hypertarget{classtson_1_1IDecompressor_a82aa4c374737ef3533831f2c6d803a15}\label{classtson_1_1IDecompressor_a82aa4c374737ef3533831f2c6d803a15} 
+\index{tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}!decompress@{decompress}}
+\index{decompress@{decompress}!tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class TIn , class TOut $>$ \\
+virtual TOut \mbox{\hyperlink{classtson_1_1IDecompressor}{tson\+::\+IDecompressor}}$<$ TIn, TOut $>$\+::decompress (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Used for whole file decompression. Not related to Tiled 
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtson_1_1Base64Decompressor_acd08d3334e6ce61ec2e53605987f2b83}{tson\+::\+Base64\+Decompressor}}.
+
+\Hypertarget{classtson_1_1IDecompressor_a2d1bed552a2305ac98aceb96eb897deb}\label{classtson_1_1IDecompressor_a2d1bed552a2305ac98aceb96eb897deb} 
+\index{tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}!decompressFile@{decompressFile}}
+\index{decompressFile@{decompressFile}!tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}}
+\doxysubsubsection{\texorpdfstring{decompressFile()}{decompressFile()}}
+{\footnotesize\ttfamily template$<$class TIn , class TOut $>$ \\
+virtual TOut \mbox{\hyperlink{classtson_1_1IDecompressor}{tson\+::\+IDecompressor}}$<$ TIn, TOut $>$\+::decompress\+File (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Used for whole file decompression. Not related to Tiled 
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtson_1_1Base64Decompressor_a2745131e454a170879ab05ff60568088}{tson\+::\+Base64\+Decompressor}}.
+
+\Hypertarget{classtson_1_1IDecompressor_a7c42337c5d957585be515952209c1317}\label{classtson_1_1IDecompressor_a7c42337c5d957585be515952209c1317} 
+\index{tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}!name@{name}}
+\index{name@{name}!tson::IDecompressor$<$ TIn, TOut $>$@{tson::IDecompressor$<$ TIn, TOut $>$}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily template$<$class TIn , class TOut $>$ \\
+virtual const std\+::string \& \mbox{\hyperlink{classtson_1_1IDecompressor}{tson\+::\+IDecompressor}}$<$ TIn, TOut $>$\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+If the name matches with \textquotesingle{}compression\textquotesingle{} or \textquotesingle{}encoding\textquotesingle{} the \doxylink{classtson_1_1IDecompressor_a77349ae9cf9e1338196dc21169448c4f}{decompress()} function will be called automatically for the actual \doxylink{classtson_1_1Layer}{Layer}. Encoding-\/related matching is handled first!
+
+Known values\+:
+
+compression\+: zlib, gzip, zstd (since Tiled 1.\+3) or empty (default) (tilelayer only). encoding\+: csv (default) or base64 (tilelayer only).
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classtson_1_1Base64Decompressor_aa68ecadc13e74d724780b6eba200d657}{tson\+::\+Base64\+Decompressor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/interfaces/IDecompressor.\+hpp\end{DoxyCompactItemize}

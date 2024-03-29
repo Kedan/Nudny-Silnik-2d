@@ -1,0 +1,35 @@
+\doxysection{JSONLoader.\+h}
+\hypertarget{JSONLoader_8h_source}{}\label{JSONLoader_8h_source}\index{silnik/core/include/JSONLoader.h@{silnik/core/include/JSONLoader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_JSON\_LOADER\_CLASS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_JSON\_LOADER\_CLASS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}json.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1JSONLoader}{JSONLoader}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ json\ \mbox{\hyperlink{classn2d_1_1JSONLoader_a9464d2560262689496d4c2280402871c}{JSON}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<unsigned\ char>\ \mbox{\hyperlink{classn2d_1_1JSONLoader_a8882df89be113205d50ff9dfd9477c79}{data}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1JSONLoader_a88c0fccd475480bee916dec80466cbc4}{JSONLoader}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1JSONLoader_a88c0fccd475480bee916dec80466cbc4}{JSONLoader}}(\ std::string\ t\_file\ );}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classn2d_1_1JSONLoader_a26f753c46e66a1fdf02a192fb4db6445}{Load}}(\ std::string\ t\_file\ );}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classn2d_1_1JSONLoader_aff208a9b69cc12fe8310de1f6a764a7a}{Find}}(\ std::string\ t\_value,\ json\ t\_accessor\ )\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t\_accessor.find(\ t\_value\ )\ !=\ t\_accessor.end();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ json\ \mbox{\hyperlink{classn2d_1_1JSONLoader_a890c46a926d6e2bd10e9ea43fce28620}{GetData}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \};}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

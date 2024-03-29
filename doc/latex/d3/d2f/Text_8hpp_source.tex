@@ -1,0 +1,74 @@
+\doxysection{Text.\+hpp}
+\hypertarget{Text_8hpp_source}{}\label{Text_8hpp_source}\index{silnik/core/lib/include/tileson/tiled/Text.hpp@{silnik/core/lib/include/tileson/tiled/Text.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 05.08.2019.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_TEXT\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_TEXT\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Text}{Text}}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Text}{Text}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//inline\ Text(std::string\ \_text,\ bool\ \_wrap,\ tson::Colori\ \_color)\ :\ text\ \{std::move(\_text)\},\ wrap\ \{\_wrap\},\ color\ \{\_color\}\ \{\};}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Text_a313491b90219157f57db01f922ca8743}{Text}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasColor\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}color"{}})\ >\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color}{tson::Color}}\ c\ =\ (hasColor)\ ?\ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}color"{}}].get<std::string>())\ :\ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color\ =\ c;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ text\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}text"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}text"{}}].get<std::string>()\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrap\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}wrap"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}wrap"{}}].get<bool>()\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Previously\ missing\ properties}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bold\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}bold"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}bold"{}}].get<bool>()\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fontFamily\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}fontfamily"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}fontfamily"{}}].get<std::string>()\ :\ \textcolor{stringliteral}{"{}sans-\/serif"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ horizontalAlignment\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}halign"{}})\ >\ 0)\ ?\ resolveTextAlignmentByString(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}halign"{}}].get<std::string>())\ :\ TextAlignment::Left;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ italic\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}italic"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}italic"{}}].get<bool>()\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kerning\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}kerning"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}kerning"{}}].get<bool>()\ :\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pixelSize\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}pixelsize"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}pixelsize"{}}].get<int32\_t>()\ :\ 16;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strikeout\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}strikeout"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}strikeout"{}}].get<bool>()\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ underline\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}underline"{}})\ >\ 0)\ ?\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}underline"{}}].get<bool>()\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ verticalAlignment\ =\ (\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}valign"{}})\ >\ 0)\ ?\ resolveTextAlignmentByString(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}valign"{}}].get<std::string>())\ :\ TextAlignment::Top;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Just\ make\ it\ simple}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ text\ \{\};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}\ color\ \{\};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wrap\{\};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Previously\ missing\ properties}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ bold\ \{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ fontFamily\ \{\textcolor{stringliteral}{"{}sans-\/serif"{}}\};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ TextAlignment\ horizontalAlignment\ \{TextAlignment::Left\};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ italic\ \{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ kerning\ \{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pixelSize\ \{16\};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ strikeout\ \{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ underline\ \{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ TextAlignment\ verticalAlignment\ \{TextAlignment::Top\};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ TextAlignment\ resolveTextAlignmentByString(\textcolor{keyword}{const}\ std::string\ \&str)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}left"{}})\ \textcolor{keywordflow}{return}\ TextAlignment::Left;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}center"{}})\ \textcolor{keywordflow}{return}\ TextAlignment::Center;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}right"{}})\ \textcolor{keywordflow}{return}\ TextAlignment::Right;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}justify"{}})\ \textcolor{keywordflow}{return}\ TextAlignment::Justify;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}top"{}})\ \textcolor{keywordflow}{return}\ TextAlignment::Top;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}bottom"{}})\ \textcolor{keywordflow}{return}\ TextAlignment::Bottom;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TextAlignment::Unresolved;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_TEXT\_HPP}}
+
+\end{DoxyCode}

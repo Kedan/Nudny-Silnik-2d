@@ -1,0 +1,66 @@
+\doxysection{Frame.\+hpp}
+\hypertarget{Frame_8hpp_source}{}\label{Frame_8hpp_source}\index{silnik/core/lib/include/tileson/tiled/Frame.hpp@{silnik/core/lib/include/tileson/tiled/Frame.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_FRAME\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_FRAME\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\#include\ "{}../external/json.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Frame}{Frame}}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Frame}{Frame}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Frame}{Frame}}(\textcolor{keywordtype}{int}\ duration,\ uint32\_t\ tileId);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Frame}{Frame}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Frame_af6a61eaee779eefb9aea32356a6e56a3}{parse}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1Frame_a64d0428ca6c866bc3cd6d21b76400653}{getDuration}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ uint32\_t\ \mbox{\hyperlink{classtson_1_1Frame_aed6247c47a0228cdf7dec839c3ee8fee}{getTileId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_duration\ \{\};\ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ m\_tileId\ \{\};\ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ tson::Frame::Frame(\textcolor{keywordtype}{int}\ duration,\ uint32\_t\ tileId)\ :\ m\_duration\ \{duration\},\ m\_tileId\ \{tileId\}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ tson::Frame::Frame(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ parse(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Frame_af6a61eaee779eefb9aea32356a6e56a3}{tson::Frame::parse}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ allFound\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}duration"{}})\ >\ 0)\ m\_duration\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}duration"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<\textcolor{keywordtype}{int}>();\ \textcolor{keywordflow}{else}\ allFound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}tileid"{}})\ >\ 0)\ m\_tileId\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}tileid"{}}].get<uint32\_t>()\ +\ 1;\ \textcolor{keywordflow}{else}\ allFound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ allFound;}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1Frame_a64d0428ca6c866bc3cd6d21b76400653}{tson::Frame::getDuration}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00069\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_duration;}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ uint32\_t\ \mbox{\hyperlink{classtson_1_1Frame_aed6247c47a0228cdf7dec839c3ee8fee}{tson::Frame::getTileId}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00078\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_tileId;}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_FRAME\_HPP}}
+
+\end{DoxyCode}

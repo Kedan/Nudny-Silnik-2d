@@ -1,0 +1,82 @@
+\doxysection{Sprite.\+h}
+\hypertarget{Sprite_8h_source}{}\label{Sprite_8h_source}\index{silnik/visual/include/Sprite.h@{silnik/visual/include/Sprite.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_VISUAL\_SPRITE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_VISUAL\_SPRITE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Poly.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Poly}{Poly}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_size;\ }
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Sprite\ \ \ \ \ \ \ \ \ \ \ \ \ \ sprite;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ float\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_current\_frame\_index\ =\ 0;}}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::vector<std::pair<float,glm::vec4>>\ m\_frames;}}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ bool\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_pause;}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ bool\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_play;}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ float\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_elapsed\_time;}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ bool\ \ \ \ loop\ =\ false;}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ float\ \ \ animation\_speed\ =\ 1.0f;}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::vector<SpriteAnimation>\ \ animations;\ }}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1SpriteAnimation}{SpriteAnimation}}\ \ animation;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ GID;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}}(\textcolor{keywordtype}{int});\ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}}\&\ );}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ std::string\ );}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ sf::Texture\&\ );}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTextureCoords(\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0\ );}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTextureCoords(\ glm::vec4\ );\ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Drawable*\ \ \ \ \ \ \ GetDrawable();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Transformable*\ \ GetTransformable();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//b2Shape*\ \ \ \ \ \ GetUpdatable();}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Shape}{Shape}}*\ \ \ \ \ \ \ \ \ Clone()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite_a2c33d5e407c56ea39b1bfe9b361b7502}{Draw}}(\ sf::RenderWindow\&\ w\ );}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite_a2c33d5e407c56ea39b1bfe9b361b7502}{Draw}}(\ sf::RenderWindow\&\ w,\ sf::Transform\&\ t\ );}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ AddBodyCoords(\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ rotation\ );\ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetRotation(\ \textcolor{keywordtype}{float}=0.0f\ );}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetPosition(\ \textcolor{keywordtype}{float}=0.0f,\ \textcolor{keywordtype}{float}=0.0f\ );}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetPosition(\ glm::vec2\ );}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255\ );}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ glm::vec4\ );}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ sf::Color\ );}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetSize(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ FixToBody();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ SetRotation(\ float=0.0f\ );}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ SetPosition(\ float=0.0f,\ float=0.0f\ );}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ SetPosition(\ glm::vec2\ );}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetOrigin(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetOrigin(\ glm::vec2\ );}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ GetSize();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ FlipHorizontal();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ FlipVertical();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ FlipDiagonal();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ IsAnimated();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite_a92c490d78b81c5187b0b29bd9795a9bc}{Animate}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite_ad6e004356cbe3c987a9b8e46cae99376}{ClearAnimation}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite_a6083debb1ccc6f68dfc96cd36be00b12}{Play}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite_a5980332422675c6ebb2e94c4d4162aee}{Pause}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Sprite_a690101a913549c037e7e186386738453}{Stop}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ bool\ \ \ \ \ \ \ \ \ \ \ \ IsAnimated();}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ Animate(\ float\ );}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ ClearAnimation();}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ AddFrame(\ float,\ glm::vec4\ );}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ Play();}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ Pause();}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ void\ \ \ \ \ \ \ \ \ \ \ \ Stop();}}
+\DoxyCodeLine{00073\ \ \ \ \ \};}
+\DoxyCodeLine{00074\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,89 @@
+\doxysection{tson\+::Chunk Class Reference}
+\hypertarget{classtson_1_1Chunk}{}\label{classtson_1_1Chunk}\index{tson::Chunk@{tson::Chunk}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtson_1_1Chunk_a4f5df72a4edc37a6a9da3ed26728c453}{Chunk}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+bool \mbox{\hyperlink{classtson_1_1Chunk_ab23d9f5d366553ff658a28e77c37b155}{parse}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+const std\+::vector$<$ int $>$ \& \mbox{\hyperlink{classtson_1_1Chunk_a53e840537bffc39c6e9b8dfd5df8591e}{get\+Data}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Chunk_a2b1d0c783c14c0776e7aaafdb2e1c87e}{get\+Base64\+Data}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Chunk_a20c01627ca8ff4affbd68efd09ccb452}{get\+Size}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Chunk_ae1b1dbd8f1b3dd9925fa49577f183b83}{get\+Position}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtson_1_1Chunk_a4f5df72a4edc37a6a9da3ed26728c453}\label{classtson_1_1Chunk_a4f5df72a4edc37a6a9da3ed26728c453} 
+\index{tson::Chunk@{tson::Chunk}!Chunk@{Chunk}}
+\index{Chunk@{Chunk}!tson::Chunk@{tson::Chunk}}
+\doxysubsubsection{\texorpdfstring{Chunk()}{Chunk()}}
+{\footnotesize\ttfamily tson\+::\+Chunk\+::\+Chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Parses \textquotesingle{}chunk\textquotesingle{} data from Tiled json and stores the values in this class 
+\begin{DoxyParams}{Parameters}
+{\em json} & json-\/data \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Chunk_a2b1d0c783c14c0776e7aaafdb2e1c87e}\label{classtson_1_1Chunk_a2b1d0c783c14c0776e7aaafdb2e1c87e} 
+\index{tson::Chunk@{tson::Chunk}!getBase64Data@{getBase64Data}}
+\index{getBase64Data@{getBase64Data}!tson::Chunk@{tson::Chunk}}
+\doxysubsubsection{\texorpdfstring{getBase64Data()}{getBase64Data()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Chunk\+::get\+Base64\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}data\textquotesingle{} (when string)\+: Array of unsigned int (GIDs) or base64-\/encoded data. \begin{DoxyReturn}{Returns}
+base64 string 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Chunk_a53e840537bffc39c6e9b8dfd5df8591e}\label{classtson_1_1Chunk_a53e840537bffc39c6e9b8dfd5df8591e} 
+\index{tson::Chunk@{tson::Chunk}!getData@{getData}}
+\index{getData@{getData}!tson::Chunk@{tson::Chunk}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const std\+::vector$<$ int $>$ \& tson\+::\+Chunk\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}data\textquotesingle{} (when uint array)\+: Array of unsigned int (GIDs) or base64-\/encoded data. tilelayer only. \begin{DoxyReturn}{Returns}
+list of tile ids 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Chunk_ae1b1dbd8f1b3dd9925fa49577f183b83}\label{classtson_1_1Chunk_ae1b1dbd8f1b3dd9925fa49577f183b83} 
+\index{tson::Chunk@{tson::Chunk}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!tson::Chunk@{tson::Chunk}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Chunk\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}x\textquotesingle{} and \textquotesingle{}y\textquotesingle{} position in tiles \begin{DoxyReturn}{Returns}
+Position in int 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Chunk_a20c01627ca8ff4affbd68efd09ccb452}\label{classtson_1_1Chunk_a20c01627ca8ff4affbd68efd09ccb452} 
+\index{tson::Chunk@{tson::Chunk}!getSize@{getSize}}
+\index{getSize@{getSize}!tson::Chunk@{tson::Chunk}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Chunk\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+x=\textquotesingle{}width\textquotesingle{} (in tiles) and y=\textquotesingle{}height\textquotesingle{} (in tiles). \begin{DoxyReturn}{Returns}
+Size (x and y), containing the values from the fields \textquotesingle{}width\textquotesingle{} and \textquotesingle{}height\textquotesingle{} in Tiled 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Chunk_ab23d9f5d366553ff658a28e77c37b155}\label{classtson_1_1Chunk_ab23d9f5d366553ff658a28e77c37b155} 
+\index{tson::Chunk@{tson::Chunk}!parse@{parse}}
+\index{parse@{parse}!tson::Chunk@{tson::Chunk}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool tson\+::\+Chunk\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses \textquotesingle{}chunk\textquotesingle{} data from Tiled json and stores the values in this class 
+\begin{DoxyParams}{Parameters}
+{\em json} & json-\/data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all mandatory fields was found. false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Chunk.\+hpp\end{DoxyCompactItemize}

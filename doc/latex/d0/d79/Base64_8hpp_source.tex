@@ -1,0 +1,118 @@
+\doxysection{Base64.\+hpp}
+\hypertarget{Base64_8hpp_source}{}\label{Base64_8hpp_source}\index{silnik/core/lib/include/tileson/common/Base64.hpp@{silnik/core/lib/include/tileson/common/Base64.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Based\ on:\ https://github.com/ReneNyffenegger/cpp-\/base64}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ TILESON\_BASE64\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ TILESON\_BASE64\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Base64}{Base64}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::string\ Encode(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}\ *,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ len);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::string\ Decode(std::string\ \textcolor{keyword}{const}\ \&s);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ base64\_chars\ =}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ABCDEFGHIJKLMNOPQRSTUVWXYZ"{}}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}abcdefghijklmnopqrstuvwxyz"{}}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}0123456789+/"{}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ is\_base64(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ c)}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (isalnum(c)\ ||\ (c\ ==\ \textcolor{charliteral}{'+'})\ ||\ (c\ ==\ \textcolor{charliteral}{'/'}));}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ std::string\ tson::Base64::Encode(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \textcolor{keyword}{const}*\ bytes\_to\_encode,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ in\_len)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ ret;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ char\_array\_3[3];}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ char\_array\_4[4];}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{while}\ (in\_len-\/-\/)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ char\_array\_3[i++]\ =\ *(bytes\_to\_encode++);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 3)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_4[0]\ =\ (char\_array\_3[0]\ \&\ 0xfc)\ >>\ 2;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_4[1]\ =\ ((char\_array\_3[0]\ \&\ 0x03)\ <<\ 4)\ +\ ((char\_array\_3[1]\ \&\ 0xf0)\ >>\ 4);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_4[2]\ =\ ((char\_array\_3[1]\ \&\ 0x0f)\ <<\ 2)\ +\ ((char\_array\_3[2]\ \&\ 0xc0)\ >>\ 6);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_4[3]\ =\ char\_array\_3[2]\ \&\ 0x3f;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(i\ =\ 0;\ (i\ <4)\ ;\ i++)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret\ +=\ base64\_chars[char\_array\_4[i]];}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (i)}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(j\ =\ i;\ j\ <\ 3;\ j++)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_3[j]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ char\_array\_4[0]\ =\ (\ char\_array\_3[0]\ \&\ 0xfc)\ >>\ 2;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ char\_array\_4[1]\ =\ ((char\_array\_3[0]\ \&\ 0x03)\ <<\ 4)\ +\ ((char\_array\_3[1]\ \&\ 0xf0)\ >>\ 4);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ char\_array\_4[2]\ =\ ((char\_array\_3[1]\ \&\ 0x0f)\ <<\ 2)\ +\ ((char\_array\_3[2]\ \&\ 0xc0)\ >>\ 6);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (j\ =\ 0;\ (j\ <\ i\ +\ 1);\ j++)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ ret\ +=\ base64\_chars[char\_array\_4[j]];}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((i++\ <\ 3))}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ ret\ +=\ \textcolor{charliteral}{'='};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ std::string\ tson::Base64::Decode(std::string\ \textcolor{keyword}{const}\&\ encoded\_string)\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ in\_len\ =\ encoded\_string.size();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ in\_\ =\ 0;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ char\_array\_4[4],\ char\_array\_3[3];}
+\DoxyCodeLine{00081\ \ \ \ \ std::string\ ret;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{while}\ (in\_len-\/-\/\ \&\&\ (\ encoded\_string[in\_]\ !=\ \textcolor{charliteral}{'='})\ \&\&\ is\_base64(encoded\_string[in\_]))\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ char\_array\_4[i++]\ =\ encoded\_string[in\_];\ in\_++;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==4)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ i\ <4;\ i++)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_4[i]\ =\ base64\_chars.find(char\_array\_4[i])\ \&\ 0xff;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_3[0]\ =\ (\ char\_array\_4[0]\ <<\ 2\ \ \ \ \ \ \ )\ +\ ((char\_array\_4[1]\ \&\ 0x30)\ >>\ 4);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_3[1]\ =\ ((char\_array\_4[1]\ \&\ 0xf)\ <<\ 4)\ +\ ((char\_array\_4[2]\ \&\ 0x3c)\ >>\ 2);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_3[2]\ =\ ((char\_array\_4[2]\ \&\ 0x3)\ <<\ 6)\ +\ \ \ char\_array\_4[3];}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (i\ =\ 0;\ (i\ <\ 3);\ i++)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret\ +=\ char\_array\_3[i];}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (i)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (j\ =\ 0;\ j\ <\ i;\ j++)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ char\_array\_4[j]\ =\ base64\_chars.find(char\_array\_4[j])\ \&\ 0xff;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ char\_array\_3[0]\ =\ (char\_array\_4[0]\ <<\ 2)\ +\ ((char\_array\_4[1]\ \&\ 0x30)\ >>\ 4);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ char\_array\_3[1]\ =\ ((char\_array\_4[1]\ \&\ 0xf)\ <<\ 4)\ +\ ((char\_array\_4[2]\ \&\ 0x3c)\ >>\ 2);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (j\ =\ 0;\ (j\ <\ i\ -\/\ 1);\ j++)\ ret\ +=\ char\_array\_3[j];}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_BASE64\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,66 @@
+\doxysection{tson\+::Tools Class Reference}
+\hypertarget{classtson_1_1Tools}{}\label{classtson_1_1Tools}\index{tson::Tools@{tson::Tools}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classtson_1_1Tools_a77c2b4987ed469456dc1be4f2d379e58}{Base64\+Decoded\+String\+To\+Bytes}} (std\+::string\+\_\+view str)
+\item 
+static std\+::vector$<$ uint32\+\_\+t $>$ \mbox{\hyperlink{classtson_1_1Tools_ae00a5840c3731d59c048934e7bb790b2}{Bytes\+To\+Unsigned\+Ints}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&bytes)
+\item 
+\Hypertarget{classtson_1_1Tools_ab56c47431a470d4aa8c19b22642715e2}\label{classtson_1_1Tools_ab56c47431a470d4aa8c19b22642715e2} 
+static std\+::vector$<$ std\+::string $>$ {\bfseries Split\+String} (const std\+::string \&s, char delim)
+\item 
+static bool \mbox{\hyperlink{classtson_1_1Tools_a6792b5d1c3fff847b06bf1df75dc0401}{Equal}} (float a, float b, float precision=8192.f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Tools_a77c2b4987ed469456dc1be4f2d379e58}\label{classtson_1_1Tools_a77c2b4987ed469456dc1be4f2d379e58} 
+\index{tson::Tools@{tson::Tools}!Base64DecodedStringToBytes@{Base64DecodedStringToBytes}}
+\index{Base64DecodedStringToBytes@{Base64DecodedStringToBytes}!tson::Tools@{tson::Tools}}
+\doxysubsubsection{\texorpdfstring{Base64DecodedStringToBytes()}{Base64DecodedStringToBytes()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ tson\+::\+Tools\+::\+Base64\+Decoded\+String\+To\+Bytes (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+When you have decoded a \doxylink{classtson_1_1Base64}{Base64} string, you\textquotesingle{}ll get a string representing bytes. This function turns them into actual bytes. 
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tools_ae00a5840c3731d59c048934e7bb790b2}\label{classtson_1_1Tools_ae00a5840c3731d59c048934e7bb790b2} 
+\index{tson::Tools@{tson::Tools}!BytesToUnsignedInts@{BytesToUnsignedInts}}
+\index{BytesToUnsignedInts@{BytesToUnsignedInts}!tson::Tools@{tson::Tools}}
+\doxysubsubsection{\texorpdfstring{BytesToUnsignedInts()}{BytesToUnsignedInts()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint32\+\_\+t $>$ tson\+::\+Tools\+::\+Bytes\+To\+Unsigned\+Ints (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Converts bytes into unsigned int values. The bytes are converted in the Little Endian byte order to fit Tiled\textquotesingle{}s specs. 
+\begin{DoxyParams}{Parameters}
+{\em bytes} & A vector of bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bytes converted to unsigned ints 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tools_a6792b5d1c3fff847b06bf1df75dc0401}\label{classtson_1_1Tools_a6792b5d1c3fff847b06bf1df75dc0401} 
+\index{tson::Tools@{tson::Tools}!Equal@{Equal}}
+\index{Equal@{Equal}!tson::Tools@{tson::Tools}}
+\doxysubsubsection{\texorpdfstring{Equal()}{Equal()}}
+{\footnotesize\ttfamily bool tson\+::\+Tools\+::\+Equal (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b,  }\item[{float}]{precision = {\ttfamily 8192.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Uses a threshold for comparing floats, as they are not precise in many cases. 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal based on the currently defined precision 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/common/Tools.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\doxysection{json11\+::Value\texorpdfstring{$<$}{<} tag, T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classjson11_1_1Value}{}\label{classjson11_1_1Value}\index{json11::Value$<$ tag, T $>$@{json11::Value$<$ tag, T $>$}}
+Inheritance diagram for json11\+::Value\texorpdfstring{$<$}{<} tag, T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/de3/classjson11_1_1Value}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classjson11_1_1Value_a0ba1c06e0de70655878b52ae47c9d876}\label{classjson11_1_1Value_a0ba1c06e0de70655878b52ae47c9d876} 
+{\bfseries Value} (const T \&value)
+\item 
+\Hypertarget{classjson11_1_1Value_adf0aaa04f8f04d67cd45e7065270f21c}\label{classjson11_1_1Value_adf0aaa04f8f04d67cd45e7065270f21c} 
+{\bfseries Value} (T \&\&value)
+\item 
+Json\+::\+Type \mbox{\hyperlink{classjson11_1_1Value_a7f859afc6549e1616384c1ed8b95773e}{type}} () const override
+\item 
+bool \mbox{\hyperlink{classjson11_1_1Value_a9e55dfa0c1119e102fd9bd9bb5bb1f56}{equals}} (const \mbox{\hyperlink{classjson11_1_1JsonValue}{Json\+Value}} \texorpdfstring{$\ast$}{*}other) const override
+\item 
+bool \mbox{\hyperlink{classjson11_1_1Value_a7ea36aadc76a335a6eaf4d44af154732}{less}} (const \mbox{\hyperlink{classjson11_1_1JsonValue}{Json\+Value}} \texorpdfstring{$\ast$}{*}other) const override
+\item 
+\Hypertarget{classjson11_1_1Value_ac7c653a5479bb6f766e01a80bb06927f}\label{classjson11_1_1Value_ac7c653a5479bb6f766e01a80bb06927f} 
+void {\bfseries dump} (string \&out) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classjson11_1_1JsonValue}{json11\+::\+Json\+Value}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries dump} (std\+::string \&out) const =0
+\item 
+virtual double {\bfseries number\+\_\+value} () const
+\item 
+virtual int {\bfseries int\+\_\+value} () const
+\item 
+virtual bool {\bfseries bool\+\_\+value} () const
+\item 
+virtual const std\+::string \& {\bfseries string\+\_\+value} () const
+\item 
+virtual const Json\+::array \& {\bfseries array\+\_\+items} () const
+\item 
+virtual const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t i) const
+\item 
+virtual const Json\+::object \& {\bfseries object\+\_\+items} () const
+\item 
+virtual const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (const std\+::string \&key) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classjson11_1_1Value_a248561db10925d05532a3c2b3ec5b916}\label{classjson11_1_1Value_a248561db10925d05532a3c2b3ec5b916} 
+const T {\bfseries m\+\_\+value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classjson11_1_1Value_a9e55dfa0c1119e102fd9bd9bb5bb1f56}\label{classjson11_1_1Value_a9e55dfa0c1119e102fd9bd9bb5bb1f56} 
+\index{json11::Value$<$ tag, T $>$@{json11::Value$<$ tag, T $>$}!equals@{equals}}
+\index{equals@{equals}!json11::Value$<$ tag, T $>$@{json11::Value$<$ tag, T $>$}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily template$<$Json\+::\+Type tag, typename T $>$ \\
+bool \mbox{\hyperlink{classjson11_1_1Value}{json11\+::\+Value}}$<$ tag, T $>$\+::equals (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classjson11_1_1JsonValue}{Json\+Value}}$<$ tag, T $>$ \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classjson11_1_1JsonValue}{json11\+::\+Json\+Value}}.
+
+\Hypertarget{classjson11_1_1Value_a7ea36aadc76a335a6eaf4d44af154732}\label{classjson11_1_1Value_a7ea36aadc76a335a6eaf4d44af154732} 
+\index{json11::Value$<$ tag, T $>$@{json11::Value$<$ tag, T $>$}!less@{less}}
+\index{less@{less}!json11::Value$<$ tag, T $>$@{json11::Value$<$ tag, T $>$}}
+\doxysubsubsection{\texorpdfstring{less()}{less()}}
+{\footnotesize\ttfamily template$<$Json\+::\+Type tag, typename T $>$ \\
+bool \mbox{\hyperlink{classjson11_1_1Value}{json11\+::\+Value}}$<$ tag, T $>$\+::less (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classjson11_1_1JsonValue}{Json\+Value}}$<$ tag, T $>$ \texorpdfstring{$\ast$}{*}}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classjson11_1_1JsonValue}{json11\+::\+Json\+Value}}.
+
+\Hypertarget{classjson11_1_1Value_a7f859afc6549e1616384c1ed8b95773e}\label{classjson11_1_1Value_a7f859afc6549e1616384c1ed8b95773e} 
+\index{json11::Value$<$ tag, T $>$@{json11::Value$<$ tag, T $>$}!type@{type}}
+\index{type@{type}!json11::Value$<$ tag, T $>$@{json11::Value$<$ tag, T $>$}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily template$<$Json\+::\+Type tag, typename T $>$ \\
+Json\+::\+Type \mbox{\hyperlink{classjson11_1_1Value}{json11\+::\+Value}}$<$ tag, T $>$\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classjson11_1_1JsonValue}{json11\+::\+Json\+Value}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/external/json11.\+hpp\end{DoxyCompactItemize}

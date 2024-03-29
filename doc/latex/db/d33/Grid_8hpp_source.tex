@@ -1,0 +1,64 @@
+\doxysection{Grid.\+hpp}
+\hypertarget{Grid_8hpp_source}{}\label{Grid_8hpp_source}\index{silnik/core/lib/include/tileson/tiled/Grid.hpp@{silnik/core/lib/include/tileson/tiled/Grid.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_GRID\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_GRID\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../objects/Vector2.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\#include\ "{}../external/json.hpp"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Grid}{Grid}}}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Grid}{Grid}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Grid}{Grid}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Grid_a07ed782351604add041be6d659d7a9f4}{parse}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Grid_adc321890fe76f2fe81a39c5006285fda}{getOrientation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}}\ \&\mbox{\hyperlink{classtson_1_1Grid_a2d76dc0a69b034a1e28bf3141010e818}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ m\_orientation;\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2i}}\ m\_size;\ }
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ tson::Grid::Grid(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classtson_1_1Grid_a07ed782351604add041be6d659d7a9f4}{parse}}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00038\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Grid_a07ed782351604add041be6d659d7a9f4}{tson::Grid::parse}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ allFound\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}orientation"{}})\ >\ 0)\ m\_orientation\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}orientation"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<std::string>();\ \textcolor{comment}{//Optional}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}width"{}})\ >\ 0\ \&\&\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}height"{}})\ >\ 0)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ m\_size\ =\ \{\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}width"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<\textcolor{keywordtype}{int}>(),\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}height"{}}].get<int>()\};\ \textcolor{keywordflow}{else}\ allFound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ allFound;}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Grid_adc321890fe76f2fe81a39c5006285fda}{tson::Grid::getOrientation}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_orientation;}
+\DoxyCodeLine{00064\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2i}}\ \&\mbox{\hyperlink{classtson_1_1Grid_a2d76dc0a69b034a1e28bf3141010e818}{tson::Grid::getSize}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00071\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_size;}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_GRID\_HPP}}
+
+\end{DoxyCode}

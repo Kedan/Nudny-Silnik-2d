@@ -1,0 +1,120 @@
+\doxysection{n2d\+::Layer Class Reference}
+\hypertarget{classn2d_1_1Layer}{}\label{classn2d_1_1Layer}\index{n2d::Layer@{n2d::Layer}}
+Inheritance diagram for n2d\+::Layer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d0/d72/classn2d_1_1Layer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Layer_aad247d96d878b9402639b266d64c3e81}\label{classn2d_1_1Layer_aad247d96d878b9402639b266d64c3e81} 
+virtual bool {\bfseries Load} (std\+::string, tson\+::\+Layer \&)=0
+\item 
+\Hypertarget{classn2d_1_1Layer_a5702ce239d69eab1283095c99bc69736}\label{classn2d_1_1Layer_a5702ce239d69eab1283095c99bc69736} 
+virtual void {\bfseries Create} (b2\+World \&)=0
+\item 
+\Hypertarget{classn2d_1_1Layer_a24b7493aae88e04dfe206447a3fba8cf}\label{classn2d_1_1Layer_a24b7493aae88e04dfe206447a3fba8cf} 
+void {\bfseries Set\+Resources} (\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \&t\+\_\+resources)
+\item 
+\Hypertarget{classn2d_1_1Layer_af669e02cef66a67f2244ad687101f22e}\label{classn2d_1_1Layer_af669e02cef66a67f2244ad687101f22e} 
+void {\bfseries Set\+Tileset} (\mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}} \&t\+\_\+tileset)
+\item 
+\Hypertarget{classn2d_1_1Layer_a216300ce52e08f1c948404304c472170}\label{classn2d_1_1Layer_a216300ce52e08f1c948404304c472170} 
+void {\bfseries Set\+Grid} (glm\+::vec2 t\+\_\+grid\+\_\+size)
+\item 
+glm\+::vec2 \mbox{\hyperlink{classn2d_1_1Layer_a85bbb84d883e5aa29b9c1030c6c19419}{Get\+Correct\+Tile\+Position}} (tson\+::\+Vector2f t\+\_\+obj\+\_\+position, glm\+::vec2 t\+\_\+tile\+\_\+size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window)=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window, sf\+::\+Transform \&t\+\_\+transform)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Updatable}{n2d\+::\+Updatable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Updatable_afdd0bf94a4486b3a893ed560af5e22c6}{Update}} (float t\+\_\+dt)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}{Events}} (sf\+::\+Event \&t\+\_\+event)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Layer_a1e590f4fef2a3a6b28a4f3f794113992}\label{classn2d_1_1Layer_a1e590f4fef2a3a6b28a4f3f794113992} 
+int {\bfseries id}
+\item 
+\Hypertarget{classn2d_1_1Layer_ad7bd1a92213664916263ada5900a422f}\label{classn2d_1_1Layer_ad7bd1a92213664916263ada5900a422f} 
+std\+::string {\bfseries name}
+\item 
+\Hypertarget{classn2d_1_1Layer_abc030fadcd526196d295deabf3bc2342}\label{classn2d_1_1Layer_abc030fadcd526196d295deabf3bc2342} 
+bool {\bfseries visible}
+\item 
+\Hypertarget{classn2d_1_1Layer_a80ffa4ba2b3dd4512715ca083fd86def}\label{classn2d_1_1Layer_a80ffa4ba2b3dd4512715ca083fd86def} 
+glm\+::vec2 {\bfseries position}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Layer_a6bf8b1e0a87c0f4b0fcd54aa1f9e4d6a}\label{classn2d_1_1Layer_a6bf8b1e0a87c0f4b0fcd54aa1f9e4d6a} 
+void {\bfseries Set\+Default\+Data} (tson\+::\+Layer \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Layer_aeea951d3630d75057ec9d26fc63b1094}\label{classn2d_1_1Layer_aeea951d3630d75057ec9d26fc63b1094} 
+bool {\bfseries m\+\_\+loaded} = false
+\item 
+\Hypertarget{classn2d_1_1Layer_aab675d61a8ac3fd71c0cb2102e6cfb26}\label{classn2d_1_1Layer_aab675d61a8ac3fd71c0cb2102e6cfb26} 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+resources}
+\item 
+\Hypertarget{classn2d_1_1Layer_a6fa1cd91e21746e145dd6358fec7eb82}\label{classn2d_1_1Layer_a6fa1cd91e21746e145dd6358fec7eb82} 
+\mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+tileset}
+\item 
+\Hypertarget{classn2d_1_1Layer_a09d43e43862fcec466da79e9732eb62a}\label{classn2d_1_1Layer_a09d43e43862fcec466da79e9732eb62a} 
+glm\+::vec2 {\bfseries m\+\_\+grid\+\_\+size}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Layer_a85bbb84d883e5aa29b9c1030c6c19419}\label{classn2d_1_1Layer_a85bbb84d883e5aa29b9c1030c6c19419} 
+\index{n2d::Layer@{n2d::Layer}!GetCorrectTilePosition@{GetCorrectTilePosition}}
+\index{GetCorrectTilePosition@{GetCorrectTilePosition}!n2d::Layer@{n2d::Layer}}
+\doxysubsubsection{\texorpdfstring{GetCorrectTilePosition()}{GetCorrectTilePosition()}}
+{\footnotesize\ttfamily glm\+::vec2 Layer\+::\+Get\+Correct\+Tile\+Position (\begin{DoxyParamCaption}\item[{tson\+::\+Vector2f}]{t\+\_\+obj\+\_\+position,  }\item[{glm\+::vec2}]{t\+\_\+tile\+\_\+size }\end{DoxyParamCaption})}
+
+IF you use tiles with size ( i.\+e. 64x80 pixels ) different than map grid ( i.\+e. 16x16 pixels ), tson\+::\+Object.\+get\+Position() gives you shit becouse it multiplies tile size, not the map grid size, so when tile is position ( 1, 1 tiles) -\/ it gives (1\texorpdfstring{$\ast$}{*}64, 1\texorpdfstring{$\ast$}{*}80 pixels ) instead of (1\texorpdfstring{$\ast$}{*}16, 1\texorpdfstring{$\ast$}{*}16)
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+obj\+\_\+position} & \mbox{[}tson\+::\+Vector2f\mbox{]}. Tileson object position -\/ tson\+::\+Object\+::get\+Position() in pixels \\
+\hline
+{\em t\+\_\+tile\+\_\+size} & \mbox{[}glm\+::vec2\mbox{]} actual tile size in pixels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(glm\+::vec2) Corrected tile position, calculates using actual map grid size. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/game/include/Map\+Layer.\+h\item 
+silnik/game/src/Map\+Layer.\+cpp\end{DoxyCompactItemize}

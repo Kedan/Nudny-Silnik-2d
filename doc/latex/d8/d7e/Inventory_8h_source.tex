@@ -1,0 +1,34 @@
+\doxysection{Inventory.\+h}
+\hypertarget{Inventory_8h_source}{}\label{Inventory_8h_source}\index{silnik/game/include/Inventory.h@{silnik/game/include/Inventory.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_INVENTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_INVENTORY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Inventory}{Inventory}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Entity}{Entity}}\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ max\_volume;}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ max\_weight;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ current\_volume;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ current\_weight;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item>\ \ \ items;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Inventory}{Inventory}}(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ AddItem(\ \mbox{\hyperlink{classn2d_1_1Item}{Item}}\&\ );}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SelectItem(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ UseItem(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RemoveItem(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ GrabAll(\ \mbox{\hyperlink{classn2d_1_1Inventory}{Inventory}}\&\ );}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ DropAll();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Inventory_a0d95ddb43d3586c490c25d1944d9283b}{Draw}}(\ sf::RenderWindow\&\ );}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Inventory_a4d10e64d2c1b296658f0cf4cf93887bd}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Inventory_a39250d4aa775e7322a3f3b16e265d4fe}{Update}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Inventory_a3db0a9c03495e8536ae75f7bb149aff7}{Events}}(\ sf::Event\&\ );}
+\DoxyCodeLine{00025\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Inventory}}
+\DoxyCodeLine{00026\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,108 @@
+\doxysection{Base64\+Decompressor.\+hpp}
+\hypertarget{Base64Decompressor_8hpp_source}{}\label{Base64Decompressor_8hpp_source}\index{silnik/core/lib/include/tileson/common/Base64Decompressor.hpp@{silnik/core/lib/include/tileson/common/Base64Decompressor.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 29.07.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ The\ Base64\ decoding\ logic\ is\ heavily\ based\ on:\ https://github.com/ReneNyffenegger/cpp-\/base64}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ TILESON\_BASE64DECOMPRESSOR\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ TILESON\_BASE64DECOMPRESSOR\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../interfaces/IDecompressor.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Base64Decompressor}{Base64Decompressor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}<std::string\_view,\ std::string>}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Base64Decompressor_aa68ecadc13e74d724780b6eba200d657}{name}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df}{decompress}}(\textcolor{keyword}{const}\ std::string\_view\ \&s)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classtson_1_1Base64Decompressor_a2745131e454a170879ab05ff60568088}{decompressFile}}(\textcolor{keyword}{const}\ fs::path\ \&path)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df}{decompress}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *data,\ \textcolor{keywordtype}{size\_t}\ size)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pos\_of\_char(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ chr);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ NAME\ =\ \textcolor{stringliteral}{"{}base64"{}};}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Base64Decompressor_aa68ecadc13e74d724780b6eba200d657}{Base64Decompressor::name}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NAME;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df}{Base64Decompressor::decompress}}(\textcolor{keyword}{const}\ std::string\_view\ \&s)}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ length\_of\_string\ =\ s.length();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!length\_of\_string)\ \textcolor{keywordflow}{return}\ std::string(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ in\_len\ =\ length\_of\_string;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ 0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ approximate\ length\ (bytes)\ of\ the\ decoded\ string\ might\ be\ one\ ore}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ two\ bytes\ smaller,\ depending\ on\ the\ amount\ of\ trailing\ equal\ signs}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in\ the\ encoded\ string.\ This\ approximation\ is\ needed\ to\ reserve}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ enough\ space\ in\ the\ string\ to\ be\ returned.}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ approx\_length\_of\_decoded\_string\ =\ length\_of\_string\ /\ 4\ *\ 3;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ std::string\ ret;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ ret.reserve(approx\_length\_of\_decoded\_string);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (pos\ <\ in\_len)\ \{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pos\_of\_char\_1\ =\ pos\_of\_char(s[pos+1]\ );}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ ret.push\_back(\textcolor{keyword}{static\_cast<}std::string::value\_type\textcolor{keyword}{>}(\ (\ (pos\_of\_char(s[pos+0])\ )\ <<\ 2\ )\ +\ (\ (pos\_of\_char\_1\ \&\ 0x30\ )\ >>\ 4)));}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[pos+2]\ !=\ \textcolor{charliteral}{'='}\ \&\&\ s[pos+2]\ !=\ \textcolor{charliteral}{'.'})\ \{\ \textcolor{comment}{//\ accept\ URL-\/safe\ base\ 64\ strings,\ too,\ so\ check\ for\ '.'\ also.}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pos\_of\_char\_2\ =\ pos\_of\_char(s[pos+2]\ );}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret.push\_back(\textcolor{keyword}{static\_cast<}std::string::value\_type\textcolor{keyword}{>}(\ ((\ pos\_of\_char\_1\ \&\ 0x0f)\ <<\ 4)\ +\ ((\ pos\_of\_char\_2\ \&\ 0x3c)\ >>\ 2)));}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s[pos+3]\ !=\ \textcolor{charliteral}{'='}\ \&\&\ s[pos+3]\ !=\ \textcolor{charliteral}{'.'})\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret.push\_back(\textcolor{keyword}{static\_cast<}std::string::value\_type\textcolor{keyword}{>}(\ (\ (pos\_of\_char\_2\ \&\ 0x03\ )\ <<\ 6\ )\ +\ pos\_of\_char(s[pos+3])\ \ \ ));}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ pos\ +=\ 4;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ Base64Decompressor::pos\_of\_char(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ chr)}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Return\ the\ position\ of\ chr\ within\ base64\_encode()}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \ \ \ \ \ (chr\ >=\ \textcolor{charliteral}{'A'}\ \&\&\ chr\ <=\ \textcolor{charliteral}{'Z'})\ \textcolor{keywordflow}{return}\ chr\ -\/\ \textcolor{charliteral}{'A'};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (chr\ >=\ \textcolor{charliteral}{'a'}\ \&\&\ chr\ <=\ \textcolor{charliteral}{'z'})\ \textcolor{keywordflow}{return}\ chr\ -\/\ \textcolor{charliteral}{'a'}\ +\ (\textcolor{charliteral}{'Z'}\ -\/\ \textcolor{charliteral}{'A'})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ 1;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (chr\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ chr\ <=\ \textcolor{charliteral}{'9'})\ \textcolor{keywordflow}{return}\ chr\ -\/\ \textcolor{charliteral}{'0'}\ +\ (\textcolor{charliteral}{'Z'}\ -\/\ \textcolor{charliteral}{'A'})\ +\ (\textcolor{charliteral}{'z'}\ -\/\ \textcolor{charliteral}{'a'})\ +\ 2;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (chr\ ==\ \textcolor{charliteral}{'+'}\ ||\ chr\ ==\ \textcolor{charliteral}{'-\/'})\ \textcolor{keywordflow}{return}\ 62;\ \textcolor{comment}{//\ Be\ liberal\ with\ input\ and\ accept\ both\ url\ ('-\/')\ and\ non-\/url\ ('+')\ base\ 64\ characters\ (}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (chr\ ==\ \textcolor{charliteral}{'/'}\ ||\ chr\ ==\ \textcolor{charliteral}{'\_'})\ \textcolor{keywordflow}{return}\ 63;\ \textcolor{comment}{//\ Ditto\ for\ '/'\ and\ '\_'}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{stringliteral}{"{}If\ input\ is\ correct,\ this\ line\ should\ never\ be\ reached."{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ std::string\ \mbox{\hyperlink{classtson_1_1Base64Decompressor_a2745131e454a170879ab05ff60568088}{Base64Decompressor::decompressFile}}(\textcolor{keyword}{const}\ fs::path\ \&)}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string();}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ std::string\ \mbox{\hyperlink{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df}{Base64Decompressor::decompress}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *,\ \textcolor{keywordtype}{size\_t})}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string();}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_BASE64DECOMPRESSOR\_HPP}}
+
+\end{DoxyCode}

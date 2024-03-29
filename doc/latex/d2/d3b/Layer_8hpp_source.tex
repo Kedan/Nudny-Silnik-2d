@@ -1,0 +1,420 @@
+\doxysection{Layer.\+hpp}
+\hypertarget{Layer_8hpp_source}{}\label{Layer_8hpp_source}\index{silnik/core/lib/include/tileson/tiled/Layer.hpp@{silnik/core/lib/include/tileson/tiled/Layer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_LAYER\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_LAYER\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\#include\ "{}../external/json.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../objects/Vector2.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../objects/Color.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Chunk.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Object.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../objects/TileObject.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../objects/Property.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../objects/PropertyCollection.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../common/Enums.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../objects/FlaggedTile.hpp"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }Tile;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }Map;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Layer}{Layer}}}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Layer}{Layer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Layer}{Layer}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *map);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Layer_a333e6e81daffaa8a1632771261152806}{parse}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *map);\ \textcolor{comment}{//Defined\ in\ tileson\_forward}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_a7cfd01a29846a700f256866f648866b6}{getCompression}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::vector<uint32\_t>\ \&\mbox{\hyperlink{classtson_1_1Layer_a7bc9c4babb001e70724bcac87ff1a44b}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_a127b8b53be6689337ccaae44662b4bd0}{getBase64Data}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_af18c1e3bf8edacd7e77360cb8cfd22d4}{getDrawOrder}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_a72795bb8357a832ca73b8c92c3b996e7}{getEncoding}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1Layer_a23a500cb6656aa0daacede9d8e2fcf5b}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_ac803ebda218541ba725320b2d96b91a0}{getImage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_a32db2db6de49b6daf221ae06a3b3f7e1}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{Vector2f}}\ \&\mbox{\hyperlink{classtson_1_1Layer_a8f0d856ccfe72514e73fa08981469135}{getOffset}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtson_1_1Layer_a72925a3b4e073219b49b5e322b3e190c}{getOpacity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}}\ \&\mbox{\hyperlink{classtson_1_1Layer_a4998bb3f1d21c2a0e163dbc95f6dbefd}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Color}{Colori}}\ \&\mbox{\hyperlink{classtson_1_1Layer_ab0fe1d3e92b6d3b240fd8301c668512a}{getTransparentColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{Vector2f}}\ \&\mbox{\hyperlink{classtson_1_1Layer_aca6291922deff267a3c9c5fa1af771df}{getParallax}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Layer_a7ebac3c8bb3bc4ea8ac5a20d8deedb6a}{hasRepeatX}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Layer_a26776c1d139279e0ee2a12bbd3fba49c}{hasRepeatY}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ LayerType\ \mbox{\hyperlink{classtson_1_1Layer_a3987553cdfc9e9718e270a7b8e11560e}{getType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&getClassType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1TiledClass}{tson::TiledClass}}\ *getClass();\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_aa67545069934024f7383c8c59026ce38}{getTypeStr}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Layer_a9f15627018a6cd843babcd177c910bce}{isVisible}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1Layer_aebf4eec1d654fb9c79bfefccb435fa20}{getX}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1Layer_af68877b9894e9ee9a4fecaa0081737e4}{getY}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ std::vector<tson::Chunk>\ \&\mbox{\hyperlink{classtson_1_1Layer_a631f1ba160425ef531d9dd1b2d2a975e}{getChunks}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ std::vector<tson::Layer>\ \&\mbox{\hyperlink{classtson_1_1Layer_a0d5a4c4f6f56f89b10d266cb90a86ae1}{getLayers}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ std::vector<tson::Object>\ \&\mbox{\hyperlink{classtson_1_1Layer_acc7f2d5e9a4a4d1bd16b02ce8ad61783}{getObjects}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1PropertyCollection}{PropertyCollection}}\ \&\mbox{\hyperlink{classtson_1_1Layer_a12978038cdfa9cbeb50f016eb321e305}{getProperties}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Object}{tson::Object}}\ *\mbox{\hyperlink{classtson_1_1Layer_a2d3b4f227b5f1ac37f1f41ad511b0d44}{getObj}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Object}{tson::Object}}\ *\mbox{\hyperlink{classtson_1_1Layer_a1b635e2b5a9aec6921990b4946689475}{firstObj}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<tson::Object>\ \mbox{\hyperlink{classtson_1_1Layer_af4ce4349ec4cd19e903ce3078712cc48}{getObjectsByName}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<tson::Object>\ \mbox{\hyperlink{classtson_1_1Layer_a02c33010f8a26d26503f75f7d15024d3}{getObjectsByType}}(tson::ObjectType\ type);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{classtson_1_1Layer_a4d629dd00219fa52ac138107a72c0631}{get}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Property}{tson::Property}}\ *\ \mbox{\hyperlink{classtson_1_1Layer_a940b26d0a913c34bd4232a284a4779af}{getProp}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtson_1_1Layer_a1bfad85349d2f026201b7cad0419878b}{assignTileMap}}(std::map<uint32\_t,\ tson::Tile*>\ *tileMap);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtson_1_1Layer_a0fda78f286ab1f0179864b43a875b18a}{createTileData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}}\ \&mapSize,\ \textcolor{keywordtype}{bool}\ isInfiniteMap);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::map<std::tuple<int,\ int>,\ \mbox{\hyperlink{classtson_1_1Tile}{tson::Tile}}\ *>\ \&\mbox{\hyperlink{classtson_1_1Layer_a0bc443cd1c272a6f6fbf4cca77121ab6}{getTileData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Tile}{tson::Tile}}\ *\ \mbox{\hyperlink{classtson_1_1Layer_a0bc443cd1c272a6f6fbf4cca77121ab6}{getTileData}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//v1.2.0-\/stuff}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Color}{Colori}}\ \&\mbox{\hyperlink{classtson_1_1Layer_abd7f24d6450724a93844dd464caa92ae}{getTintColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *\mbox{\hyperlink{classtson_1_1Layer_a670540bd9efc9e0eb5279086ea45f408}{getMap}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ std::map<std::tuple<int,\ int>,\ \mbox{\hyperlink{classtson_1_1TileObject}{tson::TileObject}}>\ \&getTileObjects();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1TileObject}{tson::TileObject}}\ *\ getTileObject(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::set<uint32\_t>\ \&getUniqueFlaggedTiles()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ resolveFlaggedTiles();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ setTypeByString();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::Chunk>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_chunks;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_compression;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<uint32\_t>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_data;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_base64Data;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_drawOrder;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_encoding;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_id\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_image;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::Layer>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_layers;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_name;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::Object>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_objects;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2f}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_offset;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_opacity\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson::PropertyCollection}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_properties;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2i}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_size;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_transparentColor;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_typeStr;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ LayerType\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_type\ \{LayerType::Undefined\};\ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_visible\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_x\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_y\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2f}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_parallax\{1.f,\ 1.f\};\ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_repeatX\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_repeatY\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<uint32\_t,\ tson::Tile*>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *m\_tileMap;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::tuple<int,\ int>,\ \mbox{\hyperlink{classtson_1_1Tile}{tson::Tile}}*>\ \ \ \ m\_tileData;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//v1.2.0-\/stuff}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_tintColor;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ decompressData();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ queueFlaggedTile(\textcolor{keywordtype}{size\_t}\ x,\ \textcolor{keywordtype}{size\_t}\ y,\ uint32\_t\ \textcolor{keywordtype}{id});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_map;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::tuple<int,\ int>,\ \mbox{\hyperlink{classtson_1_1TileObject}{tson::TileObject}}>\ \ \ \ m\_tileObjects;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ std::set<uint32\_t>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_uniqueFlaggedTiles;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::FlaggedTile>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_flaggedTiles;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_classType\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<tson::TiledClass>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_class\ \{\};}
+\DoxyCodeLine{00135\ \ \ \ \ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00144\ \ \ \ \ T\ \mbox{\hyperlink{classtson_1_1Layer_a4d629dd00219fa52ac138107a72c0631}{Layer::get}}(\textcolor{keyword}{const}\ std::string\ \&name)}
+\DoxyCodeLine{00145\ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_properties.getValue<T>(name);}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ tson::Layer::Layer(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *map)}
+\DoxyCodeLine{00155\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{classtson_1_1Layer_a333e6e81daffaa8a1632771261152806}{parse}}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ map);}
+\DoxyCodeLine{00157\ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{void}\ tson::Layer::queueFlaggedTile(\textcolor{keywordtype}{size\_t}\ x,\ \textcolor{keywordtype}{size\_t}\ y,\ uint32\_t\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ uint32\_t\ tileId\ =\ id;}
+\DoxyCodeLine{00162\ \ \ \ \ tileId\ \&=\ \string~(FLIPPED\_HORIZONTALLY\_FLAG\ |\ FLIPPED\_VERTICALLY\_FLAG\ |\ FLIPPED\_DIAGONALLY\_FLAG);}
+\DoxyCodeLine{00163\ \ \ \ \ m\_uniqueFlaggedTiles.insert(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00164\ \ \ \ \ m\_flaggedTiles.emplace\_back(x,\ y,\ \textcolor{keywordtype}{id},\ tileId);}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00172\ std::vector<tson::Object>\ \mbox{\hyperlink{classtson_1_1Layer_af4ce4349ec4cd19e903ce3078712cc48}{tson::Layer::getObjectsByName}}(\textcolor{keyword}{const}\ std::string\ \&name)}
+\DoxyCodeLine{00173\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ std::vector<tson::Object>\ found;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ std::copy\_if(m\_objects.begin(),\ m\_objects.end(),\ std::back\_inserter(found),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Object}{tson::Object}}\ \&item)}
+\DoxyCodeLine{00177\ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ return\ item.getName()\ ==\ name;}
+\DoxyCodeLine{00179\ \ \ \ \ \});}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{return}\ found;}
+\DoxyCodeLine{00182\ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00191\ std::vector<tson::Object>\ \mbox{\hyperlink{classtson_1_1Layer_a02c33010f8a26d26503f75f7d15024d3}{tson::Layer::getObjectsByType}}(tson::ObjectType\ type)}
+\DoxyCodeLine{00192\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ std::vector<tson::Object>\ found;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ std::copy\_if(m\_objects.begin(),\ m\_objects.end(),\ std::back\_inserter(found),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Object}{tson::Object}}\ \&item)}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ return\ item.getObjectType()\ ==\ type;}
+\DoxyCodeLine{00198\ \ \ \ \ \});}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{return}\ found;}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00208\ \mbox{\hyperlink{classtson_1_1Object}{tson::Object}}\ *\mbox{\hyperlink{classtson_1_1Layer_a1b635e2b5a9aec6921990b4946689475}{tson::Layer::firstObj}}(\textcolor{keyword}{const}\ std::string\ \&name)}
+\DoxyCodeLine{00209\ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ std::find\_if(m\_objects.begin(),\ m\_objects.end(),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Object}{tson::Object}}\ \&obj)\{return\ obj.getName()\ ==\ name;\ \});}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{if}(result\ ==\ m\_objects.end())}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordflow}{return}\ \&result.operator*();}
+\DoxyCodeLine{00215\ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00222\ \mbox{\hyperlink{classtson_1_1Object}{tson::Object}}\ *\mbox{\hyperlink{classtson_1_1Layer_a2d3b4f227b5f1ac37f1f41ad511b0d44}{tson::Layer::getObj}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00223\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ std::find\_if(m\_objects.begin(),\ m\_objects.end(),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Object}{tson::Object}}\ \&obj)\{return\ obj.getId()\ ==\ id;\ \});}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{if}(result\ ==\ m\_objects.end())}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{return}\ \&result.operator*();}
+\DoxyCodeLine{00229\ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00235\ \textcolor{keywordtype}{void}\ tson::Layer::setTypeByString()}
+\DoxyCodeLine{00236\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{if}(m\_typeStr\ ==\ \textcolor{stringliteral}{"{}tilelayer"{}})\ m\_type\ =\ LayerType::TileLayer;}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(m\_typeStr\ ==\ \textcolor{stringliteral}{"{}objectgroup"{}})\ m\_type\ =\ LayerType::ObjectGroup;}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(m\_typeStr\ ==\ \textcolor{stringliteral}{"{}imagelayer"{}})\ m\_type\ =\ LayerType::ImageLayer;}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(m\_typeStr\ ==\ \textcolor{stringliteral}{"{}group"{}})\ m\_type\ =\ LayerType::Group;}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{else}\ m\_type\ =\ LayerType::Undefined;}
+\DoxyCodeLine{00242\ \}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00248\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_a7cfd01a29846a700f256866f648866b6}{tson::Layer::getCompression}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00249\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_compression;}
+\DoxyCodeLine{00251\ \}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{const}\ std::vector<uint32\_t>\ \&\mbox{\hyperlink{classtson_1_1Layer_a7bc9c4babb001e70724bcac87ff1a44b}{tson::Layer::getData}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00258\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data;}
+\DoxyCodeLine{00260\ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00266\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_a127b8b53be6689337ccaae44662b4bd0}{tson::Layer::getBase64Data}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00267\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_base64Data;}
+\DoxyCodeLine{00269\ \}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00275\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_af18c1e3bf8edacd7e77360cb8cfd22d4}{tson::Layer::getDrawOrder}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00276\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_drawOrder;}
+\DoxyCodeLine{00278\ \}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00284\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_a72795bb8357a832ca73b8c92c3b996e7}{tson::Layer::getEncoding}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00285\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_encoding;}
+\DoxyCodeLine{00287\ \}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00293\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1Layer_a23a500cb6656aa0daacede9d8e2fcf5b}{tson::Layer::getId}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00294\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_id;}
+\DoxyCodeLine{00296\ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00302\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_ac803ebda218541ba725320b2d96b91a0}{tson::Layer::getImage}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00303\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_image;}
+\DoxyCodeLine{00305\ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_a32db2db6de49b6daf221ae06a3b3f7e1}{tson::Layer::getName}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00312\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_name;}
+\DoxyCodeLine{00314\ \}}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00320\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2f}}\ \&\mbox{\hyperlink{classtson_1_1Layer_a8f0d856ccfe72514e73fa08981469135}{tson::Layer::getOffset}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00321\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_offset;}
+\DoxyCodeLine{00323\ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00329\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classtson_1_1Layer_a72925a3b4e073219b49b5e322b3e190c}{tson::Layer::getOpacity}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00330\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_opacity;}
+\DoxyCodeLine{00332\ \}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00339\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2i}}\ \&\mbox{\hyperlink{classtson_1_1Layer_a4998bb3f1d21c2a0e163dbc95f6dbefd}{tson::Layer::getSize}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00340\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_size;}
+\DoxyCodeLine{00342\ \}}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00348\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}\ \&\mbox{\hyperlink{classtson_1_1Layer_ab0fe1d3e92b6d3b240fd8301c668512a}{tson::Layer::getTransparentColor}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00349\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_transparentColor;}
+\DoxyCodeLine{00351\ \}}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00357\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Layer_aa67545069934024f7383c8c59026ce38}{tson::Layer::getTypeStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00358\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00359\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_typeStr;}
+\DoxyCodeLine{00360\ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00366\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Layer_a9f15627018a6cd843babcd177c910bce}{tson::Layer::isVisible}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00367\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_visible;}
+\DoxyCodeLine{00369\ \}}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00375\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1Layer_aebf4eec1d654fb9c79bfefccb435fa20}{tson::Layer::getX}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00376\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_x;}
+\DoxyCodeLine{00378\ \}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00384\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1Layer_af68877b9894e9ee9a4fecaa0081737e4}{tson::Layer::getY}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00385\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_y;}
+\DoxyCodeLine{00387\ \}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00393\ std::vector<tson::Chunk>\ \&\mbox{\hyperlink{classtson_1_1Layer_a631f1ba160425ef531d9dd1b2d2a975e}{tson::Layer::getChunks}}()}
+\DoxyCodeLine{00394\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_chunks;}
+\DoxyCodeLine{00396\ \}}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00402\ std::vector<tson::Layer>\ \&\mbox{\hyperlink{classtson_1_1Layer_a0d5a4c4f6f56f89b10d266cb90a86ae1}{tson::Layer::getLayers}}()}
+\DoxyCodeLine{00403\ \{}
+\DoxyCodeLine{00404\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_layers;}
+\DoxyCodeLine{00405\ \}}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00411\ std::vector<tson::Object>\ \&\mbox{\hyperlink{classtson_1_1Layer_acc7f2d5e9a4a4d1bd16b02ce8ad61783}{tson::Layer::getObjects}}()}
+\DoxyCodeLine{00412\ \{}
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_objects;}
+\DoxyCodeLine{00414\ \}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00420\ \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson::PropertyCollection}}\ \&\mbox{\hyperlink{classtson_1_1Layer_a12978038cdfa9cbeb50f016eb321e305}{tson::Layer::getProperties}}()}
+\DoxyCodeLine{00421\ \{}
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_properties;}
+\DoxyCodeLine{00423\ \}}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00430\ \mbox{\hyperlink{classtson_1_1Property}{tson::Property}}\ *\mbox{\hyperlink{classtson_1_1Layer_a940b26d0a913c34bd4232a284a4779af}{tson::Layer::getProp}}(\textcolor{keyword}{const}\ std::string\ \&name)}
+\DoxyCodeLine{00431\ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordflow}{if}(m\_properties.hasProperty(name))}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_properties.getProperty(name);}
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00435\ \}}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00441\ tson::LayerType\ \mbox{\hyperlink{classtson_1_1Layer_a3987553cdfc9e9718e270a7b8e11560e}{tson::Layer::getType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00442\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_type;}
+\DoxyCodeLine{00444\ \}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00450\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtson_1_1Layer_a1bfad85349d2f026201b7cad0419878b}{tson::Layer::assignTileMap}}(std::map<uint32\_t,\ tson::Tile\ *>\ *tileMap)}
+\DoxyCodeLine{00451\ \{}
+\DoxyCodeLine{00452\ \ \ \ \ m\_tileMap\ =\ tileMap;}
+\DoxyCodeLine{00453\ \}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00465\ \textcolor{keyword}{const}\ std::map<std::tuple<int,\ int>,\ \mbox{\hyperlink{classtson_1_1Tile}{tson::Tile}}\ *>\ \&\mbox{\hyperlink{classtson_1_1Layer_a0bc443cd1c272a6f6fbf4cca77121ab6}{tson::Layer::getTileData}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00466\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_tileData;}
+\DoxyCodeLine{00468\ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00482\ \mbox{\hyperlink{classtson_1_1Tile}{tson::Tile}}\ *\mbox{\hyperlink{classtson_1_1Layer_a0bc443cd1c272a6f6fbf4cca77121ab6}{tson::Layer::getTileData}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{00483\ \{}
+\DoxyCodeLine{00484\ \ \ \ \ \textcolor{keywordflow}{return}\ (m\_tileData.count(\{x,\ y\})\ >\ 0)\ ?\ m\_tileData[\{x,y\}]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00485\ \}}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00491\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *\mbox{\hyperlink{classtson_1_1Layer_a670540bd9efc9e0eb5279086ea45f408}{tson::Layer::getMap}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00492\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00493\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_map;}
+\DoxyCodeLine{00494\ \}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00503\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtson_1_1Layer_a0fda78f286ab1f0179864b43a875b18a}{tson::Layer::createTileData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}}\ \&mapSize,\ \textcolor{keywordtype}{bool}\ isInfiniteMap)}
+\DoxyCodeLine{00504\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ x\ =\ 0;}
+\DoxyCodeLine{00506\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ y\ =\ 0;}
+\DoxyCodeLine{00507\ \ \ \ \ \textcolor{keywordflow}{if}(!isInfiniteMap)}
+\DoxyCodeLine{00508\ \ \ \ \ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ std::for\_each(m\_data.begin(),\ m\_data.end(),\ [\&](uint32\_t\ tileId)}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (static\_cast<int>(x)\ ==\ mapSize.x)}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++y;}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ if\ (tileId\ >\ 0\ \&\&\ m\_tileMap-\/>count(tileId)\ >\ 0)}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_tileData[\{static\_cast<int>(x),\ static\_cast<int>(y)\}]\ =\ m\_tileMap-\/>at(tileId);}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_tileObjects[\{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(y)\}]\ =\ \{\{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(y)\},\ m\_tileData[\{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(y)\}]\};}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(tileId\ >\ 0\ \&\&\ m\_tileMap-\/>count(tileId)\ ==\ 0)\ \textcolor{comment}{//Tile\ with\ flip\ flags!}}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ queueFlaggedTile(x,\ y,\ tileId);}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \}}
+\DoxyCodeLine{00530\ \}}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ std::map<std::tuple<int,\ int>,\ \mbox{\hyperlink{classtson_1_1TileObject}{tson::TileObject}}>\ \&tson::Layer::getTileObjects()}
+\DoxyCodeLine{00533\ \{}
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_tileObjects;}
+\DoxyCodeLine{00535\ \}}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \mbox{\hyperlink{classtson_1_1TileObject}{tson::TileObject}}\ *tson::Layer::getTileObject(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{00538\ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \textcolor{keywordflow}{return}\ (m\_tileObjects.count(\{x,\ y\})\ >\ 0)\ ?\ \&m\_tileObjects[\{x,y\}]\ :\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00540\ \}}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{keyword}{const}\ std::set<uint32\_t>\ \&tson::Layer::getUniqueFlaggedTiles()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00543\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00544\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_uniqueFlaggedTiles;}
+\DoxyCodeLine{00545\ \}}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \textcolor{keywordtype}{void}\ tson::Layer::resolveFlaggedTiles()}
+\DoxyCodeLine{00548\ \{}
+\DoxyCodeLine{00549\ \ \ \ \ std::for\_each(m\_flaggedTiles.begin(),\ m\_flaggedTiles.end(),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1FlaggedTile}{tson::FlaggedTile}}\ \&tile)}
+\DoxyCodeLine{00550\ \ \ \ \ \{}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ if\ (tile.id\ >\ 0\ \&\&\ m\_tileMap-\/>count(tile.id)\ >\ 0)}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ m\_tileData[\{static\_cast<int>(tile.x),\ static\_cast<int>(tile.y)\}]\ =\ m\_tileMap-\/>at(tile.id);}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ m\_tileObjects[\{static\_cast<int>(tile.x),\ static\_cast<int>(tile.y)\}]\ =\ \{\{static\_cast<int>(tile.x),\ static\_cast<int>(tile.y)\},\ m\_tileData[\{static\_cast<int>(tile.x),\ static\_cast<int>(tile.y)\}]\};}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00556\ \ \ \ \ \});}
+\DoxyCodeLine{00557\ \}}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00564\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}\ \&\mbox{\hyperlink{classtson_1_1Layer_abd7f24d6450724a93844dd464caa92ae}{tson::Layer::getTintColor}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00565\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_tintColor;}
+\DoxyCodeLine{00567\ \}}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00574\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2f}}\ \&\mbox{\hyperlink{classtson_1_1Layer_aca6291922deff267a3c9c5fa1af771df}{tson::Layer::getParallax}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00575\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00576\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_parallax;}
+\DoxyCodeLine{00577\ \}}
+\DoxyCodeLine{00578\ }
+\DoxyCodeLine{00584\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Layer_a7ebac3c8bb3bc4ea8ac5a20d8deedb6a}{tson::Layer::hasRepeatX}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00585\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_repeatX;}
+\DoxyCodeLine{00587\ \}}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00594\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Layer_a26776c1d139279e0ee2a12bbd3fba49c}{tson::Layer::hasRepeatY}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00595\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00596\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_repeatY;}
+\DoxyCodeLine{00597\ \}}
+\DoxyCodeLine{00598\ }
+\DoxyCodeLine{00599\ \textcolor{keyword}{const}\ std::string\ \&tson::Layer::getClassType()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00600\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_classType;}
+\DoxyCodeLine{00602\ \}}
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ }
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_LAYER\_HPP}}
+
+\end{DoxyCode}

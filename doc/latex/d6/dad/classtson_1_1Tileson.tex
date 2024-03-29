@@ -1,0 +1,79 @@
+\doxysection{tson\+::Tileson Class Reference}
+\hypertarget{classtson_1_1Tileson}{}\label{classtson_1_1Tileson}\index{tson::Tileson@{tson::Tileson}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0}{Tileson}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}} $>$ json\+Parser, bool include\+Base64\+Decoder=true)
+\item 
+\Hypertarget{classtson_1_1Tileson_ab9bedbeadebf55cfe9312e31fe143a91}\label{classtson_1_1Tileson_ab9bedbeadebf55cfe9312e31fe143a91} 
+{\bfseries Tileson} (\mbox{\hyperlink{classtson_1_1Project}{tson\+::\+Project}} \texorpdfstring{$\ast$}{*}project, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}} $>$ json\+Parser, bool include\+Base64\+Decoder=true)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} $>$ \mbox{\hyperlink{classtson_1_1Tileson_afbf4c769a04960fc1d5dd1fc827d76ac}{parse}} (const fs\+::path \&path, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}$<$ std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$ $>$ $>$ decompressor=nullptr)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} $>$ \mbox{\hyperlink{classtson_1_1Tileson_a54b80e3dbcc1275fb7b700ac4efe73b6}{parse}} (const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t size, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}$<$ std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$ $>$ $>$ decompressor=nullptr)
+\item 
+\mbox{\hyperlink{classtson_1_1DecompressorContainer}{tson\+::\+Decompressor\+Container}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Tileson_ac0d8f569178b0c718a8a32351ab7c06a}{decompressors}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0}\label{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0} 
+\index{tson::Tileson@{tson::Tileson}!Tileson@{Tileson}}
+\index{Tileson@{Tileson}!tson::Tileson@{tson::Tileson}}
+\doxysubsubsection{\texorpdfstring{Tileson()}{Tileson()}}
+{\footnotesize\ttfamily tson\+::\+Tileson\+::\+Tileson (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}} $>$}]{json\+Parser,  }\item[{bool}]{include\+Base64\+Decoder = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em include\+Base64\+Decoder} & Includes the base64-\/decoder from "{}\+Base64\+Decompressor.\+hpp"{} if true. Otherwise no other decompressors/decoders than whatever the user itself have added will be used. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Tileson_ac0d8f569178b0c718a8a32351ab7c06a}\label{classtson_1_1Tileson_ac0d8f569178b0c718a8a32351ab7c06a} 
+\index{tson::Tileson@{tson::Tileson}!decompressors@{decompressors}}
+\index{decompressors@{decompressors}!tson::Tileson@{tson::Tileson}}
+\doxysubsubsection{\texorpdfstring{decompressors()}{decompressors()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1DecompressorContainer}{tson\+::\+Decompressor\+Container}} \texorpdfstring{$\ast$}{*} tson\+::\+Tileson\+::decompressors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the decompressor container used when something is either encoded or compressed (regardless\+: \doxylink{classtson_1_1IDecompressor}{IDecompressor} is used as base). These are used specifically for tile layers, and are connected by checking the name of the \doxylink{classtson_1_1IDecompressor}{IDecompressor}. If the name of a decompressor matches with an encoding or a compression, its decompress() function will be used.
+
+\begin{DoxyReturn}{Returns}
+The container including all decompressors. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileson_afbf4c769a04960fc1d5dd1fc827d76ac}\label{classtson_1_1Tileson_afbf4c769a04960fc1d5dd1fc827d76ac} 
+\index{tson::Tileson@{tson::Tileson}!parse@{parse}}
+\index{parse@{parse}!tson::Tileson@{tson::Tileson}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} $>$ tson\+::\+Tileson\+::parse (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{path,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}$<$ std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$ $>$ $>$}]{decompressor = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses Tiled json map data by file 
+\begin{DoxyParams}{Parameters}
+{\em path} & path to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsed data as \doxylink{classtson_1_1Map}{Map} 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileson_a54b80e3dbcc1275fb7b700ac4efe73b6}\label{classtson_1_1Tileson_a54b80e3dbcc1275fb7b700ac4efe73b6} 
+\index{tson::Tileson@{tson::Tileson}!parse@{parse}}
+\index{parse@{parse}!tson::Tileson@{tson::Tileson}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} $>$ tson\+::\+Tileson\+::parse (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{size,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}$<$ std\+::vector$<$ uint8\+\_\+t $>$, std\+::vector$<$ uint8\+\_\+t $>$ $>$ $>$}]{decompressor = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses Tiled json map data by memory 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to parse \\
+\hline
+{\em size} & The size of the data to parse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+parsed data as \doxylink{classtson_1_1Map}{Map} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tileson\+\_\+parser.\+hpp\end{DoxyCompactItemize}

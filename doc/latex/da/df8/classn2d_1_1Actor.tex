@@ -1,0 +1,111 @@
+\doxysection{n2d\+::Actor Class Reference}
+\hypertarget{classn2d_1_1Actor}{}\label{classn2d_1_1Actor}\index{n2d::Actor@{n2d::Actor}}
+Inheritance diagram for n2d\+::Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{da/df8/classn2d_1_1Actor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Actor_a9ebf6ba7345991c71995dea16d1587fa}\label{classn2d_1_1Actor_a9ebf6ba7345991c71995dea16d1587fa} 
+void {\bfseries Move} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Entity}{n2d\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Add} (\mbox{\hyperlink{classn2d_1_1Body}{Body}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_ad1a70a6e105d0f0343fc7a6cf1f37456}{Draw}} (sf\+::\+Render\+Window \&w)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_abec79b028e5a1ceee4b50da603aae696}{Draw}} (sf\+::\+Render\+Window \&w, sf\+::\+Transform \&t)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_ad1ae33462762e798d68a4e6f216ceb17}{Update}} (float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_a4472cab45f62816550b634681d4a2074}{Events}} (sf\+::\+Event \&)
+\item 
+void {\bfseries Create} (b2\+World \&world)
+\item 
+void {\bfseries Set\+Rotation} (float)
+\item 
+void {\bfseries Set\+Velocity} (float, float)
+\item 
+void {\bfseries Set\+Type} (b2\+Body\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Actor_a29ba8fc373fe53e88f9d1dfe4352427f}\label{classn2d_1_1Actor_a29ba8fc373fe53e88f9d1dfe4352427f} 
+glm\+::vec2 {\bfseries move\+\_\+direction}
+\item 
+\Hypertarget{classn2d_1_1Actor_a7b585a47abda54cd96f4fce43771ce6f}\label{classn2d_1_1Actor_a7b585a47abda54cd96f4fce43771ce6f} 
+glm\+::vec2 {\bfseries attack\+\_\+direction}
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1Entity}{n2d\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries id}
+\item 
+std\+::string {\bfseries name}
+\item 
+glm\+::vec2 {\bfseries position}
+\item 
+float {\bfseries rotation}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classn2d_1_1Body}{Body}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries bodies}
+\item 
+\mbox{\hyperlink{classn2d_1_1Text}{Text}} {\bfseries text}
+\item 
+bool {\bfseries show\+\_\+text} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Actor_ac074bb00fa8992b538b63f7426cc2f87}\label{classn2d_1_1Actor_ac074bb00fa8992b538b63f7426cc2f87} 
+float {\bfseries m\+\_\+vit}
+\item 
+\Hypertarget{classn2d_1_1Actor_ac0b162bcc8df67b70a9d8943394b4913}\label{classn2d_1_1Actor_ac0b162bcc8df67b70a9d8943394b4913} 
+float {\bfseries m\+\_\+dmg}
+\item 
+\Hypertarget{classn2d_1_1Actor_ae4ef499a6e4bc8b4b722fcf2f4e5f397}\label{classn2d_1_1Actor_ae4ef499a6e4bc8b4b722fcf2f4e5f397} 
+float {\bfseries m\+\_\+def}
+\item 
+\Hypertarget{classn2d_1_1Actor_af58875f0a8988fdd94baad1bfd092f62}\label{classn2d_1_1Actor_af58875f0a8988fdd94baad1bfd092f62} 
+float {\bfseries m\+\_\+walk\+\_\+speed} = 0.\+8f
+\item 
+\Hypertarget{classn2d_1_1Actor_a385ef9e1a5f285eb3d1420d17c57fc1a}\label{classn2d_1_1Actor_a385ef9e1a5f285eb3d1420d17c57fc1a} 
+float {\bfseries m\+\_\+run\+\_\+speed} = 0.\+6f
+\item 
+\Hypertarget{classn2d_1_1Actor_a31a4e4741815c6e6ea942095dbd40d87}\label{classn2d_1_1Actor_a31a4e4741815c6e6ea942095dbd40d87} 
+float {\bfseries m\+\_\+crouch\+\_\+speed} = 0.\+2f
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Entity}{n2d\+::\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Load\+Text} (tson\+::\+Object \&)
+\item 
+void {\bfseries Load\+Template} (tson\+::\+Object \&)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/game/include/Actor.\+h\item 
+silnik/game/src/Actor.\+cpp\end{DoxyCompactItemize}

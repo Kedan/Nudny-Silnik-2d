@@ -1,0 +1,88 @@
+\doxysection{Chunk.\+hpp}
+\hypertarget{Chunk_8hpp_source}{}\label{Chunk_8hpp_source}\index{silnik/core/lib/include/tileson/tiled/Chunk.hpp@{silnik/core/lib/include/tileson/tiled/Chunk.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_CHUNK\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_CHUNK\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\#include\ "{}../external/json.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../objects/Vector2.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Chunk}{Chunk}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Chunk}{Chunk}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Chunk}{Chunk}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Chunk_ab23d9f5d366553ff658a28e77c37b155}{parse}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::vector<int>\ \&\mbox{\hyperlink{classtson_1_1Chunk_a53e840537bffc39c6e9b8dfd5df8591e}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Chunk_a2b1d0c783c14c0776e7aaafdb2e1c87e}{getBase64Data}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}}\ \&\mbox{\hyperlink{classtson_1_1Chunk_a20c01627ca8ff4affbd68efd09ccb452}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}}\ \&\mbox{\hyperlink{classtson_1_1Chunk_ae1b1dbd8f1b3dd9925fa49577f183b83}{getPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ m\_data;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ m\_base64Data;\ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2i}}\ \ \ m\_size;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2i}}\ \ \ m\_position;\ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \};}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_CHUNK\_HPP}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ tson::Chunk::Chunk(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classtson_1_1Chunk_ab23d9f5d366553ff658a28e77c37b155}{parse}}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00042\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Chunk_ab23d9f5d366553ff658a28e77c37b155}{tson::Chunk::parse}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ allFound\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}width"{}})\ >\ 0\ \&\&\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}height"{}})\ >\ 0)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ m\_size\ =\ \{\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}width"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<\textcolor{keywordtype}{int}>(),\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}height"{}}].get<int>()\};\ \textcolor{keywordflow}{else}\ allFound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}x"{}})\ >\ 0\ \&\&\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}y"{}})\ >\ 0)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ m\_position\ =\ \{\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}x"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<\textcolor{keywordtype}{int}>(),\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}y"{}}].get<int>()\};\ \textcolor{keywordflow}{else}\ allFound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//Handle\ DATA\ (Optional)}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}data"{}})\ >\ 0)}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}data"{}}].isArray())}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&data\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.array(\textcolor{stringliteral}{"{}data"{}});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ std::for\_each(data.begin(),\ data.end(),\ [\&](std::unique\_ptr<IJson>\ \&item)\ \{\ m\_data.push\_back(item-\/>get<int>());\ \});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ m\_base64Data\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}data"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<std::string>();}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ allFound;}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{const}\ std::vector<int>\ \&\mbox{\hyperlink{classtson_1_1Chunk_a53e840537bffc39c6e9b8dfd5df8591e}{tson::Chunk::getData}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00078\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data;}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1Chunk_a2b1d0c783c14c0776e7aaafdb2e1c87e}{tson::Chunk::getBase64Data}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_base64Data;}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2i}}\ \&\mbox{\hyperlink{classtson_1_1Chunk_a20c01627ca8ff4affbd68efd09ccb452}{tson::Chunk::getSize}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00096\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_size;}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Vector2}{tson::Vector2i}}\ \&\mbox{\hyperlink{classtson_1_1Chunk_ae1b1dbd8f1b3dd9925fa49577f183b83}{tson::Chunk::getPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00105\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_position;}
+\DoxyCodeLine{00107\ \}}
+
+\end{DoxyCode}

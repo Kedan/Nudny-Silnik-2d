@@ -1,0 +1,131 @@
+\doxysection{tson\+::Enum\+Value Class Reference}
+\hypertarget{classtson_1_1EnumValue}{}\label{classtson_1_1EnumValue}\index{tson::EnumValue@{tson::EnumValue}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1EnumValue_aeca953204adf9098704dfbe79dfbc7d1}\label{classtson_1_1EnumValue_aeca953204adf9098704dfbe79dfbc7d1} 
+{\bfseries Enum\+Value} (uint32\+\_\+t value, \mbox{\hyperlink{classtson_1_1EnumDefinition}{Enum\+Definition}} \texorpdfstring{$\ast$}{*}definition)
+\item 
+\Hypertarget{classtson_1_1EnumValue_a58b74d025f9343ef04cbbfc67f8d72dc}\label{classtson_1_1EnumValue_a58b74d025f9343ef04cbbfc67f8d72dc} 
+{\bfseries Enum\+Value} (const std\+::string \&value, \mbox{\hyperlink{classtson_1_1EnumDefinition}{Enum\+Definition}} \texorpdfstring{$\ast$}{*}definition)
+\item 
+\Hypertarget{classtson_1_1EnumValue_ac62ec8567e7d6c1aeeab49720261c4d6}\label{classtson_1_1EnumValue_ac62ec8567e7d6c1aeeab49720261c4d6} 
+uint32\+\_\+t {\bfseries get\+Value} () const
+\item 
+std\+::string \mbox{\hyperlink{classtson_1_1EnumValue_af7b960e175c7fb05953d8c7a3ddca3c0}{get\+Value\+Name}} () const
+\item 
+\Hypertarget{classtson_1_1EnumValue_a105534bb9e7d5214eb4a391973caed4e}\label{classtson_1_1EnumValue_a105534bb9e7d5214eb4a391973caed4e} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Value\+Names} () const
+\item 
+\Hypertarget{classtson_1_1EnumValue_acb7009d5ec9b4cb3fdc94e4dc5186609}\label{classtson_1_1EnumValue_acb7009d5ec9b4cb3fdc94e4dc5186609} 
+\mbox{\hyperlink{classtson_1_1EnumDefinition}{Enum\+Definition}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Definition} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1EnumValue_a0e8939e31f4e4ac32d971c8812dca6da}{has\+Flag\+Value}} (uint32\+\_\+t flag) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classtson_1_1EnumValue_a766093ae435470cf8c1dbf3ec6056edf}{has\+Flag}} (T flags) const
+\item 
+bool \mbox{\hyperlink{classtson_1_1EnumValue_a37acff8cbd06994ee757688ae70944c5}{has\+Any\+Flag\+Value}} (uint32\+\_\+t flags) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{classtson_1_1EnumValue_aa99dee42ec33c9eccd10e9cf6af214b1}{has\+Any\+Flag}} (T flags) const
+\item 
+bool \mbox{\hyperlink{classtson_1_1EnumValue_a47a2cf27a28b12571504a3126621dcb5}{contains\+Value\+Name}} (const std\+::string \&value) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1EnumValue_a47a2cf27a28b12571504a3126621dcb5}\label{classtson_1_1EnumValue_a47a2cf27a28b12571504a3126621dcb5} 
+\index{tson::EnumValue@{tson::EnumValue}!containsValueName@{containsValueName}}
+\index{containsValueName@{containsValueName}!tson::EnumValue@{tson::EnumValue}}
+\doxysubsubsection{\texorpdfstring{containsValueName()}{containsValueName()}}
+{\footnotesize\ttfamily bool tson\+::\+Enum\+Value\+::contains\+Value\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1EnumValue_af7b960e175c7fb05953d8c7a3ddca3c0}\label{classtson_1_1EnumValue_af7b960e175c7fb05953d8c7a3ddca3c0} 
+\index{tson::EnumValue@{tson::EnumValue}!getValueName@{getValueName}}
+\index{getValueName@{getValueName}!tson::EnumValue@{tson::EnumValue}}
+\doxysubsubsection{\texorpdfstring{getValueName()}{getValueName()}}
+{\footnotesize\ttfamily std\+::string tson\+::\+Enum\+Value\+::get\+Value\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the single name of a value. This function is intended for enums that can only have one value (non-\/flag). If you want to get several value names (flags), use get\+Value\+Names() instead. \begin{DoxyReturn}{Returns}
+A single name for a value 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1EnumValue_aa99dee42ec33c9eccd10e9cf6af214b1}\label{classtson_1_1EnumValue_aa99dee42ec33c9eccd10e9cf6af214b1} 
+\index{tson::EnumValue@{tson::EnumValue}!hasAnyFlag@{hasAnyFlag}}
+\index{hasAnyFlag@{hasAnyFlag}!tson::EnumValue@{tson::EnumValue}}
+\doxysubsubsection{\texorpdfstring{hasAnyFlag()}{hasAnyFlag()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool tson\+::\+Enum\+Value\+::has\+Any\+Flag (\begin{DoxyParamCaption}\item[{T}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if T value contains one of several possible flags. If \textquotesingle{}values\+As\+Flags\textquotesingle{} is not a part of the \doxylink{classtson_1_1EnumDefinition}{Enum\+Definition}, a simple equality comparison will be done instead. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A uint32\+\_\+t compatible type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & One or more flags you want to verify is included. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true is all flags presented are set. false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1EnumValue_a37acff8cbd06994ee757688ae70944c5}\label{classtson_1_1EnumValue_a37acff8cbd06994ee757688ae70944c5} 
+\index{tson::EnumValue@{tson::EnumValue}!hasAnyFlagValue@{hasAnyFlagValue}}
+\index{hasAnyFlagValue@{hasAnyFlagValue}!tson::EnumValue@{tson::EnumValue}}
+\doxysubsubsection{\texorpdfstring{hasAnyFlagValue()}{hasAnyFlagValue()}}
+{\footnotesize\ttfamily bool tson\+::\+Enum\+Value\+::has\+Any\+Flag\+Value (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if uint32 value contains one of several possible flags. If \textquotesingle{}values\+As\+Flags\textquotesingle{} is not a part of the \doxylink{classtson_1_1EnumDefinition}{Enum\+Definition}, a simple equality comparison will be done instead. 
+\begin{DoxyParams}{Parameters}
+{\em flags} & The uint32 values of the flags you want to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} if \doxylink{classtson_1_1EnumValue}{Enum\+Value} has the requested bits activated. \textquotesingle{}false\textquotesingle{} otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1EnumValue_a766093ae435470cf8c1dbf3ec6056edf}\label{classtson_1_1EnumValue_a766093ae435470cf8c1dbf3ec6056edf} 
+\index{tson::EnumValue@{tson::EnumValue}!hasFlag@{hasFlag}}
+\index{hasFlag@{hasFlag}!tson::EnumValue@{tson::EnumValue}}
+\doxysubsubsection{\texorpdfstring{hasFlag()}{hasFlag()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool tson\+::\+Enum\+Value\+::has\+Flag (\begin{DoxyParamCaption}\item[{T}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if T value contains a single flag. If \textquotesingle{}values\+As\+Flags\textquotesingle{} is not a part of the \doxylink{classtson_1_1EnumDefinition}{Enum\+Definition}, a simple equality comparison will be done instead. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & A uint32\+\_\+t compatible type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & One or more flags you want to verify is included. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true is all flags presented are set. false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1EnumValue_a0e8939e31f4e4ac32d971c8812dca6da}\label{classtson_1_1EnumValue_a0e8939e31f4e4ac32d971c8812dca6da} 
+\index{tson::EnumValue@{tson::EnumValue}!hasFlagValue@{hasFlagValue}}
+\index{hasFlagValue@{hasFlagValue}!tson::EnumValue@{tson::EnumValue}}
+\doxysubsubsection{\texorpdfstring{hasFlagValue()}{hasFlagValue()}}
+{\footnotesize\ttfamily bool tson\+::\+Enum\+Value\+::has\+Flag\+Value (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if uint32 value contains a single flag. If \textquotesingle{}values\+As\+Flags\textquotesingle{} is not a part of the \doxylink{classtson_1_1EnumDefinition}{Enum\+Definition}, a simple equality comparison will be done instead. 
+\begin{DoxyParams}{Parameters}
+{\em flags} & The uint32 value of the flag you want to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\textquotesingle{}true\textquotesingle{} if \doxylink{classtson_1_1EnumValue}{Enum\+Value} has the requested bit activated. \textquotesingle{}false\textquotesingle{} otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Tiled\+Enum.\+hpp\end{DoxyCompactItemize}

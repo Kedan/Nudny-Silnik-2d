@@ -1,0 +1,53 @@
+\doxysection{Body.\+h}
+\hypertarget{Body_8h_source}{}\label{Body_8h_source}\index{silnik/visual/include/Body.h@{silnik/visual/include/Body.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_VISUAL\_BODY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_VISUAL\_BODY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Shape.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ \ \ \ \ *\ If\ body\ is\ in\ entity,\ position\ is\ in\ entity,\ relative\ coordinate\ system}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Body}{Body}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Shape*>\ m\_shapes;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ b2Body*\ \ \ \ \ \ \ \ \ m\_body\ =\ \textcolor{keyword}{nullptr};\textcolor{comment}{//\ do\ not\ user\ smart\ ptr.\ b2Worl\ class\ deletes\ bodies}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ position;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ rotation;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ is\_ground;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ b2BodyDef\ \ \ \ \ \ \ def;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Body}{Body}}(\ \textcolor{keywordtype}{float}\ x=0.0f,\ \textcolor{keywordtype}{float}\ y\ =\ 0.0f,\ \textcolor{keywordtype}{float}\ rotation\ =\ 0.0f\ );}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Body}{Body}}(\ glm::vec2\ position,\ \textcolor{keywordtype}{float}\ rotattion\ =\ 0.0f\ );}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ world\ );}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Add(\ \mbox{\hyperlink{classn2d_1_1Shape}{Shape}}*\ );}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Body_aa82cf4e6c2f0e7eeff491d1dfe18e049}{Draw}}(\ sf::RenderWindow\&\ w\ );}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Body_aa82cf4e6c2f0e7eeff491d1dfe18e049}{Draw}}(\ sf::RenderWindow\&\ w,\ sf::Transform\&\ t\ );}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Body_a09de0f5285d41d2e4d86c5d36eae9680}{Update}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ !!\ Setters\ and\ Getters\ can\ only\ be\ used\ AFTER\ body.Create(\ b2World\&\ )\ !!}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ !!\ (Otherwise\ b2Body*\ m\_body\ =\ nullptr\ -\/>\ Segmentation\ fault)\ !!}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetPosition(\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y\ );}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetPosition(\ glm::vec2\ p\ );}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetRotation(\ \textcolor{keywordtype}{float}\ r\ );}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Enable(\textcolor{keywordtype}{bool}=\textcolor{keyword}{true});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Disable();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsEnable();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ b2Body*\ GetBodyPtr()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_body;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Body}}
+\DoxyCodeLine{00045\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

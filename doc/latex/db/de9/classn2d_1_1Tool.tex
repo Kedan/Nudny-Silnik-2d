@@ -1,0 +1,255 @@
+\doxysection{n2d\+::Tool Class Reference}
+\hypertarget{classn2d_1_1Tool}{}\label{classn2d_1_1Tool}\index{n2d::Tool@{n2d::Tool}}
+
+
+{\ttfamily \#include $<$Interfaces.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static b2\+Vec2 \mbox{\hyperlink{classn2d_1_1Tool_a5e85df1d7d5d3b9f6efb4439d579cb23}{g2b}} (glm\+::vec2 v, float s=\mbox{\hyperlink{namespacen2d_a05eb87428a9b7e50ba846fc175c53f05}{PIXEL\+\_\+\+TO\+\_\+\+BOX2D}})
+\item 
+static b2\+Vec2 \mbox{\hyperlink{classn2d_1_1Tool_a0421036c16c6376cf05b2c9fb02acbf5}{s2b}} (sf\+::\+Vector2f v, float s=\mbox{\hyperlink{namespacen2d_a05eb87428a9b7e50ba846fc175c53f05}{PIXEL\+\_\+\+TO\+\_\+\+BOX2D}})
+\item 
+static glm\+::vec2 \mbox{\hyperlink{classn2d_1_1Tool_a9ded990a42967f51c9a2114f1428e4ae}{b2g}} (b2\+Vec2 v, float s=\mbox{\hyperlink{namespacen2d_a96018993161d9c674895a7974b577ff4}{BOX2\+D\+\_\+\+TO\+\_\+\+PIXEL}})
+\item 
+static glm\+::vec2 \mbox{\hyperlink{classn2d_1_1Tool_a4a695909cf60f34fd71b5cad07a53315}{s2g}} (sf\+::\+Vector2f v)
+\item 
+static sf\+::\+Vector2f \mbox{\hyperlink{classn2d_1_1Tool_ae8a9f69c3f23f57ce256508904bdffc4}{g2s}} (glm\+::vec2 v)
+\item 
+static sf\+::\+Vector2f \mbox{\hyperlink{classn2d_1_1Tool_a521b4791d5303e6413598dde215eaed5}{b2s}} (b2\+Vec2 v)
+\item 
+static float \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}} (float deg)
+\item 
+static float \mbox{\hyperlink{classn2d_1_1Tool_a827b485eda8ee14537ebb9fea2ed50b1}{ang}} (float \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}})
+\item 
+static float \mbox{\hyperlink{classn2d_1_1Tool_aace20d06cc7db12432d14ad94b65bcf7}{Bf}} (float val)
+\item 
+static float \mbox{\hyperlink{classn2d_1_1Tool_a845678732acc0204851c7ce1d9c4353c}{Bs}} (float val)
+\item 
+static std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classn2d_1_1Tool_aea54f2fbe559ab1ab3584f8db5afc428}{Rotate}} (std\+::vector$<$ glm\+::vec2 $>$ t\+\_\+v, float t\+\_\+rotation)
+\item 
+static std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classn2d_1_1Tool_a5812b749e50273841851199229a55cc6}{Translate}} (std\+::vector$<$ glm\+::vec2 $>$ t\+\_\+v, glm\+::vec2 t\+\_\+translation)
+\item 
+static std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classn2d_1_1Tool_a5f55d746ca5f1fc3575fadb429a6ef24}{Transform}} (std\+::vector$<$ glm\+::vec2 $>$ t\+\_\+v, glm\+::vec2 t\+\_\+translation, float t\+\_\+rotation)
+\item 
+static std\+::string \mbox{\hyperlink{classn2d_1_1Tool_a5f7b117837b631dea354ba3e856620a5}{Get\+Current\+Datetime}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class contains some handy, static methods, used i.\+e. for type or coordinate systems conversions. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Tool_a827b485eda8ee14537ebb9fea2ed50b1}\label{classn2d_1_1Tool_a827b485eda8ee14537ebb9fea2ed50b1} 
+\index{n2d::Tool@{n2d::Tool}!ang@{ang}}
+\index{ang@{ang}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{ang()}{ang()}}
+{\footnotesize\ttfamily static float n2d\+::\+Tool\+::ang (\begin{DoxyParamCaption}\item[{float}]{rad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert radians to degrees 
+\begin{DoxyParams}{Parameters}
+{\em rad} & -\/ angle in radians \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle in degrees ~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a9ded990a42967f51c9a2114f1428e4ae}\label{classn2d_1_1Tool_a9ded990a42967f51c9a2114f1428e4ae} 
+\index{n2d::Tool@{n2d::Tool}!b2g@{b2g}}
+\index{b2g@{b2g}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{b2g()}{b2g()}}
+{\footnotesize\ttfamily static glm\+::vec2 n2d\+::\+Tool\+::b2g (\begin{DoxyParamCaption}\item[{b2\+Vec2}]{v,  }\item[{float}]{s = {\ttfamily \mbox{\hyperlink{namespacen2d_a96018993161d9c674895a7974b577ff4}{BOX2\+D\+\_\+\+TO\+\_\+\+PIXEL}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert 2D vector from box2D to glm ( b2\+Vec2 to glm\+::vec2) 
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ box2D vector \\
+\hline
+{\em s} & -\/ coordinates conversion multiplayer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+glm vector 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a521b4791d5303e6413598dde215eaed5}\label{classn2d_1_1Tool_a521b4791d5303e6413598dde215eaed5} 
+\index{n2d::Tool@{n2d::Tool}!b2s@{b2s}}
+\index{b2s@{b2s}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{b2s()}{b2s()}}
+{\footnotesize\ttfamily static sf\+::\+Vector2f n2d\+::\+Tool\+::b2s (\begin{DoxyParamCaption}\item[{b2\+Vec2}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert 2D vector from box2D to SFML ( b2\+Vec2 to sf\+::\+Vector2f ) 
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ box2D vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SFML vector 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_aace20d06cc7db12432d14ad94b65bcf7}\label{classn2d_1_1Tool_aace20d06cc7db12432d14ad94b65bcf7} 
+\index{n2d::Tool@{n2d::Tool}!Bf@{Bf}}
+\index{Bf@{Bf}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{Bf()}{Bf()}}
+{\footnotesize\ttfamily static float n2d\+::\+Tool\+::\+Bf (\begin{DoxyParamCaption}\item[{float}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert float value from SFML, pixel-\/coordinate system, to box2d meter-\/coordinate system 
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value (i.\+e. distance ) in pixels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value in meters 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a845678732acc0204851c7ce1d9c4353c}\label{classn2d_1_1Tool_a845678732acc0204851c7ce1d9c4353c} 
+\index{n2d::Tool@{n2d::Tool}!Bs@{Bs}}
+\index{Bs@{Bs}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{Bs()}{Bs()}}
+{\footnotesize\ttfamily static float n2d\+::\+Tool\+::\+Bs (\begin{DoxyParamCaption}\item[{float}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert float value from box2d meter-\/coordinate system to SFML, pixel-\/coordinate system 
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value (i.\+e. distance ) in meters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value in pixels 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a5e85df1d7d5d3b9f6efb4439d579cb23}\label{classn2d_1_1Tool_a5e85df1d7d5d3b9f6efb4439d579cb23} 
+\index{n2d::Tool@{n2d::Tool}!g2b@{g2b}}
+\index{g2b@{g2b}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{g2b()}{g2b()}}
+{\footnotesize\ttfamily static b2\+Vec2 n2d\+::\+Tool\+::g2b (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{v,  }\item[{float}]{s = {\ttfamily \mbox{\hyperlink{namespacen2d_a05eb87428a9b7e50ba846fc175c53f05}{PIXEL\+\_\+\+TO\+\_\+\+BOX2D}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert 2D vector form glm to box2D ( glm\+::vec2 to b2\+Vec2 ) 
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ glm vector to convert \\
+\hline
+{\em s} & -\/ coordinates conversion multiplayer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+box2D vector 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_ae8a9f69c3f23f57ce256508904bdffc4}\label{classn2d_1_1Tool_ae8a9f69c3f23f57ce256508904bdffc4} 
+\index{n2d::Tool@{n2d::Tool}!g2s@{g2s}}
+\index{g2s@{g2s}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{g2s()}{g2s()}}
+{\footnotesize\ttfamily static sf\+::\+Vector2f n2d\+::\+Tool\+::g2s (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert 2D vector from glm to SFML ( glm\+::vec2 to sf\+::\+Vector2f ) 
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ glm vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SFML vector 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a5f7b117837b631dea354ba3e856620a5}\label{classn2d_1_1Tool_a5f7b117837b631dea354ba3e856620a5} 
+\index{n2d::Tool@{n2d::Tool}!GetCurrentDatetime@{GetCurrentDatetime}}
+\index{GetCurrentDatetime@{GetCurrentDatetime}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{GetCurrentDatetime()}{GetCurrentDatetime()}}
+{\footnotesize\ttfamily static std\+::string n2d\+::\+Tool\+::\+Get\+Current\+Datetime (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Returns current Date/\+Time stamp \begin{DoxyReturn}{Returns}
+datetime string 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}\label{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33} 
+\index{n2d::Tool@{n2d::Tool}!rad@{rad}}
+\index{rad@{rad}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{rad()}{rad()}}
+{\footnotesize\ttfamily static float n2d\+::\+Tool\+::rad (\begin{DoxyParamCaption}\item[{float}]{deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert degrees to radians 
+\begin{DoxyParams}{Parameters}
+{\em deg} & -\/ angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+angle in radians ~\newline
+ 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_aea54f2fbe559ab1ab3584f8db5afc428}\label{classn2d_1_1Tool_aea54f2fbe559ab1ab3584f8db5afc428} 
+\index{n2d::Tool@{n2d::Tool}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily static std\+::vector$<$ glm\+::vec2 $>$ n2d\+::\+Tool\+::\+Rotate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ glm\+::vec2 $>$}]{t\+\_\+v,  }\item[{float}]{t\+\_\+rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Calculate vertexes coords, rotated by given angle 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+v} & -\/ vector of vertexes \\
+\hline
+{\em t\+\_\+rotation} & -\/ angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$glm\+::vec2$>$ -\/ vector of rotated vertexes 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a0421036c16c6376cf05b2c9fb02acbf5}\label{classn2d_1_1Tool_a0421036c16c6376cf05b2c9fb02acbf5} 
+\index{n2d::Tool@{n2d::Tool}!s2b@{s2b}}
+\index{s2b@{s2b}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{s2b()}{s2b()}}
+{\footnotesize\ttfamily static b2\+Vec2 n2d\+::\+Tool\+::s2b (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{v,  }\item[{float}]{s = {\ttfamily \mbox{\hyperlink{namespacen2d_a05eb87428a9b7e50ba846fc175c53f05}{PIXEL\+\_\+\+TO\+\_\+\+BOX2D}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert 2D vector from SFML to box2D ( sf\+::\+Vector2f to b2\+Vec2 ) 
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ SFML vector \\
+\hline
+{\em s} & -\/ coordinates conversion multiplayer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+box2d vector 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a4a695909cf60f34fd71b5cad07a53315}\label{classn2d_1_1Tool_a4a695909cf60f34fd71b5cad07a53315} 
+\index{n2d::Tool@{n2d::Tool}!s2g@{s2g}}
+\index{s2g@{s2g}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{s2g()}{s2g()}}
+{\footnotesize\ttfamily static glm\+::vec2 n2d\+::\+Tool\+::s2g (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Convert 2D vector from sfml to glm ( sf\+::\+Vector2f to glm\+::vec2) 
+\begin{DoxyParams}{Parameters}
+{\em v} & -\/ SFML vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+glm vector 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a5f55d746ca5f1fc3575fadb429a6ef24}\label{classn2d_1_1Tool_a5f55d746ca5f1fc3575fadb429a6ef24} 
+\index{n2d::Tool@{n2d::Tool}!Transform@{Transform}}
+\index{Transform@{Transform}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily static std\+::vector$<$ glm\+::vec2 $>$ n2d\+::\+Tool\+::\+Transform (\begin{DoxyParamCaption}\item[{std\+::vector$<$ glm\+::vec2 $>$}]{t\+\_\+v,  }\item[{glm\+::vec2}]{t\+\_\+translation,  }\item[{float}]{t\+\_\+rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Calculate vertexes coords, translated by given vector, and rotated by given angle 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+v} & -\/ vector of vertexes \\
+\hline
+{\em t\+\_\+translation} & -\/ translation vector \\
+\hline
+{\em t\+\_\+rotation} & -\/ angle in degrees \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$glm\+::vec2$>$ -\/ vector of translated and rotated vertexes 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a5812b749e50273841851199229a55cc6}\label{classn2d_1_1Tool_a5812b749e50273841851199229a55cc6} 
+\index{n2d::Tool@{n2d::Tool}!Translate@{Translate}}
+\index{Translate@{Translate}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}}
+{\footnotesize\ttfamily static std\+::vector$<$ glm\+::vec2 $>$ n2d\+::\+Tool\+::\+Translate (\begin{DoxyParamCaption}\item[{std\+::vector$<$ glm\+::vec2 $>$}]{t\+\_\+v,  }\item[{glm\+::vec2}]{t\+\_\+translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Calculate vertexes coords, translated by given vector 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+v} & -\/ vector of vertexes \\
+\hline
+{\em t\+\_\+translation} & -\/ translation vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$glm\+::vec2$>$ -\/ vector of translated vertexes 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/Interfaces.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,87 @@
+\doxysection{n2d\+::Frame\+Animation Class Reference}
+\hypertarget{classn2d_1_1FrameAnimation}{}\label{classn2d_1_1FrameAnimation}\index{n2d::FrameAnimation@{n2d::FrameAnimation}}
+Inheritance diagram for n2d\+::Frame\+Animation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d3/d9a/classn2d_1_1FrameAnimation}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classn2d_1_1FrameAnimation_ae68d990468efbc57c37b5e951801a370}{Play}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1FrameAnimation_a1c3eeced2e9fbe7b829f63a37bd6accf}{Stop}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1FrameAnimation_a6feeb0df1ca3601cbc4fe068ce76741e}{Pause}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Animated}{n2d\+::\+Animated}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_a52e707da569f0c6c9fad24ebebebd6e7}{Clear\+Animation}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_aca9c14d240d437b4112419d9d446addd}{Animate}} (float t\+\_\+dt)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1FrameAnimation_a7eecce5bbf3c631858a3429d51c94874}\label{classn2d_1_1FrameAnimation_a7eecce5bbf3c631858a3429d51c94874} 
+bool {\bfseries loop} = false
+\item 
+\Hypertarget{classn2d_1_1FrameAnimation_aa2f9ba439d408c4f46d2213d92acbe78}\label{classn2d_1_1FrameAnimation_aa2f9ba439d408c4f46d2213d92acbe78} 
+float {\bfseries speed} = 1.\+0f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1FrameAnimation_a7bbd484ca779c92491a4d0c8ed5749ab}\label{classn2d_1_1FrameAnimation_a7bbd484ca779c92491a4d0c8ed5749ab} 
+bool {\bfseries m\+\_\+pause}
+\item 
+\Hypertarget{classn2d_1_1FrameAnimation_ad2a0c82419cb4d6737c5d546c1b9b2e1}\label{classn2d_1_1FrameAnimation_ad2a0c82419cb4d6737c5d546c1b9b2e1} 
+bool {\bfseries m\+\_\+play}
+\item 
+\Hypertarget{classn2d_1_1FrameAnimation_a99ef2aea4c67ec099e6183e3d79a3621}\label{classn2d_1_1FrameAnimation_a99ef2aea4c67ec099e6183e3d79a3621} 
+float {\bfseries m\+\_\+elapsed\+\_\+time}
+\item 
+\Hypertarget{classn2d_1_1FrameAnimation_a0a62aa4ff63df22b35dac5eeee7b6088}\label{classn2d_1_1FrameAnimation_a0a62aa4ff63df22b35dac5eeee7b6088} 
+int {\bfseries m\+\_\+current\+\_\+frame} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1FrameAnimation_a6feeb0df1ca3601cbc4fe068ce76741e}\label{classn2d_1_1FrameAnimation_a6feeb0df1ca3601cbc4fe068ce76741e} 
+\index{n2d::FrameAnimation@{n2d::FrameAnimation}!Pause@{Pause}}
+\index{Pause@{Pause}!n2d::FrameAnimation@{n2d::FrameAnimation}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily void Frame\+Animation\+::\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pause method. Freezes animation in current frame. 
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_a5291e65867b18d0f6f429e2683a7c31e}{n2d\+::\+Animated}}.
+
+\Hypertarget{classn2d_1_1FrameAnimation_ae68d990468efbc57c37b5e951801a370}\label{classn2d_1_1FrameAnimation_ae68d990468efbc57c37b5e951801a370} 
+\index{n2d::FrameAnimation@{n2d::FrameAnimation}!Play@{Play}}
+\index{Play@{Play}!n2d::FrameAnimation@{n2d::FrameAnimation}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily void Frame\+Animation\+::\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Play method. 
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_a07c4762576f95f53d5f6cda7d15ea337}{n2d\+::\+Animated}}.
+
+\Hypertarget{classn2d_1_1FrameAnimation_a1c3eeced2e9fbe7b829f63a37bd6accf}\label{classn2d_1_1FrameAnimation_a1c3eeced2e9fbe7b829f63a37bd6accf} 
+\index{n2d::FrameAnimation@{n2d::FrameAnimation}!Stop@{Stop}}
+\index{Stop@{Stop}!n2d::FrameAnimation@{n2d::FrameAnimation}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void Frame\+Animation\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Stop methos. Rewind animation to first frame. 
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_aafa111136e06807badbd0886a2f762ae}{n2d\+::\+Animated}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/visual/include/Animation.\+h\item 
+silnik/visual/src/Animation.\+cpp\end{DoxyCompactItemize}

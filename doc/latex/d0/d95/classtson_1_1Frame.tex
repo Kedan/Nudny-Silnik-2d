@@ -1,0 +1,82 @@
+\doxysection{tson\+::Frame Class Reference}
+\hypertarget{classtson_1_1Frame}{}\label{classtson_1_1Frame}\index{tson::Frame@{tson::Frame}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtson_1_1Frame_aa8e93bfe317bbbdd7e96765c1e8be270}{Frame}} (int duration, uint32\+\_\+t tile\+Id)
+\item 
+\mbox{\hyperlink{classtson_1_1Frame_a87cf6f486a74e6c05a606068b6420e00}{Frame}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+bool \mbox{\hyperlink{classtson_1_1Frame_af6a61eaee779eefb9aea32356a6e56a3}{parse}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+int \mbox{\hyperlink{classtson_1_1Frame_a64d0428ca6c866bc3cd6d21b76400653}{get\+Duration}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classtson_1_1Frame_aed6247c47a0228cdf7dec839c3ee8fee}{get\+Tile\+Id}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtson_1_1Frame_aa8e93bfe317bbbdd7e96765c1e8be270}\label{classtson_1_1Frame_aa8e93bfe317bbbdd7e96765c1e8be270} 
+\index{tson::Frame@{tson::Frame}!Frame@{Frame}}
+\index{Frame@{Frame}!tson::Frame@{tson::Frame}}
+\doxysubsubsection{\texorpdfstring{Frame()}{Frame()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tson\+::\+Frame\+::\+Frame (\begin{DoxyParamCaption}\item[{int}]{duration,  }\item[{uint32\+\_\+t}]{tile\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & duration in milliseconds \\
+\hline
+{\em tile\+Id} & Tile\+Id \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtson_1_1Frame_a87cf6f486a74e6c05a606068b6420e00}\label{classtson_1_1Frame_a87cf6f486a74e6c05a606068b6420e00} 
+\index{tson::Frame@{tson::Frame}!Frame@{Frame}}
+\index{Frame@{Frame}!tson::Frame@{tson::Frame}}
+\doxysubsubsection{\texorpdfstring{Frame()}{Frame()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tson\+::\+Frame\+::\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Parses frame data from json 
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Frame_a64d0428ca6c866bc3cd6d21b76400653}\label{classtson_1_1Frame_a64d0428ca6c866bc3cd6d21b76400653} 
+\index{tson::Frame@{tson::Frame}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!tson::Frame@{tson::Frame}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily int tson\+::\+Frame\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}duration\textquotesingle{}\+: \doxylink{classtson_1_1Frame}{Frame} duration in milliseconds \begin{DoxyReturn}{Returns}
+Duration in milliseconds 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Frame_aed6247c47a0228cdf7dec839c3ee8fee}\label{classtson_1_1Frame_aed6247c47a0228cdf7dec839c3ee8fee} 
+\index{tson::Frame@{tson::Frame}!getTileId@{getTileId}}
+\index{getTileId@{getTileId}!tson::Frame@{tson::Frame}}
+\doxysubsubsection{\texorpdfstring{getTileId()}{getTileId()}}
+{\footnotesize\ttfamily uint32\+\_\+t tson\+::\+Frame\+::get\+Tile\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}tileid\textquotesingle{}\+: Local tile ID representing this frame \begin{DoxyReturn}{Returns}
+tile id 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Frame_af6a61eaee779eefb9aea32356a6e56a3}\label{classtson_1_1Frame_af6a61eaee779eefb9aea32356a6e56a3} 
+\index{tson::Frame@{tson::Frame}!parse@{parse}}
+\index{parse@{parse}!tson::Frame@{tson::Frame}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool tson\+::\+Frame\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses frame data from json 
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all mandatory fields was found. false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Frame.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,427 @@
+\doxysection{tson\+::Gason Class Reference}
+\hypertarget{classtson_1_1Gason}{}\label{classtson_1_1Gason}\index{tson::Gason@{tson::Gason}}
+Inheritance diagram for tson\+::Gason\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/d1b/classtson_1_1Gason}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \& \mbox{\hyperlink{classtson_1_1Gason_af04703409218911967efc4bc13af9dfd}{operator\mbox{[}$\,$\mbox{]}}} (std\+::string\+\_\+view key) override
+\item 
+\Hypertarget{classtson_1_1Gason_a74a38a2b1b68f40e725dfb5e3c877898}\label{classtson_1_1Gason_a74a38a2b1b68f40e725dfb5e3c877898} 
+{\bfseries Gason} (\mbox{\hyperlink{uniongason_1_1JsonValue}{gason\+::\+Json\+Value}} \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \& \mbox{\hyperlink{classtson_1_1Gason_ac47a299c77ed0ec93f9d09d24c87c90a}{at}} (std\+::string\+\_\+view key) override
+\item 
+\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \& \mbox{\hyperlink{classtson_1_1Gason_a04b18af361edd8909c7e400e777e4416}{at}} (size\+\_\+t pos) override
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{IJson}} $>$ $>$ \mbox{\hyperlink{classtson_1_1Gason_a43228ad2deb85d94ddd17e10c5d865d0}{array}} () override
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{IJson}} $>$ $>$ \& \mbox{\hyperlink{classtson_1_1Gason_a36881e547a59c41da38b95a17bf9b50a}{array}} (std\+::string\+\_\+view key) override
+\item 
+size\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_ac4bfeec219f3755b3d04397e7e0604f6}{size}} () const override
+\item 
+bool \mbox{\hyperlink{classtson_1_1Gason_ab2f059af5c0a3fac8c79108006274094}{parse}} (const fs\+::path \&path) override
+\item 
+bool \mbox{\hyperlink{classtson_1_1Gason_a4b6d14d068d1fb607bc616d77acd1809}{parse}} (const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_ac4bfeec219f3755b3d04397e7e0604f6}{size}}) override
+\item 
+size\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_ae0f313213906f96f73fc491c487b6e92}{count}} (std\+::string\+\_\+view key) const override
+\item 
+bool \mbox{\hyperlink{classtson_1_1Gason_a97ae949644d270955b2cd3dde0d98483}{any}} (std\+::string\+\_\+view key) const override
+\item 
+bool \mbox{\hyperlink{classtson_1_1Gason_a1390ae21a6bea26f16244ba446b5e5cc}{is\+Array}} () const override
+\item 
+bool \mbox{\hyperlink{classtson_1_1Gason_a55740d8644d7e0fe2a10c3587edcd59d}{is\+Object}} () const override
+\item 
+bool \mbox{\hyperlink{classtson_1_1Gason_ae6f159427787c504751971693771b10b}{is\+Null}} () const override
+\item 
+fs\+::path \mbox{\hyperlink{classtson_1_1Gason_aa67a641884162b54ed73f1b3f8e17bc8}{directory}} () const override
+\item 
+void \mbox{\hyperlink{classtson_1_1Gason_a9886802cb61d84753746af0ba08abe6a}{directory}} (const fs\+::path \&directory) override
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{IJson}} $>$ \mbox{\hyperlink{classtson_1_1Gason_a1c01a585bde497ebb751a2b11de449f6}{create}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T {\bfseries get} (std\+::string\+\_\+view key)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T {\bfseries get} ()
+\item 
+virtual \mbox{\hyperlink{classtson_1_1IJson_a7306d8d8878c7258121bc456120d88a2}{\texorpdfstring{$\sim$}{\string~}\+IJson}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_abc92ce1157997fc3ddf3a71926e3ff0b}{get\+Int32}} (std\+::string\+\_\+view key) override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_a47c88d7e193e5a524d889646f0713330}{get\+UInt32}} (std\+::string\+\_\+view key) override
+\item 
+int64\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_a34095ef5798ffcc2538c5ff5f71665f9}{get\+Int64}} (std\+::string\+\_\+view key) override
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_a1814ee58002f9060c2e908fbf34f9cf2}{get\+UInt64}} (std\+::string\+\_\+view key) override
+\item 
+double \mbox{\hyperlink{classtson_1_1Gason_a73de905fd8b5c08baa9a21fbd8e4d11c}{get\+Double}} (std\+::string\+\_\+view key) override
+\item 
+std\+::string \mbox{\hyperlink{classtson_1_1Gason_ad726dc43e8157c177a729d8f5d06765e}{get\+String}} (std\+::string\+\_\+view key) override
+\item 
+bool \mbox{\hyperlink{classtson_1_1Gason_a7ef76b9026e95d970e8a920c9aa410f7}{get\+Bool}} (std\+::string\+\_\+view key) override
+\item 
+float \mbox{\hyperlink{classtson_1_1Gason_a45812a8542ebe414d72392525490c699}{get\+Float}} (std\+::string\+\_\+view key) override
+\item 
+int32\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_a8137cdb4069a592cfb6203b72bc8ad77}{get\+Int32}} () override
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_acb9e4c90e858c914f0e635a218cb4495}{get\+UInt32}} () override
+\item 
+int64\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_a3c6952b7b04a41f1853cc43f3636b034}{get\+Int64}} () override
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classtson_1_1Gason_ad3c091c5c491e644ec68b5b14c3c346f}{get\+UInt64}} () override
+\item 
+double \mbox{\hyperlink{classtson_1_1Gason_a621006ec2117f86ab15dff878b617f35}{get\+Double}} () override
+\item 
+std\+::string \mbox{\hyperlink{classtson_1_1Gason_a06ff80326d799c0c3038cf860c4385c9}{get\+String}} () override
+\item 
+bool \mbox{\hyperlink{classtson_1_1Gason_ab1acd478cd55ca50cffff53a7f2bf611}{get\+Bool}} () override
+\item 
+float \mbox{\hyperlink{classtson_1_1Gason_ab0dfc15bcabe585e7e63532a8c5b9f4c}{get\+Float}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Gason_a97ae949644d270955b2cd3dde0d98483}\label{classtson_1_1Gason_a97ae949644d270955b2cd3dde0d98483} 
+\index{tson::Gason@{tson::Gason}!any@{any}}
+\index{any@{any}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{any()}{any()}}
+{\footnotesize\ttfamily bool tson\+::\+Gason\+::any (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a43228ad2deb85d94ddd17e10c5d865d0}\label{classtson_1_1Gason_a43228ad2deb85d94ddd17e10c5d865d0} 
+\index{tson::Gason@{tson::Gason}!array@{array}}
+\index{array@{array}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{array()}{array()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{IJson}} $>$ $>$ tson\+::\+Gason\+::array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If current json object is an array, this will get all elements of it! \begin{DoxyReturn}{Returns}
+An array 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson_ae972ee03fb75c020586ae4c27cd33115}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a36881e547a59c41da38b95a17bf9b50a}\label{classtson_1_1Gason_a36881e547a59c41da38b95a17bf9b50a} 
+\index{tson::Gason@{tson::Gason}!array@{array}}
+\index{array@{array}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{array()}{array()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{IJson}} $>$ $>$ \& tson\+::\+Gason\+::array (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a04b18af361edd8909c7e400e777e4416}\label{classtson_1_1Gason_a04b18af361edd8909c7e400e777e4416} 
+\index{tson::Gason@{tson::Gason}!at@{at}}
+\index{at@{at}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1IJson}{IJson}} \& tson\+::\+Gason\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ac47a299c77ed0ec93f9d09d24c87c90a}\label{classtson_1_1Gason_ac47a299c77ed0ec93f9d09d24c87c90a} 
+\index{tson::Gason@{tson::Gason}!at@{at}}
+\index{at@{at}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1IJson}{IJson}} \& tson\+::\+Gason\+::at (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ae0f313213906f96f73fc491c487b6e92}\label{classtson_1_1Gason_ae0f313213906f96f73fc491c487b6e92} 
+\index{tson::Gason@{tson::Gason}!count@{count}}
+\index{count@{count}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily size\+\_\+t tson\+::\+Gason\+::count (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a1c01a585bde497ebb751a2b11de449f6}\label{classtson_1_1Gason_a1c01a585bde497ebb751a2b11de449f6} 
+\index{tson::Gason@{tson::Gason}!create@{create}}
+\index{create@{create}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{IJson}} $>$ tson\+::\+Gason\+::create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Create a new empty instance using the same engine 
+
+Implements \mbox{\hyperlink{classtson_1_1IJson_a1dbcf5fb29fb67357b573fcf903ac056}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_aa67a641884162b54ed73f1b3f8e17bc8}\label{classtson_1_1Gason_aa67a641884162b54ed73f1b3f8e17bc8} 
+\index{tson::Gason@{tson::Gason}!directory@{directory}}
+\index{directory@{directory}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{directory()}{directory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily fs\+::path tson\+::\+Gason\+::directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the directory where the json was loaded. Only assigned if json is parsed by file. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson_a7dde0e27f91cb713846d32fa8ca92dac}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a9886802cb61d84753746af0ba08abe6a}\label{classtson_1_1Gason_a9886802cb61d84753746af0ba08abe6a} 
+\index{tson::Gason@{tson::Gason}!directory@{directory}}
+\index{directory@{directory}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{directory()}{directory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void tson\+::\+Gason\+::directory (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{directory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ab1acd478cd55ca50cffff53a7f2bf611}\label{classtson_1_1Gason_ab1acd478cd55ca50cffff53a7f2bf611} 
+\index{tson::Gason@{tson::Gason}!getBool@{getBool}}
+\index{getBool@{getBool}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getBool()}{getBool()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool tson\+::\+Gason\+::get\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a7ef76b9026e95d970e8a920c9aa410f7}\label{classtson_1_1Gason_a7ef76b9026e95d970e8a920c9aa410f7} 
+\index{tson::Gason@{tson::Gason}!getBool@{getBool}}
+\index{getBool@{getBool}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getBool()}{getBool()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool tson\+::\+Gason\+::get\+Bool (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a621006ec2117f86ab15dff878b617f35}\label{classtson_1_1Gason_a621006ec2117f86ab15dff878b617f35} 
+\index{tson::Gason@{tson::Gason}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double tson\+::\+Gason\+::get\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a73de905fd8b5c08baa9a21fbd8e4d11c}\label{classtson_1_1Gason_a73de905fd8b5c08baa9a21fbd8e4d11c} 
+\index{tson::Gason@{tson::Gason}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double tson\+::\+Gason\+::get\+Double (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ab0dfc15bcabe585e7e63532a8c5b9f4c}\label{classtson_1_1Gason_ab0dfc15bcabe585e7e63532a8c5b9f4c} 
+\index{tson::Gason@{tson::Gason}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float tson\+::\+Gason\+::get\+Float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a45812a8542ebe414d72392525490c699}\label{classtson_1_1Gason_a45812a8542ebe414d72392525490c699} 
+\index{tson::Gason@{tson::Gason}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float tson\+::\+Gason\+::get\+Float (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a8137cdb4069a592cfb6203b72bc8ad77}\label{classtson_1_1Gason_a8137cdb4069a592cfb6203b72bc8ad77} 
+\index{tson::Gason@{tson::Gason}!getInt32@{getInt32}}
+\index{getInt32@{getInt32}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getInt32()}{getInt32()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int32\+\_\+t tson\+::\+Gason\+::get\+Int32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_abc92ce1157997fc3ddf3a71926e3ff0b}\label{classtson_1_1Gason_abc92ce1157997fc3ddf3a71926e3ff0b} 
+\index{tson::Gason@{tson::Gason}!getInt32@{getInt32}}
+\index{getInt32@{getInt32}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getInt32()}{getInt32()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int32\+\_\+t tson\+::\+Gason\+::get\+Int32 (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a3c6952b7b04a41f1853cc43f3636b034}\label{classtson_1_1Gason_a3c6952b7b04a41f1853cc43f3636b034} 
+\index{tson::Gason@{tson::Gason}!getInt64@{getInt64}}
+\index{getInt64@{getInt64}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getInt64()}{getInt64()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int64\+\_\+t tson\+::\+Gason\+::get\+Int64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a34095ef5798ffcc2538c5ff5f71665f9}\label{classtson_1_1Gason_a34095ef5798ffcc2538c5ff5f71665f9} 
+\index{tson::Gason@{tson::Gason}!getInt64@{getInt64}}
+\index{getInt64@{getInt64}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getInt64()}{getInt64()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int64\+\_\+t tson\+::\+Gason\+::get\+Int64 (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a06ff80326d799c0c3038cf860c4385c9}\label{classtson_1_1Gason_a06ff80326d799c0c3038cf860c4385c9} 
+\index{tson::Gason@{tson::Gason}!getString@{getString}}
+\index{getString@{getString}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string tson\+::\+Gason\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ad726dc43e8157c177a729d8f5d06765e}\label{classtson_1_1Gason_ad726dc43e8157c177a729d8f5d06765e} 
+\index{tson::Gason@{tson::Gason}!getString@{getString}}
+\index{getString@{getString}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string tson\+::\+Gason\+::get\+String (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_acb9e4c90e858c914f0e635a218cb4495}\label{classtson_1_1Gason_acb9e4c90e858c914f0e635a218cb4495} 
+\index{tson::Gason@{tson::Gason}!getUInt32@{getUInt32}}
+\index{getUInt32@{getUInt32}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getUInt32()}{getUInt32()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t tson\+::\+Gason\+::get\+UInt32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a47c88d7e193e5a524d889646f0713330}\label{classtson_1_1Gason_a47c88d7e193e5a524d889646f0713330} 
+\index{tson::Gason@{tson::Gason}!getUInt32@{getUInt32}}
+\index{getUInt32@{getUInt32}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getUInt32()}{getUInt32()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t tson\+::\+Gason\+::get\+UInt32 (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ad3c091c5c491e644ec68b5b14c3c346f}\label{classtson_1_1Gason_ad3c091c5c491e644ec68b5b14c3c346f} 
+\index{tson::Gason@{tson::Gason}!getUInt64@{getUInt64}}
+\index{getUInt64@{getUInt64}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getUInt64()}{getUInt64()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint64\+\_\+t tson\+::\+Gason\+::get\+UInt64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a1814ee58002f9060c2e908fbf34f9cf2}\label{classtson_1_1Gason_a1814ee58002f9060c2e908fbf34f9cf2} 
+\index{tson::Gason@{tson::Gason}!getUInt64@{getUInt64}}
+\index{getUInt64@{getUInt64}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{getUInt64()}{getUInt64()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint64\+\_\+t tson\+::\+Gason\+::get\+UInt64 (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a1390ae21a6bea26f16244ba446b5e5cc}\label{classtson_1_1Gason_a1390ae21a6bea26f16244ba446b5e5cc} 
+\index{tson::Gason@{tson::Gason}!isArray@{isArray}}
+\index{isArray@{isArray}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{isArray()}{isArray()}}
+{\footnotesize\ttfamily bool tson\+::\+Gason\+::is\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ae6f159427787c504751971693771b10b}\label{classtson_1_1Gason_ae6f159427787c504751971693771b10b} 
+\index{tson::Gason@{tson::Gason}!isNull@{isNull}}
+\index{isNull@{isNull}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{isNull()}{isNull()}}
+{\footnotesize\ttfamily bool tson\+::\+Gason\+::is\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a55740d8644d7e0fe2a10c3587edcd59d}\label{classtson_1_1Gason_a55740d8644d7e0fe2a10c3587edcd59d} 
+\index{tson::Gason@{tson::Gason}!isObject@{isObject}}
+\index{isObject@{isObject}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{isObject()}{isObject()}}
+{\footnotesize\ttfamily bool tson\+::\+Gason\+::is\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_af04703409218911967efc4bc13af9dfd}\label{classtson_1_1Gason_af04703409218911967efc4bc13af9dfd} 
+\index{tson::Gason@{tson::Gason}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1IJson}{IJson}} \& tson\+::\+Gason\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ab2f059af5c0a3fac8c79108006274094}\label{classtson_1_1Gason_ab2f059af5c0a3fac8c79108006274094} 
+\index{tson::Gason@{tson::Gason}!parse@{parse}}
+\index{parse@{parse}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool tson\+::\+Gason\+::parse (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_a4b6d14d068d1fb607bc616d77acd1809}\label{classtson_1_1Gason_a4b6d14d068d1fb607bc616d77acd1809} 
+\index{tson::Gason@{tson::Gason}!parse@{parse}}
+\index{parse@{parse}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool tson\+::\+Gason\+::parse (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}}.
+
+\Hypertarget{classtson_1_1Gason_ac4bfeec219f3755b3d04397e7e0604f6}\label{classtson_1_1Gason_ac4bfeec219f3755b3d04397e7e0604f6} 
+\index{tson::Gason@{tson::Gason}!size@{size}}
+\index{size@{size}!tson::Gason@{tson::Gason}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily size\+\_\+t tson\+::\+Gason\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Get the size of an object. This will be equal to the number of variables an object contains. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtson_1_1IJson_ac98b2ad71ae5b9607b48c7f0e428bf1d}{tson\+::\+IJson}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/json/Gason.\+hpp\end{DoxyCompactItemize}

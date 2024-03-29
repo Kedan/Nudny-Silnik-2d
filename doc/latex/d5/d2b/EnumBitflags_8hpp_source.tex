@@ -1,0 +1,155 @@
+\doxysection{Enum\+Bitflags.\+hpp}
+\hypertarget{EnumBitflags_8hpp_source}{}\label{EnumBitflags_8hpp_source}\index{silnik/core/lib/include/tileson/common/EnumBitflags.hpp@{silnik/core/lib/include/tileson/common/EnumBitflags.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 08.11.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_ENUMBITFLAGS\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_ENUMBITFLAGS\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ TILESON\_ENABLE\_BITMASK\_OPERATORS(x)\ \ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{namespace\ tson\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ ENABLE\_BITMASK\_OPERATORS(x)\ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \#define\ ENABLE\_BITMASK\_OPERATORS(x)\ \ \(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ template<>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ struct\ EnableBitMaskOperators<x>\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ const\ bool\ enable\ =\ true;\ \(\backslash\)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \};}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Enum>}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtson_1_1EnableBitMaskOperators}{EnableBitMaskOperators}}}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ enable\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Enum>}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<EnableBitMaskOperators<Enum>::enable,\ Enum>::type}
+\DoxyCodeLine{00034\ \ \ \ \ operator\ |(Enum\ lhs,\ Enum\ rhs)}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_enum<Enum>::value,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}template\ parameter\ is\ not\ an\ enum\ type"{}});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }underlying\ =\ \textcolor{keyword}{typename}\ std::underlying\_type<Enum>::type;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}Enum\textcolor{keyword}{>}\ (}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(lhs)\ |}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(rhs)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//Permissions\ operator\ \&(Permissions\ lhs,\ Permissions\ rhs)}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Enum>}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<EnableBitMaskOperators<Enum>::enable,\ Enum>::type}
+\DoxyCodeLine{00050\ \ \ \ \ operator\ \&(Enum\ lhs,\ Enum\ rhs)}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_enum<Enum>::value,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}template\ parameter\ is\ not\ an\ enum\ type"{}});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }underlying\ =\ \textcolor{keyword}{typename}\ std::underlying\_type<Enum>::type;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}Enum\textcolor{keyword}{>}\ (}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(lhs)\ \&}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(rhs)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//Permissions\ operator\ \string^(Permissions\ lhs,\ Permissions\ rhs)}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Enum>}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<EnableBitMaskOperators<Enum>::enable,\ Enum>::type}
+\DoxyCodeLine{00066\ \ \ \ \ operator\ \string^(Enum\ lhs,\ Enum\ rhs)}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_enum<Enum>::value,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}template\ parameter\ is\ not\ an\ enum\ type"{}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }underlying\ =\ \textcolor{keyword}{typename}\ std::underlying\_type<Enum>::type;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}Enum\textcolor{keyword}{>}\ (}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(lhs)\ \string^}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(rhs)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//Permissions\ operator\ \string~(Permissions\ rhs)}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Enum>}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<EnableBitMaskOperators<Enum>::enable,\ Enum>::type}
+\DoxyCodeLine{00082\ \ \ \ \ operator\ \string~(Enum\ rhs)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_enum<Enum>::value,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}template\ parameter\ is\ not\ an\ enum\ type"{}});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }underlying\ =\ \textcolor{keyword}{typename}\ std::underlying\_type<Enum>::type;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}Enum\textcolor{keyword}{>}\ (}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \string~static\_cast<underlying>(rhs)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//Permissions\&\ operator\ |=(Permissions\ \&lhs,\ Permissions\ rhs)}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Enum>}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<EnableBitMaskOperators<Enum>::enable,\ Enum>::type}
+\DoxyCodeLine{00097\ \ \ \ \ \&operator\ |=(Enum\ \&lhs,\ Enum\ rhs)}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_enum<Enum>::value,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}template\ parameter\ is\ not\ an\ enum\ type"{}});}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }underlying\ =\ \textcolor{keyword}{typename}\ std::underlying\_type<Enum>::type;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ lhs\ =\ \textcolor{keyword}{static\_cast<}Enum\textcolor{keyword}{>}\ (}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(lhs)\ |}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(rhs)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lhs;}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//Permissions\&\ operator\ \&=(Permissions\ \&lhs,\ Permissions\ rhs)}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Enum>}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<EnableBitMaskOperators<Enum>::enable,\ Enum>::type}
+\DoxyCodeLine{00115\ \ \ \ \ \&operator\ \&=(Enum\ \&lhs,\ Enum\ rhs)}
+\DoxyCodeLine{00116\ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_enum<Enum>::value,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}template\ parameter\ is\ not\ an\ enum\ type"{}});}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }underlying\ =\ \textcolor{keyword}{typename}\ std::underlying\_type<Enum>::type;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ lhs\ =\ \textcolor{keyword}{static\_cast<}Enum\textcolor{keyword}{>}\ (}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(lhs)\ \&}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(rhs)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lhs;}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//Permissions\&\ operator\ \string^=(Permissions\ \&lhs,\ Permissions\ rhs)}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Enum>}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{typename}\ std::enable\_if<EnableBitMaskOperators<Enum>::enable,\ Enum>::type}
+\DoxyCodeLine{00133\ \ \ \ \ \&operator\ \string^=(Enum\ \&lhs,\ Enum\ rhs)}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_assert}(std::is\_enum<Enum>::value,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}template\ parameter\ is\ not\ an\ enum\ type"{}});}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }underlying\ =\ \textcolor{keyword}{typename}\ std::underlying\_type<Enum>::type;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ lhs\ =\ \textcolor{keyword}{static\_cast<}Enum\textcolor{keyword}{>}\ (}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(lhs)\ \string^}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}underlying\textcolor{keyword}{>}(rhs)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lhs;}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_ENUMBITFLAGS\_HPP}}
+
+\end{DoxyCode}

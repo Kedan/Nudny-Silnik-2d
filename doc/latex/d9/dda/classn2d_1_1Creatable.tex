@@ -1,0 +1,33 @@
+\doxysection{n2d\+::Creatable Class Reference}
+\hypertarget{classn2d_1_1Creatable}{}\label{classn2d_1_1Creatable}\index{n2d::Creatable@{n2d::Creatable}}
+
+
+{\ttfamily \#include $<$Interfaces.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Creatable_a58c8fe521854b6db80918d98f4dbd308}{Create}} (b2\+World \&t\+\_\+world)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface. Abstract clas. If something sopose to be initiated by physics system, should implements \doxylink{classn2d_1_1Creatable}{Creatable} interface. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Creatable_a58c8fe521854b6db80918d98f4dbd308}\label{classn2d_1_1Creatable_a58c8fe521854b6db80918d98f4dbd308} 
+\index{n2d::Creatable@{n2d::Creatable}!Create@{Create}}
+\index{Create@{Create}!n2d::Creatable@{n2d::Creatable}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily virtual void n2d\+::\+Creatable\+::\+Create (\begin{DoxyParamCaption}\item[{b2\+World \&}]{t\+\_\+world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Creation method. This method id called whenever object need to be initiaded by Box2D, for physics simulation. 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+world} & -\/ Box2D world reference, that should refere to \doxylink{classn2d_1_1App_a48ababdcabf46d6d25403dc028a8ab42}{n2d\+::\+App\+::world} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/Interfaces.\+h\end{DoxyCompactItemize}

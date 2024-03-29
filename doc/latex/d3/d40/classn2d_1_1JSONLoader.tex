@@ -1,0 +1,115 @@
+\doxysection{n2d\+::JSONLoader Class Reference}
+\hypertarget{classn2d_1_1JSONLoader}{}\label{classn2d_1_1JSONLoader}\index{n2d::JSONLoader@{n2d::JSONLoader}}
+
+
+{\ttfamily \#include $<$JSONLoader.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classn2d_1_1JSONLoader_a88c0fccd475480bee916dec80466cbc4}{JSONLoader}} ()
+\item 
+\mbox{\hyperlink{classn2d_1_1JSONLoader_a5e58fbec637c65fe59e96530a7ece91f}{JSONLoader}} (std\+::string t\+\_\+file)
+\item 
+bool \mbox{\hyperlink{classn2d_1_1JSONLoader_a26f753c46e66a1fdf02a192fb4db6445}{Load}} (std\+::string t\+\_\+file)
+\item 
+json \mbox{\hyperlink{classn2d_1_1JSONLoader_a890c46a926d6e2bd10e9ea43fce28620}{Get\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classn2d_1_1JSONLoader_aff208a9b69cc12fe8310de1f6a764a7a}{Find}} (std\+::string t\+\_\+value, json t\+\_\+accessor)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+json \mbox{\hyperlink{classn2d_1_1JSONLoader_a9464d2560262689496d4c2280402871c}{JSON}}
+\item 
+std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{classn2d_1_1JSONLoader_a8882df89be113205d50ff9dfd9477c79}{data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class used for loading and easy hangling json files 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classn2d_1_1JSONLoader_a88c0fccd475480bee916dec80466cbc4}\label{classn2d_1_1JSONLoader_a88c0fccd475480bee916dec80466cbc4} 
+\index{n2d::JSONLoader@{n2d::JSONLoader}!JSONLoader@{JSONLoader}}
+\index{JSONLoader@{JSONLoader}!n2d::JSONLoader@{n2d::JSONLoader}}
+\doxysubsubsection{\texorpdfstring{JSONLoader()}{JSONLoader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily JSONLoader\+::\+JSONLoader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default construcor \Hypertarget{classn2d_1_1JSONLoader_a5e58fbec637c65fe59e96530a7ece91f}\label{classn2d_1_1JSONLoader_a5e58fbec637c65fe59e96530a7ece91f} 
+\index{n2d::JSONLoader@{n2d::JSONLoader}!JSONLoader@{JSONLoader}}
+\index{JSONLoader@{JSONLoader}!n2d::JSONLoader@{n2d::JSONLoader}}
+\doxysubsubsection{\texorpdfstring{JSONLoader()}{JSONLoader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily JSONLoader\+::\+JSONLoader (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+file }\end{DoxyParamCaption})}
+
+Construcor 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+file} & -\/ path to .json file \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1JSONLoader_aff208a9b69cc12fe8310de1f6a764a7a}\label{classn2d_1_1JSONLoader_aff208a9b69cc12fe8310de1f6a764a7a} 
+\index{n2d::JSONLoader@{n2d::JSONLoader}!Find@{Find}}
+\index{Find@{Find}!n2d::JSONLoader@{n2d::JSONLoader}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily static bool n2d\+::\+JSONLoader\+::\+Find (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+value,  }\item[{json}]{t\+\_\+accessor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Searching values in json data 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+value} & -\/ Value you search \\
+\hline
+{\em t\+\_\+accessor} & -\/ json data you want to search in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if finds value, false if don\textquotesingle{}t 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1JSONLoader_a890c46a926d6e2bd10e9ea43fce28620}\label{classn2d_1_1JSONLoader_a890c46a926d6e2bd10e9ea43fce28620} 
+\index{n2d::JSONLoader@{n2d::JSONLoader}!GetData@{GetData}}
+\index{GetData@{GetData}!n2d::JSONLoader@{n2d::JSONLoader}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily json JSONLoader\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns parsed json data. Call this method ONLY if \doxylink{classn2d_1_1JSONLoader_a26f753c46e66a1fdf02a192fb4db6445}{Load()} returns true. \begin{DoxyReturn}{Returns}
+json data; 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1JSONLoader_a26f753c46e66a1fdf02a192fb4db6445}\label{classn2d_1_1JSONLoader_a26f753c46e66a1fdf02a192fb4db6445} 
+\index{n2d::JSONLoader@{n2d::JSONLoader}!Load@{Load}}
+\index{Load@{Load}!n2d::JSONLoader@{n2d::JSONLoader}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily bool JSONLoader\+::\+Load (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+file }\end{DoxyParamCaption})}
+
+Load method. 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+file} & -\/ path to .json file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file is loaded and parsed correctly. Else returns false. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classn2d_1_1JSONLoader_a8882df89be113205d50ff9dfd9477c79}\label{classn2d_1_1JSONLoader_a8882df89be113205d50ff9dfd9477c79} 
+\index{n2d::JSONLoader@{n2d::JSONLoader}!data@{data}}
+\index{data@{data}!n2d::JSONLoader@{n2d::JSONLoader}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::vector$<$unsigned char$>$ n2d\+::\+JSONLoader\+::data\hspace{0.3cm}{\ttfamily [protected]}}
+
+Some stuff, Don\textquotesingle{}t remember what for. Propablly raw data from json file. \Hypertarget{classn2d_1_1JSONLoader_a9464d2560262689496d4c2280402871c}\label{classn2d_1_1JSONLoader_a9464d2560262689496d4c2280402871c} 
+\index{n2d::JSONLoader@{n2d::JSONLoader}!JSON@{JSON}}
+\index{JSON@{JSON}!n2d::JSONLoader@{n2d::JSONLoader}}
+\doxysubsubsection{\texorpdfstring{JSON}{JSON}}
+{\footnotesize\ttfamily json n2d\+::\+JSONLoader\+::\+JSON\hspace{0.3cm}{\ttfamily [protected]}}
+
+json parser 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/JSONLoader.\+h\item 
+silnik/core/src/JSONLoader.\+cpp\end{DoxyCompactItemize}

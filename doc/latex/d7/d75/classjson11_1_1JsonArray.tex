@@ -1,0 +1,60 @@
+\doxysection{json11\+::Json\+Array Class Reference}
+\hypertarget{classjson11_1_1JsonArray}{}\label{classjson11_1_1JsonArray}\index{json11::JsonArray@{json11::JsonArray}}
+Inheritance diagram for json11\+::Json\+Array\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d7/d75/classjson11_1_1JsonArray}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classjson11_1_1JsonArray_a305a9591c44b22ffc91a371b8248d5a4}\label{classjson11_1_1JsonArray_a305a9591c44b22ffc91a371b8248d5a4} 
+{\bfseries Json\+Array} (const Json\+::array \&value)
+\item 
+\Hypertarget{classjson11_1_1JsonArray_ae360edbd727b3126f7174c86a24003e1}\label{classjson11_1_1JsonArray_ae360edbd727b3126f7174c86a24003e1} 
+{\bfseries Json\+Array} (Json\+::array \&\&value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classjson11_1_1Value}{json11\+::\+Value$<$ Json\+::\+ARRAY, Json\+::array $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Value} (const Json\+::array \&value)
+\item 
+{\bfseries Value} (Json\+::array \&\&value)
+\item 
+Json\+::\+Type \mbox{\hyperlink{classjson11_1_1Value_a7f859afc6549e1616384c1ed8b95773e}{type}} () const override
+\item 
+bool \mbox{\hyperlink{classjson11_1_1Value_a9e55dfa0c1119e102fd9bd9bb5bb1f56}{equals}} (const \mbox{\hyperlink{classjson11_1_1JsonValue}{Json\+Value}} \texorpdfstring{$\ast$}{*}other) const override
+\item 
+bool \mbox{\hyperlink{classjson11_1_1Value_a7ea36aadc76a335a6eaf4d44af154732}{less}} (const \mbox{\hyperlink{classjson11_1_1JsonValue}{Json\+Value}} \texorpdfstring{$\ast$}{*}other) const override
+\item 
+void {\bfseries dump} (string \&out) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classjson11_1_1JsonValue}{json11\+::\+Json\+Value}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries dump} (std\+::string \&out) const =0
+\item 
+virtual double {\bfseries number\+\_\+value} () const
+\item 
+virtual int {\bfseries int\+\_\+value} () const
+\item 
+virtual bool {\bfseries bool\+\_\+value} () const
+\item 
+virtual const std\+::string \& {\bfseries string\+\_\+value} () const
+\item 
+virtual const Json\+::object \& {\bfseries object\+\_\+items} () const
+\item 
+virtual const \mbox{\hyperlink{classjson11_1_1Json}{Json}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (const std\+::string \&key) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classjson11_1_1Value}{json11\+::\+Value$<$ Json\+::\+ARRAY, Json\+::array $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+const Json\+::array {\bfseries m\+\_\+value}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/external/json11.\+hpp\end{DoxyCompactItemize}

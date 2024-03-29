@@ -1,0 +1,184 @@
+\doxysection{Wang\+Set.\+hpp}
+\hypertarget{WangSet_8hpp_source}{}\label{WangSet_8hpp_source}\index{silnik/core/lib/include/tileson/tiled/WangSet.hpp@{silnik/core/lib/include/tileson/tiled/WangSet.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_WANGSET\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_WANGSET\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\#include\ "{}../external/json.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}WangColor.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}WangTile.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../objects/PropertyCollection.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1WangSet}{WangSet}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1WangSet}{WangSet}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1WangSet}{WangSet}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *map);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ parse(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *map);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1WangSet_aa002fb1015dbff989c2b6d873b5a237c}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1WangSet_a2d3b0eb85584744f4c1b806af3d999b2}{getTile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::vector<tson::WangTile>\ \&\mbox{\hyperlink{classtson_1_1WangSet_a8d90b5f1f993ec88a0979ce652982ca6}{getWangTiles}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::vector<tson::WangColor>\ \&\mbox{\hyperlink{classtson_1_1WangSet_addc926be72148d1f5a3727b492e0cf9b}{getCornerColors}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::vector<tson::WangColor>\ \&\mbox{\hyperlink{classtson_1_1WangSet_aabed471f20fd092bfc55311cec45e967}{getEdgeColors}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1WangColor}{tson::WangColor}}\ *\ \mbox{\hyperlink{classtson_1_1WangSet_ab3f53ac1136807583226dcfa0fd6621d}{getColor}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::vector<tson::WangColor>\ \&\mbox{\hyperlink{classtson_1_1WangSet_a16537ccda9a63d1a9a349356d2ac8484}{getColors}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1PropertyCollection}{PropertyCollection}}\ \&\mbox{\hyperlink{classtson_1_1WangSet_a6e718fb0fcb5fadfa50711a35a8445c7}{getProperties}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{classtson_1_1WangSet_af384e6f13f1d1421a5da410ff00963ff}{get}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Property}{tson::Property}}\ *\ \mbox{\hyperlink{classtson_1_1WangSet_ae45fc2035820338b8d2b8f62db6993c9}{getProp}}(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&getClassType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1TiledClass}{tson::TiledClass}}\ *getClass();\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ parseTiled15Props(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_name;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_tile\{\};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::WangTile>\ \ m\_wangTiles;\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::WangColor>\ m\_cornerColors;\ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::WangColor>\ m\_edgeColors;\ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson::PropertyCollection}}\ \ \ \ \ m\_properties;\ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Tiled\ v1.5}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::WangColor>\ m\_colors;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_map;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_classType\ \{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<tson::TiledClass>\ m\_class\ \{\};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00067\ \ \ \ \ T\ \mbox{\hyperlink{classtson_1_1WangSet_af384e6f13f1d1421a5da410ff00963ff}{tson::WangSet::get}}(\textcolor{keyword}{const}\ std::string\ \&name)}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_properties.getValue<T>(name);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ tson::WangSet::WangSet(IJson\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *map)}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ parse(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ map);}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{bool}\ tson::WangSet::parse(IJson\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Map}{tson::Map}}\ *map)}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ m\_map\ =\ map;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ allFound\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}tile"{}})\ >\ 0)\ m\_tile\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}tile"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<\textcolor{keywordtype}{int}>();\ \textcolor{keywordflow}{else}\ allFound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}name"{}})\ >\ 0)\ m\_name\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}name"{}}].get<std::string>();\ \textcolor{keywordflow}{else}\ allFound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//More\ advanced\ data}}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}wangtiles"{}})\ >\ 0\ \&\&\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}wangtiles"{}}].isArray())}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&wangtiles\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.array(\textcolor{stringliteral}{"{}wangtiles"{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::for\_each(wangtiles.begin(),\ wangtiles.end(),\ [\&](std::unique\_ptr<IJson>\ \&item)\ \{\ m\_wangTiles.emplace\_back(*item);\ \});}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}cornercolors"{}})\ >\ 0\ \&\&\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}cornercolors"{}}].isArray())}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&cornercolors\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.array(\textcolor{stringliteral}{"{}cornercolors"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::for\_each(cornercolors.begin(),\ cornercolors.end(),\ [\&](std::unique\_ptr<IJson>\ \&item)\ \{\ m\_cornerColors.emplace\_back(*item,\ m\_map);\ \});}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}edgecolors"{}})\ >\ 0\ \&\&\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}edgecolors"{}}].isArray())}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&edgecolors\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.array(\textcolor{stringliteral}{"{}edgecolors"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ std::for\_each(edgecolors.begin(),\ edgecolors.end(),\ [\&](std::unique\_ptr<IJson>\ \&item)\ \{\ m\_edgeColors.emplace\_back(*item,\ m\_map);\ \});}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}properties"{}})\ >\ 0\ \&\&\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}properties"{}}].isArray())}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&properties\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.array(\textcolor{stringliteral}{"{}properties"{}});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ std::for\_each(properties.begin(),\ properties.end(),\ [\&](std::unique\_ptr<IJson>\ \&item)\ \{\ m\_properties.add(*item);\ \});}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}class"{}})\ >\ 0)\ m\_classType\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}class"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<std::string>();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Optional}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}(!parseTiled15Props(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}))}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ allFound\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{return}\ allFound;}
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{bool}\ tson::WangSet::parseTiled15Props(\mbox{\hyperlink{classtson_1_1IJson}{tson::IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}colors"{}})\ >\ 0\ \&\&\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}colors"{}}].isArray())}
+\DoxyCodeLine{00125\ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&colors\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.array(\textcolor{stringliteral}{"{}colors"{}});}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ std::for\_each(colors.begin(),\ colors.end(),\ [\&](std::unique\_ptr<IJson>\ \&item)\ \{\ m\_colors.emplace\_back(*item,\ m\_map);\ \});}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00130\ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1WangSet_aa002fb1015dbff989c2b6d873b5a237c}{tson::WangSet::getName}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00137\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_name;}
+\DoxyCodeLine{00139\ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classtson_1_1WangSet_a2d3b0eb85584744f4c1b806af3d999b2}{tson::WangSet::getTile}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00146\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_tile;}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \textcolor{keyword}{const}\ std::vector<tson::WangTile>\ \&\mbox{\hyperlink{classtson_1_1WangSet_a8d90b5f1f993ec88a0979ce652982ca6}{tson::WangSet::getWangTiles}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00155\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_wangTiles;}
+\DoxyCodeLine{00157\ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{const}\ std::vector<tson::WangColor>\ \&\mbox{\hyperlink{classtson_1_1WangSet_addc926be72148d1f5a3727b492e0cf9b}{tson::WangSet::getCornerColors}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00164\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_cornerColors;}
+\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{const}\ std::vector<tson::WangColor>\ \&\mbox{\hyperlink{classtson_1_1WangSet_aabed471f20fd092bfc55311cec45e967}{tson::WangSet::getEdgeColors}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00173\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_edgeColors;}
+\DoxyCodeLine{00175\ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00181\ \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson::PropertyCollection}}\ \&\mbox{\hyperlink{classtson_1_1WangSet_a6e718fb0fcb5fadfa50711a35a8445c7}{tson::WangSet::getProperties}}()}
+\DoxyCodeLine{00182\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_properties;}
+\DoxyCodeLine{00184\ \}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00191\ \mbox{\hyperlink{classtson_1_1Property}{tson::Property}}\ *\mbox{\hyperlink{classtson_1_1WangSet_ae45fc2035820338b8d2b8f62db6993c9}{tson::WangSet::getProp}}(\textcolor{keyword}{const}\ std::string\ \&name)}
+\DoxyCodeLine{00192\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{if}(m\_properties.hasProperty(name))}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_properties.getProperty(name);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00197\ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00203\ \textcolor{keyword}{const}\ std::vector<tson::WangColor>\ \&\mbox{\hyperlink{classtson_1_1WangSet_a16537ccda9a63d1a9a349356d2ac8484}{tson::WangSet::getColors}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00204\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_colors;}
+\DoxyCodeLine{00206\ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00215\ \mbox{\hyperlink{classtson_1_1WangColor}{tson::WangColor}}\ *\mbox{\hyperlink{classtson_1_1WangSet_ab3f53ac1136807583226dcfa0fd6621d}{tson::WangSet::getColor}}(\textcolor{keyword}{const}\ std::string\ \&name)}
+\DoxyCodeLine{00216\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{auto}\ color\ =\ std::find\_if(m\_colors.begin(),\ m\_colors.end(),\ [\&](\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&c)\ \{\ return\ c.getName()\ ==\ name;\ \});}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{if}(color\ !=\ m\_colors.end())}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&color.operator*();}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00223\ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{keyword}{const}\ std::string\ \&tson::WangSet::getClassType()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00226\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_classType;}
+\DoxyCodeLine{00228\ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_WANGSET\_HPP}}
+
+\end{DoxyCode}

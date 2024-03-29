@@ -1,0 +1,33 @@
+\doxysection{Project\+Data.\+hpp}
+\hypertarget{ProjectData_8hpp_source}{}\label{ProjectData_8hpp_source}\index{silnik/core/lib/include/tileson/objects/ProjectData.hpp@{silnik/core/lib/include/tileson/objects/ProjectData.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 01.08.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_PROJECTDATA\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_PROJECTDATA\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1ProjectData}{ProjectData}}}
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1ProjectData}{ProjectData}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ automappingRulesFile;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ commands;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ extensionsPath;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ folders;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ objectTypesFile;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1ProjectPropertyTypes}{ProjectPropertyTypes}}\ projectPropertyTypes;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Tileson\ specific}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ fs::path\ basePath;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<tson::ProjectFolder>\ folderPaths;}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_PROJECTDATA\_HPP}}
+
+\end{DoxyCode}

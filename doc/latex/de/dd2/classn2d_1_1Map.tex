@@ -1,0 +1,189 @@
+\doxysection{n2d\+::Map Class Reference}
+\hypertarget{classn2d_1_1Map}{}\label{classn2d_1_1Map}\index{n2d::Map@{n2d::Map}}
+Inheritance diagram for n2d\+::Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{de/dd2/classn2d_1_1Map}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Map_a612ae7aabf50ac113282d89eccc67d6e}\label{classn2d_1_1Map_a612ae7aabf50ac113282d89eccc67d6e} 
+{\bfseries Map} (std\+::string)
+\item 
+\Hypertarget{classn2d_1_1Map_a1c53760e8c8562bf265b9088ea04b75a}\label{classn2d_1_1Map_a1c53760e8c8562bf265b9088ea04b75a} 
+bool {\bfseries Load} ()
+\item 
+\Hypertarget{classn2d_1_1Map_a6b2f78b2f7ded4f9cfa2335475c2baf7}\label{classn2d_1_1Map_a6b2f78b2f7ded4f9cfa2335475c2baf7} 
+bool {\bfseries Load} (std\+::string)
+\item 
+\Hypertarget{classn2d_1_1Map_a4ce8d4f2b58354c936aa42b1667f84e7}\label{classn2d_1_1Map_a4ce8d4f2b58354c936aa42b1667f84e7} 
+bool {\bfseries Load\+Assets} ()
+\item 
+\Hypertarget{classn2d_1_1Map_a0be24215ba21847a6fe921af232e826f}\label{classn2d_1_1Map_a0be24215ba21847a6fe921af232e826f} 
+void {\bfseries Create} (b2\+World \&world)
+\item 
+\Hypertarget{classn2d_1_1Map_ac926962f633e7d742bdb70937657175a}\label{classn2d_1_1Map_ac926962f633e7d742bdb70937657175a} 
+void {\bfseries Free} ()
+\item 
+\Hypertarget{classn2d_1_1Map_ad3f48b69c5a2d619335732e968050eca}\label{classn2d_1_1Map_ad3f48b69c5a2d619335732e968050eca} 
+void {\bfseries Free\+Assets} ()
+\item 
+\Hypertarget{classn2d_1_1Map_a3a5d94b63c0a43e64ae000aba429a46b}\label{classn2d_1_1Map_a3a5d94b63c0a43e64ae000aba429a46b} 
+void {\bfseries Set\+Entity\+Factory} (\mbox{\hyperlink{classn2d_1_1EntityFactory}{Entity\+Factory}} \&t\+\_\+entity\+\_\+factory)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Map_a636674e32b9c79aec88cd44e47da0890}{Draw}} (sf\+::\+Render\+Window \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Map_a968ce7267871ecad22fc6f5997823496}{Draw}} (sf\+::\+Render\+Window \&, sf\+::\+Transform \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Map_a457739e2939890265a4530280a0ecd27}{Update}} (float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Map_afe365ff4c4ccac18748a7eef5cc29bc5}{Events}} (sf\+::\+Event \&)
+\item 
+\Hypertarget{classn2d_1_1Map_ad14d196453d25a3665e4afc95adba84b}\label{classn2d_1_1Map_ad14d196453d25a3665e4afc95adba84b} 
+glm\+::vec2 {\bfseries Get\+Grid\+Size} ()
+\item 
+\Hypertarget{classn2d_1_1Map_a58e257facd4a72f56e9cb99de0eb49fb}\label{classn2d_1_1Map_a58e257facd4a72f56e9cb99de0eb49fb} 
+float {\bfseries Get\+Grid\+Width} ()
+\item 
+\Hypertarget{classn2d_1_1Map_ad1e29161f250a5393a849dead404b31f}\label{classn2d_1_1Map_ad1e29161f250a5393a849dead404b31f} 
+float {\bfseries Get\+Grid\+Heigh} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Map_aa72ebc93a43c8c01d6156b4e796638e6}\label{classn2d_1_1Map_aa72ebc93a43c8c01d6156b4e796638e6} 
+glm\+::vec2 {\bfseries position}
+\item 
+\Hypertarget{classn2d_1_1Map_ad1d20add8e22117485a15e2accaaeb84}\label{classn2d_1_1Map_ad1d20add8e22117485a15e2accaaeb84} 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} {\bfseries src}
+\item 
+\Hypertarget{classn2d_1_1Map_ac41b9ea70dbb801776b1aecc46ab5649}\label{classn2d_1_1Map_ac41b9ea70dbb801776b1aecc46ab5649} 
+\mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}} {\bfseries tileset}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Map_a82a99279f762573e169db717e8bcc9be}\label{classn2d_1_1Map_a82a99279f762573e169db717e8bcc9be} 
+bool {\bfseries Load\+Tilesets} ()
+\item 
+\Hypertarget{classn2d_1_1Map_ac67d2b55afda33c92ec3eba0d0855800}\label{classn2d_1_1Map_ac67d2b55afda33c92ec3eba0d0855800} 
+bool {\bfseries Load\+Images} ()
+\item 
+\Hypertarget{classn2d_1_1Map_a2c76a81e8b6c970153d506642a9eff77}\label{classn2d_1_1Map_a2c76a81e8b6c970153d506642a9eff77} 
+bool {\bfseries Load\+Layers} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Map_af912360a2e272aa4f3ce770ee1bfdfc1}\label{classn2d_1_1Map_af912360a2e272aa4f3ce770ee1bfdfc1} 
+glm\+::vec2 {\bfseries m\+\_\+grid\+\_\+size}
+\item 
+\Hypertarget{classn2d_1_1Map_a2d53e6733c5cd2b65edd4bb694eb672e}\label{classn2d_1_1Map_a2d53e6733c5cd2b65edd4bb694eb672e} 
+\mbox{\hyperlink{classn2d_1_1LayerFactory}{Layer\+Factory}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+layer\+\_\+factory}
+\item 
+\Hypertarget{classn2d_1_1Map_a380e9d1a41ce38fe898ec9f77909d5ba}\label{classn2d_1_1Map_a380e9d1a41ce38fe898ec9f77909d5ba} 
+\mbox{\hyperlink{classn2d_1_1EntityFactory}{Entity\+Factory}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+entity\+\_\+factory}
+\item 
+\Hypertarget{classn2d_1_1Map_a08b84187e3489450e5b06bd0f865548c}\label{classn2d_1_1Map_a08b84187e3489450e5b06bd0f865548c} 
+std\+::unique\+\_\+ptr$<$ tson\+::\+Map $>$ {\bfseries mp\+\_\+map}
+\item 
+\Hypertarget{classn2d_1_1Map_a2311096075bf8c45bdea2a6e8bec482d}\label{classn2d_1_1Map_a2311096075bf8c45bdea2a6e8bec482d} 
+std\+::string {\bfseries m\+\_\+file\+\_\+path}
+\item 
+\Hypertarget{classn2d_1_1Map_af124d42cc5f69c67182423548c40059f}\label{classn2d_1_1Map_af124d42cc5f69c67182423548c40059f} 
+std\+::string {\bfseries m\+\_\+dir}
+\item 
+\Hypertarget{classn2d_1_1Map_a8a087ae5e7aca402dc14094cb57e8f45}\label{classn2d_1_1Map_a8a087ae5e7aca402dc14094cb57e8f45} 
+bool {\bfseries m\+\_\+assets\+\_\+loaded}
+\item 
+\Hypertarget{classn2d_1_1Map_add707ff9e50ed7cc1a981fef2e7deea7}\label{classn2d_1_1Map_add707ff9e50ed7cc1a981fef2e7deea7} 
+std\+::vector$<$ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+layers}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Map_a636674e32b9c79aec88cd44e47da0890}\label{classn2d_1_1Map_a636674e32b9c79aec88cd44e47da0890} 
+\index{n2d::Map@{n2d::Map}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::Map@{n2d::Map}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Map\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{n2d\+::\+Drawable}}.
+
+\Hypertarget{classn2d_1_1Map_a968ce7267871ecad22fc6f5997823496}\label{classn2d_1_1Map_a968ce7267871ecad22fc6f5997823496} 
+\index{n2d::Map@{n2d::Map}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::Map@{n2d::Map}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Map\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{sf\+::\+Transform \&}]{t\+\_\+transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+{\em \&t\+\_\+transform} & -\/ additional transformations reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{n2d\+::\+Drawable}}.
+
+\Hypertarget{classn2d_1_1Map_afe365ff4c4ccac18748a7eef5cc29bc5}\label{classn2d_1_1Map_afe365ff4c4ccac18748a7eef5cc29bc5} 
+\index{n2d::Map@{n2d::Map}!Events@{Events}}
+\index{Events@{Events}!n2d::Map@{n2d::Map}}
+\doxysubsubsection{\texorpdfstring{Events()}{Events()}}
+{\footnotesize\ttfamily void Map\+::\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Event handling method. 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+event} & -\/ SFML event reference, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}{n2d\+::\+Interactive}}.
+
+\Hypertarget{classn2d_1_1Map_a457739e2939890265a4530280a0ecd27}\label{classn2d_1_1Map_a457739e2939890265a4530280a0ecd27} 
+\index{n2d::Map@{n2d::Map}!Update@{Update}}
+\index{Update@{Update}!n2d::Map@{n2d::Map}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Map\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update method 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & -\/ time tick, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} from sf\+::\+Clock and sf\+::\+Time class \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Updatable_afdd0bf94a4486b3a893ed560af5e22c6}{n2d\+::\+Updatable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/game/include/Map.\+h\item 
+silnik/game/src/Map.\+cpp\end{DoxyCompactItemize}

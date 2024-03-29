@@ -1,0 +1,55 @@
+\doxysection{Rect.\+h}
+\hypertarget{Rect_8h_source}{}\label{Rect_8h_source}\index{silnik/visual/include/Rect.h@{silnik/visual/include/Rect.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_VISUAL\_RECT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_VISUAL\_RECT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Shape.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Rect}{Rect}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Shape}{Shape}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ size;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ sf::RectangleShape\ \ shape;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ b2PolygonShape\ \ \ \ \ \ bound;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect}{Rect}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect}{Rect}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classn2d_1_1Rect}{Rect}}\&\ );}
+\DoxyCodeLine{00015\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ b2Shape*\ \ \ \ \ \ \ \ GetUpdatable();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Drawable*\ \ \ \ \ \ \ GetDrawable();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Transformable*\ \ GetTransformable();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Shape}{Shape}}*\ \ \ \ \ \ \ \ \ Clone()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect_a467967c7b9c7934bc2dca5169400e299}{Draw}}(\ sf::RenderWindow\&\ w\ );}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect_a467967c7b9c7934bc2dca5169400e299}{Draw}}(\ sf::RenderWindow\&\ w,\ sf::Transform\&\ t\ );}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ AddBodyCoords(\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ rotation\ );\ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ FixToBody();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetSize(\ \textcolor{keywordtype}{float}=40.0f,\ \textcolor{keywordtype}{float}=40.0f\ );}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetSize(\ glm::vec2\ );\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetRotation(\ \textcolor{keywordtype}{float}=0.0f\ );}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetPosition(\ \textcolor{keywordtype}{float}=0.0f,\ \textcolor{keywordtype}{float}=0.0f\ );}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetPosition(\ glm::vec2\ );}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetOrigin(\ \textcolor{keywordtype}{float}=20.0f,\ \textcolor{keywordtype}{float}=20.0f\ );}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetOrigin(\ glm::vec2\ );}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255\ );}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ glm::vec4\ );}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ sf::Color\ );}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ std::string\ );}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ sf::Texture\&\ );}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTextureCoords(\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0\ );}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTextureCoords(\ glm::vec4\ );\ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect_a4ba31a66c592437e214985c32c7d3bdf}{Animate}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect_a99a692520444a36bf58d6a54061354c7}{ClearAnimation}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect_a8de2adf2a5edbaca308a27467810f975}{Play}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect_ae466b4fbd3e07279fbd1ee207ae8c5be}{Pause}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect_aad7d6bc51600aad5b4864b4a15c53721}{Stop}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Transform\ m\_transform;}
+\DoxyCodeLine{00046\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Rect}}
+\DoxyCodeLine{00047\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

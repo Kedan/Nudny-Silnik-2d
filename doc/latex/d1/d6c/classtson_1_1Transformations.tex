@@ -1,0 +1,63 @@
+\doxysection{tson\+::Transformations Class Reference}
+\hypertarget{classtson_1_1Transformations}{}\label{classtson_1_1Transformations}\index{tson::Transformations@{tson::Transformations}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1Transformations_a1299abd552c13b72787599632b6ecb90}\label{classtson_1_1Transformations_a1299abd552c13b72787599632b6ecb90} 
+{\bfseries Transformations} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+\Hypertarget{classtson_1_1Transformations_a2ecc8e0154a8953fbefa16efaa281eeb}\label{classtson_1_1Transformations_a2ecc8e0154a8953fbefa16efaa281eeb} 
+bool {\bfseries parse} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\item 
+bool \mbox{\hyperlink{classtson_1_1Transformations_a800bfb7cadd48c49aae89057a1b530e8}{allow\+Hflip}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Transformations_adac8b717872f6d460c59a495049f28e3}{allow\+Preferuntransformed}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Transformations_a47099dc68a9fe08a4f36ff8ce3e780ab}{allow\+Rotation}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Transformations_a3083d13b55dd6036f4ef78f75438cd29}{allow\+Vflip}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Transformations_a800bfb7cadd48c49aae89057a1b530e8}\label{classtson_1_1Transformations_a800bfb7cadd48c49aae89057a1b530e8} 
+\index{tson::Transformations@{tson::Transformations}!allowHflip@{allowHflip}}
+\index{allowHflip@{allowHflip}!tson::Transformations@{tson::Transformations}}
+\doxysubsubsection{\texorpdfstring{allowHflip()}{allowHflip()}}
+{\footnotesize\ttfamily bool tson\+::\+Transformations\+::allow\+Hflip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+hflip\+: Whether the tiles in this set can be flipped horizontally (default false) 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Transformations_adac8b717872f6d460c59a495049f28e3}\label{classtson_1_1Transformations_adac8b717872f6d460c59a495049f28e3} 
+\index{tson::Transformations@{tson::Transformations}!allowPreferuntransformed@{allowPreferuntransformed}}
+\index{allowPreferuntransformed@{allowPreferuntransformed}!tson::Transformations@{tson::Transformations}}
+\doxysubsubsection{\texorpdfstring{allowPreferuntransformed()}{allowPreferuntransformed()}}
+{\footnotesize\ttfamily bool tson\+::\+Transformations\+::allow\+Preferuntransformed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+preferuntransformed\+: Whether untransformed tiles remain preferred, otherwise transformed tiles are used to produce more variations (default false) 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Transformations_a47099dc68a9fe08a4f36ff8ce3e780ab}\label{classtson_1_1Transformations_a47099dc68a9fe08a4f36ff8ce3e780ab} 
+\index{tson::Transformations@{tson::Transformations}!allowRotation@{allowRotation}}
+\index{allowRotation@{allowRotation}!tson::Transformations@{tson::Transformations}}
+\doxysubsubsection{\texorpdfstring{allowRotation()}{allowRotation()}}
+{\footnotesize\ttfamily bool tson\+::\+Transformations\+::allow\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+rotate\+: Whether the tiles in this set can be rotated in 90 degree increments (default false) 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Transformations_a3083d13b55dd6036f4ef78f75438cd29}\label{classtson_1_1Transformations_a3083d13b55dd6036f4ef78f75438cd29} 
+\index{tson::Transformations@{tson::Transformations}!allowVflip@{allowVflip}}
+\index{allowVflip@{allowVflip}!tson::Transformations@{tson::Transformations}}
+\doxysubsubsection{\texorpdfstring{allowVflip()}{allowVflip()}}
+{\footnotesize\ttfamily bool tson\+::\+Transformations\+::allow\+Vflip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+vflip\+: Whether the tiles in this set can be flipped vertically (default false) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Transformations.\+hpp\end{DoxyCompactItemize}

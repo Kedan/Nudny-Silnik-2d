@@ -1,0 +1,180 @@
+\doxysection{n2d\+::Image\+Layer Class Reference}
+\hypertarget{classn2d_1_1ImageLayer}{}\label{classn2d_1_1ImageLayer}\index{n2d::ImageLayer@{n2d::ImageLayer}}
+Inheritance diagram for n2d\+::Image\+Layer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d8/d3b/classn2d_1_1ImageLayer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classn2d_1_1ImageLayer_a98ea2de019524488b11d0a4ca9ea81a6}{Draw}} (sf\+::\+Render\+Window \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1ImageLayer_a330bda7d1e3ed3c88553120cc5f2dc56}{Draw}} (sf\+::\+Render\+Window \&, sf\+::\+Transform \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1ImageLayer_a0094d9bf98f5c999aa3d826ee5e8b7bb}{Update}} (float)
+\item 
+bool \mbox{\hyperlink{classn2d_1_1ImageLayer_af68e22f085aea32839ec12f085d8d716}{Load}} (std\+::string, tson\+::\+Layer \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1ImageLayer_acc482883a48b83bf544a27724e054444}{Create}} (b2\+World \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1ImageLayer_aee7a8e4f03fe395977bc86d338969334}{Events}} (sf\+::\+Event \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Layer}{n2d\+::\+Layer}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Set\+Resources} (\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \&t\+\_\+resources)
+\item 
+void {\bfseries Set\+Tileset} (\mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}} \&t\+\_\+tileset)
+\item 
+void {\bfseries Set\+Grid} (glm\+::vec2 t\+\_\+grid\+\_\+size)
+\item 
+glm\+::vec2 \mbox{\hyperlink{classn2d_1_1Layer_a85bbb84d883e5aa29b9c1030c6c19419}{Get\+Correct\+Tile\+Position}} (tson\+::\+Vector2f t\+\_\+obj\+\_\+position, glm\+::vec2 t\+\_\+tile\+\_\+size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1ImageLayer_a6757324d315f3d253807fb683e57eac9}\label{classn2d_1_1ImageLayer_a6757324d315f3d253807fb683e57eac9} 
+int {\bfseries m\+\_\+texture\+\_\+id}
+\item 
+\Hypertarget{classn2d_1_1ImageLayer_abde14ac5cd2a25e1074d8140536d5f7e}\label{classn2d_1_1ImageLayer_abde14ac5cd2a25e1074d8140536d5f7e} 
+\mbox{\hyperlink{classn2d_1_1Rect}{Rect}} {\bfseries m\+\_\+rect}
+\item 
+\Hypertarget{classn2d_1_1ImageLayer_a4a4d089d0604dbb170cc7f50ae726e34}\label{classn2d_1_1ImageLayer_a4a4d089d0604dbb170cc7f50ae726e34} 
+\mbox{\hyperlink{classn2d_1_1Body}{Body}} {\bfseries m\+\_\+body}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Layer}{n2d\+::\+Layer}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+\_\+loaded} = false
+\item 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+resources}
+\item 
+\mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+tileset}
+\item 
+glm\+::vec2 {\bfseries m\+\_\+grid\+\_\+size}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1Layer}{n2d\+::\+Layer}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries id}
+\item 
+std\+::string {\bfseries name}
+\item 
+bool {\bfseries visible}
+\item 
+glm\+::vec2 {\bfseries position}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Layer}{n2d\+::\+Layer}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Set\+Default\+Data} (tson\+::\+Layer \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1ImageLayer_acc482883a48b83bf544a27724e054444}\label{classn2d_1_1ImageLayer_acc482883a48b83bf544a27724e054444} 
+\index{n2d::ImageLayer@{n2d::ImageLayer}!Create@{Create}}
+\index{Create@{Create}!n2d::ImageLayer@{n2d::ImageLayer}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily void Image\+Layer\+::\+Create (\begin{DoxyParamCaption}\item[{b2\+World \&}]{t\+\_\+world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Layer}{n2d\+::\+Layer}}.
+
+\Hypertarget{classn2d_1_1ImageLayer_a98ea2de019524488b11d0a4ca9ea81a6}\label{classn2d_1_1ImageLayer_a98ea2de019524488b11d0a4ca9ea81a6} 
+\index{n2d::ImageLayer@{n2d::ImageLayer}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::ImageLayer@{n2d::ImageLayer}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Image\+Layer\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{n2d\+::\+Drawable}}.
+
+\Hypertarget{classn2d_1_1ImageLayer_a330bda7d1e3ed3c88553120cc5f2dc56}\label{classn2d_1_1ImageLayer_a330bda7d1e3ed3c88553120cc5f2dc56} 
+\index{n2d::ImageLayer@{n2d::ImageLayer}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::ImageLayer@{n2d::ImageLayer}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Image\+Layer\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{sf\+::\+Transform \&}]{t\+\_\+transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+{\em \&t\+\_\+transform} & -\/ additional transformations reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{n2d\+::\+Drawable}}.
+
+\Hypertarget{classn2d_1_1ImageLayer_aee7a8e4f03fe395977bc86d338969334}\label{classn2d_1_1ImageLayer_aee7a8e4f03fe395977bc86d338969334} 
+\index{n2d::ImageLayer@{n2d::ImageLayer}!Events@{Events}}
+\index{Events@{Events}!n2d::ImageLayer@{n2d::ImageLayer}}
+\doxysubsubsection{\texorpdfstring{Events()}{Events()}}
+{\footnotesize\ttfamily void Image\+Layer\+::\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Event handling method. 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+event} & -\/ SFML event reference, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}{n2d\+::\+Interactive}}.
+
+\Hypertarget{classn2d_1_1ImageLayer_af68e22f085aea32839ec12f085d8d716}\label{classn2d_1_1ImageLayer_af68e22f085aea32839ec12f085d8d716} 
+\index{n2d::ImageLayer@{n2d::ImageLayer}!Load@{Load}}
+\index{Load@{Load}!n2d::ImageLayer@{n2d::ImageLayer}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily bool Image\+Layer\+::\+Load (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+dir,  }\item[{tson\+::\+Layer \&}]{t\+\_\+layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Layer}{n2d\+::\+Layer}}.
+
+\Hypertarget{classn2d_1_1ImageLayer_a0094d9bf98f5c999aa3d826ee5e8b7bb}\label{classn2d_1_1ImageLayer_a0094d9bf98f5c999aa3d826ee5e8b7bb} 
+\index{n2d::ImageLayer@{n2d::ImageLayer}!Update@{Update}}
+\index{Update@{Update}!n2d::ImageLayer@{n2d::ImageLayer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Image\+Layer\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update method 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & -\/ time tick, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} from sf\+::\+Clock and sf\+::\+Time class \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Updatable_afdd0bf94a4486b3a893ed560af5e22c6}{n2d\+::\+Updatable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/game/include/Map\+Layer.\+h\item 
+silnik/game/src/Map\+Layer.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\doxysection{tson\+::Project Class Reference}
+\hypertarget{classtson_1_1Project}{}\label{classtson_1_1Project}\index{tson::Project@{tson::Project}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1Project_ae8b2751936cc3910c32565e937af5500}\label{classtson_1_1Project_ae8b2751936cc3910c32565e937af5500} 
+{\bfseries Project} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}} $>$ json\+Parser)
+\item 
+\Hypertarget{classtson_1_1Project_a79dba55badf8d3a801ea5d3a4586a83a}\label{classtson_1_1Project_a79dba55badf8d3a801ea5d3a4586a83a} 
+{\bfseries Project} (const fs\+::path \&path, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classtson_1_1IJson}{tson\+::\+IJson}} $>$ json\+Parser)
+\item 
+\Hypertarget{classtson_1_1Project_ae928577270658157fe6ec37a75103c18}\label{classtson_1_1Project_ae928577270658157fe6ec37a75103c18} 
+bool {\bfseries parse} (const fs\+::path \&path)
+\item 
+void \mbox{\hyperlink{classtson_1_1Project_a9f1fb27c29c5ea55308fc5c05db89aab}{parse}} ()
+\item 
+\Hypertarget{classtson_1_1Project_a510191f49709fb8440713146f0bdcc57}\label{classtson_1_1Project_a510191f49709fb8440713146f0bdcc57} 
+const \mbox{\hyperlink{classtson_1_1ProjectData}{Project\+Data}} \& {\bfseries get\+Data} () const
+\item 
+\Hypertarget{classtson_1_1Project_adabe2fa1a6e0128d385fdb5c708aaf2b}\label{classtson_1_1Project_adabe2fa1a6e0128d385fdb5c708aaf2b} 
+const fs\+::path \& {\bfseries get\+Path} () const
+\item 
+\Hypertarget{classtson_1_1Project_aafd67aa3cb5fe1a3bc6db205f8b17f73}\label{classtson_1_1Project_aafd67aa3cb5fe1a3bc6db205f8b17f73} 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1ProjectFolder}{Project\+Folder}} $>$ \& {\bfseries get\+Folders} () const
+\item 
+\Hypertarget{classtson_1_1Project_a54661a680058316f801333e5083db769}\label{classtson_1_1Project_a54661a680058316f801333e5083db769} 
+\mbox{\hyperlink{classtson_1_1EnumDefinition}{tson\+::\+Enum\+Definition}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Enum\+Definition} (std\+::string\+\_\+view name)
+\item 
+\Hypertarget{classtson_1_1Project_ac8de3236ed25a153ecb5fa0ccf383853}\label{classtson_1_1Project_ac8de3236ed25a153ecb5fa0ccf383853} 
+\mbox{\hyperlink{classtson_1_1TiledClass}{tson\+::\+Tiled\+Class}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Class} (std\+::string\+\_\+view name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Project_a9f1fb27c29c5ea55308fc5c05db89aab}\label{classtson_1_1Project_a9f1fb27c29c5ea55308fc5c05db89aab} 
+\index{tson::Project@{tson::Project}!parse@{parse}}
+\index{parse@{parse}!tson::Project@{tson::Project}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily void tson\+::\+Project\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses preloaded json data. Only used during tests involving project jsons not actually read from files \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Project.\+hpp\end{DoxyCompactItemize}

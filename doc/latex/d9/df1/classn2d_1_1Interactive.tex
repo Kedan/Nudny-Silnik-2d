@@ -1,0 +1,68 @@
+\doxysection{n2d\+::Interactive Class Reference}
+\hypertarget{classn2d_1_1Interactive}{}\label{classn2d_1_1Interactive}\index{n2d::Interactive@{n2d::Interactive}}
+
+
+{\ttfamily \#include $<$Interfaces.\+h$>$}
+
+Inheritance diagram for n2d\+::Interactive\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.206897cm]{d9/df1/classn2d_1_1Interactive}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}{Events}} (sf\+::\+Event \&t\+\_\+event)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface. Abstrac class. If something sopose to react to event, should implements \doxylink{classn2d_1_1Interactive}{Interactive} interface. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}\label{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e} 
+\index{n2d::Interactive@{n2d::Interactive}!Events@{Events}}
+\index{Events@{Events}!n2d::Interactive@{n2d::Interactive}}
+\doxysubsubsection{\texorpdfstring{Events()}{Events()}}
+{\footnotesize\ttfamily virtual void n2d\+::\+Interactive\+::\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Event handling method. 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+event} & -\/ SFML event reference, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} method \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classn2d_1_1Inventory_a3db0a9c03495e8536ae75f7bb149aff7}{n2d\+::\+Inventory}}, \mbox{\hyperlink{classn2d_1_1Map_afe365ff4c4ccac18748a7eef5cc29bc5}{n2d\+::\+Map}}, \mbox{\hyperlink{classn2d_1_1ImageLayer_aee7a8e4f03fe395977bc86d338969334}{n2d\+::\+Image\+Layer}}, \mbox{\hyperlink{classn2d_1_1TileLayer_a57f46360da0015bb98d5c45971442b1c}{n2d\+::\+Tile\+Layer}}, \mbox{\hyperlink{classn2d_1_1EntityLayer_a032f0d9921d6134624d6938df04f95ec}{n2d\+::\+Entity\+Layer}}, \mbox{\hyperlink{classn2d_1_1Player_a9b0323ca1c5b32846da3e20a04fd37c2}{n2d\+::\+Player}}, and \mbox{\hyperlink{classn2d_1_1Entity_a4472cab45f62816550b634681d4a2074}{n2d\+::\+Entity}}.
+
+\Hypertarget{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}\label{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c} 
+\index{n2d::Interactive@{n2d::Interactive}!IsInteractive@{IsInteractive}}
+\index{IsInteractive@{IsInteractive}!n2d::Interactive@{n2d::Interactive}}
+\doxysubsubsection{\texorpdfstring{IsInteractive()}{IsInteractive()}}
+{\footnotesize\ttfamily bool n2d\+::\+Interactive\+::\+Is\+Interactive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return true, is object is "{}awake"{} \begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}\label{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e} 
+\index{n2d::Interactive@{n2d::Interactive}!m\_interactive@{m\_interactive}}
+\index{m\_interactive@{m\_interactive}!n2d::Interactive@{n2d::Interactive}}
+\doxysubsubsection{\texorpdfstring{m\_interactive}{m\_interactive}}
+{\footnotesize\ttfamily bool n2d\+::\+Interactive\+::m\+\_\+interactive = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\doxylink{classn2d_1_1Interactive}{Interactive} flag. If set to false, object must not react for events 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/Interfaces.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,311 @@
+\doxysection{tson\+::Object Class Reference}
+\hypertarget{classtson_1_1Object}{}\label{classtson_1_1Object}\index{tson::Object@{tson::Object}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtson_1_1Object_ad1fde9d6453d6540e059464c602a9fa3}{Object}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+bool \mbox{\hyperlink{classtson_1_1Object_a8d1afaeb2878eb4dcd5c519a4b6d9db3}{parse}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+Object\+Type \mbox{\hyperlink{classtson_1_1Object_ab23b1aacebd3f336e2276ad81c1fffe9}{get\+Object\+Type}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Object_ad4e021ff8d2eaa7c660d8b90db3ec005}{is\+Ellipse}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classtson_1_1Object_ab95d441052cc1231748e3efeee06126a}{get\+Gid}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Object_a99729d2eaf19db160178b679499a3b80}{get\+Size}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1Object_adbfd0c407766d4ce42445b4d2cc7d3a0}{get\+Id}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Object_a34304ec8a32264ea727a316dafe161bf}{get\+Name}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Object_afda3ed8a906aef01e4b834ece6965e50}{is\+Point}} () const
+\item 
+float \mbox{\hyperlink{classtson_1_1Object_a6348140db92546bd48c84dfe5712deda}{get\+Rotation}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Object_a0720e228d43b38e032beb1ddd5d47fba}{get\+Template}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Object_a57a0d7e77f6cbe037770392ac72e7a25}{get\+Type}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Object_a13328dfacc21b0b9e950b300aafc94ce}{get\+Class\+Type}} () const
+\item 
+\mbox{\hyperlink{classtson_1_1TiledClass}{tson\+::\+Tiled\+Class}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Object_abcf98f9023442eb66f4c12dd573c0397}{get\+Class}} ()
+\item 
+bool \mbox{\hyperlink{classtson_1_1Object_ab2c504d55d8ddadd40cef0ca3711d49d}{is\+Visible}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Object_a88bcc0a8b442397ea4468254bbccd7e7}{get\+Position}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} $>$ \& \mbox{\hyperlink{classtson_1_1Object_a3abca1e9aabc88855e1b187c13cfdb8f}{get\+Polygons}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} $>$ \& \mbox{\hyperlink{classtson_1_1Object_a7748b51bd933bf1d03487769edcaf9a9}{get\+Polylines}} () const
+\item 
+\mbox{\hyperlink{classtson_1_1PropertyCollection}{Property\+Collection}} \& \mbox{\hyperlink{classtson_1_1Object_ae3fed079c2129007b0b4f70c67737d1c}{get\+Properties}} ()
+\item 
+const \mbox{\hyperlink{classtson_1_1Text}{Text}} \& \mbox{\hyperlink{classtson_1_1Object_ad3d7c49ed26289d3438adfca3f0c21c5}{get\+Text}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classtson_1_1Object_a24082e07c3b08bed0ca4c23321a895f1}{get}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Object_a4d34c740f45c97a19014f5ffe334ea63}{get\+Prop}} (const std\+::string \&name)
+\item 
+Tile\+Flip\+Flags \mbox{\hyperlink{classtson_1_1Object_a376a1082001ed4f1ff5200dd735deef0}{get\+Flip\+Flags}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Object_a22e5910e077d32be2076e425be7ced87}{has\+Flip\+Flags}} (Tile\+Flip\+Flags flags)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtson_1_1Object_ad1fde9d6453d6540e059464c602a9fa3}\label{classtson_1_1Object_ad1fde9d6453d6540e059464c602a9fa3} 
+\index{tson::Object@{tson::Object}!Object@{Object}}
+\index{Object@{Object}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily tson\+::\+Object\+::\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json,  }\item[{\mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Parses a json Tiled object 
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Object_a24082e07c3b08bed0ca4c23321a895f1}\label{classtson_1_1Object_a24082e07c3b08bed0ca4c23321a895f1} 
+\index{tson::Object@{tson::Object}!get@{get}}
+\index{get@{get}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T tson\+::\+Object\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A shortcut for getting a property. Alternative to \doxylink{classtson_1_1Object_ae3fed079c2129007b0b4f70c67737d1c}{get\+Properties()}.get\+Value$<$\+T$>$("{}$<$name$>$"{}) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The template value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual value, if it exists. Otherwise\+: The default value of the type. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_abcf98f9023442eb66f4c12dd573c0397}\label{classtson_1_1Object_abcf98f9023442eb66f4c12dd573c0397} 
+\index{tson::Object@{tson::Object}!getClass@{getClass}}
+\index{getClass@{getClass}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getClass()}{getClass()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1TiledClass}{tson\+::\+Tiled\+Class}} \texorpdfstring{$\ast$}{*} tson\+::\+Object\+::get\+Class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the class information for the \textquotesingle{}type\textquotesingle{}/\textquotesingle{}class\textquotesingle{} This may only give a valid result if the map is loaded through a \doxylink{classtson_1_1Project}{tson\+::\+Project} \begin{DoxyReturn}{Returns}
+a \doxylink{classtson_1_1TiledClass}{tson\+::\+Tiled\+Class} object if related map was loaded through \doxylink{classtson_1_1Project}{tson\+::\+Project} 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a13328dfacc21b0b9e950b300aafc94ce}\label{classtson_1_1Object_a13328dfacc21b0b9e950b300aafc94ce} 
+\index{tson::Object@{tson::Object}!getClassType@{getClassType}}
+\index{getClassType@{getClassType}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getClassType()}{getClassType()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Object\+::get\+Class\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}class\textquotesingle{}\+: String assigned to class field in editor This was renamed from \textquotesingle{}type\textquotesingle{} to \textquotesingle{}class\textquotesingle{} in Tiled v1.\+9 \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a376a1082001ed4f1ff5200dd735deef0}\label{classtson_1_1Object_a376a1082001ed4f1ff5200dd735deef0} 
+\index{tson::Object@{tson::Object}!getFlipFlags@{getFlipFlags}}
+\index{getFlipFlags@{getFlipFlags}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getFlipFlags()}{getFlipFlags()}}
+{\footnotesize\ttfamily tson\+::\+Tile\+Flip\+Flags tson\+::\+Object\+::get\+Flip\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get all flip flags \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_ab95d441052cc1231748e3efeee06126a}\label{classtson_1_1Object_ab95d441052cc1231748e3efeee06126a} 
+\index{tson::Object@{tson::Object}!getGid@{getGid}}
+\index{getGid@{getGid}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getGid()}{getGid()}}
+{\footnotesize\ttfamily uint32\+\_\+t tson\+::\+Object\+::get\+Gid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}gid\textquotesingle{}\+: GID, only if object comes from a Tilemap \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_adbfd0c407766d4ce42445b4d2cc7d3a0}\label{classtson_1_1Object_adbfd0c407766d4ce42445b4d2cc7d3a0} 
+\index{tson::Object@{tson::Object}!getId@{getId}}
+\index{getId@{getId}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int tson\+::\+Object\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}id\textquotesingle{}\+: Incremental id -\/ unique across all objects \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a34304ec8a32264ea727a316dafe161bf}\label{classtson_1_1Object_a34304ec8a32264ea727a316dafe161bf} 
+\index{tson::Object@{tson::Object}!getName@{getName}}
+\index{getName@{getName}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Object\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}name\textquotesingle{}\+: String assigned to name field in editor \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_ab23b1aacebd3f336e2276ad81c1fffe9}\label{classtson_1_1Object_ab23b1aacebd3f336e2276ad81c1fffe9} 
+\index{tson::Object@{tson::Object}!getObjectType@{getObjectType}}
+\index{getObjectType@{getObjectType}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getObjectType()}{getObjectType()}}
+{\footnotesize\ttfamily tson\+::\+Object\+Type tson\+::\+Object\+::get\+Object\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets what type of object this is. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a3abca1e9aabc88855e1b187c13cfdb8f}\label{classtson_1_1Object_a3abca1e9aabc88855e1b187c13cfdb8f} 
+\index{tson::Object@{tson::Object}!getPolygons@{getPolygons}}
+\index{getPolygons@{getPolygons}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getPolygons()}{getPolygons()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} $>$ \& tson\+::\+Object\+::get\+Polygons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}polygon\textquotesingle{}\+: A list of x,y coordinates in pixels. If this is a Polygon type, this function will return the points used to create it \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a7748b51bd933bf1d03487769edcaf9a9}\label{classtson_1_1Object_a7748b51bd933bf1d03487769edcaf9a9} 
+\index{tson::Object@{tson::Object}!getPolylines@{getPolylines}}
+\index{getPolylines@{getPolylines}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getPolylines()}{getPolylines()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} $>$ \& tson\+::\+Object\+::get\+Polylines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}polyline\textquotesingle{}\+: A list of x,y coordinates in pixels If this is a Polyline type, this function will return the points used to create it \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a88bcc0a8b442397ea4468254bbccd7e7}\label{classtson_1_1Object_a88bcc0a8b442397ea4468254bbccd7e7} 
+\index{tson::Object@{tson::Object}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Object\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}x\textquotesingle{} and \textquotesingle{}y\textquotesingle{}\+: coordinate in pixels \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a4d34c740f45c97a19014f5ffe334ea63}\label{classtson_1_1Object_a4d34c740f45c97a19014f5ffe334ea63} 
+\index{tson::Object@{tson::Object}!getProp@{getProp}}
+\index{getProp@{getProp}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getProp()}{getProp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} tson\+::\+Object\+::get\+Prop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shortcut for getting a property object. Alternative to \doxylink{classtson_1_1Object_ae3fed079c2129007b0b4f70c67737d1c}{get\+Properties()}.get\+Property("{}$<$name$>$"{}); 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_ae3fed079c2129007b0b4f70c67737d1c}\label{classtson_1_1Object_ae3fed079c2129007b0b4f70c67737d1c} 
+\index{tson::Object@{tson::Object}!getProperties@{getProperties}}
+\index{getProperties@{getProperties}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getProperties()}{getProperties()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson\+::\+Property\+Collection}} \& tson\+::\+Object\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}properties\textquotesingle{}\+: A list of properties (name, value, type). \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a6348140db92546bd48c84dfe5712deda}\label{classtson_1_1Object_a6348140db92546bd48c84dfe5712deda} 
+\index{tson::Object@{tson::Object}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float tson\+::\+Object\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}rotation\textquotesingle{}\+: Angle in degrees clockwise \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a99729d2eaf19db160178b679499a3b80}\label{classtson_1_1Object_a99729d2eaf19db160178b679499a3b80} 
+\index{tson::Object@{tson::Object}!getSize@{getSize}}
+\index{getSize@{getSize}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Object\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+x = \textquotesingle{}width\textquotesingle{} (Width in pixels), y = \textquotesingle{}height\textquotesingle{} (Height in pixels). Ignored if using a gid.) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a0720e228d43b38e032beb1ddd5d47fba}\label{classtson_1_1Object_a0720e228d43b38e032beb1ddd5d47fba} 
+\index{tson::Object@{tson::Object}!getTemplate@{getTemplate}}
+\index{getTemplate@{getTemplate}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getTemplate()}{getTemplate()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Object\+::get\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}template\textquotesingle{}\+: Reference to a template file, in case object is a template instance \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_ad3d7c49ed26289d3438adfca3f0c21c5}\label{classtson_1_1Object_ad3d7c49ed26289d3438adfca3f0c21c5} 
+\index{tson::Object@{tson::Object}!getText@{getText}}
+\index{getText@{getText}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Text}{tson\+::\+Text}} \& tson\+::\+Object\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}type\textquotesingle{}\+: String assigned to type field in editor \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a57a0d7e77f6cbe037770392ac72e7a25}\label{classtson_1_1Object_a57a0d7e77f6cbe037770392ac72e7a25} 
+\index{tson::Object@{tson::Object}!getType@{getType}}
+\index{getType@{getType}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Object\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}type\textquotesingle{}\+: String assigned to type field in editor This was renamed to \textquotesingle{}class\textquotesingle{} in Tiled v1.\+9 \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a22e5910e077d32be2076e425be7ced87}\label{classtson_1_1Object_a22e5910e077d32be2076e425be7ced87} 
+\index{tson::Object@{tson::Object}!hasFlipFlags@{hasFlipFlags}}
+\index{hasFlipFlags@{hasFlipFlags}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{hasFlipFlags()}{hasFlipFlags()}}
+{\footnotesize\ttfamily bool tson\+::\+Object\+::has\+Flip\+Flags (\begin{DoxyParamCaption}\item[{Tile\+Flip\+Flags}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Which flags to check for. Several flags can be checked at once using the bitwise or operator. Example\+: has\+Flip\+Flags(Tile\+Flip\+Flags\+::\+Vertically \texorpdfstring{$\vert$}{|} Tile\+Flip\+Flags\+::\+Horizontally)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the flag(s) specified are set 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_ad4e021ff8d2eaa7c660d8b90db3ec005}\label{classtson_1_1Object_ad4e021ff8d2eaa7c660d8b90db3ec005} 
+\index{tson::Object@{tson::Object}!isEllipse@{isEllipse}}
+\index{isEllipse@{isEllipse}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{isEllipse()}{isEllipse()}}
+{\footnotesize\ttfamily bool tson\+::\+Object\+::is\+Ellipse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}ellipse\textquotesingle{}\+: Used to mark an object as an ellipse \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_afda3ed8a906aef01e4b834ece6965e50}\label{classtson_1_1Object_afda3ed8a906aef01e4b834ece6965e50} 
+\index{tson::Object@{tson::Object}!isPoint@{isPoint}}
+\index{isPoint@{isPoint}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{isPoint()}{isPoint()}}
+{\footnotesize\ttfamily bool tson\+::\+Object\+::is\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}point\textquotesingle{}\+: Used to mark an object as a point \begin{DoxyReturn}{Returns}
+true if the object is of type point 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_ab2c504d55d8ddadd40cef0ca3711d49d}\label{classtson_1_1Object_ab2c504d55d8ddadd40cef0ca3711d49d} 
+\index{tson::Object@{tson::Object}!isVisible@{isVisible}}
+\index{isVisible@{isVisible}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{isVisible()}{isVisible()}}
+{\footnotesize\ttfamily bool tson\+::\+Object\+::is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Declared in \doxylink{tileson__forward_8hpp_source}{tileson\+\_\+forward.\+hpp}
+
+\textquotesingle{}visible\textquotesingle{}\+: Whether object is shown in editor. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Object_a8d1afaeb2878eb4dcd5c519a4b6d9db3}\label{classtson_1_1Object_a8d1afaeb2878eb4dcd5c519a4b6d9db3} 
+\index{tson::Object@{tson::Object}!parse@{parse}}
+\index{parse@{parse}!tson::Object@{tson::Object}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool tson\+::\+Object\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json,  }\item[{\mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses a json Tiled object and automatically determines the object type based on the data presented. Call \doxylink{classtson_1_1Object_ab23b1aacebd3f336e2276ad81c1fffe9}{get\+Object\+Type()} to see what object type it is. 
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all mandatory fields was found. false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Object.\+hpp\item 
+silnik/core/lib/include/tileson/common/tileson\+\_\+forward.\+hpp\end{DoxyCompactItemize}

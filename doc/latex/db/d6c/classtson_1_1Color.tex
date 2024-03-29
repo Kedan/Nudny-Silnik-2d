@@ -1,0 +1,129 @@
+\doxysection{tson\+::Color\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classtson_1_1Color}{}\label{classtson_1_1Color}\index{tson::Color$<$ T $>$@{tson::Color$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1Color_a6cc721090af4b257e13f1d4e19ed4de6}\label{classtson_1_1Color_a6cc721090af4b257e13f1d4e19ed4de6} 
+{\bfseries Color} (const std\+::string \&color)
+\item 
+\mbox{\hyperlink{classtson_1_1Color_a7e37cedb8a92f94d65886985db957d55}{Color}} (T red, T green, T blue, T alpha)
+\item 
+\Hypertarget{classtson_1_1Color_ad69ae67e1691738d2544d0f3a73976be}\label{classtson_1_1Color_ad69ae67e1691738d2544d0f3a73976be} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classtson_1_1Color}{Color}} \&rhs) const
+\item 
+\Hypertarget{classtson_1_1Color_af782d8d982c5158536008d3fcc64036a}\label{classtson_1_1Color_af782d8d982c5158536008d3fcc64036a} 
+bool {\bfseries operator==} (const std\+::string \&rhs) const
+\item 
+\Hypertarget{classtson_1_1Color_ab5fbaa7f56a3f0caa42fe806ca300b0a}\label{classtson_1_1Color_ab5fbaa7f56a3f0caa42fe806ca300b0a} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classtson_1_1Color}{Color}} \&rhs) const
+\item 
+\mbox{\hyperlink{classtson_1_1Color}{Color}}$<$ float $>$ \mbox{\hyperlink{classtson_1_1Color_a7829ed9dd232a30f8c9977aa63800d3b}{as\+Float}} ()
+\item 
+\mbox{\hyperlink{classtson_1_1Color}{Color}}$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classtson_1_1Color_a23692d80c57432d1b241f0c94d413eea}{as\+Int}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}{r}}
+\item 
+T \mbox{\hyperlink{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68}{g}}
+\item 
+T \mbox{\hyperlink{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218}{b}}
+\item 
+T \mbox{\hyperlink{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee}{a}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtson_1_1Color_a7e37cedb8a92f94d65886985db957d55}\label{classtson_1_1Color_a7e37cedb8a92f94d65886985db957d55} 
+\index{tson::Color$<$ T $>$@{tson::Color$<$ T $>$}!Color@{Color}}
+\index{Color@{Color}!tson::Color$<$ T $>$@{tson::Color$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Color()}{Color()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Color}}$<$ T $>$\+::\+Color (\begin{DoxyParamCaption}\item[{T}]{red,  }\item[{T}]{green,  }\item[{T}]{blue,  }\item[{T}]{alpha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Create a new color in rgba (red, green, blue, alpha) format 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the template type for each channel. Usually uint8\+\_\+t (8-\/bit int) or float. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em red} & Red channel \\
+\hline
+{\em green} & Green channel \\
+\hline
+{\em blue} & Blue channel \\
+\hline
+{\em alpha} & Alpha channel \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Color_a7829ed9dd232a30f8c9977aa63800d3b}\label{classtson_1_1Color_a7829ed9dd232a30f8c9977aa63800d3b} 
+\index{tson::Color$<$ T $>$@{tson::Color$<$ T $>$}!asFloat@{asFloat}}
+\index{asFloat@{asFloat}!tson::Color$<$ T $>$@{tson::Color$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{asFloat()}{asFloat()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+tson\+::\+Colorf \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Color}}$<$ T $>$\+::as\+Float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \doxylink{classtson_1_1Color}{Color} as a float. Only useful if the template related to the current color is NOT float 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The template type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+If the T type is float, the value will be returned as a copy of itself. Else\+: All values will be divided by 255 before returning. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Color_a23692d80c57432d1b241f0c94d413eea}\label{classtson_1_1Color_a23692d80c57432d1b241f0c94d413eea} 
+\index{tson::Color$<$ T $>$@{tson::Color$<$ T $>$}!asInt@{asInt}}
+\index{asInt@{asInt}!tson::Color$<$ T $>$@{tson::Color$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{asInt()}{asInt()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Colori}} \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Color}}$<$ T $>$\+::as\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the \doxylink{classtson_1_1Color}{Color} as an 32-\/bit variable, where each channel is 8-\/bit. Only useful if the template related to the current color is NOT already 8-\/bit int 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The template type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+If the T type is float, the value of each channel will be multiplied by 255. Else\+: The value will be returned as a copy of itself. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee}\label{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee} 
+\index{tson::Color$<$ T $>$@{tson::Color$<$ T $>$}!a@{a}}
+\index{a@{a}!tson::Color$<$ T $>$@{tson::Color$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Color}}$<$ T $>$\+::a}
+
+Alpha \Hypertarget{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218}\label{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218} 
+\index{tson::Color$<$ T $>$@{tson::Color$<$ T $>$}!b@{b}}
+\index{b@{b}!tson::Color$<$ T $>$@{tson::Color$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Color}}$<$ T $>$\+::b}
+
+Blue \Hypertarget{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68}\label{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68} 
+\index{tson::Color$<$ T $>$@{tson::Color$<$ T $>$}!g@{g}}
+\index{g@{g}!tson::Color$<$ T $>$@{tson::Color$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{g}{g}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Color}}$<$ T $>$\+::g}
+
+Green \Hypertarget{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}\label{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95} 
+\index{tson::Color$<$ T $>$@{tson::Color$<$ T $>$}!r@{r}}
+\index{r@{r}!tson::Color$<$ T $>$@{tson::Color$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Color}}$<$ T $>$\+::r}
+
+Red 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/objects/Color.\+hpp\end{DoxyCompactItemize}

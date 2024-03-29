@@ -1,0 +1,525 @@
+\doxysection{tson\+::Layer Class Reference}
+\hypertarget{classtson_1_1Layer}{}\label{classtson_1_1Layer}\index{tson::Layer@{tson::Layer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtson_1_1Layer_aa0278ab14f6ed1f74534767efbd624cf}{Layer}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+bool \mbox{\hyperlink{classtson_1_1Layer_a333e6e81daffaa8a1632771261152806}{parse}} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Layer_a7cfd01a29846a700f256866f648866b6}{get\+Compression}} () const
+\item 
+const std\+::vector$<$ uint32\+\_\+t $>$ \& \mbox{\hyperlink{classtson_1_1Layer_a7bc9c4babb001e70724bcac87ff1a44b}{get\+Data}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Layer_a127b8b53be6689337ccaae44662b4bd0}{get\+Base64\+Data}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Layer_af18c1e3bf8edacd7e77360cb8cfd22d4}{get\+Draw\+Order}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Layer_a72795bb8357a832ca73b8c92c3b996e7}{get\+Encoding}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1Layer_a23a500cb6656aa0daacede9d8e2fcf5b}{get\+Id}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Layer_ac803ebda218541ba725320b2d96b91a0}{get\+Image}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Layer_a32db2db6de49b6daf221ae06a3b3f7e1}{get\+Name}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2f}} \& \mbox{\hyperlink{classtson_1_1Layer_a8f0d856ccfe72514e73fa08981469135}{get\+Offset}} () const
+\item 
+float \mbox{\hyperlink{classtson_1_1Layer_a72925a3b4e073219b49b5e322b3e190c}{get\+Opacity}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Layer_a4998bb3f1d21c2a0e163dbc95f6dbefd}{get\+Size}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Color}{Colori}} \& \mbox{\hyperlink{classtson_1_1Layer_ab0fe1d3e92b6d3b240fd8301c668512a}{get\+Transparent\+Color}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2f}} \& \mbox{\hyperlink{classtson_1_1Layer_aca6291922deff267a3c9c5fa1af771df}{get\+Parallax}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Layer_a7ebac3c8bb3bc4ea8ac5a20d8deedb6a}{has\+RepeatX}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Layer_a26776c1d139279e0ee2a12bbd3fba49c}{has\+RepeatY}} () const
+\item 
+Layer\+Type \mbox{\hyperlink{classtson_1_1Layer_a3987553cdfc9e9718e270a7b8e11560e}{get\+Type}} () const
+\item 
+\Hypertarget{classtson_1_1Layer_aaf1ef9039ad8a12bcf83ca8201da7d0f}\label{classtson_1_1Layer_aaf1ef9039ad8a12bcf83ca8201da7d0f} 
+const std\+::string \& {\bfseries get\+Class\+Type} () const
+\item 
+\Hypertarget{classtson_1_1Layer_a536573c7a43d6e3bbd81fe621163021c}\label{classtson_1_1Layer_a536573c7a43d6e3bbd81fe621163021c} 
+\mbox{\hyperlink{classtson_1_1TiledClass}{tson\+::\+Tiled\+Class}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Class} ()
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Layer_aa67545069934024f7383c8c59026ce38}{get\+Type\+Str}} () const
+\item 
+bool \mbox{\hyperlink{classtson_1_1Layer_a9f15627018a6cd843babcd177c910bce}{is\+Visible}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1Layer_aebf4eec1d654fb9c79bfefccb435fa20}{getX}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1Layer_af68877b9894e9ee9a4fecaa0081737e4}{getY}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Chunk}{tson\+::\+Chunk}} $>$ \& \mbox{\hyperlink{classtson_1_1Layer_a631f1ba160425ef531d9dd1b2d2a975e}{get\+Chunks}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Layer}{tson\+::\+Layer}} $>$ \& \mbox{\hyperlink{classtson_1_1Layer_a0d5a4c4f6f56f89b10d266cb90a86ae1}{get\+Layers}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} $>$ \& \mbox{\hyperlink{classtson_1_1Layer_acc7f2d5e9a4a4d1bd16b02ce8ad61783}{get\+Objects}} ()
+\item 
+\mbox{\hyperlink{classtson_1_1PropertyCollection}{Property\+Collection}} \& \mbox{\hyperlink{classtson_1_1Layer_a12978038cdfa9cbeb50f016eb321e305}{get\+Properties}} ()
+\item 
+\mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Layer_a2d3b4f227b5f1ac37f1f41ad511b0d44}{get\+Obj}} (int id)
+\item 
+\mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Layer_a1b635e2b5a9aec6921990b4946689475}{first\+Obj}} (const std\+::string \&name)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} $>$ \mbox{\hyperlink{classtson_1_1Layer_af4ce4349ec4cd19e903ce3078712cc48}{get\+Objects\+By\+Name}} (const std\+::string \&name)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} $>$ \mbox{\hyperlink{classtson_1_1Layer_a02c33010f8a26d26503f75f7d15024d3}{get\+Objects\+By\+Type}} (tson\+::\+Object\+Type type)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classtson_1_1Layer_a4d629dd00219fa52ac138107a72c0631}{get}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Layer_a940b26d0a913c34bd4232a284a4779af}{get\+Prop}} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classtson_1_1Layer_a1bfad85349d2f026201b7cad0419878b}{assign\+Tile\+Map}} (std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}tile\+Map)
+\item 
+void \mbox{\hyperlink{classtson_1_1Layer_a0fda78f286ab1f0179864b43a875b18a}{create\+Tile\+Data}} (const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \&map\+Size, bool is\+Infinite\+Map)
+\item 
+const std\+::map$<$ std\+::tuple$<$ int, int $>$, \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classtson_1_1Layer_a0bc443cd1c272a6f6fbf4cca77121ab6}{get\+Tile\+Data}} () const
+\item 
+\mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Layer_a635667a7a59e06bac9613f9e675d2cbf}{get\+Tile\+Data}} (int x, int y)
+\item 
+const \mbox{\hyperlink{classtson_1_1Color}{Colori}} \& \mbox{\hyperlink{classtson_1_1Layer_abd7f24d6450724a93844dd464caa92ae}{get\+Tint\+Color}} () const
+\item 
+\mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Layer_a670540bd9efc9e0eb5279086ea45f408}{get\+Map}} () const
+\item 
+\Hypertarget{classtson_1_1Layer_a345713f20c9e9f6df0d0069be445e908}\label{classtson_1_1Layer_a345713f20c9e9f6df0d0069be445e908} 
+std\+::map$<$ std\+::tuple$<$ int, int $>$, \mbox{\hyperlink{classtson_1_1TileObject}{tson\+::\+Tile\+Object}} $>$ \& {\bfseries get\+Tile\+Objects} ()
+\item 
+\Hypertarget{classtson_1_1Layer_ab353a333b82037ab89c065d9709d2570}\label{classtson_1_1Layer_ab353a333b82037ab89c065d9709d2570} 
+\mbox{\hyperlink{classtson_1_1TileObject}{tson\+::\+Tile\+Object}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Tile\+Object} (int x, int y)
+\item 
+\Hypertarget{classtson_1_1Layer_a83b0999989afa4997809a2e1b3fbfa03}\label{classtson_1_1Layer_a83b0999989afa4997809a2e1b3fbfa03} 
+const std\+::set$<$ uint32\+\_\+t $>$ \& {\bfseries get\+Unique\+Flagged\+Tiles} () const
+\item 
+\Hypertarget{classtson_1_1Layer_a6f27802a9e68c9c6539921af7a42a81f}\label{classtson_1_1Layer_a6f27802a9e68c9c6539921af7a42a81f} 
+void {\bfseries resolve\+Flagged\+Tiles} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classtson_1_1Layer_aa0278ab14f6ed1f74534767efbd624cf}\label{classtson_1_1Layer_aa0278ab14f6ed1f74534767efbd624cf} 
+\index{tson::Layer@{tson::Layer}!Layer@{Layer}}
+\index{Layer@{Layer}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{Layer()}{Layer()}}
+{\footnotesize\ttfamily tson\+::\+Layer\+::\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json,  }\item[{\mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses a Tiled layer from json 
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Layer_a1bfad85349d2f026201b7cad0419878b}\label{classtson_1_1Layer_a1bfad85349d2f026201b7cad0419878b} 
+\index{tson::Layer@{tson::Layer}!assignTileMap@{assignTileMap}}
+\index{assignTileMap@{assignTileMap}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{assignTileMap()}{assignTileMap()}}
+{\footnotesize\ttfamily void tson\+::\+Layer\+::assign\+Tile\+Map (\begin{DoxyParamCaption}\item[{std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*}}]{tile\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assigns a tilemap of pointers to existing tiles. 
+\begin{DoxyParams}{Parameters}
+{\em tile\+Map} & The tilemap. key\+: tile id, value\+: pointer to \doxylink{classtson_1_1Tile}{Tile}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtson_1_1Layer_a0fda78f286ab1f0179864b43a875b18a}\label{classtson_1_1Layer_a0fda78f286ab1f0179864b43a875b18a} 
+\index{tson::Layer@{tson::Layer}!createTileData@{createTileData}}
+\index{createTileData@{createTileData}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{createTileData()}{createTileData()}}
+{\footnotesize\ttfamily void tson\+::\+Layer\+::create\+Tile\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \&}]{map\+Size,  }\item[{bool}]{is\+Infinite\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is only supported for non-\/infinite maps!
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+Size} & The size of the map \\
+\hline
+{\em is\+Infinite\+Map} & Whether or not the current map is infinte. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtson_1_1Layer_a1b635e2b5a9aec6921990b4946689475}\label{classtson_1_1Layer_a1b635e2b5a9aec6921990b4946689475} 
+\index{tson::Layer@{tson::Layer}!firstObj@{firstObj}}
+\index{firstObj@{firstObj}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{firstObj()}{firstObj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} \texorpdfstring{$\ast$}{*} tson\+::\+Layer\+::first\+Obj (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the first object with the given name 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the object to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the object if found. nullptr otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a4d629dd00219fa52ac138107a72c0631}\label{classtson_1_1Layer_a4d629dd00219fa52ac138107a72c0631} 
+\index{tson::Layer@{tson::Layer}!get@{get}}
+\index{get@{get}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T tson\+::\+Layer\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A shortcut for getting a property. Alternative to \doxylink{classtson_1_1Layer_a12978038cdfa9cbeb50f016eb321e305}{get\+Properties()}.get\+Value$<$\+T$>$("{}$<$name$>$"{}) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The template value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual value, if it exists. Otherwise\+: The default value of the type. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a127b8b53be6689337ccaae44662b4bd0}\label{classtson_1_1Layer_a127b8b53be6689337ccaae44662b4bd0} 
+\index{tson::Layer@{tson::Layer}!getBase64Data@{getBase64Data}}
+\index{getBase64Data@{getBase64Data}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getBase64Data()}{getBase64Data()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Layer\+::get\+Base64\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}data\textquotesingle{} (when string)\+: Array of unsigned int (GIDs) or base64-\/encoded data. tilelayer only. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a631f1ba160425ef531d9dd1b2d2a975e}\label{classtson_1_1Layer_a631f1ba160425ef531d9dd1b2d2a975e} 
+\index{tson::Layer@{tson::Layer}!getChunks@{getChunks}}
+\index{getChunks@{getChunks}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getChunks()}{getChunks()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Chunk}{tson\+::\+Chunk}} $>$ \& tson\+::\+Layer\+::get\+Chunks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}chunks\textquotesingle{}\+: Array of chunks (optional). tilelayer only. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a7cfd01a29846a700f256866f648866b6}\label{classtson_1_1Layer_a7cfd01a29846a700f256866f648866b6} 
+\index{tson::Layer@{tson::Layer}!getCompression@{getCompression}}
+\index{getCompression@{getCompression}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getCompression()}{getCompression()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Layer\+::get\+Compression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}compression\textquotesingle{}\+: zlib, gzip or empty (default). tilelayer only. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a7bc9c4babb001e70724bcac87ff1a44b}\label{classtson_1_1Layer_a7bc9c4babb001e70724bcac87ff1a44b} 
+\index{tson::Layer@{tson::Layer}!getData@{getData}}
+\index{getData@{getData}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const std\+::vector$<$ uint32\+\_\+t $>$ \& tson\+::\+Layer\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}data\textquotesingle{} (when uint array)\+: Array of unsigned int (GIDs) or base64-\/encoded data. tilelayer only. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_af18c1e3bf8edacd7e77360cb8cfd22d4}\label{classtson_1_1Layer_af18c1e3bf8edacd7e77360cb8cfd22d4} 
+\index{tson::Layer@{tson::Layer}!getDrawOrder@{getDrawOrder}}
+\index{getDrawOrder@{getDrawOrder}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getDrawOrder()}{getDrawOrder()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Layer\+::get\+Draw\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}draworder\textquotesingle{}\+: topdown (default) or index. objectgroup only. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a72795bb8357a832ca73b8c92c3b996e7}\label{classtson_1_1Layer_a72795bb8357a832ca73b8c92c3b996e7} 
+\index{tson::Layer@{tson::Layer}!getEncoding@{getEncoding}}
+\index{getEncoding@{getEncoding}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getEncoding()}{getEncoding()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Layer\+::get\+Encoding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}encoding\textquotesingle{}\+: csv (default) or base64. tilelayer only. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a23a500cb6656aa0daacede9d8e2fcf5b}\label{classtson_1_1Layer_a23a500cb6656aa0daacede9d8e2fcf5b} 
+\index{tson::Layer@{tson::Layer}!getId@{getId}}
+\index{getId@{getId}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int tson\+::\+Layer\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}id\textquotesingle{}\+: Incremental id -\/ unique across all layers \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_ac803ebda218541ba725320b2d96b91a0}\label{classtson_1_1Layer_ac803ebda218541ba725320b2d96b91a0} 
+\index{tson::Layer@{tson::Layer}!getImage@{getImage}}
+\index{getImage@{getImage}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getImage()}{getImage()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Layer\+::get\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}image\textquotesingle{}\+: Image used by this layer. imagelayer only. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a0d5a4c4f6f56f89b10d266cb90a86ae1}\label{classtson_1_1Layer_a0d5a4c4f6f56f89b10d266cb90a86ae1} 
+\index{tson::Layer@{tson::Layer}!getLayers@{getLayers}}
+\index{getLayers@{getLayers}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getLayers()}{getLayers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Layer}{tson\+::\+Layer}} $>$ \& tson\+::\+Layer\+::get\+Layers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}layers\textquotesingle{}\+: Array of layers. group on \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a670540bd9efc9e0eb5279086ea45f408}\label{classtson_1_1Layer_a670540bd9efc9e0eb5279086ea45f408} 
+\index{tson::Layer@{tson::Layer}!getMap@{getMap}}
+\index{getMap@{getMap}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getMap()}{getMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*} tson\+::\+Layer\+::get\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Used for getting the \doxylink{classtson_1_1Map}{tson\+::\+Map} who is the parent of this \doxylink{classtson_1_1Layer}{Layer}. \begin{DoxyReturn}{Returns}
+a pointer to the \doxylink{classtson_1_1Map}{tson\+::\+Map} where this layer is contained. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a32db2db6de49b6daf221ae06a3b3f7e1}\label{classtson_1_1Layer_a32db2db6de49b6daf221ae06a3b3f7e1} 
+\index{tson::Layer@{tson::Layer}!getName@{getName}}
+\index{getName@{getName}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Layer\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}name\textquotesingle{}\+: Name assigned to this layer \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a2d3b4f227b5f1ac37f1f41ad511b0d44}\label{classtson_1_1Layer_a2d3b4f227b5f1ac37f1f41ad511b0d44} 
+\index{tson::Layer@{tson::Layer}!getObj@{getObj}}
+\index{getObj@{getObj}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getObj()}{getObj()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} \texorpdfstring{$\ast$}{*} tson\+::\+Layer\+::get\+Obj (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an object by ID 
+\begin{DoxyParams}{Parameters}
+{\em id} & Unique ID of the object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the object if found. nullptr otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_acc7f2d5e9a4a4d1bd16b02ce8ad61783}\label{classtson_1_1Layer_acc7f2d5e9a4a4d1bd16b02ce8ad61783} 
+\index{tson::Layer@{tson::Layer}!getObjects@{getObjects}}
+\index{getObjects@{getObjects}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getObjects()}{getObjects()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} $>$ \& tson\+::\+Layer\+::get\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}objects\textquotesingle{}\+: Array of objects. objectgroup only. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_af4ce4349ec4cd19e903ce3078712cc48}\label{classtson_1_1Layer_af4ce4349ec4cd19e903ce3078712cc48} 
+\index{tson::Layer@{tson::Layer}!getObjectsByName@{getObjectsByName}}
+\index{getObjectsByName@{getObjectsByName}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getObjectsByName()}{getObjectsByName()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} $>$ tson\+::\+Layer\+::get\+Objects\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copies all objects with a name that equals the parameter 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the objects to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All objects with a matching name 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a02c33010f8a26d26503f75f7d15024d3}\label{classtson_1_1Layer_a02c33010f8a26d26503f75f7d15024d3} 
+\index{tson::Layer@{tson::Layer}!getObjectsByType@{getObjectsByType}}
+\index{getObjectsByType@{getObjectsByType}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getObjectsByType()}{getObjectsByType()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Object}{tson\+::\+Object}} $>$ tson\+::\+Layer\+::get\+Objects\+By\+Type (\begin{DoxyParamCaption}\item[{tson\+::\+Object\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copies all objects with a type that equals the parameter 
+\begin{DoxyParams}{Parameters}
+{\em type} & Layer\+Type of the objects to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+All objects with a matching type 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a8f0d856ccfe72514e73fa08981469135}\label{classtson_1_1Layer_a8f0d856ccfe72514e73fa08981469135} 
+\index{tson::Layer@{tson::Layer}!getOffset@{getOffset}}
+\index{getOffset@{getOffset}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getOffset()}{getOffset()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2f}} \& tson\+::\+Layer\+::get\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}offsetx\textquotesingle{} and \textquotesingle{}offsety\textquotesingle{}\+: Horizontal and Vertical layer offset in pixels (default\+: \{0, 0\}) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a72925a3b4e073219b49b5e322b3e190c}\label{classtson_1_1Layer_a72925a3b4e073219b49b5e322b3e190c} 
+\index{tson::Layer@{tson::Layer}!getOpacity@{getOpacity}}
+\index{getOpacity@{getOpacity}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getOpacity()}{getOpacity()}}
+{\footnotesize\ttfamily float tson\+::\+Layer\+::get\+Opacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}opacity\textquotesingle{}\+: Value between 0 and 1 \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_aca6291922deff267a3c9c5fa1af771df}\label{classtson_1_1Layer_aca6291922deff267a3c9c5fa1af771df} 
+\index{tson::Layer@{tson::Layer}!getParallax@{getParallax}}
+\index{getParallax@{getParallax}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getParallax()}{getParallax()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2f}} \& tson\+::\+Layer\+::get\+Parallax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+New in Tiled v1.\+5 Gets the parallax factor for current layer. Defaults to 1. \begin{DoxyReturn}{Returns}
+A vector with the x and y values of the parallax factor. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a940b26d0a913c34bd4232a284a4779af}\label{classtson_1_1Layer_a940b26d0a913c34bd4232a284a4779af} 
+\index{tson::Layer@{tson::Layer}!getProp@{getProp}}
+\index{getProp@{getProp}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getProp()}{getProp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} tson\+::\+Layer\+::get\+Prop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shortcut for getting a property object. Alternative to \doxylink{classtson_1_1Layer_a12978038cdfa9cbeb50f016eb321e305}{get\+Properties()}.get\+Property("{}$<$name$>$"{}); 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a12978038cdfa9cbeb50f016eb321e305}\label{classtson_1_1Layer_a12978038cdfa9cbeb50f016eb321e305} 
+\index{tson::Layer@{tson::Layer}!getProperties@{getProperties}}
+\index{getProperties@{getProperties}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getProperties()}{getProperties()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson\+::\+Property\+Collection}} \& tson\+::\+Layer\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}properties\textquotesingle{}\+: A list of properties (name, value, type). \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a4998bb3f1d21c2a0e163dbc95f6dbefd}\label{classtson_1_1Layer_a4998bb3f1d21c2a0e163dbc95f6dbefd} 
+\index{tson::Layer@{tson::Layer}!getSize@{getSize}}
+\index{getSize@{getSize}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Layer\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+x = \textquotesingle{}width\textquotesingle{}\+: (Column count. Same as map width for fixed-\/size maps.) y = \textquotesingle{}height\textquotesingle{}\+: Row count. Same as map height for fixed-\/size maps. \begin{DoxyReturn}{Returns}
+width and height as a single size 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a0bc443cd1c272a6f6fbf4cca77121ab6}\label{classtson_1_1Layer_a0bc443cd1c272a6f6fbf4cca77121ab6} 
+\index{tson::Layer@{tson::Layer}!getTileData@{getTileData}}
+\index{getTileData@{getTileData}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getTileData()}{getTileData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const std\+::map$<$ std\+::tuple$<$ int, int $>$, \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*} $>$ \& tson\+::\+Layer\+::get\+Tile\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get tile data as some kind of map with x and y position with pointers to existing tiles. \doxylink{classtson_1_1Map}{Map} only contains tiles that are not empty. x and y position is in tile units.
+
+Example of getting tile from the returned map\+:
+
+\doxylink{classtson_1_1Tile}{Tile} \texorpdfstring{$\ast$}{*}tile = tile\+Data\mbox{[}\{0, 4\}\mbox{]};
+
+\begin{DoxyReturn}{Returns}
+A map that represents the data returned from \doxylink{classtson_1_1Layer_a7bc9c4babb001e70724bcac87ff1a44b}{get\+Data()} in a 2D map with \doxylink{classtson_1_1Tile}{Tile} pointers. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a635667a7a59e06bac9613f9e675d2cbf}\label{classtson_1_1Layer_a635667a7a59e06bac9613f9e675d2cbf} 
+\index{tson::Layer@{tson::Layer}!getTileData@{getTileData}}
+\index{getTileData@{getTileData}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getTileData()}{getTileData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*} tson\+::\+Layer\+::get\+Tile\+Data (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A safe way to get tile data Get tile data as some kind of map with x and y position with pointers to existing tiles. \doxylink{classtson_1_1Map}{Map} only contains tiles that are not empty. x and y position is in tile units.
+
+Example of getting tile\+: \doxylink{classtson_1_1Tile}{Tile} \texorpdfstring{$\ast$}{*}tile = layer-\/\texorpdfstring{$>$}{>}get\+Tile\+Data(0, 4)
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position in tile units \\
+\hline
+{\em y} & Y position in tile units \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to tile, if it exists. nullptr otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_abd7f24d6450724a93844dd464caa92ae}\label{classtson_1_1Layer_abd7f24d6450724a93844dd464caa92ae} 
+\index{tson::Layer@{tson::Layer}!getTintColor@{getTintColor}}
+\index{getTintColor@{getTintColor}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getTintColor()}{getTintColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Colori}} \& tson\+::\+Layer\+::get\+Tint\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}tintcolor\textquotesingle{}\+: Hex-\/formatted color (\#\+RRGGBB or \#\+AARRGGBB) that is multiplied with any graphics drawn by this layer or any child layers (optional).
+
+\begin{DoxyReturn}{Returns}
+tintcolor 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_ab0fe1d3e92b6d3b240fd8301c668512a}\label{classtson_1_1Layer_ab0fe1d3e92b6d3b240fd8301c668512a} 
+\index{tson::Layer@{tson::Layer}!getTransparentColor@{getTransparentColor}}
+\index{getTransparentColor@{getTransparentColor}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getTransparentColor()}{getTransparentColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Colori}} \& tson\+::\+Layer\+::get\+Transparent\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}transparentcolor\textquotesingle{}\+: \doxylink{classtson_1_1Color}{Color} created from a hex color (\#\+RRGGBB) (optional, imagelayer only) \begin{DoxyReturn}{Returns}
+color as color object with rgba channel. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a3987553cdfc9e9718e270a7b8e11560e}\label{classtson_1_1Layer_a3987553cdfc9e9718e270a7b8e11560e} 
+\index{tson::Layer@{tson::Layer}!getType@{getType}}
+\index{getType@{getType}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily tson\+::\+Layer\+Type tson\+::\+Layer\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get layer type \begin{DoxyReturn}{Returns}
+\doxylink{classtson_1_1Layer}{Layer} type as enum 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_aa67545069934024f7383c8c59026ce38}\label{classtson_1_1Layer_aa67545069934024f7383c8c59026ce38} 
+\index{tson::Layer@{tson::Layer}!getTypeStr@{getTypeStr}}
+\index{getTypeStr@{getTypeStr}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getTypeStr()}{getTypeStr()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Layer\+::get\+Type\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Declared in \doxylink{tileson__forward_8hpp_source}{tileson\+\_\+forward.\+hpp}
+
+\textquotesingle{}type\textquotesingle{}\+: tilelayer, objectgroup, imagelayer or group \begin{DoxyReturn}{Returns}
+string with the object type 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_aebf4eec1d654fb9c79bfefccb435fa20}\label{classtson_1_1Layer_aebf4eec1d654fb9c79bfefccb435fa20} 
+\index{tson::Layer@{tson::Layer}!getX@{getX}}
+\index{getX@{getX}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int tson\+::\+Layer\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}x\textquotesingle{}\+: Horizontal layer offset in tiles. Always 0. \begin{DoxyReturn}{Returns}
+x value (always 0 for layer) 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_af68877b9894e9ee9a4fecaa0081737e4}\label{classtson_1_1Layer_af68877b9894e9ee9a4fecaa0081737e4} 
+\index{tson::Layer@{tson::Layer}!getY@{getY}}
+\index{getY@{getY}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int tson\+::\+Layer\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}y\textquotesingle{}\+: Horizontal layer offset in tiles. Always 0. \begin{DoxyReturn}{Returns}
+y value (always 0 for layer) 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a7ebac3c8bb3bc4ea8ac5a20d8deedb6a}\label{classtson_1_1Layer_a7ebac3c8bb3bc4ea8ac5a20d8deedb6a} 
+\index{tson::Layer@{tson::Layer}!hasRepeatX@{hasRepeatX}}
+\index{hasRepeatX@{hasRepeatX}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{hasRepeatX()}{hasRepeatX()}}
+{\footnotesize\ttfamily bool tson\+::\+Layer\+::has\+RepeatX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+New in Tiled v1.\+8 \textquotesingle{}repeatx\textquotesingle{}\+: Whether the image drawn by this layer is repeated along the X axis. \begin{DoxyReturn}{Returns}
+true if image layer is repeated along the X axis, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a26776c1d139279e0ee2a12bbd3fba49c}\label{classtson_1_1Layer_a26776c1d139279e0ee2a12bbd3fba49c} 
+\index{tson::Layer@{tson::Layer}!hasRepeatY@{hasRepeatY}}
+\index{hasRepeatY@{hasRepeatY}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{hasRepeatY()}{hasRepeatY()}}
+{\footnotesize\ttfamily bool tson\+::\+Layer\+::has\+RepeatY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+New in Tiled v1.\+8 \textquotesingle{}repeatx\textquotesingle{}\+: Whether the image drawn by this layer is repeated along the Y axis. \begin{DoxyReturn}{Returns}
+true if image layer is repeated along the Y axis, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a9f15627018a6cd843babcd177c910bce}\label{classtson_1_1Layer_a9f15627018a6cd843babcd177c910bce} 
+\index{tson::Layer@{tson::Layer}!isVisible@{isVisible}}
+\index{isVisible@{isVisible}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{isVisible()}{isVisible()}}
+{\footnotesize\ttfamily bool tson\+::\+Layer\+::is\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}visible\textquotesingle{}\+: Whether layer is shown or hidden in editor \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Layer_a333e6e81daffaa8a1632771261152806}\label{classtson_1_1Layer_a333e6e81daffaa8a1632771261152806} 
+\index{tson::Layer@{tson::Layer}!parse@{parse}}
+\index{parse@{parse}!tson::Layer@{tson::Layer}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool tson\+::\+Layer\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&}]{json,  }\item[{\mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Parses a Tiled layer from json 
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if all mandatory fields was found. false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Layer.\+hpp\item 
+silnik/core/lib/include/tileson/common/tileson\+\_\+forward.\+hpp\end{DoxyCompactItemize}

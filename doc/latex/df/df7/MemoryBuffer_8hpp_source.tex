@@ -1,0 +1,26 @@
+\doxysection{Memory\+Buffer.\+hpp}
+\hypertarget{MemoryBuffer_8hpp_source}{}\label{MemoryBuffer_8hpp_source}\index{silnik/core/lib/include/tileson/misc/MemoryBuffer.hpp@{silnik/core/lib/include/tileson/misc/MemoryBuffer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_MEMORYBUFFER\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_MEMORYBUFFER\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1MemoryBuffer}{MemoryBuffer}}\ :\ \textcolor{keyword}{public}\ std::basic\_streambuf<char>\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1MemoryBuffer}{MemoryBuffer}}(\textcolor{keyword}{const}\ uint8\_t\ *p,\ \textcolor{keywordtype}{size\_t}\ l)\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setg((\textcolor{keywordtype}{char}*)p,\ (\textcolor{keywordtype}{char}*)p,\ (\textcolor{keywordtype}{char}*)p\ +\ l);}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \};}
+\DoxyCodeLine{00018\ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_MEMORYBUFFER\_HPP}}
+
+\end{DoxyCode}

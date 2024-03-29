@@ -1,0 +1,144 @@
+\doxysection{n2d\+::Shape Class Reference}
+\hypertarget{classn2d_1_1Shape}{}\label{classn2d_1_1Shape}\index{n2d::Shape@{n2d::Shape}}
+Inheritance diagram for n2d\+::Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{db/d85/classn2d_1_1Shape}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Shape_a47a57a584c0a738cd05580f3ae92ed17}\label{classn2d_1_1Shape_a47a57a584c0a738cd05580f3ae92ed17} 
+void {\bfseries Set\+Density} (float=1.\+0f)
+\item 
+\Hypertarget{classn2d_1_1Shape_a0d5438fb8b5872f792f1211ffc211283}\label{classn2d_1_1Shape_a0d5438fb8b5872f792f1211ffc211283} 
+void {\bfseries Set\+Restitution} (float=0.\+01f)
+\item 
+\Hypertarget{classn2d_1_1Shape_a61b1872690f9ee9a0dfc8f87baba22c8}\label{classn2d_1_1Shape_a61b1872690f9ee9a0dfc8f87baba22c8} 
+void {\bfseries Set\+Friction} (float=0.\+3f)
+\item 
+\Hypertarget{classn2d_1_1Shape_a55d6236ed391c93c200b745cd7013a5f}\label{classn2d_1_1Shape_a55d6236ed391c93c200b745cd7013a5f} 
+void {\bfseries Set\+Resources} (\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \&t\+\_\+resources)
+\item 
+\Hypertarget{classn2d_1_1Shape_a7e3ca03b6bcde74f67eecccb3dcd63a8}\label{classn2d_1_1Shape_a7e3ca03b6bcde74f67eecccb3dcd63a8} 
+virtual b2\+Shape \texorpdfstring{$\ast$}{*} {\bfseries Get\+Updatable} ()=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a29383aef726a279dd8d8328bf31a9305}\label{classn2d_1_1Shape_a29383aef726a279dd8d8328bf31a9305} 
+virtual sf\+::\+Drawable \texorpdfstring{$\ast$}{*} {\bfseries Get\+Drawable} ()=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a4fc2625b1d42bf932ef3873a4da0e730}\label{classn2d_1_1Shape_a4fc2625b1d42bf932ef3873a4da0e730} 
+virtual sf\+::\+Transformable \texorpdfstring{$\ast$}{*} {\bfseries Get\+Transformable} ()=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a39369cfab06dbb308e3e92d4ba65eeab}\label{classn2d_1_1Shape_a39369cfab06dbb308e3e92d4ba65eeab} 
+virtual \mbox{\hyperlink{classn2d_1_1Shape}{Shape}} \texorpdfstring{$\ast$}{*} {\bfseries Clone} () const =0
+\item 
+\Hypertarget{classn2d_1_1Shape_ad4d95d8b9d763313a8dcf3edc4e94c2e}\label{classn2d_1_1Shape_ad4d95d8b9d763313a8dcf3edc4e94c2e} 
+virtual void {\bfseries Add\+Body\+Coords} (float, float, float)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_aa24d76b93a2b03d32fb05c1b3e9cbb18}\label{classn2d_1_1Shape_aa24d76b93a2b03d32fb05c1b3e9cbb18} 
+virtual void {\bfseries Fix\+To\+Body} ()=0
+\item 
+\Hypertarget{classn2d_1_1Shape_ae05c25e39bcdbe311f013f87649abc73}\label{classn2d_1_1Shape_ae05c25e39bcdbe311f013f87649abc73} 
+virtual void {\bfseries Set\+Position} (float=0.\+0f, float=0.\+0f)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a1d1b8a080a2903b281e5acf904ae6488}\label{classn2d_1_1Shape_a1d1b8a080a2903b281e5acf904ae6488} 
+virtual void {\bfseries Set\+Position} (glm\+::vec2)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a334d142bc872e93ddf4c9ca734891281}\label{classn2d_1_1Shape_a334d142bc872e93ddf4c9ca734891281} 
+virtual void {\bfseries Set\+Origin} (float, float)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_ad4fdf48c36c5971a3c404c0d09c003be}\label{classn2d_1_1Shape_ad4fdf48c36c5971a3c404c0d09c003be} 
+virtual void {\bfseries Set\+Origin} (glm\+::vec2)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a6d3c2965bc49e002f49a1de8ac61b6fd}\label{classn2d_1_1Shape_a6d3c2965bc49e002f49a1de8ac61b6fd} 
+virtual void {\bfseries Set\+Color} (int=255, int=255, int=255, int=255)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_acce891b58c15cccaa7c3f7acac898205}\label{classn2d_1_1Shape_acce891b58c15cccaa7c3f7acac898205} 
+virtual void {\bfseries Set\+Color} (glm\+::vec4)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_addb1225cda2d9252570e6c3c74e01986}\label{classn2d_1_1Shape_addb1225cda2d9252570e6c3c74e01986} 
+virtual void {\bfseries Set\+Color} (sf\+::\+Color)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a8e619f09a72c9e91e113d22c0663b610}\label{classn2d_1_1Shape_a8e619f09a72c9e91e113d22c0663b610} 
+virtual void {\bfseries Set\+Texture} (int)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_ad69d4755bf8d2e64fde556aada496e74}\label{classn2d_1_1Shape_ad69d4755bf8d2e64fde556aada496e74} 
+virtual void {\bfseries Set\+Texture} (std\+::string)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a0b56148277b0dc1ac561c7afac11f429}\label{classn2d_1_1Shape_a0b56148277b0dc1ac561c7afac11f429} 
+virtual void {\bfseries Set\+Texture} (sf\+::\+Texture \&)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_ad8ade5f394cc48b88e10d80a5e632714}\label{classn2d_1_1Shape_ad8ade5f394cc48b88e10d80a5e632714} 
+virtual void {\bfseries Set\+Texture\+Coords} (float=0, float=0, float=0, float=0)=0
+\item 
+\Hypertarget{classn2d_1_1Shape_a1fe8fcb79599857afc8c562ad113f37d}\label{classn2d_1_1Shape_a1fe8fcb79599857afc8c562ad113f37d} 
+virtual void {\bfseries Set\+Texture\+Coords} (glm\+::vec4)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window)=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window, sf\+::\+Transform \&t\+\_\+transform)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Animated}{n2d\+::\+Animated}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_a07c4762576f95f53d5f6cda7d15ea337}{Play}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_a5291e65867b18d0f6f429e2683a7c31e}{Pause}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_aafa111136e06807badbd0886a2f762ae}{Stop}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_a52e707da569f0c6c9fad24ebebebd6e7}{Clear\+Animation}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_aca9c14d240d437b4112419d9d446addd}{Animate}} (float t\+\_\+dt)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Shape_a1131853c6fd5bad02f992f7a062b3b89}\label{classn2d_1_1Shape_a1131853c6fd5bad02f992f7a062b3b89} 
+bool {\bfseries collide} = true
+\item 
+\Hypertarget{classn2d_1_1Shape_af9fdfee7efd8eb400dec6726de8c499f}\label{classn2d_1_1Shape_af9fdfee7efd8eb400dec6726de8c499f} 
+sf\+::\+Texture {\bfseries texture}
+\item 
+\Hypertarget{classn2d_1_1Shape_a8e2a271edfb0ed72a48db38be88afb5c}\label{classn2d_1_1Shape_a8e2a271edfb0ed72a48db38be88afb5c} 
+b2\+Fixture\+Def {\bfseries fixture}
+\item 
+\Hypertarget{classn2d_1_1Shape_a47face821d78bdc051f666d013107a3e}\label{classn2d_1_1Shape_a47face821d78bdc051f666d013107a3e} 
+glm\+::vec2 {\bfseries origin}
+\item 
+\Hypertarget{classn2d_1_1Shape_adc9d2c2601da1ef6fe327fde3087703d}\label{classn2d_1_1Shape_adc9d2c2601da1ef6fe327fde3087703d} 
+glm\+::vec2 {\bfseries position} = glm\+::vec2(0,0)
+\item 
+\Hypertarget{classn2d_1_1Shape_a7eaf0a8dfc1aa1499c3ca6a7b4b8a34c}\label{classn2d_1_1Shape_a7eaf0a8dfc1aa1499c3ca6a7b4b8a34c} 
+float {\bfseries rotation} = 0
+\item 
+\Hypertarget{classn2d_1_1Shape_ad2af2c4709b2fbebcf562851b60522e8}\label{classn2d_1_1Shape_ad2af2c4709b2fbebcf562851b60522e8} 
+int {\bfseries texture\+\_\+id}
+\item 
+\Hypertarget{classn2d_1_1Shape_a0afa988d2bb1876ab6760ad30d29d6dc}\label{classn2d_1_1Shape_a0afa988d2bb1876ab6760ad30d29d6dc} 
+glm\+::vec4 {\bfseries tex\+\_\+coords}
+\item 
+\Hypertarget{classn2d_1_1Shape_a37ac5710e0aa33c7194e90f287ce8f3a}\label{classn2d_1_1Shape_a37ac5710e0aa33c7194e90f287ce8f3a} 
+glm\+::vec4 {\bfseries color}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Shape_a1db996231fac5e13c2ad936a243f4cd0}\label{classn2d_1_1Shape_a1db996231fac5e13c2ad936a243f4cd0} 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+resources}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/visual/include/Shape.\+h\item 
+silnik/visual/src/Shape.\+cpp\end{DoxyCompactItemize}

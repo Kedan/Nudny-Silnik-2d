@@ -1,0 +1,68 @@
+\doxysection{tson\+::Tile\+Object Class Reference}
+\hypertarget{classtson_1_1TileObject}{}\label{classtson_1_1TileObject}\index{tson::TileObject@{tson::TileObject}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1TileObject_ae5678b4a11f6268a82cc9a1d7fd60269}\label{classtson_1_1TileObject_ae5678b4a11f6268a82cc9a1d7fd60269} 
+{\bfseries Tile\+Object} (const std\+::tuple$<$ int, int $>$ \&pos\+In\+Tile\+Units, \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*}tile)
+\item 
+void \mbox{\hyperlink{classtson_1_1TileObject_adeaeefb6ddd5c4551404b2311695edd6}{initialize}} (const std\+::tuple$<$ int, int $>$ \&pos\+In\+Tile\+Units, \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*}tile)
+\item 
+\mbox{\hyperlink{classtson_1_1Tile}{Tile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1TileObject_ab14836c5f611d21a67503a17ec163d17}{get\+Tile}} ()
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1TileObject_a702de2057bfae4dc584432b2476f423e}{get\+Position\+In\+Tile\+Units}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2f}} \& \mbox{\hyperlink{classtson_1_1TileObject_ae6b3309f31293069941305ad3373a08c}{get\+Position}} () const
+\item 
+\Hypertarget{classtson_1_1TileObject_ad80a597688e5b855954b2980d341f3cb}\label{classtson_1_1TileObject_ad80a597688e5b855954b2980d341f3cb} 
+const \mbox{\hyperlink{classtson_1_1Rect}{tson\+::\+Rect}} \& {\bfseries get\+Drawing\+Rect} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1TileObject_ae6b3309f31293069941305ad3373a08c}\label{classtson_1_1TileObject_ae6b3309f31293069941305ad3373a08c} 
+\index{tson::TileObject@{tson::TileObject}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!tson::TileObject@{tson::TileObject}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2f}} \& tson\+::\+Tile\+Object\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the position of the tile in pixels. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1TileObject_a702de2057bfae4dc584432b2476f423e}\label{classtson_1_1TileObject_a702de2057bfae4dc584432b2476f423e} 
+\index{tson::TileObject@{tson::TileObject}!getPositionInTileUnits@{getPositionInTileUnits}}
+\index{getPositionInTileUnits@{getPositionInTileUnits}!tson::TileObject@{tson::TileObject}}
+\doxysubsubsection{\texorpdfstring{getPositionInTileUnits()}{getPositionInTileUnits()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& tson\+::\+Tile\+Object\+::get\+Position\+In\+Tile\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the position of the tile in tile units \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1TileObject_ab14836c5f611d21a67503a17ec163d17}\label{classtson_1_1TileObject_ab14836c5f611d21a67503a17ec163d17} 
+\index{tson::TileObject@{tson::TileObject}!getTile@{getTile}}
+\index{getTile@{getTile}!tson::TileObject@{tson::TileObject}}
+\doxysubsubsection{\texorpdfstring{getTile()}{getTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Tile}{Tile}} \texorpdfstring{$\ast$}{*} tson\+::\+Tile\+Object\+::get\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a pointer to the related tile \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1TileObject_adeaeefb6ddd5c4551404b2311695edd6}\label{classtson_1_1TileObject_adeaeefb6ddd5c4551404b2311695edd6} 
+\index{tson::TileObject@{tson::TileObject}!initialize@{initialize}}
+\index{initialize@{initialize}!tson::TileObject@{tson::TileObject}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void tson\+::\+Tile\+Object\+::initialize (\begin{DoxyParamCaption}\item[{const std\+::tuple$<$ int, int $>$ \&}]{pos\+In\+Tile\+Units,  }\item[{\mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*}}]{tile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+In cases where the empty constructor is called, this must be called manually for this class to make sense 
+\begin{DoxyParams}{Parameters}
+{\em pos\+In\+Tile\+Units} & \\
+\hline
+{\em tile} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/objects/Tile\+Object.\+hpp\item 
+silnik/core/lib/include/tileson/common/tileson\+\_\+forward.\+hpp\end{DoxyCompactItemize}

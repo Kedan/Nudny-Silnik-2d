@@ -1,0 +1,170 @@
+\doxysection{n2d\+::Entity Class Reference}
+\hypertarget{classn2d_1_1Entity}{}\label{classn2d_1_1Entity}\index{n2d::Entity@{n2d::Entity}}
+Inheritance diagram for n2d\+::Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d9/d3c/classn2d_1_1Entity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Entity_ac65107802c83afc7cb1212d87b9c064f}\label{classn2d_1_1Entity_ac65107802c83afc7cb1212d87b9c064f} 
+int {\bfseries Add} (\mbox{\hyperlink{classn2d_1_1Body}{Body}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_ad1a70a6e105d0f0343fc7a6cf1f37456}{Draw}} (sf\+::\+Render\+Window \&w)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_abec79b028e5a1ceee4b50da603aae696}{Draw}} (sf\+::\+Render\+Window \&w, sf\+::\+Transform \&t)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_ad1ae33462762e798d68a4e6f216ceb17}{Update}} (float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Entity_a4472cab45f62816550b634681d4a2074}{Events}} (sf\+::\+Event \&)
+\item 
+\Hypertarget{classn2d_1_1Entity_a42deb6c8ae943601f91e2e7bd72a974d}\label{classn2d_1_1Entity_a42deb6c8ae943601f91e2e7bd72a974d} 
+void {\bfseries Create} (b2\+World \&world)
+\item 
+\Hypertarget{classn2d_1_1Entity_ae7f87ceca5b959a1fe433d8caa92b2f9}\label{classn2d_1_1Entity_ae7f87ceca5b959a1fe433d8caa92b2f9} 
+void {\bfseries Set\+Rotation} (float)
+\item 
+\Hypertarget{classn2d_1_1Entity_aadc17ee543fcf06046edc85714a96963}\label{classn2d_1_1Entity_aadc17ee543fcf06046edc85714a96963} 
+void {\bfseries Set\+Velocity} (float, float)
+\item 
+\Hypertarget{classn2d_1_1Entity_afa46f30f8d45e7a9804c76a36c4c53b4}\label{classn2d_1_1Entity_afa46f30f8d45e7a9804c76a36c4c53b4} 
+void {\bfseries Set\+Type} (b2\+Body\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Entity_ab8f8997fd27613fd3bcb99502ef417f1}\label{classn2d_1_1Entity_ab8f8997fd27613fd3bcb99502ef417f1} 
+int {\bfseries id}
+\item 
+\Hypertarget{classn2d_1_1Entity_a75805ce6aaa6a280337621b9d41ebd8c}\label{classn2d_1_1Entity_a75805ce6aaa6a280337621b9d41ebd8c} 
+std\+::string {\bfseries name}
+\item 
+\Hypertarget{classn2d_1_1Entity_a976805f17ab9566be496fc199272983e}\label{classn2d_1_1Entity_a976805f17ab9566be496fc199272983e} 
+glm\+::vec2 {\bfseries position}
+\item 
+\Hypertarget{classn2d_1_1Entity_a1b8a3d9c6570f6d8997862f39d0d7ac2}\label{classn2d_1_1Entity_a1b8a3d9c6570f6d8997862f39d0d7ac2} 
+float {\bfseries rotation}
+\item 
+\Hypertarget{classn2d_1_1Entity_ac259dda6c62e93de9b3c6a86e1570a94}\label{classn2d_1_1Entity_ac259dda6c62e93de9b3c6a86e1570a94} 
+std\+::vector$<$ \mbox{\hyperlink{classn2d_1_1Body}{Body}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries bodies}
+\item 
+\Hypertarget{classn2d_1_1Entity_ae61f4384cae39a9686836cb1eb612c48}\label{classn2d_1_1Entity_ae61f4384cae39a9686836cb1eb612c48} 
+\mbox{\hyperlink{classn2d_1_1Text}{Text}} {\bfseries text}
+\item 
+\Hypertarget{classn2d_1_1Entity_a517dfd9b16c4d4df125cd8b4eafafd96}\label{classn2d_1_1Entity_a517dfd9b16c4d4df125cd8b4eafafd96} 
+bool {\bfseries show\+\_\+text} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Entity_ae2f9de64a4a99440a94231f92204937a}\label{classn2d_1_1Entity_ae2f9de64a4a99440a94231f92204937a} 
+void {\bfseries Load\+Text} (tson\+::\+Object \&)
+\item 
+\Hypertarget{classn2d_1_1Entity_aaa70aab6c65869ae1bb2da5291c7d5ba}\label{classn2d_1_1Entity_aaa70aab6c65869ae1bb2da5291c7d5ba} 
+void {\bfseries Load\+Template} (tson\+::\+Object \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Entity_ad1a70a6e105d0f0343fc7a6cf1f37456}\label{classn2d_1_1Entity_ad1a70a6e105d0f0343fc7a6cf1f37456} 
+\index{n2d::Entity@{n2d::Entity}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::Entity@{n2d::Entity}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Entity\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{n2d\+::\+Drawable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classn2d_1_1Inventory_a0d95ddb43d3586c490c25d1944d9283b}{n2d\+::\+Inventory}}, and \mbox{\hyperlink{classn2d_1_1Player_a476e77752e9985ac251db1246fc694e0}{n2d\+::\+Player}}.
+
+\Hypertarget{classn2d_1_1Entity_abec79b028e5a1ceee4b50da603aae696}\label{classn2d_1_1Entity_abec79b028e5a1ceee4b50da603aae696} 
+\index{n2d::Entity@{n2d::Entity}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::Entity@{n2d::Entity}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Entity\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{sf\+::\+Transform \&}]{t\+\_\+transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+{\em \&t\+\_\+transform} & -\/ additional transformations reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{n2d\+::\+Drawable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classn2d_1_1Inventory_a4d10e64d2c1b296658f0cf4cf93887bd}{n2d\+::\+Inventory}}, and \mbox{\hyperlink{classn2d_1_1Player_aefb024e75e644a450ea24338c158ff32}{n2d\+::\+Player}}.
+
+\Hypertarget{classn2d_1_1Entity_a4472cab45f62816550b634681d4a2074}\label{classn2d_1_1Entity_a4472cab45f62816550b634681d4a2074} 
+\index{n2d::Entity@{n2d::Entity}!Events@{Events}}
+\index{Events@{Events}!n2d::Entity@{n2d::Entity}}
+\doxysubsubsection{\texorpdfstring{Events()}{Events()}}
+{\footnotesize\ttfamily void Entity\+::\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Event handling method. 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+event} & -\/ SFML event reference, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}{n2d\+::\+Interactive}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classn2d_1_1Inventory_a3db0a9c03495e8536ae75f7bb149aff7}{n2d\+::\+Inventory}}, and \mbox{\hyperlink{classn2d_1_1Player_a9b0323ca1c5b32846da3e20a04fd37c2}{n2d\+::\+Player}}.
+
+\Hypertarget{classn2d_1_1Entity_ad1ae33462762e798d68a4e6f216ceb17}\label{classn2d_1_1Entity_ad1ae33462762e798d68a4e6f216ceb17} 
+\index{n2d::Entity@{n2d::Entity}!Update@{Update}}
+\index{Update@{Update}!n2d::Entity@{n2d::Entity}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Entity\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update method 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & -\/ time tick, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} from sf\+::\+Clock and sf\+::\+Time class \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Updatable_afdd0bf94a4486b3a893ed560af5e22c6}{n2d\+::\+Updatable}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classn2d_1_1Inventory_a39250d4aa775e7322a3f3b16e265d4fe}{n2d\+::\+Inventory}}, and \mbox{\hyperlink{classn2d_1_1Player_a1d6df184e2e5ae9c2b93d5e146135aa7}{n2d\+::\+Player}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/visual/include/Entity.\+h\item 
+silnik/visual/src/Entity.\+cpp\end{DoxyCompactItemize}

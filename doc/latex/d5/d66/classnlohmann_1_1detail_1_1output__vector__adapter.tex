@@ -1,0 +1,73 @@
+\doxysection{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter\texorpdfstring{$<$}{<} Char\+Type, Allocator\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classnlohmann_1_1detail_1_1output__vector__adapter}{}\label{classnlohmann_1_1detail_1_1output__vector__adapter}\index{nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$@{nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$}}
+
+
+output adapter for byte vectors  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+Inheritance diagram for nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter\texorpdfstring{$<$}{<} Char\+Type, Allocator\+Type \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/d66/classnlohmann_1_1detail_1_1output__vector__adapter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classnlohmann_1_1detail_1_1output__vector__adapter_a3fe56240156513c7d6c2db9063c9e0a3}\label{classnlohmann_1_1detail_1_1output__vector__adapter_a3fe56240156513c7d6c2db9063c9e0a3} 
+{\bfseries output\+\_\+vector\+\_\+adapter} (std\+::vector$<$ Char\+Type, Allocator\+Type $>$ \&vec) noexcept
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_a75dd40842507f8604670ecfbf901ad0a}{write\+\_\+character}} (Char\+Type c) override
+\item 
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter_a368ecbbeb00b34121ee951d86b77e276}{write\+\_\+characters}} (const Char\+Type \texorpdfstring{$\ast$}{*}s, std\+::size\+\_\+t length) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol$<$ Char\+Type $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries output\+\_\+adapter\+\_\+protocol} (const \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&)=default
+\item 
+{\bfseries output\+\_\+adapter\+\_\+protocol} (\mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&\&) noexcept=default
+\item 
+\mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \& {\bfseries operator=} (const \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&)=default
+\item 
+\mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \& {\bfseries operator=} (\mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{output\+\_\+adapter\+\_\+protocol}} \&\&) noexcept=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Char\+Type, typename Allocator\+Type = std\+::allocator$<$\+Char\+Type$>$$>$\newline
+class nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter$<$ Char\+Type, Allocator\+Type $>$}
+output adapter for byte vectors 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classnlohmann_1_1detail_1_1output__vector__adapter_a75dd40842507f8604670ecfbf901ad0a}\label{classnlohmann_1_1detail_1_1output__vector__adapter_a75dd40842507f8604670ecfbf901ad0a} 
+\index{nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$@{nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$}!write\_character@{write\_character}}
+\index{write\_character@{write\_character}!nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$@{nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_character()}{write\_character()}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename Allocator\+Type  = std\+::allocator$<$\+Char\+Type$>$$>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter}}$<$ Char\+Type, Allocator\+Type $>$\+::write\+\_\+character (\begin{DoxyParamCaption}\item[{Char\+Type}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol$<$ Char\+Type $>$}}.
+
+\Hypertarget{classnlohmann_1_1detail_1_1output__vector__adapter_a368ecbbeb00b34121ee951d86b77e276}\label{classnlohmann_1_1detail_1_1output__vector__adapter_a368ecbbeb00b34121ee951d86b77e276} 
+\index{nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$@{nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$}!write\_characters@{write\_characters}}
+\index{write\_characters@{write\_characters}!nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$@{nlohmann::detail::output\_vector\_adapter$<$ CharType, AllocatorType $>$}}
+\doxysubsubsection{\texorpdfstring{write\_characters()}{write\_characters()}}
+{\footnotesize\ttfamily template$<$typename Char\+Type , typename Allocator\+Type  = std\+::allocator$<$\+Char\+Type$>$$>$ \\
+void \mbox{\hyperlink{classnlohmann_1_1detail_1_1output__vector__adapter}{nlohmann\+::detail\+::output\+\_\+vector\+\_\+adapter}}$<$ Char\+Type, Allocator\+Type $>$\+::write\+\_\+characters (\begin{DoxyParamCaption}\item[{const Char\+Type \texorpdfstring{$\ast$}{*}}]{s,  }\item[{std\+::size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{structnlohmann_1_1detail_1_1output__adapter__protocol}{nlohmann\+::detail\+::output\+\_\+adapter\+\_\+protocol$<$ Char\+Type $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/json.\+hpp\end{DoxyCompactItemize}

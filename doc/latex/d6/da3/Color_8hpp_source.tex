@@ -1,0 +1,145 @@
+\doxysection{Color.\+hpp}
+\hypertarget{Color_8hpp_source}{}\label{Color_8hpp_source}\index{silnik/core/lib/include/tileson/objects/Color.hpp@{silnik/core/lib/include/tileson/objects/Color.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 09.08.2019.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_COLOR\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_COLOR\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Color}{Color}}}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Color}{Color}}(\textcolor{keyword}{const}\ std::string\ \&color)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parseHexString(color);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Color_a7e37cedb8a92f94d65886985db957d55}{Color}}(T\ red,\ T\ green,\ T\ blue,\ T\ alpha);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Color}{Color}}()\ \{\ \mbox{\hyperlink{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}{r}}\ =\ \mbox{\hyperlink{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68}{g}}\ =\ \mbox{\hyperlink{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218}{b}}\ =\ 0;\ \mbox{\hyperlink{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee}{a}}\ =\ 255;\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Color}{Color}}\ \&rhs)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ std::string\ \&rhs)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classtson_1_1Color}{Color}}\ \&rhs)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ Color<float>\ \mbox{\hyperlink{classtson_1_1Color_a7829ed9dd232a30f8c9977aa63800d3b}{asFloat}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ Color<uint8\_t>\ \mbox{\hyperlink{classtson_1_1Color_a23692d80c57432d1b241f0c94d413eea}{asInt}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}{r}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68}{g}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218}{b}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee}{a}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ parseHexString(\textcolor{keyword}{const}\ std::string\ \&color)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same<T,\ float>::value)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.size()\ ==\ 9)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee}{a}}\ =\ (float)\ std::stoi(color.substr(1,\ 2),\ \textcolor{keyword}{nullptr},\ 16)\ /\ 255;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}{r}}\ =\ (float)\ std::stoi(color.substr(3,\ 2),\ \textcolor{keyword}{nullptr},\ 16)\ /\ 255;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68}{g}}\ =\ (float)\ std::stoi(color.substr(5,\ 2),\ \textcolor{keyword}{nullptr},\ 16)\ /\ 255;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218}{b}}\ =\ (float)\ std::stoi(color.substr(7,\ 2),\ \textcolor{keyword}{nullptr},\ 16)\ /\ 255;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (color.size()\ ==\ 7)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}{r}}\ =\ (float)\ std::stoi(color.substr(1,\ 2),\ \textcolor{keyword}{nullptr},\ 16)\ /\ 255;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68}{g}}\ =\ (float)\ std::stoi(color.substr(3,\ 2),\ \textcolor{keyword}{nullptr},\ 16)\ /\ 255;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218}{b}}\ =\ (float)\ std::stoi(color.substr(5,\ 2),\ \textcolor{keyword}{nullptr},\ 16)\ /\ 255;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee}{a}}\ =\ 1.f;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same<T,\ uint8\_t>::value)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color.size()\ ==\ 9)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee}{a}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(std::stoi(color.substr(1,\ 2),\ \textcolor{keyword}{nullptr},\ 16));}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}{r}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(std::stoi(color.substr(3,\ 2),\ \textcolor{keyword}{nullptr},\ 16));}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68}{g}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(std::stoi(color.substr(5,\ 2),\ \textcolor{keyword}{nullptr},\ 16));}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218}{b}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(std::stoi(color.substr(7,\ 2),\ \textcolor{keyword}{nullptr},\ 16));}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (color.size()\ ==\ 7)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}{r}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(std::stoi(color.substr(1,\ 2),\ \textcolor{keyword}{nullptr},\ 16));}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_aeeed87b44d02661bbe344a8d38f81b68}{g}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(std::stoi(color.substr(3,\ 2),\ \textcolor{keyword}{nullptr},\ 16));}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_ade5c9bddf95777741ad9df25754e0218}{b}}\ =\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(std::stoi(color.substr(5,\ 2),\ \textcolor{keyword}{nullptr},\ 16));}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color_a8dba28f6d32dc222a751d28e7066d5ee}{a}}\ =\ 255;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{typedef}\ Color<uint8\_t>\ Colori;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{typedef}\ Color<float>\ Colorf;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00099\ \ \ \ \ tson::Colorf\ \mbox{\hyperlink{classtson_1_1Color_a7829ed9dd232a30f8c9977aa63800d3b}{Color<T>::asFloat}}()}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same<T,\ float>::value)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tson::Colorf((\textcolor{keywordtype}{float})\ r\ /\ 255,\ (\textcolor{keywordtype}{float})\ g\ /\ 255,\ (\textcolor{keywordtype}{float})\ b\ /\ 255,\ (\textcolor{keywordtype}{float})\ a\ /\ 255);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}\ \mbox{\hyperlink{classtson_1_1Color_a23692d80c57432d1b241f0c94d413eea}{Color<T>::asInt}}()}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (std::is\_same<T,\ float>::value)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classtson_1_1Color}{tson::Colori}}(\textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}((\textcolor{keywordtype}{float})\ r\ *\ 255),}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}((float)\ g\ *\ 255),}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}((float)\ b\ *\ 255),}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}std::uint8\_t\textcolor{keyword}{>}((float)\ a\ *\ 255));}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color}{Color<T>::Color}}(T\ red,\ T\ green,\ T\ blue,\ T\ alpha)}
+\DoxyCodeLine{00135\ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ r\ =\ red;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ g\ =\ green;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ b\ =\ blue;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ a\ =\ alpha;}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classtson_1_1Color}{Color<T>::operator==}}(\textcolor{keyword}{const}\ std::string\ \&rhs)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Color}{Color}}\ other\ \{rhs\};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}\ ==\ other;}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ Color<T>::operator==(\textcolor{keyword}{const}\ Color\ \&rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00150\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r\ ==\ rhs.\mbox{\hyperlink{classtson_1_1Color_af3fcb996a66d8c0301eca603d3710a95}{r}}\ \&\&}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g\ ==\ rhs.g\ \&\&}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b\ ==\ rhs.b\ \&\&}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ ==\ rhs.a;}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{bool}\ Color<T>::operator!=(\textcolor{keyword}{const}\ Color\ \&rhs)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00159\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(rhs\ ==\ *\textcolor{keyword}{this});}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_COLOR\_HPP}}
+
+\end{DoxyCode}

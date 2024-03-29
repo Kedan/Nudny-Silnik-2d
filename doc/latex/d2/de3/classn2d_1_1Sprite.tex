@@ -1,0 +1,437 @@
+\doxysection{n2d\+::Sprite Class Reference}
+\hypertarget{classn2d_1_1Sprite}{}\label{classn2d_1_1Sprite}\index{n2d::Sprite@{n2d::Sprite}}
+Inheritance diagram for n2d\+::Sprite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d2/de3/classn2d_1_1Sprite}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Sprite_a1558985b906fad5ac7c5e31210cdd0e3}\label{classn2d_1_1Sprite_a1558985b906fad5ac7c5e31210cdd0e3} 
+{\bfseries Sprite} (int)
+\item 
+\Hypertarget{classn2d_1_1Sprite_af3700feddc3ee35f077a7bf05dc45e06}\label{classn2d_1_1Sprite_af3700feddc3ee35f077a7bf05dc45e06} 
+{\bfseries Sprite} (const \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}} \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a88d8cf7085184fb5e4318fdc689626df}{Set\+Texture}} (int)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_ac4276229b49fce73aed73de22ea7279b}{Set\+Texture}} (std\+::string)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a1519b3e0079b0a572792fa1c869253dd}{Set\+Texture}} (sf\+::\+Texture \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a49ec36ca47154a0d274e1ab3273599c0}{Set\+Texture\+Coords}} (float=0, float=0, float=0, float=0)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a3df2a9917460329d53522d99f5e504e3}{Set\+Texture\+Coords}} (glm\+::vec4)
+\item 
+sf\+::\+Drawable \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Sprite_adf527bbf475cd143df79e1be5312aeea}{Get\+Drawable}} ()
+\item 
+sf\+::\+Transformable \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Sprite_a6346b12810dfc7d6555b5c3bdf8fa30a}{Get\+Transformable}} ()
+\item 
+\mbox{\hyperlink{classn2d_1_1Shape}{Shape}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Sprite_ad8e7326db988bf80a8bef33f374f905c}{Clone}} () const override
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a2c33d5e407c56ea39b1bfe9b361b7502}{Draw}} (sf\+::\+Render\+Window \&w)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_afa0d02120f66a5c396a16cd15eb66387}{Draw}} (sf\+::\+Render\+Window \&w, sf\+::\+Transform \&t)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a937b16156ced4bf6d2f3c3ff6c8eb9a8}{Add\+Body\+Coords}} (float x, float y, float rotation)
+\item 
+\Hypertarget{classn2d_1_1Sprite_a3f536bea16ebf049ce903160569ebf0c}\label{classn2d_1_1Sprite_a3f536bea16ebf049ce903160569ebf0c} 
+void {\bfseries Set\+Rotation} (float=0.\+0f)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a936083197c94079123c218cf8097a753}{Set\+Position}} (float=0.\+0f, float=0.\+0f)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_abb870cc2aa41c0210017ffffe19de9b9}{Set\+Position}} (glm\+::vec2)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a5eb7647a96566f77f15edb7dbd333e4d}{Set\+Color}} (int=255, int=255, int=255, int=255)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a330f805a901856779549863b8b1e87c3}{Set\+Color}} (glm\+::vec4)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a95698685b5da9c9fa1c0f9417678e9ab}{Set\+Color}} (sf\+::\+Color)
+\item 
+\Hypertarget{classn2d_1_1Sprite_ac214f2bd5fa5273426e6c0356c791ecb}\label{classn2d_1_1Sprite_ac214f2bd5fa5273426e6c0356c791ecb} 
+void {\bfseries Set\+Size} (float, float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a535cc6edddbe3c0110385de0437adcd4}{Set\+Origin}} (float, float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_abb02317f66fb8881d4db9390c05f384e}{Set\+Origin}} (glm\+::vec2)
+\item 
+\Hypertarget{classn2d_1_1Sprite_a5863b6e2f7c05f54d900060804acfc98}\label{classn2d_1_1Sprite_a5863b6e2f7c05f54d900060804acfc98} 
+glm\+::vec2 {\bfseries Get\+Size} ()
+\item 
+\Hypertarget{classn2d_1_1Sprite_ace9fba9bd61c20b7e37c0e51b2d7115d}\label{classn2d_1_1Sprite_ace9fba9bd61c20b7e37c0e51b2d7115d} 
+void {\bfseries Flip\+Horizontal} ()
+\item 
+\Hypertarget{classn2d_1_1Sprite_ad1cb2a7b4da09f54363f9fb4d8da5a95}\label{classn2d_1_1Sprite_ad1cb2a7b4da09f54363f9fb4d8da5a95} 
+void {\bfseries Flip\+Vertical} ()
+\item 
+\Hypertarget{classn2d_1_1Sprite_ad57b021a904bb57d25a2c9d485d961b1}\label{classn2d_1_1Sprite_ad57b021a904bb57d25a2c9d485d961b1} 
+void {\bfseries Flip\+Diagonal} ()
+\item 
+\Hypertarget{classn2d_1_1Sprite_a55ae2574fd173e659b572976fbded0ff}\label{classn2d_1_1Sprite_a55ae2574fd173e659b572976fbded0ff} 
+bool {\bfseries Is\+Animated} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a92c490d78b81c5187b0b29bd9795a9bc}{Animate}} (float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_ad6e004356cbe3c987a9b8e46cae99376}{Clear\+Animation}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a6083debb1ccc6f68dfc96cd36be00b12}{Play}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a5980332422675c6ebb2e94c4d4162aee}{Pause}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1Sprite_a690101a913549c037e7e186386738453}{Stop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Poly} (std\+::vector$<$ glm\+::vec2 $>$)
+\item 
+{\bfseries Poly} (const \mbox{\hyperlink{classn2d_1_1Poly}{Poly}} \&)
+\item 
+b2\+Shape \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Poly_ae245249fc0410a1f5fa21335576e16d2}{Get\+Updatable}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1Poly_ade369bf83c561886f26202a0907e57bf}{Fix\+To\+Body}} ()
+\item 
+void {\bfseries Set\+Rotation} (float=0.\+0f)
+\item 
+void {\bfseries Set\+Vertices} (std\+::vector$<$ glm\+::vec2 $>$ vertices)
+\item 
+void {\bfseries Transform\+Vertices} ()
+\item 
+void {\bfseries Reset} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Set\+Density} (float=1.\+0f)
+\item 
+void {\bfseries Set\+Restitution} (float=0.\+01f)
+\item 
+void {\bfseries Set\+Friction} (float=0.\+3f)
+\item 
+void {\bfseries Set\+Resources} (\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \&t\+\_\+resources)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Sprite_a2496f0546abce5f7380f3a5422e37fe2}\label{classn2d_1_1Sprite_a2496f0546abce5f7380f3a5422e37fe2} 
+\mbox{\hyperlink{classn2d_1_1SpriteAnimation}{Sprite\+Animation}} {\bfseries animation}
+\item 
+\Hypertarget{classn2d_1_1Sprite_a90ddaad0e498281663cd21318e1551c9}\label{classn2d_1_1Sprite_a90ddaad0e498281663cd21318e1551c9} 
+int {\bfseries GID}
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ {\bfseries vertices}
+\item 
+sf\+::\+Convex\+Shape {\bfseries shape}
+\item 
+b2\+Polygon\+Shape {\bfseries bound}
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries collide} = true
+\item 
+sf\+::\+Texture {\bfseries texture}
+\item 
+b2\+Fixture\+Def {\bfseries fixture}
+\item 
+glm\+::vec2 {\bfseries origin}
+\item 
+glm\+::vec2 {\bfseries position} = glm\+::vec2(0,0)
+\item 
+float {\bfseries rotation} = 0
+\item 
+int {\bfseries texture\+\_\+id}
+\item 
+glm\+::vec4 {\bfseries tex\+\_\+coords}
+\item 
+glm\+::vec4 {\bfseries color}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Sprite_ac22104328b61f541c7427ab754ca9608}\label{classn2d_1_1Sprite_ac22104328b61f541c7427ab754ca9608} 
+glm\+::vec2 {\bfseries m\+\_\+size}
+\item 
+\Hypertarget{classn2d_1_1Sprite_a676663d740bcea16995314f668c7db55}\label{classn2d_1_1Sprite_a676663d740bcea16995314f668c7db55} 
+sf\+::\+Sprite {\bfseries sprite}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform {\bfseries m\+\_\+transform}
+\item 
+std\+::vector$<$ glm\+::vec2 $>$ {\bfseries m\+\_\+vertices}
+\item 
+std\+::vector$<$ b2\+Vec2 $>$ {\bfseries b2\+\_\+vertices}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+resources}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Sprite_a937b16156ced4bf6d2f3c3ff6c8eb9a8}\label{classn2d_1_1Sprite_a937b16156ced4bf6d2f3c3ff6c8eb9a8} 
+\index{n2d::Sprite@{n2d::Sprite}!AddBodyCoords@{AddBodyCoords}}
+\index{AddBodyCoords@{AddBodyCoords}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{AddBodyCoords()}{AddBodyCoords()}}
+{\footnotesize\ttfamily void Sprite\+::\+Add\+Body\+Coords (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a92c490d78b81c5187b0b29bd9795a9bc}\label{classn2d_1_1Sprite_a92c490d78b81c5187b0b29bd9795a9bc} 
+\index{n2d::Sprite@{n2d::Sprite}!Animate@{Animate}}
+\index{Animate@{Animate}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{Animate()}{Animate()}}
+{\footnotesize\ttfamily void Sprite\+::\+Animate (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Runs the animation. Equivalent of Update() method -\/ but Update() should handle chages related with physics. 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & -\/ time tick, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} from sf\+::\+Clock and sf\+::\+Time class \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly_a098163398d3ab6e10e8d3c6dd5c3f9e3}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_ad6e004356cbe3c987a9b8e46cae99376}\label{classn2d_1_1Sprite_ad6e004356cbe3c987a9b8e46cae99376} 
+\index{n2d::Sprite@{n2d::Sprite}!ClearAnimation@{ClearAnimation}}
+\index{ClearAnimation@{ClearAnimation}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{ClearAnimation()}{ClearAnimation()}}
+{\footnotesize\ttfamily void Sprite\+::\+Clear\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Delete all frames 
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly_a04f70519b10d1521479271fe5a4e4cd3}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_ad8e7326db988bf80a8bef33f374f905c}\label{classn2d_1_1Sprite_ad8e7326db988bf80a8bef33f374f905c} 
+\index{n2d::Sprite@{n2d::Sprite}!Clone@{Clone}}
+\index{Clone@{Clone}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classn2d_1_1Shape}{Shape}} \texorpdfstring{$\ast$}{*} Sprite\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a2c33d5e407c56ea39b1bfe9b361b7502}\label{classn2d_1_1Sprite_a2c33d5e407c56ea39b1bfe9b361b7502} 
+\index{n2d::Sprite@{n2d::Sprite}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly_a10abac9714e876ca552bb71fc1ec0103}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_afa0d02120f66a5c396a16cd15eb66387}\label{classn2d_1_1Sprite_afa0d02120f66a5c396a16cd15eb66387} 
+\index{n2d::Sprite@{n2d::Sprite}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{sf\+::\+Transform \&}]{t\+\_\+transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+{\em \&t\+\_\+transform} & -\/ additional transformations reference \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly_ac936465cc4cef2f5de2a9b3172cfd1f2}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_adf527bbf475cd143df79e1be5312aeea}\label{classn2d_1_1Sprite_adf527bbf475cd143df79e1be5312aeea} 
+\index{n2d::Sprite@{n2d::Sprite}!GetDrawable@{GetDrawable}}
+\index{GetDrawable@{GetDrawable}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{GetDrawable()}{GetDrawable()}}
+{\footnotesize\ttfamily sf\+::\+Drawable \texorpdfstring{$\ast$}{*} Sprite\+::\+Get\+Drawable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a6346b12810dfc7d6555b5c3bdf8fa30a}\label{classn2d_1_1Sprite_a6346b12810dfc7d6555b5c3bdf8fa30a} 
+\index{n2d::Sprite@{n2d::Sprite}!GetTransformable@{GetTransformable}}
+\index{GetTransformable@{GetTransformable}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{GetTransformable()}{GetTransformable()}}
+{\footnotesize\ttfamily sf\+::\+Transformable \texorpdfstring{$\ast$}{*} Sprite\+::\+Get\+Transformable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a5980332422675c6ebb2e94c4d4162aee}\label{classn2d_1_1Sprite_a5980332422675c6ebb2e94c4d4162aee} 
+\index{n2d::Sprite@{n2d::Sprite}!Pause@{Pause}}
+\index{Pause@{Pause}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily void Sprite\+::\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pause method. Freezes animation in current frame. 
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly_aa654ea539a1c51c7759ab81491fcd400}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a6083debb1ccc6f68dfc96cd36be00b12}\label{classn2d_1_1Sprite_a6083debb1ccc6f68dfc96cd36be00b12} 
+\index{n2d::Sprite@{n2d::Sprite}!Play@{Play}}
+\index{Play@{Play}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily void Sprite\+::\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Play method. 
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly_a76c779a11a96e531644b33f1e5fd8950}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a330f805a901856779549863b8b1e87c3}\label{classn2d_1_1Sprite_a330f805a901856779549863b8b1e87c3} 
+\index{n2d::Sprite@{n2d::Sprite}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a5eb7647a96566f77f15edb7dbd333e4d}\label{classn2d_1_1Sprite_a5eb7647a96566f77f15edb7dbd333e4d} 
+\index{n2d::Sprite@{n2d::Sprite}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{int}]{r = {\ttfamily 255},  }\item[{int}]{g = {\ttfamily 255},  }\item[{int}]{b = {\ttfamily 255},  }\item[{int}]{a = {\ttfamily 255} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a95698685b5da9c9fa1c0f9417678e9ab}\label{classn2d_1_1Sprite_a95698685b5da9c9fa1c0f9417678e9ab} 
+\index{n2d::Sprite@{n2d::Sprite}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a535cc6edddbe3c0110385de0437adcd4}\label{classn2d_1_1Sprite_a535cc6edddbe3c0110385de0437adcd4} 
+\index{n2d::Sprite@{n2d::Sprite}!SetOrigin@{SetOrigin}}
+\index{SetOrigin@{SetOrigin}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetOrigin()}{SetOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Origin (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_abb02317f66fb8881d4db9390c05f384e}\label{classn2d_1_1Sprite_abb02317f66fb8881d4db9390c05f384e} 
+\index{n2d::Sprite@{n2d::Sprite}!SetOrigin@{SetOrigin}}
+\index{SetOrigin@{SetOrigin}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetOrigin()}{SetOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Origin (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a936083197c94079123c218cf8097a753}\label{classn2d_1_1Sprite_a936083197c94079123c218cf8097a753} 
+\index{n2d::Sprite@{n2d::Sprite}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{float}]{x = {\ttfamily 0.0f},  }\item[{float}]{y = {\ttfamily 0.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_abb870cc2aa41c0210017ffffe19de9b9}\label{classn2d_1_1Sprite_abb870cc2aa41c0210017ffffe19de9b9} 
+\index{n2d::Sprite@{n2d::Sprite}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a88d8cf7085184fb5e4318fdc689626df}\label{classn2d_1_1Sprite_a88d8cf7085184fb5e4318fdc689626df} 
+\index{n2d::Sprite@{n2d::Sprite}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a1519b3e0079b0a572792fa1c869253dd}\label{classn2d_1_1Sprite_a1519b3e0079b0a572792fa1c869253dd} 
+\index{n2d::Sprite@{n2d::Sprite}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{t\+\_\+texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_ac4276229b49fce73aed73de22ea7279b}\label{classn2d_1_1Sprite_ac4276229b49fce73aed73de22ea7279b} 
+\index{n2d::Sprite@{n2d::Sprite}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{texture\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a49ec36ca47154a0d274e1ab3273599c0}\label{classn2d_1_1Sprite_a49ec36ca47154a0d274e1ab3273599c0} 
+\index{n2d::Sprite@{n2d::Sprite}!SetTextureCoords@{SetTextureCoords}}
+\index{SetTextureCoords@{SetTextureCoords}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetTextureCoords()}{SetTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Texture\+Coords (\begin{DoxyParamCaption}\item[{float}]{u0 = {\ttfamily 0},  }\item[{float}]{v0 = {\ttfamily 0},  }\item[{float}]{u1 = {\ttfamily 0},  }\item[{float}]{v1 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a3df2a9917460329d53522d99f5e504e3}\label{classn2d_1_1Sprite_a3df2a9917460329d53522d99f5e504e3} 
+\index{n2d::Sprite@{n2d::Sprite}!SetTextureCoords@{SetTextureCoords}}
+\index{SetTextureCoords@{SetTextureCoords}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{SetTextureCoords()}{SetTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sprite\+::\+Set\+Texture\+Coords (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{coords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly}{n2d\+::\+Poly}}.
+
+\Hypertarget{classn2d_1_1Sprite_a690101a913549c037e7e186386738453}\label{classn2d_1_1Sprite_a690101a913549c037e7e186386738453} 
+\index{n2d::Sprite@{n2d::Sprite}!Stop@{Stop}}
+\index{Stop@{Stop}!n2d::Sprite@{n2d::Sprite}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void Sprite\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Stop methos. Rewind animation to first frame. 
+
+Reimplemented from \mbox{\hyperlink{classn2d_1_1Poly_aa17a6645d2b46a625159dc22905e2f51}{n2d\+::\+Poly}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/visual/include/Sprite.\+h\item 
+silnik/visual/src/Sprite.\+cpp\end{DoxyCompactItemize}

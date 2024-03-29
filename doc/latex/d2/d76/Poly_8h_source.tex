@@ -1,0 +1,59 @@
+\doxysection{Poly.\+h}
+\hypertarget{Poly_8h_source}{}\label{Poly_8h_source}\index{silnik/visual/include/Poly.h@{silnik/visual/include/Poly.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_VISUAL\_POLY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_VISUAL\_POLY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Shape.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Poly}{Poly}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Shape}{Shape}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<glm::vec2>\ \ vertices;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ sf::ConvexShape\ \ \ \ \ shape;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ b2PolygonShape\ \ \ \ \ \ bound;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly}{Poly}}()\{\};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly}{Poly}}(\ std::vector<glm::vec2>\ );}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly}{Poly}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classn2d_1_1Poly}{Poly}}\&\ );}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ b2Shape*\ \ \ \ \ \ \ \ GetUpdatable();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Drawable*\ \ \ \ \ \ \ GetDrawable();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Transformable*\ \ GetTransformable();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Shape}{Shape}}*\ \ \ \ \ \ \ \ \ Clone()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly_a10abac9714e876ca552bb71fc1ec0103}{Draw}}(\ sf::RenderWindow\&\ w\ );}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly_a10abac9714e876ca552bb71fc1ec0103}{Draw}}(\ sf::RenderWindow\&\ w,\ sf::Transform\&\ t\ );}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ AddBodyCoords(\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ rotation\ );\ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ FixToBody();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetRotation(\ \textcolor{keywordtype}{float}=0.0f\ );}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetPosition(\ \textcolor{keywordtype}{float}=0.0f,\ \textcolor{keywordtype}{float}=0.0f\ );}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetPosition(\ glm::vec2\ );}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetOrigin(\ \textcolor{keywordtype}{float}=20.0f,\ \textcolor{keywordtype}{float}=20.0f\ );}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetOrigin(\ glm::vec2\ );}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255,\ \textcolor{keywordtype}{int}=255\ );}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ glm::vec4\ );}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetColor(\ sf::Color\ );}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ std::string\ );}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTexture(\ sf::Texture\&\ );}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTextureCoords(\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0,\ \textcolor{keywordtype}{float}=0\ );}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetTextureCoords(\ glm::vec4\ );\ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ SetVertices(\ std::vector<glm::vec2>\ vertices\ );}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ TransformVertices();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ Reset();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly_a098163398d3ab6e10e8d3c6dd5c3f9e3}{Animate}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly_a04f70519b10d1521479271fe5a4e4cd3}{ClearAnimation}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly_a76c779a11a96e531644b33f1e5fd8950}{Play}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly_aa654ea539a1c51c7759ab81491fcd400}{Pause}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Poly_aa17a6645d2b46a625159dc22905e2f51}{Stop}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Transform\ m\_transform;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<glm::vec2>\ \ m\_vertices;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<b2Vec2>\ b2\_vertices;}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

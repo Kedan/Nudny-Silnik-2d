@@ -1,0 +1,34 @@
+\doxysection{IDecompressor.\+hpp}
+\hypertarget{IDecompressor_8hpp_source}{}\label{IDecompressor_8hpp_source}\index{silnik/core/lib/include/tileson/interfaces/IDecompressor.hpp@{silnik/core/lib/include/tileson/interfaces/IDecompressor.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 29.07.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_IDECOMPRESSOR\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_IDECOMPRESSOR\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string\_view>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ TIn,\ \textcolor{keyword}{class}\ TOut>}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classtson_1_1IDecompressor_a7c42337c5d957585be515952209c1317}{name}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ TOut\ \mbox{\hyperlink{classtson_1_1IDecompressor_a77349ae9cf9e1338196dc21169448c4f}{decompress}}(\textcolor{keyword}{const}\ TIn\ \&input)\ =\ 0;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ TOut\ \mbox{\hyperlink{classtson_1_1IDecompressor_a2d1bed552a2305ac98aceb96eb897deb}{decompressFile}}(\textcolor{keyword}{const}\ fs::path\ \&path)\ =\ 0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ TOut\ \mbox{\hyperlink{classtson_1_1IDecompressor_a82aa4c374737ef3533831f2c6d803a15}{decompress}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *data,\ \textcolor{keywordtype}{size\_t}\ size)\ =\ 0;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtson_1_1IDecompressor_af4018046a1c549fc53e7150306a1f44c}{\string~IDecompressor}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_IDECOMPRESSOR\_HPP}}
+
+\end{DoxyCode}

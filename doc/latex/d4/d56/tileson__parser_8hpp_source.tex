@@ -1,0 +1,161 @@
+\doxysection{tileson\+\_\+parser.\+hpp}
+\hypertarget{tileson__parser_8hpp_source}{}\label{tileson__parser_8hpp_source}\index{silnik/core/lib/include/tileson/tileson\_parser.hpp@{silnik/core/lib/include/tileson/tileson\_parser.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_TILESON\_PARSER\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_TILESON\_PARSER\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//RBP:\ FS-\/namespace\ is\ defined\ in\ tileson\_parser\ now!}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#if\ \_MSC\_VER\ \&\&\ !\_\_INTEL\_COMPILER}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ \#include\ <filesystem>}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#elif\ \_\_MINGW64\_\_}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \#if\ \_\_MINGW64\_VERSION\_MAJOR\ >\ 6}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <filesystem>}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <experimental/filesystem>}}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }fs\ =\ std::experimental::filesystem;}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#elif\ \_\_clang\_\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ \#if\ \_\_clang\_major\_\_\ <\ 8}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <experimental/filesystem>}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }fs\ =\ std::experimental::filesystem;}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <filesystem>}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//Linux}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ \#if\ \_\_GNUC\_\_\ <\ 8\ }\textcolor{comment}{//GCC\ major\ version\ less\ than\ 8}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <experimental/filesystem>}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }fs\ =\ std::experimental::filesystem;}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <filesystem>}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}common/Tools.hpp"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}common/Base64Decompressor.hpp"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}common/Lzma.hpp"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}common/DecompressorContainer.hpp"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}misc/MemoryStream.hpp"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}tiled/Map.hpp"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}tiled/TiledEnum.hpp"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}tiled/TiledClass.hpp"{}}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}tiled/Project.hpp"{}}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Tileson}{Tileson}}}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#ifdef\ JSON11\_IS\_DEFINED}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0}{Tileson}}(std::unique\_ptr<tson::IJson>\ jsonParser\ =\ std::make\_unique<tson::Json11>(),\ \textcolor{keywordtype}{bool}\ includeBase64Decoder\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0}{Tileson}}(\mbox{\hyperlink{classtson_1_1Project}{tson::Project}}\ *project,\ std::unique\_ptr<tson::IJson>\ jsonParser\ =\ std::make\_unique<tson::Json11>(),\ \textcolor{keywordtype}{bool}\ includeBase64Decoder\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0}{Tileson}}(std::unique\_ptr<tson::IJson>\ jsonParser,\ \textcolor{keywordtype}{bool}\ includeBase64Decoder\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0}{Tileson}}(\mbox{\hyperlink{classtson_1_1Project}{tson::Project}}\ *project,\ std::unique\_ptr<tson::IJson>\ jsonParser,\ \textcolor{keywordtype}{bool}\ includeBase64Decoder\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::unique\_ptr<tson::Map>\ \mbox{\hyperlink{classtson_1_1Tileson_afbf4c769a04960fc1d5dd1fc827d76ac}{parse}}(\textcolor{keyword}{const}\ fs::path\ \&path,\ std::unique\_ptr<\mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}<std::vector<uint8\_t>,\ std::vector<uint8\_t>>>\ decompressor\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::unique\_ptr<tson::Map>\ \mbox{\hyperlink{classtson_1_1Tileson_afbf4c769a04960fc1d5dd1fc827d76ac}{parse}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *\ data,\ \textcolor{keywordtype}{size\_t}\ size,\ std::unique\_ptr<\mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}<std::vector<uint8\_t>,\ std::vector<uint8\_t>>>\ decompressor\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1DecompressorContainer}{tson::DecompressorContainer}}\ *\mbox{\hyperlink{classtson_1_1Tileson_ac0d8f569178b0c718a8a32351ab7c06a}{decompressors}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::unique\_ptr<tson::Map>\ parseJson();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<tson::IJson>\ m\_json;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1DecompressorContainer}{tson::DecompressorContainer}}\ m\_decompressors;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Project}{tson::Project}}\ *m\_project\ \{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00075\ \ \ \ \ \};}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \mbox{\hyperlink{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0}{tson::Tileson::Tileson}}(std::unique\_ptr<tson::IJson>\ jsonParser,\ \textcolor{keywordtype}{bool}\ includeBase64Decoder)\ :\ m\_json\ \{std::move(jsonParser)\}}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{if}(includeBase64Decoder)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ m\_decompressors.add<\mbox{\hyperlink{classtson_1_1Base64Decompressor}{Base64Decompressor}}>();}
+\DoxyCodeLine{00087\ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \mbox{\hyperlink{classtson_1_1Tileson_ac8d8723984dc54bc91433bd119dee4c0}{tson::Tileson::Tileson}}(\mbox{\hyperlink{classtson_1_1Project}{tson::Project}}\ *project,\ std::unique\_ptr<tson::IJson>\ jsonParser,\ \textcolor{keywordtype}{bool}\ includeBase64Decoder)\ :\ m\_json\ \{std::move(jsonParser)\}}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ m\_project\ =\ project;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}(includeBase64Decoder)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ m\_decompressors.add<\mbox{\hyperlink{classtson_1_1Base64Decompressor}{Base64Decompressor}}>();}
+\DoxyCodeLine{00094\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ std::unique\_ptr<tson::Map>\ \mbox{\hyperlink{classtson_1_1Tileson_afbf4c769a04960fc1d5dd1fc827d76ac}{tson::Tileson::parse}}(\textcolor{keyword}{const}\ fs::path\ \&path,\ std::unique\_ptr<\mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}<std::vector<uint8\_t>,\ std::vector<uint8\_t>>>\ decompressor)}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{if}(decompressor\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ decompressed\ =\ decompressor-\/>\mbox{\hyperlink{classtson_1_1Base64Decompressor_a2745131e454a170879ab05ff60568088}{decompressFile}}(path);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ result\ =\ (decompressed.empty())\ ?\ \textcolor{keyword}{false}\ :\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!result)}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<tson::Map>(tson::ParseStatus::DecompressionError,\ \textcolor{stringliteral}{"{}Error\ during\ decompression"{}});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ result\ =\ m\_json-\/>parse(\&decompressed[0],\ decompressed.size());}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(result)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parseJson();}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(m\_json-\/>parse(path))}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ parseJson();}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ std::string\ msg\ =\ \textcolor{stringliteral}{"{}File\ not\ found:\ "{}};}
+\DoxyCodeLine{00124\ \ \ \ \ msg\ +=\ std::string(path.generic\_string());}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<tson::Map>(tson::ParseStatus::FileNotFound,\ msg);}
+\DoxyCodeLine{00126\ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00134\ std::unique\_ptr<tson::Map>\ \mbox{\hyperlink{classtson_1_1Tileson_afbf4c769a04960fc1d5dd1fc827d76ac}{tson::Tileson::parse}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *data,\ \textcolor{keywordtype}{size\_t}\ size,\ std::unique\_ptr<\mbox{\hyperlink{classtson_1_1IDecompressor}{IDecompressor}}<std::vector<uint8\_t>,\ std::vector<uint8\_t>>>\ decompressor)}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{if}(decompressor\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ decompressed\ =\ decompressor-\/>decompress(data,\ size);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ result\ =\ (decompressed.empty())\ ?\ \textcolor{keyword}{false}\ :\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!result)}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<tson::Map>(tson::ParseStatus::DecompressionError,\ \textcolor{stringliteral}{"{}Error\ during\ decompression"{}});}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ result\ =\ m\_json-\/>parse(\&decompressed[0],\ decompressed.size());}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ result\ =\ m\_json-\/>parse(data,\ size);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{if}(!result)}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<tson::Map>(tson::ParseStatus::ParseError,\ \textcolor{stringliteral}{"{}Memory\ error"{}});}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ parseJson();}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ std::unique\_ptr<tson::Map>\ tson::Tileson::parseJson()}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ std::unique\_ptr<tson::Map>\ map\ =\ std::make\_unique<tson::Map>();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordflow}{if}(map-\/>parse(*m\_json,\ \&m\_decompressors,\ m\_project))}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ map;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<tson::Map>\ (tson::ParseStatus::MissingData,\ \textcolor{stringliteral}{"{}Missing\ map\ data..."{}});}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00178\ \mbox{\hyperlink{classtson_1_1DecompressorContainer}{tson::DecompressorContainer}}\ *\mbox{\hyperlink{classtson_1_1Tileson_ac0d8f569178b0c718a8a32351ab7c06a}{tson::Tileson::decompressors}}()}
+\DoxyCodeLine{00179\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{return}\ \&m\_decompressors;}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_TILESON\_PARSER\_HPP}}
+
+\end{DoxyCode}

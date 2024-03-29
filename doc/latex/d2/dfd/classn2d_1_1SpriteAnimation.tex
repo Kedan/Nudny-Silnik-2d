@@ -1,0 +1,119 @@
+\doxysection{n2d\+::Sprite\+Animation Class Reference}
+\hypertarget{classn2d_1_1SpriteAnimation}{}\label{classn2d_1_1SpriteAnimation}\index{n2d::SpriteAnimation@{n2d::SpriteAnimation}}
+Inheritance diagram for n2d\+::Sprite\+Animation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d2/dfd/classn2d_1_1SpriteAnimation}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_aa14583d8c864adcb2222a7fa7d98c4e5}\label{classn2d_1_1SpriteAnimation_aa14583d8c864adcb2222a7fa7d98c4e5} 
+{\bfseries Sprite\+Animation} (sf\+::\+Sprite \&)
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a967f8704e177906eef85bfa1aac6f6c2}\label{classn2d_1_1SpriteAnimation_a967f8704e177906eef85bfa1aac6f6c2} 
+void {\bfseries Set\+Sprite} (sf\+::\+Sprite \&)
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a2e61a409c982edbe0f67fee9827ecce1}\label{classn2d_1_1SpriteAnimation_a2e61a409c982edbe0f67fee9827ecce1} 
+void {\bfseries Add\+Frame} (float, glm\+::vec4)
+\item 
+void \mbox{\hyperlink{classn2d_1_1SpriteAnimation_a03d77f1b16d85b1be61c245dca0c37bd}{Animate}} (float t\+\_\+dt)
+\item 
+void \mbox{\hyperlink{classn2d_1_1SpriteAnimation_a2e00d7c57cbe683f3997b6beaeac3074}{Clear\+Animation}} ()
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a1251f1ddbedde3cc9e3ee19acfa17fa9}\label{classn2d_1_1SpriteAnimation_a1251f1ddbedde3cc9e3ee19acfa17fa9} 
+void {\bfseries Load} (tson\+::\+Animation \&, tson\+::\+Tileset \&)
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a1b1509539aeb92aa8ae0c93695ae984a}\label{classn2d_1_1SpriteAnimation_a1b1509539aeb92aa8ae0c93695ae984a} 
+int {\bfseries Count\+Frames} ()
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a6fa8368c29fa0755ffdfb024d9bf3a74}\label{classn2d_1_1SpriteAnimation_a6fa8368c29fa0755ffdfb024d9bf3a74} 
+float {\bfseries Get\+Duration} ()
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a58013c76356402299ccd4c07a9cbbd42}\label{classn2d_1_1SpriteAnimation_a58013c76356402299ccd4c07a9cbbd42} 
+void {\bfseries Next\+Frame} ()
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_acccd8cab3ee7c5c552a0c3deaeaa64b9}\label{classn2d_1_1SpriteAnimation_acccd8cab3ee7c5c552a0c3deaeaa64b9} 
+void {\bfseries Prev\+Frame} ()
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a18cdf6fa6c9c064652b4ae100b1926db}\label{classn2d_1_1SpriteAnimation_a18cdf6fa6c9c064652b4ae100b1926db} 
+bool {\bfseries Is\+Time\+Elapsed} ()
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a61fa6809f40f0d07ea67b03a011079de}\label{classn2d_1_1SpriteAnimation_a61fa6809f40f0d07ea67b03a011079de} 
+\mbox{\hyperlink{classn2d_1_1SpriteAnimation}{Sprite\+Animation}} \& {\bfseries operator=} (const \mbox{\hyperlink{classn2d_1_1SpriteAnimation}{Sprite\+Animation}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1FrameAnimation}{n2d\+::\+Frame\+Animation}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classn2d_1_1FrameAnimation_ae68d990468efbc57c37b5e951801a370}{Play}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1FrameAnimation_a1c3eeced2e9fbe7b829f63a37bd6accf}{Stop}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1FrameAnimation_a6feeb0df1ca3601cbc4fe068ce76741e}{Pause}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a010f8f4cd8da31c1c12b14cbcde5d0c3}\label{classn2d_1_1SpriteAnimation_a010f8f4cd8da31c1c12b14cbcde5d0c3} 
+float {\bfseries m\+\_\+duration}
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_a77fc9e7a92feab5653471e31e37defad}\label{classn2d_1_1SpriteAnimation_a77fc9e7a92feab5653471e31e37defad} 
+sf\+::\+Sprite \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+sprite}
+\item 
+\Hypertarget{classn2d_1_1SpriteAnimation_ab31263122ddf4d7657c33d17247463ff}\label{classn2d_1_1SpriteAnimation_ab31263122ddf4d7657c33d17247463ff} 
+std\+::vector$<$ \mbox{\hyperlink{classn2d_1_1Frame}{Frame}} $>$ {\bfseries m\+\_\+frames}
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1FrameAnimation}{n2d\+::\+Frame\+Animation}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries loop} = false
+\item 
+float {\bfseries speed} = 1.\+0f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1FrameAnimation}{n2d\+::\+Frame\+Animation}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries m\+\_\+pause}
+\item 
+bool {\bfseries m\+\_\+play}
+\item 
+float {\bfseries m\+\_\+elapsed\+\_\+time}
+\item 
+int {\bfseries m\+\_\+current\+\_\+frame} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1SpriteAnimation_a03d77f1b16d85b1be61c245dca0c37bd}\label{classn2d_1_1SpriteAnimation_a03d77f1b16d85b1be61c245dca0c37bd} 
+\index{n2d::SpriteAnimation@{n2d::SpriteAnimation}!Animate@{Animate}}
+\index{Animate@{Animate}!n2d::SpriteAnimation@{n2d::SpriteAnimation}}
+\doxysubsubsection{\texorpdfstring{Animate()}{Animate()}}
+{\footnotesize\ttfamily void Sprite\+Animation\+::\+Animate (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Runs the animation. Equivalent of Update() method -\/ but Update() should handle chages related with physics. 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & -\/ time tick, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} from sf\+::\+Clock and sf\+::\+Time class \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_aca9c14d240d437b4112419d9d446addd}{n2d\+::\+Animated}}.
+
+\Hypertarget{classn2d_1_1SpriteAnimation_a2e00d7c57cbe683f3997b6beaeac3074}\label{classn2d_1_1SpriteAnimation_a2e00d7c57cbe683f3997b6beaeac3074} 
+\index{n2d::SpriteAnimation@{n2d::SpriteAnimation}!ClearAnimation@{ClearAnimation}}
+\index{ClearAnimation@{ClearAnimation}!n2d::SpriteAnimation@{n2d::SpriteAnimation}}
+\doxysubsubsection{\texorpdfstring{ClearAnimation()}{ClearAnimation()}}
+{\footnotesize\ttfamily void Sprite\+Animation\+::\+Clear\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Delete all frames 
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_a52e707da569f0c6c9fad24ebebebd6e7}{n2d\+::\+Animated}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/visual/include/Animation.\+h\item 
+silnik/visual/src/Animation.\+cpp\end{DoxyCompactItemize}

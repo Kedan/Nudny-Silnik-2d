@@ -1,0 +1,58 @@
+\doxysection{gason Namespace Reference}
+\hypertarget{namespacegason}{}\label{namespacegason}\index{gason@{gason}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classgason_1_1JsonAllocator}{Json\+Allocator}}
+\item 
+struct \mbox{\hyperlink{structgason_1_1JsonIterator}{Json\+Iterator}}
+\item 
+struct \mbox{\hyperlink{structgason_1_1JsonNode}{Json\+Node}}
+\item 
+union \mbox{\hyperlink{uniongason_1_1JsonValue}{Json\+Value}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacegason_abb18737b3d73f6080a0829d35963945c}\label{namespacegason_abb18737b3d73f6080a0829d35963945c} 
+enum {\bfseries Json\+Tag} \{ \newline
+{\bfseries JSON\+\_\+\+NUMBER} = 0
+, {\bfseries JSON\+\_\+\+STRING}
+, {\bfseries JSON\+\_\+\+ARRAY}
+, {\bfseries JSON\+\_\+\+OBJECT}
+, \newline
+{\bfseries JSON\+\_\+\+TRUE}
+, {\bfseries JSON\+\_\+\+FALSE}
+, {\bfseries JSON\+\_\+\+NULL} = 0xF
+ \}
+\item 
+\Hypertarget{namespacegason_a9744e51beb9b7eff4e3da4eb477f1ca0}\label{namespacegason_a9744e51beb9b7eff4e3da4eb477f1ca0} 
+enum {\bfseries Json\+Errno} 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{namespacegason_ad76b4c8c10a737fdf36121ac3f2602be}\label{namespacegason_ad76b4c8c10a737fdf36121ac3f2602be} 
+\mbox{\hyperlink{structgason_1_1JsonIterator}{Json\+Iterator}} {\bfseries begin} (\mbox{\hyperlink{uniongason_1_1JsonValue}{Json\+Value}} o)
+\item 
+\Hypertarget{namespacegason_ab8dd8ddceaa26bc5f9227a974fcc216b}\label{namespacegason_ab8dd8ddceaa26bc5f9227a974fcc216b} 
+\mbox{\hyperlink{structgason_1_1JsonIterator}{Json\+Iterator}} {\bfseries end} (\mbox{\hyperlink{uniongason_1_1JsonValue}{Json\+Value}})
+\item 
+\Hypertarget{namespacegason_abcc68e0a542643101e47d7f94d37e9a7}\label{namespacegason_abcc68e0a542643101e47d7f94d37e9a7} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries json\+Str\+Error} (int err)
+\item 
+\Hypertarget{namespacegason_a9c4c66b03b63b5817f903ba02b8cda86}\label{namespacegason_a9c4c66b03b63b5817f903ba02b8cda86} 
+int {\bfseries json\+Parse} (char \texorpdfstring{$\ast$}{*}str, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}endptr, \mbox{\hyperlink{uniongason_1_1JsonValue}{Json\+Value}} \texorpdfstring{$\ast$}{*}value, \mbox{\hyperlink{classgason_1_1JsonAllocator}{Json\+Allocator}} \&allocator)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The MIT License (MIT)
+
+Copyright (c) 2013-\/2015 Ivan Vashchaev
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "{}\+Software"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "{}\+AS IS"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 

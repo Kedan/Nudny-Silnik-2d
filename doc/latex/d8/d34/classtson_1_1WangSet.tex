@@ -1,0 +1,159 @@
+\doxysection{tson\+::Wang\+Set Class Reference}
+\hypertarget{classtson_1_1WangSet}{}\label{classtson_1_1WangSet}\index{tson::WangSet@{tson::WangSet}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1WangSet_a4cc62c8732a4e7f724e88d4ddec7f8c0}\label{classtson_1_1WangSet_a4cc62c8732a4e7f724e88d4ddec7f8c0} 
+{\bfseries Wang\+Set} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+\Hypertarget{classtson_1_1WangSet_a98e9822321f4899d29c0fda958ae7565}\label{classtson_1_1WangSet_a98e9822321f4899d29c0fda958ae7565} 
+bool {\bfseries parse} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1WangSet_aa002fb1015dbff989c2b6d873b5a237c}{get\+Name}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1WangSet_a2d3b0eb85584744f4c1b806af3d999b2}{get\+Tile}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangTile}{tson\+::\+Wang\+Tile}} $>$ \& \mbox{\hyperlink{classtson_1_1WangSet_a8d90b5f1f993ec88a0979ce652982ca6}{get\+Wang\+Tiles}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangColor}{tson\+::\+Wang\+Color}} $>$ \& \mbox{\hyperlink{classtson_1_1WangSet_addc926be72148d1f5a3727b492e0cf9b}{get\+Corner\+Colors}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangColor}{tson\+::\+Wang\+Color}} $>$ \& \mbox{\hyperlink{classtson_1_1WangSet_aabed471f20fd092bfc55311cec45e967}{get\+Edge\+Colors}} () const
+\item 
+\mbox{\hyperlink{classtson_1_1WangColor}{tson\+::\+Wang\+Color}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1WangSet_ab3f53ac1136807583226dcfa0fd6621d}{get\+Color}} (const std\+::string \&name)
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangColor}{tson\+::\+Wang\+Color}} $>$ \& \mbox{\hyperlink{classtson_1_1WangSet_a16537ccda9a63d1a9a349356d2ac8484}{get\+Colors}} () const
+\item 
+\mbox{\hyperlink{classtson_1_1PropertyCollection}{Property\+Collection}} \& \mbox{\hyperlink{classtson_1_1WangSet_a6e718fb0fcb5fadfa50711a35a8445c7}{get\+Properties}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classtson_1_1WangSet_af384e6f13f1d1421a5da410ff00963ff}{get}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1WangSet_ae45fc2035820338b8d2b8f62db6993c9}{get\+Prop}} (const std\+::string \&name)
+\item 
+\Hypertarget{classtson_1_1WangSet_a046e315bd87696f3c332be5bf245b62c}\label{classtson_1_1WangSet_a046e315bd87696f3c332be5bf245b62c} 
+const std\+::string \& {\bfseries get\+Class\+Type} () const
+\item 
+\Hypertarget{classtson_1_1WangSet_a9181e9de793f606ff3c93c5e75940fd4}\label{classtson_1_1WangSet_a9181e9de793f606ff3c93c5e75940fd4} 
+\mbox{\hyperlink{classtson_1_1TiledClass}{tson\+::\+Tiled\+Class}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Class} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1WangSet_af384e6f13f1d1421a5da410ff00963ff}\label{classtson_1_1WangSet_af384e6f13f1d1421a5da410ff00963ff} 
+\index{tson::WangSet@{tson::WangSet}!get@{get}}
+\index{get@{get}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T tson\+::\+Wang\+Set\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A shortcut for getting a property. Alternative to \doxylink{classtson_1_1WangSet_a6e718fb0fcb5fadfa50711a35a8445c7}{get\+Properties()}.get\+Value$<$\+T$>$("{}$<$name$>$"{}) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The template value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual value, if it exists. Otherwise\+: The default value of the type. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_ab3f53ac1136807583226dcfa0fd6621d}\label{classtson_1_1WangSet_ab3f53ac1136807583226dcfa0fd6621d} 
+\index{tson::WangSet@{tson::WangSet}!getColor@{getColor}}
+\index{getColor@{getColor}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1WangColor}{tson\+::\+Wang\+Color}} \texorpdfstring{$\ast$}{*} tson\+::\+Wang\+Set\+::get\+Color (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+NB! Will only work with maps created/modified by Tiled v1.\+5 or later! Gets a color from a wangset by its name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \textquotesingle{}name\textquotesingle{} of \doxylink{classtson_1_1WangColor}{Wang\+Color} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{classtson_1_1WangColor}{Wang\+Color} with the given name or nullptr if it doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_a16537ccda9a63d1a9a349356d2ac8484}\label{classtson_1_1WangSet_a16537ccda9a63d1a9a349356d2ac8484} 
+\index{tson::WangSet@{tson::WangSet}!getColors@{getColors}}
+\index{getColors@{getColors}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getColors()}{getColors()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangColor}{tson\+::\+Wang\+Color}} $>$ \& tson\+::\+Wang\+Set\+::get\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get Wangset colors (new in Tiled v1.\+5) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_addc926be72148d1f5a3727b492e0cf9b}\label{classtson_1_1WangSet_addc926be72148d1f5a3727b492e0cf9b} 
+\index{tson::WangSet@{tson::WangSet}!getCornerColors@{getCornerColors}}
+\index{getCornerColors@{getCornerColors}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getCornerColors()}{getCornerColors()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangColor}{tson\+::\+Wang\+Color}} $>$ \& tson\+::\+Wang\+Set\+::get\+Corner\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}cornercolors\textquotesingle{}\+: Array of Wang colors \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_aabed471f20fd092bfc55311cec45e967}\label{classtson_1_1WangSet_aabed471f20fd092bfc55311cec45e967} 
+\index{tson::WangSet@{tson::WangSet}!getEdgeColors@{getEdgeColors}}
+\index{getEdgeColors@{getEdgeColors}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getEdgeColors()}{getEdgeColors()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangColor}{tson\+::\+Wang\+Color}} $>$ \& tson\+::\+Wang\+Set\+::get\+Edge\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}edgecolors\textquotesingle{}\+: Array of Wang colors \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_aa002fb1015dbff989c2b6d873b5a237c}\label{classtson_1_1WangSet_aa002fb1015dbff989c2b6d873b5a237c} 
+\index{tson::WangSet@{tson::WangSet}!getName@{getName}}
+\index{getName@{getName}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Wang\+Set\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}name\textquotesingle{}\+: Name of the Wang set \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_ae45fc2035820338b8d2b8f62db6993c9}\label{classtson_1_1WangSet_ae45fc2035820338b8d2b8f62db6993c9} 
+\index{tson::WangSet@{tson::WangSet}!getProp@{getProp}}
+\index{getProp@{getProp}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getProp()}{getProp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} tson\+::\+Wang\+Set\+::get\+Prop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shortcut for getting a property object. Alternative to \doxylink{classtson_1_1WangSet_a6e718fb0fcb5fadfa50711a35a8445c7}{get\+Properties()}.get\+Property("{}$<$name$>$"{}); 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_a6e718fb0fcb5fadfa50711a35a8445c7}\label{classtson_1_1WangSet_a6e718fb0fcb5fadfa50711a35a8445c7} 
+\index{tson::WangSet@{tson::WangSet}!getProperties@{getProperties}}
+\index{getProperties@{getProperties}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getProperties()}{getProperties()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson\+::\+Property\+Collection}} \& tson\+::\+Wang\+Set\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}properties\textquotesingle{}\+: A list of properties (name, value, type). \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_a2d3b0eb85584744f4c1b806af3d999b2}\label{classtson_1_1WangSet_a2d3b0eb85584744f4c1b806af3d999b2} 
+\index{tson::WangSet@{tson::WangSet}!getTile@{getTile}}
+\index{getTile@{getTile}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getTile()}{getTile()}}
+{\footnotesize\ttfamily int tson\+::\+Wang\+Set\+::get\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}tile\textquotesingle{}\+: Local ID of tile representing the Wang set \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangSet_a8d90b5f1f993ec88a0979ce652982ca6}\label{classtson_1_1WangSet_a8d90b5f1f993ec88a0979ce652982ca6} 
+\index{tson::WangSet@{tson::WangSet}!getWangTiles@{getWangTiles}}
+\index{getWangTiles@{getWangTiles}!tson::WangSet@{tson::WangSet}}
+\doxysubsubsection{\texorpdfstring{getWangTiles()}{getWangTiles()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangTile}{tson\+::\+Wang\+Tile}} $>$ \& tson\+::\+Wang\+Set\+::get\+Wang\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}wangtiles\textquotesingle{}\+: Array of Wang tiles \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Wang\+Set.\+hpp\item 
+silnik/core/lib/include/tileson/common/tileson\+\_\+forward.\+hpp\end{DoxyCompactItemize}

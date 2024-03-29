@@ -1,0 +1,103 @@
+\doxysection{tson\+::Property Class Reference}
+\hypertarget{classtson_1_1Property}{}\label{classtson_1_1Property}\index{tson::Property@{tson::Property}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1Property_a33b06fb85a588624b3755f51e2709e45}\label{classtson_1_1Property_a33b06fb85a588624b3755f51e2709e45} 
+{\bfseries Property} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Project}{tson\+::\+Project}} \texorpdfstring{$\ast$}{*}project=nullptr)
+\item 
+\Hypertarget{classtson_1_1Property_a37ff89a2917eb1e7f629bfbbe93d7757}\label{classtson_1_1Property_a37ff89a2917eb1e7f629bfbbe93d7757} 
+{\bfseries Property} (std\+::string name, std\+::any value, Type type)
+\item 
+\Hypertarget{classtson_1_1Property_a8ff1dae4110fac51d024407303552b1b}\label{classtson_1_1Property_a8ff1dae4110fac51d024407303552b1b} 
+void {\bfseries set\+Value} (const std\+::any \&value)
+\item 
+void \mbox{\hyperlink{classtson_1_1Property_ad9df5aff4283d1ffdf40abf12090e034}{set\+Str\+Value}} (const std\+::string \&value)
+\item 
+\Hypertarget{classtson_1_1Property_aec8cb237c1dac262589cd2b52189bde1}\label{classtson_1_1Property_aec8cb237c1dac262589cd2b52189bde1} 
+void {\bfseries set\+Name} (const std\+::string \&name)
+\item 
+const std\+::type\+\_\+info \& \mbox{\hyperlink{classtson_1_1Property_abf5f675eb76d2e7bfedfd2adecbeb387}{get\+Value\+Type}} () const
+\item 
+std\+::string \mbox{\hyperlink{classtson_1_1Property_a919f4be1d231c7388e99edffd0d10cca}{get\+Value\+Type\+Info}} ()
+\item 
+\Hypertarget{classtson_1_1Property_a91e1d6d644f1089026a02a5bbe2eeaf2}\label{classtson_1_1Property_a91e1d6d644f1089026a02a5bbe2eeaf2} 
+const std\+::any \& {\bfseries get\+Value} () const
+\item 
+\Hypertarget{classtson_1_1Property_af5edbee1fe8e95b6428474890476f8a0}\label{classtson_1_1Property_af5edbee1fe8e95b6428474890476f8a0} 
+{\footnotesize template$<$typename T $>$ }\\T {\bfseries get\+Value} () const
+\item 
+\Hypertarget{classtson_1_1Property_a9dda5b011cdfd6229e68deaf4ad793f4}\label{classtson_1_1Property_a9dda5b011cdfd6229e68deaf4ad793f4} 
+const std\+::string \& {\bfseries get\+Name} () const
+\item 
+\Hypertarget{classtson_1_1Property_adfcce89b1c2fe417b05016fc4270a89f}\label{classtson_1_1Property_adfcce89b1c2fe417b05016fc4270a89f} 
+Type {\bfseries get\+Type} () const
+\item 
+\Hypertarget{classtson_1_1Property_a49b8b5cdffcb6849e353a27fb04f8e90}\label{classtson_1_1Property_a49b8b5cdffcb6849e353a27fb04f8e90} 
+const std\+::string \& {\bfseries get\+Property\+Type} () const
+\item 
+\Hypertarget{classtson_1_1Property_abe7fb87228cccdc1dd3218a961859fff}\label{classtson_1_1Property_abe7fb87228cccdc1dd3218a961859fff} 
+void {\bfseries set\+Value\+By\+Type} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1Property_a69849575fcc65abcfed6ea0e3990c367}\label{classtson_1_1Property_a69849575fcc65abcfed6ea0e3990c367} 
+void {\bfseries set\+Type\+By\+String} (const std\+::string \&str)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1Property_a94309df86b9ace415b65976402d64562}\label{classtson_1_1Property_a94309df86b9ace415b65976402d64562} 
+\mbox{\hyperlink{classtson_1_1Project}{tson\+::\+Project}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+project} = nullptr
+\item 
+\Hypertarget{classtson_1_1Property_aafe3dea9b34ca4223443453a2d853691}\label{classtson_1_1Property_aafe3dea9b34ca4223443453a2d853691} 
+Type {\bfseries m\+\_\+type} = Type\+::\+Undefined
+\item 
+\Hypertarget{classtson_1_1Property_af1f97b6afdeed73db4f5d2a533be2e5f}\label{classtson_1_1Property_af1f97b6afdeed73db4f5d2a533be2e5f} 
+std\+::string {\bfseries m\+\_\+name} \{\}
+\item 
+\Hypertarget{classtson_1_1Property_ac02e72777dd95d2c15cb812cb36aec39}\label{classtson_1_1Property_ac02e72777dd95d2c15cb812cb36aec39} 
+std\+::string {\bfseries m\+\_\+property\+Type} \{\}
+\item 
+\Hypertarget{classtson_1_1Property_a7c4094c49c3b10e0698d3f96f6695c68}\label{classtson_1_1Property_a7c4094c49c3b10e0698d3f96f6695c68} 
+std\+::any {\bfseries m\+\_\+value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Property_abf5f675eb76d2e7bfedfd2adecbeb387}\label{classtson_1_1Property_abf5f675eb76d2e7bfedfd2adecbeb387} 
+\index{tson::Property@{tson::Property}!getValueType@{getValueType}}
+\index{getValueType@{getValueType}!tson::Property@{tson::Property}}
+\doxysubsubsection{\texorpdfstring{getValueType()}{getValueType()}}
+{\footnotesize\ttfamily const std\+::type\+\_\+info \& tson\+::\+Property\+::get\+Value\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the value type as std\+::value\+\_\+info. This can easily be compared to types like this\+: Check if int\+: \doxylink{classtson_1_1Property_abf5f675eb76d2e7bfedfd2adecbeb387}{get\+Value\+Type()} == typeid(int) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Property_a919f4be1d231c7388e99edffd0d10cca}\label{classtson_1_1Property_a919f4be1d231c7388e99edffd0d10cca} 
+\index{tson::Property@{tson::Property}!getValueTypeInfo@{getValueTypeInfo}}
+\index{getValueTypeInfo@{getValueTypeInfo}!tson::Property@{tson::Property}}
+\doxysubsubsection{\texorpdfstring{getValueTypeInfo()}{getValueTypeInfo()}}
+{\footnotesize\ttfamily std\+::string tson\+::\+Property\+::get\+Value\+Type\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets the value type as std\+::string Examples of known types\+: "{}i"{} = int "{}f"{} = float "{}b"{} = bool \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Property_ad9df5aff4283d1ffdf40abf12090e034}\label{classtson_1_1Property_ad9df5aff4283d1ffdf40abf12090e034} 
+\index{tson::Property@{tson::Property}!setStrValue@{setStrValue}}
+\index{setStrValue@{setStrValue}!tson::Property@{tson::Property}}
+\doxysubsubsection{\texorpdfstring{setStrValue()}{setStrValue()}}
+{\footnotesize\ttfamily void tson\+::\+Property\+::set\+Str\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the value specifically as string. When not specified as std\+::string, the default is that the value will be set as char \texorpdfstring{$\ast$}{*} when adding a value like "{}test"{} This function is to make sure the value is added as string. 
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/objects/Property.\+hpp\item 
+silnik/core/lib/include/tileson/common/tileson\+\_\+forward.\+hpp\end{DoxyCompactItemize}

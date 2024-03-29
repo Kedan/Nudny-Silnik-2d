@@ -1,0 +1,99 @@
+\doxysection{tson\+::Property\+Collection Class Reference}
+\hypertarget{classtson_1_1PropertyCollection}{}\label{classtson_1_1PropertyCollection}\index{tson::PropertyCollection@{tson::PropertyCollection}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_ac897569d2d84e8a467bf14cb7cf6fd26}\label{classtson_1_1PropertyCollection_ac897569d2d84e8a467bf14cb7cf6fd26} 
+{\bfseries Property\+Collection} (std\+::string id)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_a12f1839416855a8e16a23f67b5c98508}\label{classtson_1_1PropertyCollection_a12f1839416855a8e16a23f67b5c98508} 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} {\bfseries add} (const \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \&property)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_a00e1cafed624c44f8d2ef8a5ef923df7}\label{classtson_1_1PropertyCollection_a00e1cafed624c44f8d2ef8a5ef923df7} 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} {\bfseries add} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Project}{tson\+::\+Project}} \texorpdfstring{$\ast$}{*}project=nullptr)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_ae4b5dac635c868b424d756a27075ffe1}\label{classtson_1_1PropertyCollection_ae4b5dac635c868b424d756a27075ffe1} 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} {\bfseries add} (const std\+::string \&name, const std\+::any \&value, tson\+::\+Type type)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_a1bbda14527b9276a34ed7057c54e315d}\label{classtson_1_1PropertyCollection_a1bbda14527b9276a34ed7057c54e315d} 
+void {\bfseries remove} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classtson_1_1PropertyCollection_a80470b96535b25aae6bc09c6ea3d51d6}{set\+Value}} (const std\+::string \&name, const std\+::any \&value)
+\item 
+void \mbox{\hyperlink{classtson_1_1PropertyCollection_a6c68d240d15989d2a3407b716071dadc}{set\+Property}} (const std\+::string \&name, const \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \&value)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_ac7946632c038ef7dcc10881229f29c18}\label{classtson_1_1PropertyCollection_ac7946632c038ef7dcc10881229f29c18} 
+void {\bfseries set\+Id} (const std\+::string \&id)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_a9460ec4fa2395e6f0e7324243b38028e}\label{classtson_1_1PropertyCollection_a9460ec4fa2395e6f0e7324243b38028e} 
+bool {\bfseries has\+Property} (const std\+::string \&name)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_aa2a84ec4ec40f10c1b50815c0dfd7c46}\label{classtson_1_1PropertyCollection_aa2a84ec4ec40f10c1b50815c0dfd7c46} 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Property} (const std\+::string \&name)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_a3f386c0c90e4ee45fb572a5fb24ad361}\label{classtson_1_1PropertyCollection_a3f386c0c90e4ee45fb572a5fb24ad361} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classtson_1_1Property}{Property}} $>$ \& {\bfseries get\+Properties} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Property}{Property}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classtson_1_1PropertyCollection_a78211fa3c907c42e36627b6c66f0ba25}{get}} ()
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_a472bfac4acd23991bc4ee85f5905a200}\label{classtson_1_1PropertyCollection_a472bfac4acd23991bc4ee85f5905a200} 
+{\footnotesize template$<$typename T $>$ }\\T {\bfseries get\+Value} (const std\+::string \&name)
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_aa77da12565ee501a9ef4e4c64c1a6ada}\label{classtson_1_1PropertyCollection_aa77da12565ee501a9ef4e4c64c1a6ada} 
+const std\+::string \& {\bfseries get\+Id} () const
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_ae80af67b83ef88593a086ef0c2ea053c}\label{classtson_1_1PropertyCollection_ae80af67b83ef88593a086ef0c2ea053c} 
+size\+\_\+t {\bfseries get\+Size} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_a4a4f991ba691cbdb54e9e81a79ef2c61}\label{classtson_1_1PropertyCollection_a4a4f991ba691cbdb54e9e81a79ef2c61} 
+std\+::string {\bfseries m\+\_\+id}
+\item 
+\Hypertarget{classtson_1_1PropertyCollection_aa24d8fa316c823910db6de42a6b90b5c}\label{classtson_1_1PropertyCollection_aa24d8fa316c823910db6de42a6b90b5c} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} $>$ {\bfseries m\+\_\+properties}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1PropertyCollection_a78211fa3c907c42e36627b6c66f0ba25}\label{classtson_1_1PropertyCollection_a78211fa3c907c42e36627b6c66f0ba25} 
+\index{tson::PropertyCollection@{tson::PropertyCollection}!get@{get}}
+\index{get@{get}!tson::PropertyCollection@{tson::PropertyCollection}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} $>$ tson\+::\+Property\+Collection\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets vector of pointers to all the existing properties \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1PropertyCollection_a6c68d240d15989d2a3407b716071dadc}\label{classtson_1_1PropertyCollection_a6c68d240d15989d2a3407b716071dadc} 
+\index{tson::PropertyCollection@{tson::PropertyCollection}!setProperty@{setProperty}}
+\index{setProperty@{setProperty}!tson::PropertyCollection@{tson::PropertyCollection}}
+\doxysubsubsection{\texorpdfstring{setProperty()}{setProperty()}}
+{\footnotesize\ttfamily void tson\+::\+Property\+Collection\+::set\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Overwrites the current property if it exists, or adds it if it doesn\textquotesingle{}t. 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classtson_1_1PropertyCollection_a80470b96535b25aae6bc09c6ea3d51d6}\label{classtson_1_1PropertyCollection_a80470b96535b25aae6bc09c6ea3d51d6} 
+\index{tson::PropertyCollection@{tson::PropertyCollection}!setValue@{setValue}}
+\index{setValue@{setValue}!tson::PropertyCollection@{tson::PropertyCollection}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void tson\+::\+Property\+Collection\+::set\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::any \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets a value IF the property already exists. Does nothing otherwise. See add() for adding new properties 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/objects/Property\+Collection.\+hpp\end{DoxyCompactItemize}

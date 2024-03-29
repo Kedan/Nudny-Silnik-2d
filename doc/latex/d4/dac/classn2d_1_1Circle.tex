@@ -1,0 +1,398 @@
+\doxysection{n2d\+::Circle Class Reference}
+\hypertarget{classn2d_1_1Circle}{}\label{classn2d_1_1Circle}\index{n2d::Circle@{n2d::Circle}}
+Inheritance diagram for n2d\+::Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d4/dac/classn2d_1_1Circle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Circle_ad1001966463dc4aa21a990dc8a6bdbd0}\label{classn2d_1_1Circle_ad1001966463dc4aa21a990dc8a6bdbd0} 
+{\bfseries Circle} (const \mbox{\hyperlink{classn2d_1_1Circle}{Circle}} \&)
+\item 
+b2\+Shape \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Circle_aae0390eb144d64ff9a985cf0ca9a3fa6}{Get\+Updatable}} ()
+\item 
+sf\+::\+Drawable \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Circle_aa32351e76db77e232bb77076f12b1b56}{Get\+Drawable}} ()
+\item 
+sf\+::\+Transformable \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Circle_ab004a52f7aead0ee790a80c35b71ca74}{Get\+Transformable}} ()
+\item 
+\mbox{\hyperlink{classn2d_1_1Shape}{Shape}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Circle_a20d8a7462679118206f7841a1f48ef77}{Clone}} () const override
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_aabdae061b0cb80c77a95d153be8d12e9}{Draw}} (sf\+::\+Render\+Window \&w)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a0a1a88d419e87cf09521bcd743b1ace6}{Draw}} (sf\+::\+Render\+Window \&w, sf\+::\+Transform \&t)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a985dec22ce7462f58c0edb01aa42260d}{Add\+Body\+Coords}} (float x, float y, float rotation)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a28dfe954572fe28c8bc397028417eb06}{Fix\+To\+Body}} ()
+\item 
+\Hypertarget{classn2d_1_1Circle_ae6aca03375498a9412d9328b7c0c8ec8}\label{classn2d_1_1Circle_ae6aca03375498a9412d9328b7c0c8ec8} 
+void {\bfseries Set\+Radius} (float r=20.f)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a33923180fa895aaa1cd3c8488271bd92}{Set\+Position}} (float=0.\+0f, float=0.\+0f)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a677b31e7f3031da884736a0b138eb570}{Set\+Position}} (glm\+::vec2)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a1e7bc4d0a32f5585cf300fab2a828c4e}{Set\+Origin}} (float, float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a4a42550652c6ea424f08b6654c2f4afd}{Set\+Origin}} (glm\+::vec2)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a69334382bf41b3ca619a35decffcabdd}{Set\+Color}} (int=255, int=255, int=255, int=255)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_aaa72f364c7a1486c08293a3b42cef42f}{Set\+Color}} (glm\+::vec4)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a97c1c65a54176ea67a4435534f56564f}{Set\+Color}} (sf\+::\+Color)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_ac388bd8e8572eccdeeaa20afa4692747}{Set\+Texture}} (int)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a4da54268e8768910b812b3e497c2eff9}{Set\+Texture}} (std\+::string)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a12046c30512ea8242e7a373dbd59063a}{Set\+Texture}} (sf\+::\+Texture \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_aa3b8c58d5484f95bfadd56aca92eadc2}{Set\+Texture\+Coords}} (float=0, float=0, float=0, float=0)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a61cec46eee5f85a6058b1ea7ce147ddf}{Set\+Texture\+Coords}} (glm\+::vec4)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a8eef0ee9defb5631f123b5915ceac313}{Animate}} (float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_ab1cdb8770bba4ea076f7c22266dd200f}{Clear\+Animation}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a8ad9dbb76874b1859917cd8a3d0c49af}{Play}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a26c653dced3bab7d6475b4980399adad}{Pause}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1Circle_a097c679dccf60549e236e574de67ed64}{Stop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Set\+Density} (float=1.\+0f)
+\item 
+void {\bfseries Set\+Restitution} (float=0.\+01f)
+\item 
+void {\bfseries Set\+Friction} (float=0.\+3f)
+\item 
+void {\bfseries Set\+Resources} (\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \&t\+\_\+resources)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Circle_a87f757da918f8f5f378165bf3bf61246}\label{classn2d_1_1Circle_a87f757da918f8f5f378165bf3bf61246} 
+float {\bfseries radius}
+\item 
+\Hypertarget{classn2d_1_1Circle_ad449f13d6ba27b26cb12df3d9600dfe0}\label{classn2d_1_1Circle_ad449f13d6ba27b26cb12df3d9600dfe0} 
+sf\+::\+Circle\+Shape {\bfseries shape}
+\item 
+\Hypertarget{classn2d_1_1Circle_ae9208b719fd63c3cdfbe969303eb1410}\label{classn2d_1_1Circle_ae9208b719fd63c3cdfbe969303eb1410} 
+b2\+Circle\+Shape {\bfseries bound}
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries collide} = true
+\item 
+sf\+::\+Texture {\bfseries texture}
+\item 
+b2\+Fixture\+Def {\bfseries fixture}
+\item 
+glm\+::vec2 {\bfseries origin}
+\item 
+glm\+::vec2 {\bfseries position} = glm\+::vec2(0,0)
+\item 
+float {\bfseries rotation} = 0
+\item 
+int {\bfseries texture\+\_\+id}
+\item 
+glm\+::vec4 {\bfseries tex\+\_\+coords}
+\item 
+glm\+::vec4 {\bfseries color}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+resources}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Circle_a985dec22ce7462f58c0edb01aa42260d}\label{classn2d_1_1Circle_a985dec22ce7462f58c0edb01aa42260d} 
+\index{n2d::Circle@{n2d::Circle}!AddBodyCoords@{AddBodyCoords}}
+\index{AddBodyCoords@{AddBodyCoords}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{AddBodyCoords()}{AddBodyCoords()}}
+{\footnotesize\ttfamily void Circle\+::\+Add\+Body\+Coords (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a8eef0ee9defb5631f123b5915ceac313}\label{classn2d_1_1Circle_a8eef0ee9defb5631f123b5915ceac313} 
+\index{n2d::Circle@{n2d::Circle}!Animate@{Animate}}
+\index{Animate@{Animate}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{Animate()}{Animate()}}
+{\footnotesize\ttfamily void Circle\+::\+Animate (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Runs the animation. Equivalent of Update() method -\/ but Update() should handle chages related with physics. 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & -\/ time tick, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} from sf\+::\+Clock and sf\+::\+Time class \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_aca9c14d240d437b4112419d9d446addd}{n2d\+::\+Animated}}.
+
+\Hypertarget{classn2d_1_1Circle_ab1cdb8770bba4ea076f7c22266dd200f}\label{classn2d_1_1Circle_ab1cdb8770bba4ea076f7c22266dd200f} 
+\index{n2d::Circle@{n2d::Circle}!ClearAnimation@{ClearAnimation}}
+\index{ClearAnimation@{ClearAnimation}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{ClearAnimation()}{ClearAnimation()}}
+{\footnotesize\ttfamily void Circle\+::\+Clear\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Delete all frames 
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_a52e707da569f0c6c9fad24ebebebd6e7}{n2d\+::\+Animated}}.
+
+\Hypertarget{classn2d_1_1Circle_a20d8a7462679118206f7841a1f48ef77}\label{classn2d_1_1Circle_a20d8a7462679118206f7841a1f48ef77} 
+\index{n2d::Circle@{n2d::Circle}!Clone@{Clone}}
+\index{Clone@{Clone}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classn2d_1_1Shape}{Shape}} \texorpdfstring{$\ast$}{*} Circle\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_aabdae061b0cb80c77a95d153be8d12e9}\label{classn2d_1_1Circle_aabdae061b0cb80c77a95d153be8d12e9} 
+\index{n2d::Circle@{n2d::Circle}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Circle\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{n2d\+::\+Drawable}}.
+
+\Hypertarget{classn2d_1_1Circle_a0a1a88d419e87cf09521bcd743b1ace6}\label{classn2d_1_1Circle_a0a1a88d419e87cf09521bcd743b1ace6} 
+\index{n2d::Circle@{n2d::Circle}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Circle\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{sf\+::\+Transform \&}]{t\+\_\+transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+{\em \&t\+\_\+transform} & -\/ additional transformations reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{n2d\+::\+Drawable}}.
+
+\Hypertarget{classn2d_1_1Circle_a28dfe954572fe28c8bc397028417eb06}\label{classn2d_1_1Circle_a28dfe954572fe28c8bc397028417eb06} 
+\index{n2d::Circle@{n2d::Circle}!FixToBody@{FixToBody}}
+\index{FixToBody@{FixToBody}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{FixToBody()}{FixToBody()}}
+{\footnotesize\ttfamily void Circle\+::\+Fix\+To\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_aa32351e76db77e232bb77076f12b1b56}\label{classn2d_1_1Circle_aa32351e76db77e232bb77076f12b1b56} 
+\index{n2d::Circle@{n2d::Circle}!GetDrawable@{GetDrawable}}
+\index{GetDrawable@{GetDrawable}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{GetDrawable()}{GetDrawable()}}
+{\footnotesize\ttfamily sf\+::\+Drawable \texorpdfstring{$\ast$}{*} Circle\+::\+Get\+Drawable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_ab004a52f7aead0ee790a80c35b71ca74}\label{classn2d_1_1Circle_ab004a52f7aead0ee790a80c35b71ca74} 
+\index{n2d::Circle@{n2d::Circle}!GetTransformable@{GetTransformable}}
+\index{GetTransformable@{GetTransformable}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{GetTransformable()}{GetTransformable()}}
+{\footnotesize\ttfamily sf\+::\+Transformable \texorpdfstring{$\ast$}{*} Circle\+::\+Get\+Transformable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_aae0390eb144d64ff9a985cf0ca9a3fa6}\label{classn2d_1_1Circle_aae0390eb144d64ff9a985cf0ca9a3fa6} 
+\index{n2d::Circle@{n2d::Circle}!GetUpdatable@{GetUpdatable}}
+\index{GetUpdatable@{GetUpdatable}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{GetUpdatable()}{GetUpdatable()}}
+{\footnotesize\ttfamily b2\+Shape \texorpdfstring{$\ast$}{*} Circle\+::\+Get\+Updatable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a26c653dced3bab7d6475b4980399adad}\label{classn2d_1_1Circle_a26c653dced3bab7d6475b4980399adad} 
+\index{n2d::Circle@{n2d::Circle}!Pause@{Pause}}
+\index{Pause@{Pause}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{Pause()}{Pause()}}
+{\footnotesize\ttfamily void Circle\+::\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Pause method. Freezes animation in current frame. 
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_a5291e65867b18d0f6f429e2683a7c31e}{n2d\+::\+Animated}}.
+
+\Hypertarget{classn2d_1_1Circle_a8ad9dbb76874b1859917cd8a3d0c49af}\label{classn2d_1_1Circle_a8ad9dbb76874b1859917cd8a3d0c49af} 
+\index{n2d::Circle@{n2d::Circle}!Play@{Play}}
+\index{Play@{Play}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily void Circle\+::\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Play method. 
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_a07c4762576f95f53d5f6cda7d15ea337}{n2d\+::\+Animated}}.
+
+\Hypertarget{classn2d_1_1Circle_aaa72f364c7a1486c08293a3b42cef42f}\label{classn2d_1_1Circle_aaa72f364c7a1486c08293a3b42cef42f} 
+\index{n2d::Circle@{n2d::Circle}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a69334382bf41b3ca619a35decffcabdd}\label{classn2d_1_1Circle_a69334382bf41b3ca619a35decffcabdd} 
+\index{n2d::Circle@{n2d::Circle}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{int}]{r = {\ttfamily 255},  }\item[{int}]{g = {\ttfamily 255},  }\item[{int}]{b = {\ttfamily 255},  }\item[{int}]{a = {\ttfamily 255} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a97c1c65a54176ea67a4435534f56564f}\label{classn2d_1_1Circle_a97c1c65a54176ea67a4435534f56564f} 
+\index{n2d::Circle@{n2d::Circle}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a1e7bc4d0a32f5585cf300fab2a828c4e}\label{classn2d_1_1Circle_a1e7bc4d0a32f5585cf300fab2a828c4e} 
+\index{n2d::Circle@{n2d::Circle}!SetOrigin@{SetOrigin}}
+\index{SetOrigin@{SetOrigin}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetOrigin()}{SetOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Origin (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a4a42550652c6ea424f08b6654c2f4afd}\label{classn2d_1_1Circle_a4a42550652c6ea424f08b6654c2f4afd} 
+\index{n2d::Circle@{n2d::Circle}!SetOrigin@{SetOrigin}}
+\index{SetOrigin@{SetOrigin}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetOrigin()}{SetOrigin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Origin (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a33923180fa895aaa1cd3c8488271bd92}\label{classn2d_1_1Circle_a33923180fa895aaa1cd3c8488271bd92} 
+\index{n2d::Circle@{n2d::Circle}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{float}]{x = {\ttfamily 0.0f},  }\item[{float}]{y = {\ttfamily 0.0f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a677b31e7f3031da884736a0b138eb570}\label{classn2d_1_1Circle_a677b31e7f3031da884736a0b138eb570} 
+\index{n2d::Circle@{n2d::Circle}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{glm\+::vec2}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_ac388bd8e8572eccdeeaa20afa4692747}\label{classn2d_1_1Circle_ac388bd8e8572eccdeeaa20afa4692747} 
+\index{n2d::Circle@{n2d::Circle}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a12046c30512ea8242e7a373dbd59063a}\label{classn2d_1_1Circle_a12046c30512ea8242e7a373dbd59063a} 
+\index{n2d::Circle@{n2d::Circle}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{t\+\_\+texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a4da54268e8768910b812b3e497c2eff9}\label{classn2d_1_1Circle_a4da54268e8768910b812b3e497c2eff9} 
+\index{n2d::Circle@{n2d::Circle}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{texture\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_aa3b8c58d5484f95bfadd56aca92eadc2}\label{classn2d_1_1Circle_aa3b8c58d5484f95bfadd56aca92eadc2} 
+\index{n2d::Circle@{n2d::Circle}!SetTextureCoords@{SetTextureCoords}}
+\index{SetTextureCoords@{SetTextureCoords}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetTextureCoords()}{SetTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Texture\+Coords (\begin{DoxyParamCaption}\item[{float}]{u0 = {\ttfamily 0},  }\item[{float}]{v0 = {\ttfamily 0},  }\item[{float}]{u1 = {\ttfamily 0},  }\item[{float}]{v1 = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a61cec46eee5f85a6058b1ea7ce147ddf}\label{classn2d_1_1Circle_a61cec46eee5f85a6058b1ea7ce147ddf} 
+\index{n2d::Circle@{n2d::Circle}!SetTextureCoords@{SetTextureCoords}}
+\index{SetTextureCoords@{SetTextureCoords}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{SetTextureCoords()}{SetTextureCoords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Circle\+::\+Set\+Texture\+Coords (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{coords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Shape}{n2d\+::\+Shape}}.
+
+\Hypertarget{classn2d_1_1Circle_a097c679dccf60549e236e574de67ed64}\label{classn2d_1_1Circle_a097c679dccf60549e236e574de67ed64} 
+\index{n2d::Circle@{n2d::Circle}!Stop@{Stop}}
+\index{Stop@{Stop}!n2d::Circle@{n2d::Circle}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void Circle\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Stop methos. Rewind animation to first frame. 
+
+Implements \mbox{\hyperlink{classn2d_1_1Animated_aafa111136e06807badbd0886a2f762ae}{n2d\+::\+Animated}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/visual/include/Circle.\+h\item 
+silnik/visual/src/Circle.\+cpp\end{DoxyCompactItemize}

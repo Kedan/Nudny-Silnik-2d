@@ -1,0 +1,119 @@
+\doxysection{tson\+::Wang\+Color Class Reference}
+\hypertarget{classtson_1_1WangColor}{}\label{classtson_1_1WangColor}\index{tson::WangColor@{tson::WangColor}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1WangColor_a7c95cc86e1b99520ede903c46bb744ee}\label{classtson_1_1WangColor_a7c95cc86e1b99520ede903c46bb744ee} 
+{\bfseries Wang\+Color} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+\Hypertarget{classtson_1_1WangColor_a3c3daea6a96baba0a847df2ebbd92237}\label{classtson_1_1WangColor_a3c3daea6a96baba0a847df2ebbd92237} 
+bool {\bfseries parse} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+const \mbox{\hyperlink{classtson_1_1Color}{Colori}} \& \mbox{\hyperlink{classtson_1_1WangColor_ad71da21d00ed5cd397a76fa035e796fb}{get\+Color}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1WangColor_a57f390028710740c74d474743e83b657}{get\+Name}} () const
+\item 
+float \mbox{\hyperlink{classtson_1_1WangColor_a0f45a9049f5c452641f44ef3834e1ec0}{get\+Probability}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1WangColor_addfd9874733ef694af43cdfb33b95d47}{get\+Tile}} () const
+\item 
+\mbox{\hyperlink{classtson_1_1PropertyCollection}{Property\+Collection}} \& \mbox{\hyperlink{classtson_1_1WangColor_ac5a8245a64a00f269c8350dc20a1288c}{get\+Properties}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classtson_1_1WangColor_a37c14ca94f6d2dc9cf465b0f4a014dcd}{get}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1WangColor_a096cb1ee1fdfb64736d6ba881e642279}{get\+Prop}} (const std\+::string \&name)
+\item 
+\Hypertarget{classtson_1_1WangColor_a3b04c12448e0f9fa9e453dc60165549d}\label{classtson_1_1WangColor_a3b04c12448e0f9fa9e453dc60165549d} 
+const std\+::string \& {\bfseries get\+Class\+Type} () const
+\item 
+\Hypertarget{classtson_1_1WangColor_af6626d96f2453c094a028f0d478b515d}\label{classtson_1_1WangColor_af6626d96f2453c094a028f0d478b515d} 
+\mbox{\hyperlink{classtson_1_1TiledClass}{tson\+::\+Tiled\+Class}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Class} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1WangColor_a37c14ca94f6d2dc9cf465b0f4a014dcd}\label{classtson_1_1WangColor_a37c14ca94f6d2dc9cf465b0f4a014dcd} 
+\index{tson::WangColor@{tson::WangColor}!get@{get}}
+\index{get@{get}!tson::WangColor@{tson::WangColor}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T tson\+::\+Wang\+Color\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A shortcut for getting a property. Alternative to \doxylink{classtson_1_1WangColor_ac5a8245a64a00f269c8350dc20a1288c}{get\+Properties()}.get\+Value$<$\+T$>$("{}$<$name$>$"{}) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The template value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual value, if it exists. Otherwise\+: The default value of the type. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangColor_ad71da21d00ed5cd397a76fa035e796fb}\label{classtson_1_1WangColor_ad71da21d00ed5cd397a76fa035e796fb} 
+\index{tson::WangColor@{tson::WangColor}!getColor@{getColor}}
+\index{getColor@{getColor}!tson::WangColor@{tson::WangColor}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Colori}} \& tson\+::\+Wang\+Color\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}color\textquotesingle{}\+: \doxylink{classtson_1_1Color}{Color} object created from hex-\/formatted string (\#\+RRGGBB or \#\+AARRGGBB) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangColor_a57f390028710740c74d474743e83b657}\label{classtson_1_1WangColor_a57f390028710740c74d474743e83b657} 
+\index{tson::WangColor@{tson::WangColor}!getName@{getName}}
+\index{getName@{getName}!tson::WangColor@{tson::WangColor}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Wang\+Color\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}name\textquotesingle{}\+: Name of the Wang color \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangColor_a0f45a9049f5c452641f44ef3834e1ec0}\label{classtson_1_1WangColor_a0f45a9049f5c452641f44ef3834e1ec0} 
+\index{tson::WangColor@{tson::WangColor}!getProbability@{getProbability}}
+\index{getProbability@{getProbability}!tson::WangColor@{tson::WangColor}}
+\doxysubsubsection{\texorpdfstring{getProbability()}{getProbability()}}
+{\footnotesize\ttfamily float tson\+::\+Wang\+Color\+::get\+Probability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}probability\textquotesingle{}\+: Probability used when randomizing \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangColor_a096cb1ee1fdfb64736d6ba881e642279}\label{classtson_1_1WangColor_a096cb1ee1fdfb64736d6ba881e642279} 
+\index{tson::WangColor@{tson::WangColor}!getProp@{getProp}}
+\index{getProp@{getProp}!tson::WangColor@{tson::WangColor}}
+\doxysubsubsection{\texorpdfstring{getProp()}{getProp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} tson\+::\+Wang\+Color\+::get\+Prop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shortcut for getting a property object. Alternative to \doxylink{classtson_1_1WangColor_ac5a8245a64a00f269c8350dc20a1288c}{get\+Properties()}.get\+Property("{}$<$name$>$"{}); 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangColor_ac5a8245a64a00f269c8350dc20a1288c}\label{classtson_1_1WangColor_ac5a8245a64a00f269c8350dc20a1288c} 
+\index{tson::WangColor@{tson::WangColor}!getProperties@{getProperties}}
+\index{getProperties@{getProperties}!tson::WangColor@{tson::WangColor}}
+\doxysubsubsection{\texorpdfstring{getProperties()}{getProperties()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson\+::\+Property\+Collection}} \& tson\+::\+Wang\+Color\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+New property in Tiled v1.\+5 when data is contained in \textquotesingle{}colors\textquotesingle{} of a wangset \textquotesingle{}properties\textquotesingle{}\+: A list of properties (name, value, type). \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1WangColor_addfd9874733ef694af43cdfb33b95d47}\label{classtson_1_1WangColor_addfd9874733ef694af43cdfb33b95d47} 
+\index{tson::WangColor@{tson::WangColor}!getTile@{getTile}}
+\index{getTile@{getTile}!tson::WangColor@{tson::WangColor}}
+\doxysubsubsection{\texorpdfstring{getTile()}{getTile()}}
+{\footnotesize\ttfamily int tson\+::\+Wang\+Color\+::get\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}tile\textquotesingle{}\+: Local ID of tile representing the Wang color \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Wang\+Color.\+hpp\item 
+silnik/core/lib/include/tileson/common/tileson\+\_\+forward.\+hpp\end{DoxyCompactItemize}

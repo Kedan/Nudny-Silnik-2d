@@ -1,0 +1,168 @@
+\doxysection{Property.\+hpp}
+\hypertarget{Property_8hpp_source}{}\label{Property_8hpp_source}\index{silnik/core/lib/include/tileson/objects/Property.hpp@{silnik/core/lib/include/tileson/objects/Property.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_PROPERTY\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_PROPERTY\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\#include\ "{}../../TilesonConfig.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\#if\ USE\_CPP17\_FILESYSTEM}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <any>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../common/Enums.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\#include\ "{}../external/json.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }Project;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtson_1_1Property}{Property}}}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Property}{Property}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classtson_1_1Property}{Property}}(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Project}{tson::Project}}\ *project\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classtson_1_1Property}{Property}}(std::string\ name,\ std::any\ value,\ Type\ type);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ setValue(\textcolor{keyword}{const}\ std::any\ \&value);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtson_1_1Property_ad9df5aff4283d1ffdf40abf12090e034}{setStrValue}}(\textcolor{keyword}{const}\ std::string\ \&value);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ setName(\textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::type\_info\&\ \mbox{\hyperlink{classtson_1_1Property_abf5f675eb76d2e7bfedfd2adecbeb387}{getValueType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{classtson_1_1Property_a919f4be1d231c7388e99edffd0d10cca}{getValueTypeInfo}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::any\ \&getValue()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ T\ getValue()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&getName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ Type\ getType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&getPropertyType()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Became\ public\ in\ v1.4.0}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ setValueByType(\mbox{\hyperlink{classtson_1_1IJson}{IJson}}\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}});\ \textcolor{comment}{//Definition\ in\ tileson\_forward.hpp}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ setTypeByString(\textcolor{keyword}{const}\ std::string\ \&str);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classtson_1_1Project}{tson::Project}}\ *m\_project\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//Used\ for\ resolving\ 'enum'\ and\ 'class'\ objects}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ Type\ m\_type\ =\ Type::Undefined;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ m\_name\ \{\};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ m\_propertyType\ \{\};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ std::any\ m\_value;\ \textcolor{comment}{//Using\ std::any\ to\ assign\ any\ type}}
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00056\ \ \ \ \ T\ Property::getValue()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isCorrectType\ =\ (m\_value.type()\ ==\ \textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isCorrectType)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ T\ value\ =\ std::any\_cast<T>(m\_value);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ T\ defaultValue;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ defaultValue;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ tson::Property::Property()\ :\ m\_name\ \{\textcolor{stringliteral}{"{}unnamed"{}}\}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ tson::Property::Property(IJson\ \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}},\ \mbox{\hyperlink{classtson_1_1Project}{tson::Project}}\ *project)\ :\ m\_project\ \{project\}}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ m\_name\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}name"{}}].\mbox{\hyperlink{classnlohmann_1_1basic__json_af1650e004db368459b3c0db041b32adc}{get}}<std::string>();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}propertytype"{}})\ >\ 0)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ m\_propertyType\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}propertytype"{}}].get<std::string>();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}.\mbox{\hyperlink{classnlohmann_1_1basic__json_aba5ec6d1e37eda6b11eba491a1e5237e}{count}}(\textcolor{stringliteral}{"{}propertyType"{}})\ >\ 0)\ \textcolor{comment}{//Somehow\ Tiled's\ class\ objects\ uses\ propertyType\ with\ 'T'.}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ m\_propertyType\ =\ \mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}propertyType"{}}].get<std::string>();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ setTypeByString(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}type"{}}].get<std::string>());}
+\DoxyCodeLine{00087\ \ \ \ \ setValueByType(\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}[\textcolor{stringliteral}{"{}value"{}}]);}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ tson::Property::Property(std::string\ name,\ std::any\ value,\ Type\ type)\ :\ m\_type\ \{type\},\ m\_name\ \{\ std::move(name)\ \},\ m\_value\ \{\ std::move(\mbox{\hyperlink{namespacenlohmann_1_1detail_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}})\ \}}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ tson::Property::setValue(\textcolor{keyword}{const}\ std::any\ \&value)}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ m\_value\ =\ \mbox{\hyperlink{namespacenlohmann_1_1detail_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}};}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtson_1_1Property_ad9df5aff4283d1ffdf40abf12090e034}{tson::Property::setStrValue}}(\textcolor{keyword}{const}\ std::string\ \&value)}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ m\_value\ =\ value;}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{const}\ std::any\ \&tson::Property::getValue()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00112\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_value;}
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ tson::Property::setName(\textcolor{keyword}{const}\ std::string\ \&name)}
+\DoxyCodeLine{00117\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ m\_name\ =\ name;}
+\DoxyCodeLine{00119\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{const}\ std::string\ \&tson::Property::getName()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00122\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_name;}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00133\ \textcolor{keyword}{const}\ std::type\_info\ \&\mbox{\hyperlink{classtson_1_1Property_abf5f675eb76d2e7bfedfd2adecbeb387}{tson::Property::getValueType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00134\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_value.type();}
+\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00146\ std::string\ \mbox{\hyperlink{classtson_1_1Property_a919f4be1d231c7388e99edffd0d10cca}{tson::Property::getValueTypeInfo}}()}
+\DoxyCodeLine{00147\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_value.type().name();}
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ tson::Type\ tson::Property::getType()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00152\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_type;}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{keywordtype}{void}\ tson::Property::setTypeByString(\textcolor{keyword}{const}\ std::string\ \&str)}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}color"{}})}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::Color;}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}file"{}})}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::File;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}int"{}})}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::Int;}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}bool"{}})}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::Boolean;}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}float"{}})}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::Float;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}string"{}})}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::String;}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}class"{}})}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::Class;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(str\ ==\ \textcolor{stringliteral}{"{}object"{}})}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::Object;}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ m\_type\ =\ tson::Type::Undefined;}
+\DoxyCodeLine{00176\ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{const}\ std::string\ \&tson::Property::getPropertyType()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00179\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_propertyType;}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_PROPERTY\_HPP}}
+
+\end{DoxyCode}

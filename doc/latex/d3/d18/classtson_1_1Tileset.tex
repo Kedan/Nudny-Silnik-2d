@@ -1,0 +1,393 @@
+\doxysection{tson\+::Tileset Class Reference}
+\hypertarget{classtson_1_1Tileset}{}\label{classtson_1_1Tileset}\index{tson::Tileset@{tson::Tileset}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classtson_1_1Tileset_a13caf865ea17b6f355dfe49854540eee}\label{classtson_1_1Tileset_a13caf865ea17b6f355dfe49854540eee} 
+{\bfseries Tileset} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+\Hypertarget{classtson_1_1Tileset_a802aac1405b38db6e61a1b4fdc2ea080}\label{classtson_1_1Tileset_a802aac1405b38db6e61a1b4fdc2ea080} 
+bool {\bfseries parse} (\mbox{\hyperlink{classtson_1_1IJson}{IJson}} \&\mbox{\hyperlink{classnlohmann_1_1basic__json}{json}}, \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+int \mbox{\hyperlink{classtson_1_1Tileset_acad0f7d788025b59052b230799ffc6bb}{get\+Columns}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1Tileset_a90f6ba8eb6b9d58c9ba5d47f943082a3}{get\+Firstgid}} () const
+\item 
+const fs\+::path \& \mbox{\hyperlink{classtson_1_1Tileset_a69cd66f3c6d9337f85607beddfadeb80}{get\+Image\+Path}} () const
+\item 
+const fs\+::path \& \mbox{\hyperlink{classtson_1_1Tileset_a7fd96349c42b8aac5f8f63cb4f4274f6}{get\+Full\+Image\+Path}} () const
+\item 
+const fs\+::path \& \mbox{\hyperlink{classtson_1_1Tileset_a4600c0b7e11580772580662f85b07726}{get\+Image}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Tileset_a0f6c66cf1ccfd0654b7c448bd40808d0}{get\+Image\+Size}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1Tileset_a61e4fbc904b65159f38bcab4ab02a332}{get\+Margin}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Tileset_ae453d71cb55722d32b8695babde5ae0e}{get\+Name}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1Tileset_a48b3d5b9ba608668890f9ca617386f79}{get\+Spacing}} () const
+\item 
+int \mbox{\hyperlink{classtson_1_1Tileset_aa2e4e0b79014829b9cf9738179255f37}{get\+Tile\+Count}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Tileset_a7f5a43cc664fb619e3c607c31b4f3da0}{get\+Tile\+Size}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Color}{Colori}} \& \mbox{\hyperlink{classtson_1_1Tileset_ad8ccd22b9417bdbca393cac57993ef2d}{get\+Transparent\+Color}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Tileset_a075988a9b8787e925d42b255019dd6ae}{get\+Type}} () const
+\item 
+\Hypertarget{classtson_1_1Tileset_a445e7c8632f77136612f2f5805a9de5e}\label{classtson_1_1Tileset_a445e7c8632f77136612f2f5805a9de5e} 
+const std\+::string \& {\bfseries get\+Class\+Type} () const
+\item 
+\Hypertarget{classtson_1_1Tileset_a12a50785b5b2746f030cf7752babe13d}\label{classtson_1_1Tileset_a12a50785b5b2746f030cf7752babe13d} 
+\mbox{\hyperlink{classtson_1_1TiledClass}{tson\+::\+Tiled\+Class}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Class} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} $>$ \& \mbox{\hyperlink{classtson_1_1Tileset_ae9744efa054fa3a6a6473811c20cdb9c}{get\+Tiles}} ()
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangSet}{tson\+::\+Wang\+Set}} $>$ \& \mbox{\hyperlink{classtson_1_1Tileset_ac12fc24cd970e151e949c19ad0f62f81}{get\+Wangsets}} () const
+\item 
+\mbox{\hyperlink{classtson_1_1PropertyCollection}{Property\+Collection}} \& \mbox{\hyperlink{classtson_1_1Tileset_abfc08d09ed4a82a546e2231c0214d43a}{get\+Properties}} ()
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Terrain}{tson\+::\+Terrain}} $>$ \& \mbox{\hyperlink{classtson_1_1Tileset_a07b0c7e494c272cf45eb09b5bf5f1118}{get\+Terrains}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Vector2}{Vector2i}} \& \mbox{\hyperlink{classtson_1_1Tileset_a5151c7d3df08f24abf6a70e379224845}{get\+Tile\+Offset}} () const
+\item 
+const \mbox{\hyperlink{classtson_1_1Grid}{Grid}} \& \mbox{\hyperlink{classtson_1_1Tileset_a4a22bdf3892baf5c6bbcb4ee2af61c5f}{get\+Grid}} () const
+\item 
+\Hypertarget{classtson_1_1Tileset_a3cb8a4447ae983c609e466a276b011f5}\label{classtson_1_1Tileset_a3cb8a4447ae983c609e466a276b011f5} 
+Tile\+Render\+Size {\bfseries get\+Tile\+Render\+Size} () const
+\item 
+\Hypertarget{classtson_1_1Tileset_a71abc3ae5634052096ae150c66218ec6}\label{classtson_1_1Tileset_a71abc3ae5634052096ae150c66218ec6} 
+Fill\+Mode {\bfseries get\+Fill\+Mode} () const
+\item 
+\mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Tileset_aaabda77d218d9fbc0dd23769c380bbd0}{get\+Tile}} (uint32\+\_\+t id)
+\item 
+\mbox{\hyperlink{classtson_1_1Terrain}{tson\+::\+Terrain}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Tileset_aedae2e6b80172d117e83c67d5e9c3b50}{get\+Terrain}} (const std\+::string \&name)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{classtson_1_1Tileset_a6b23b3518bb160d1b3b23e7fe13b6694}{get}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Tileset_a872b1f62069b4399abfc72cc6242a28a}{get\+Prop}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Tileset_a88fdc4fdec3eee3ae05f6fd7a075cfd3}{get\+Map}} () const
+\item 
+\Hypertarget{classtson_1_1Tileset_a1dc53dc4beb9f9d8a336d8e18a57f119}\label{classtson_1_1Tileset_a1dc53dc4beb9f9d8a336d8e18a57f119} 
+Object\+Alignment {\bfseries get\+Object\+Alignment} () const
+\item 
+\mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \mbox{\hyperlink{classtson_1_1Tileset_afd66472f7e8bee2a8a45f52a3e2d2e1c}{get\+Margin\+Spacing\+Offset}} (const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \&pos\+In\+Tile\+Units)
+\item 
+\mbox{\hyperlink{classtson_1_1WangSet}{tson\+::\+Wang\+Set}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtson_1_1Tileset_afc363ff2934658bf99d65f0c22a5f2c9}{get\+Wangset}} (const std\+::string \&name)
+\item 
+const \mbox{\hyperlink{classtson_1_1Transformations}{Transformations}} \& \mbox{\hyperlink{classtson_1_1Tileset_a8db6f715eb8cd17a6699305162873706}{get\+Transformations}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static tson\+::\+Object\+Alignment \mbox{\hyperlink{classtson_1_1Tileset_a1722647f6375d4be676563b6daef0068}{String\+To\+Alignment}} (std\+::string\+\_\+view str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Tileset_a6b23b3518bb160d1b3b23e7fe13b6694}\label{classtson_1_1Tileset_a6b23b3518bb160d1b3b23e7fe13b6694} 
+\index{tson::Tileset@{tson::Tileset}!get@{get}}
+\index{get@{get}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T tson\+::\+Tileset\+::get (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+A shortcut for getting a property. Alternative to \doxylink{classtson_1_1Tileset_abfc08d09ed4a82a546e2231c0214d43a}{get\+Properties()}.get\+Value$<$\+T$>$("{}$<$name$>$"{}) 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The template value \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The actual value, if it exists. Otherwise\+: The default value of the type. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_acad0f7d788025b59052b230799ffc6bb}\label{classtson_1_1Tileset_acad0f7d788025b59052b230799ffc6bb} 
+\index{tson::Tileset@{tson::Tileset}!getColumns@{getColumns}}
+\index{getColumns@{getColumns}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getColumns()}{getColumns()}}
+{\footnotesize\ttfamily int tson\+::\+Tileset\+::get\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}columns\textquotesingle{}\+: The number of tile columns in the tileset \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a90f6ba8eb6b9d58c9ba5d47f943082a3}\label{classtson_1_1Tileset_a90f6ba8eb6b9d58c9ba5d47f943082a3} 
+\index{tson::Tileset@{tson::Tileset}!getFirstgid@{getFirstgid}}
+\index{getFirstgid@{getFirstgid}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getFirstgid()}{getFirstgid()}}
+{\footnotesize\ttfamily int tson\+::\+Tileset\+::get\+Firstgid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}firstgid\textquotesingle{}\+: GID corresponding to the first tile in the set \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a7fd96349c42b8aac5f8f63cb4f4274f6}\label{classtson_1_1Tileset_a7fd96349c42b8aac5f8f63cb4f4274f6} 
+\index{tson::Tileset@{tson::Tileset}!getFullImagePath@{getFullImagePath}}
+\index{getFullImagePath@{getFullImagePath}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getFullImagePath()}{getFullImagePath()}}
+{\footnotesize\ttfamily const fs\+::path \& tson\+::\+Tileset\+::get\+Full\+Image\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets a path to the image used in this tileset relative to the JSON file defining this tileset. \begin{DoxyReturn}{Returns}
+A path that can be used to open the image file of this tileset. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a4a22bdf3892baf5c6bbcb4ee2af61c5f}\label{classtson_1_1Tileset_a4a22bdf3892baf5c6bbcb4ee2af61c5f} 
+\index{tson::Tileset@{tson::Tileset}!getGrid@{getGrid}}
+\index{getGrid@{getGrid}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getGrid()}{getGrid()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Grid}{tson\+::\+Grid}} \& tson\+::\+Tileset\+::get\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}grid\textquotesingle{}\+: This element is only used in case of isometric orientation, and determines how tile overlays for terrain and collision information are rendered. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a4600c0b7e11580772580662f85b07726}\label{classtson_1_1Tileset_a4600c0b7e11580772580662f85b07726} 
+\index{tson::Tileset@{tson::Tileset}!getImage@{getImage}}
+\index{getImage@{getImage}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getImage()}{getImage()}}
+{\footnotesize\ttfamily const fs\+::path \& tson\+::\+Tileset\+::get\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}image\textquotesingle{}\+: Image used for tiles in this set \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a69cd66f3c6d9337f85607beddfadeb80}\label{classtson_1_1Tileset_a69cd66f3c6d9337f85607beddfadeb80} 
+\index{tson::Tileset@{tson::Tileset}!getImagePath@{getImagePath}}
+\index{getImagePath@{getImagePath}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getImagePath()}{getImagePath()}}
+{\footnotesize\ttfamily const fs\+::path \& tson\+::\+Tileset\+::get\+Image\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}image\textquotesingle{}\+: Image used for tiles in this set \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a0f6c66cf1ccfd0654b7c448bd40808d0}\label{classtson_1_1Tileset_a0f6c66cf1ccfd0654b7c448bd40808d0} 
+\index{tson::Tileset@{tson::Tileset}!getImageSize@{getImageSize}}
+\index{getImageSize@{getImageSize}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getImageSize()}{getImageSize()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Tileset\+::get\+Image\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+x = \textquotesingle{}imagewidth\textquotesingle{} and y = \textquotesingle{}imageheight\textquotesingle{}\+: in pixels \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a88fdc4fdec3eee3ae05f6fd7a075cfd3}\label{classtson_1_1Tileset_a88fdc4fdec3eee3ae05f6fd7a075cfd3} 
+\index{tson::Tileset@{tson::Tileset}!getMap@{getMap}}
+\index{getMap@{getMap}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getMap()}{getMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Map}{tson\+::\+Map}} \texorpdfstring{$\ast$}{*} tson\+::\+Tileset\+::get\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Used for getting the \doxylink{classtson_1_1Map}{tson\+::\+Map} who is the parent of this \doxylink{classtson_1_1Tileset}{Tileset}. \begin{DoxyReturn}{Returns}
+a pointer to the \doxylink{classtson_1_1Map}{tson\+::\+Map} where this tileset is contained. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a61e4fbc904b65159f38bcab4ab02a332}\label{classtson_1_1Tileset_a61e4fbc904b65159f38bcab4ab02a332} 
+\index{tson::Tileset@{tson::Tileset}!getMargin@{getMargin}}
+\index{getMargin@{getMargin}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getMargin()}{getMargin()}}
+{\footnotesize\ttfamily int tson\+::\+Tileset\+::get\+Margin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}margin\textquotesingle{}\+: Buffer between image edge and first tile (pixels) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_afd66472f7e8bee2a8a45f52a3e2d2e1c}\label{classtson_1_1Tileset_afd66472f7e8bee2a8a45f52a3e2d2e1c} 
+\index{tson::Tileset@{tson::Tileset}!getMarginSpacingOffset@{getMarginSpacingOffset}}
+\index{getMarginSpacingOffset@{getMarginSpacingOffset}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getMarginSpacingOffset()}{getMarginSpacingOffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} tson\+::\+Tileset\+::get\+Margin\+Spacing\+Offset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \&}]{pos\+In\+Tile\+Units }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Helper function to calculate the correct additional offset when margin and/or spacing is used in a tileset Created to solve issue \#31.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+In\+Tile\+Units} & Position of the current tile in tile units. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Calculated additional offset in pixels. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_ae453d71cb55722d32b8695babde5ae0e}\label{classtson_1_1Tileset_ae453d71cb55722d32b8695babde5ae0e} 
+\index{tson::Tileset@{tson::Tileset}!getName@{getName}}
+\index{getName@{getName}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Tileset\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}name\textquotesingle{}\+: Name given to this tileset \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a872b1f62069b4399abfc72cc6242a28a}\label{classtson_1_1Tileset_a872b1f62069b4399abfc72cc6242a28a} 
+\index{tson::Tileset@{tson::Tileset}!getProp@{getProp}}
+\index{getProp@{getProp}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getProp()}{getProp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Property}{tson\+::\+Property}} \texorpdfstring{$\ast$}{*} tson\+::\+Tileset\+::get\+Prop (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Shortcut for getting a property object. Alternative to \doxylink{classtson_1_1Tileset_abfc08d09ed4a82a546e2231c0214d43a}{get\+Properties()}.get\+Property("{}$<$name$>$"{}); 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the property \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_abfc08d09ed4a82a546e2231c0214d43a}\label{classtson_1_1Tileset_abfc08d09ed4a82a546e2231c0214d43a} 
+\index{tson::Tileset@{tson::Tileset}!getProperties@{getProperties}}
+\index{getProperties@{getProperties}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getProperties()}{getProperties()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1PropertyCollection}{tson\+::\+Property\+Collection}} \& tson\+::\+Tileset\+::get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}properties\textquotesingle{}\+: A list of properties (name, value, type). \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a48b3d5b9ba608668890f9ca617386f79}\label{classtson_1_1Tileset_a48b3d5b9ba608668890f9ca617386f79} 
+\index{tson::Tileset@{tson::Tileset}!getSpacing@{getSpacing}}
+\index{getSpacing@{getSpacing}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getSpacing()}{getSpacing()}}
+{\footnotesize\ttfamily int tson\+::\+Tileset\+::get\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}spacing\textquotesingle{}\+: Spacing between adjacent tiles in image (pixels) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_aedae2e6b80172d117e83c67d5e9c3b50}\label{classtson_1_1Tileset_aedae2e6b80172d117e83c67d5e9c3b50} 
+\index{tson::Tileset@{tson::Tileset}!getTerrain@{getTerrain}}
+\index{getTerrain@{getTerrain}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTerrain()}{getTerrain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Terrain}{tson\+::\+Terrain}} \texorpdfstring{$\ast$}{*} tson\+::\+Tileset\+::get\+Terrain (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get an existing \doxylink{classtson_1_1Terrain}{Terrain} object by name 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classtson_1_1Terrain}{Terrain} if found. nullptr otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a07b0c7e494c272cf45eb09b5bf5f1118}\label{classtson_1_1Tileset_a07b0c7e494c272cf45eb09b5bf5f1118} 
+\index{tson::Tileset@{tson::Tileset}!getTerrains@{getTerrains}}
+\index{getTerrains@{getTerrains}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTerrains()}{getTerrains()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Terrain}{tson\+::\+Terrain}} $>$ \& tson\+::\+Tileset\+::get\+Terrains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}terrains\textquotesingle{}\+: Array of Terrains (optional) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_aaabda77d218d9fbc0dd23769c380bbd0}\label{classtson_1_1Tileset_aaabda77d218d9fbc0dd23769c380bbd0} 
+\index{tson::Tileset@{tson::Tileset}!getTile@{getTile}}
+\index{getTile@{getTile}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTile()}{getTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} \texorpdfstring{$\ast$}{*} tson\+::\+Tileset\+::get\+Tile (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Gets a tile by ID (Tiled ID + 1) 
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the tile stored in Tiled map + 1. Example\+: If ID was stored in Tiled map as 0, the corresponding value in \doxylink{classtson_1_1Tileson}{Tileson} is 1. This is to make sure the IDs of tiles matches their references in containers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classtson_1_1Tile}{Tile} if found. nullptr otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_aa2e4e0b79014829b9cf9738179255f37}\label{classtson_1_1Tileset_aa2e4e0b79014829b9cf9738179255f37} 
+\index{tson::Tileset@{tson::Tileset}!getTileCount@{getTileCount}}
+\index{getTileCount@{getTileCount}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTileCount()}{getTileCount()}}
+{\footnotesize\ttfamily int tson\+::\+Tileset\+::get\+Tile\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}tilecount\textquotesingle{}\+: The number of tiles in this tileset \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a5151c7d3df08f24abf6a70e379224845}\label{classtson_1_1Tileset_a5151c7d3df08f24abf6a70e379224845} 
+\index{tson::Tileset@{tson::Tileset}!getTileOffset@{getTileOffset}}
+\index{getTileOffset@{getTileOffset}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTileOffset()}{getTileOffset()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Tileset\+::get\+Tile\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}x\textquotesingle{} and \textquotesingle{}y\textquotesingle{}\+: See $<$tileoffset$>$ (optional) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_ae9744efa054fa3a6a6473811c20cdb9c}\label{classtson_1_1Tileset_ae9744efa054fa3a6a6473811c20cdb9c} 
+\index{tson::Tileset@{tson::Tileset}!getTiles@{getTiles}}
+\index{getTiles@{getTiles}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTiles()}{getTiles()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classtson_1_1Tile}{tson\+::\+Tile}} $>$ \& tson\+::\+Tileset\+::get\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Declared in \doxylink{tileson__forward_8hpp_source}{tileson\+\_\+forward.\+hpp}
+
+\textquotesingle{}tiles\textquotesingle{}\+: Array of Tiles (optional) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a7f5a43cc664fb619e3c607c31b4f3da0}\label{classtson_1_1Tileset_a7f5a43cc664fb619e3c607c31b4f3da0} 
+\index{tson::Tileset@{tson::Tileset}!getTileSize@{getTileSize}}
+\index{getTileSize@{getTileSize}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTileSize()}{getTileSize()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Vector2}{tson\+::\+Vector2i}} \& tson\+::\+Tileset\+::get\+Tile\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+x = \textquotesingle{}tilewidth\textquotesingle{} and y = \textquotesingle{}tileheight\textquotesingle{}\+: Maximum size of tiles in this set \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a8db6f715eb8cd17a6699305162873706}\label{classtson_1_1Tileset_a8db6f715eb8cd17a6699305162873706} 
+\index{tson::Tileset@{tson::Tileset}!getTransformations@{getTransformations}}
+\index{getTransformations@{getTransformations}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTransformations()}{getTransformations()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Transformations}{tson\+::\+Transformations}} \& tson\+::\+Tileset\+::get\+Transformations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+New in Tiled v1.\+5 -\/ This element is used to describe which transformations can be applied to the tiles (e.\+g. to extend a Wang set by transforming existing tiles).
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_ad8ccd22b9417bdbca393cac57993ef2d}\label{classtson_1_1Tileset_ad8ccd22b9417bdbca393cac57993ef2d} 
+\index{tson::Tileset@{tson::Tileset}!getTransparentColor@{getTransparentColor}}
+\index{getTransparentColor@{getTransparentColor}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getTransparentColor()}{getTransparentColor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classtson_1_1Color}{tson\+::\+Colori}} \& tson\+::\+Tileset\+::get\+Transparent\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}transparentcolor\textquotesingle{}\+: \doxylink{classtson_1_1Color}{Color} object created by hex-\/formatted color (\#\+RRGGBB) (optional) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a075988a9b8787e925d42b255019dd6ae}\label{classtson_1_1Tileset_a075988a9b8787e925d42b255019dd6ae} 
+\index{tson::Tileset@{tson::Tileset}!getType@{getType}}
+\index{getType@{getType}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Tileset\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}type\textquotesingle{}\+: tileset (for tileset files, since 1.\+0) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_afc363ff2934658bf99d65f0c22a5f2c9}\label{classtson_1_1Tileset_afc363ff2934658bf99d65f0c22a5f2c9} 
+\index{tson::Tileset@{tson::Tileset}!getWangset@{getWangset}}
+\index{getWangset@{getWangset}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getWangset()}{getWangset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtson_1_1WangSet}{tson\+::\+Wang\+Set}} \texorpdfstring{$\ast$}{*} tson\+::\+Tileset\+::get\+Wangset (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get a wangset by name 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_ac12fc24cd970e151e949c19ad0f62f81}\label{classtson_1_1Tileset_ac12fc24cd970e151e949c19ad0f62f81} 
+\index{tson::Tileset@{tson::Tileset}!getWangsets@{getWangsets}}
+\index{getWangsets@{getWangsets}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{getWangsets()}{getWangsets()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{classtson_1_1WangSet}{tson\+::\+Wang\+Set}} $>$ \& tson\+::\+Tileset\+::get\+Wangsets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textquotesingle{}wangsets\textquotesingle{}\+:Array of Wang sets (since Tiled 1.\+1.\+5) \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classtson_1_1Tileset_a1722647f6375d4be676563b6daef0068}\label{classtson_1_1Tileset_a1722647f6375d4be676563b6daef0068} 
+\index{tson::Tileset@{tson::Tileset}!StringToAlignment@{StringToAlignment}}
+\index{StringToAlignment@{StringToAlignment}!tson::Tileset@{tson::Tileset}}
+\doxysubsubsection{\texorpdfstring{StringToAlignment()}{StringToAlignment()}}
+{\footnotesize\ttfamily tson\+::\+Object\+Alignment tson\+::\+Tileset\+::\+String\+To\+Alignment (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string you want to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Alignment enum based on the string from the input. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/tiled/Tileset.\+hpp\item 
+silnik/core/lib/include/tileson/common/tileson\+\_\+forward.\+hpp\end{DoxyCompactItemize}

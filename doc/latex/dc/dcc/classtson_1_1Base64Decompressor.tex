@@ -1,0 +1,105 @@
+\doxysection{tson\+::Base64\+Decompressor Class Reference}
+\hypertarget{classtson_1_1Base64Decompressor}{}\label{classtson_1_1Base64Decompressor}\index{tson::Base64Decompressor@{tson::Base64Decompressor}}
+Inheritance diagram for tson\+::Base64\+Decompressor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/dcc/classtson_1_1Base64Decompressor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{classtson_1_1Base64Decompressor_aa68ecadc13e74d724780b6eba200d657}{name}} () const override
+\item 
+std\+::string \mbox{\hyperlink{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df}{decompress}} (const std\+::string\+\_\+view \&s) override
+\item 
+std\+::string \mbox{\hyperlink{classtson_1_1Base64Decompressor_a2745131e454a170879ab05ff60568088}{decompress\+File}} (const fs\+::path \&path) override
+\item 
+std\+::string \mbox{\hyperlink{classtson_1_1Base64Decompressor_acd08d3334e6ce61ec2e53605987f2b83}{decompress}} (const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t size) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtson_1_1IDecompressor}{tson\+::\+IDecompressor$<$ std\+::string\+\_\+view, std\+::string $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classtson_1_1IDecompressor_af4018046a1c549fc53e7150306a1f44c}{\texorpdfstring{$\sim$}{\string~}\+IDecompressor}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df}\label{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df} 
+\index{tson::Base64Decompressor@{tson::Base64Decompressor}!decompress@{decompress}}
+\index{decompress@{decompress}!tson::Base64Decompressor@{tson::Base64Decompressor}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string tson\+::\+Base64\+Decompressor\+::decompress (\begin{DoxyParamCaption}\item[{const std\+::string\+\_\+view \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Used primarily for Tiled related decompression. 
+\begin{DoxyParams}{Parameters}
+{\em input} & Input data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decompressed data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtson_1_1IDecompressor_a77349ae9cf9e1338196dc21169448c4f}{tson\+::\+IDecompressor$<$ std\+::string\+\_\+view, std\+::string $>$}}.
+
+\Hypertarget{classtson_1_1Base64Decompressor_acd08d3334e6ce61ec2e53605987f2b83}\label{classtson_1_1Base64Decompressor_acd08d3334e6ce61ec2e53605987f2b83} 
+\index{tson::Base64Decompressor@{tson::Base64Decompressor}!decompress@{decompress}}
+\index{decompress@{decompress}!tson::Base64Decompressor@{tson::Base64Decompressor}}
+\doxysubsubsection{\texorpdfstring{decompress()}{decompress()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string tson\+::\+Base64\+Decompressor\+::decompress (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+UNUSED! Does nothing 
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtson_1_1IDecompressor_a82aa4c374737ef3533831f2c6d803a15}{tson\+::\+IDecompressor$<$ std\+::string\+\_\+view, std\+::string $>$}}.
+
+\Hypertarget{classtson_1_1Base64Decompressor_a2745131e454a170879ab05ff60568088}\label{classtson_1_1Base64Decompressor_a2745131e454a170879ab05ff60568088} 
+\index{tson::Base64Decompressor@{tson::Base64Decompressor}!decompressFile@{decompressFile}}
+\index{decompressFile@{decompressFile}!tson::Base64Decompressor@{tson::Base64Decompressor}}
+\doxysubsubsection{\texorpdfstring{decompressFile()}{decompressFile()}}
+{\footnotesize\ttfamily std\+::string tson\+::\+Base64\+Decompressor\+::decompress\+File (\begin{DoxyParamCaption}\item[{const fs\+::path \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+UNUSED! Does nothing 
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtson_1_1IDecompressor_a2d1bed552a2305ac98aceb96eb897deb}{tson\+::\+IDecompressor$<$ std\+::string\+\_\+view, std\+::string $>$}}.
+
+\Hypertarget{classtson_1_1Base64Decompressor_aa68ecadc13e74d724780b6eba200d657}\label{classtson_1_1Base64Decompressor_aa68ecadc13e74d724780b6eba200d657} 
+\index{tson::Base64Decompressor@{tson::Base64Decompressor}!name@{name}}
+\index{name@{name}!tson::Base64Decompressor@{tson::Base64Decompressor}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const std\+::string \& tson\+::\+Base64\+Decompressor\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+If the name matches with \textquotesingle{}compression\textquotesingle{} or \textquotesingle{}encoding\textquotesingle{} the \doxylink{classtson_1_1Base64Decompressor_a8cdeaf833e007933ff4ab8c95bc359df}{decompress()} function will be called automatically for the actual \doxylink{classtson_1_1Layer}{Layer}. Encoding-\/related matching is handled first!
+
+Known values\+:
+
+compression\+: zlib, gzip, zstd (since Tiled 1.\+3) or empty (default) (tilelayer only). encoding\+: csv (default) or base64 (tilelayer only).
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtson_1_1IDecompressor_a7c42337c5d957585be515952209c1317}{tson\+::\+IDecompressor$<$ std\+::string\+\_\+view, std\+::string $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/lib/include/tileson/common/Base64\+Decompressor.\+hpp\end{DoxyCompactItemize}

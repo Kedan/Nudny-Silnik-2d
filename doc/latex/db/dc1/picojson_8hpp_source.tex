@@ -1,0 +1,1181 @@
+\doxysection{picojson.\+hpp}
+\hypertarget{picojson_8hpp_source}{}\label{picojson_8hpp_source}\index{silnik/core/lib/include/tileson/external/picojson.hpp@{silnik/core/lib/include/tileson/external/picojson.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ 2009-\/2010\ Cybozu\ Labs,\ Inc.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ 2011-\/2014\ Kazuho\ Oku}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the\ documentation}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ \ \ \ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT\ HOLDER\ OR\ CONTRIBUTORS\ BE}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ picojson\_h}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ picojson\_h}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <cstddef>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ for\ isnan/isinf}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ >=\ 201103L}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00049\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <float.h>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#elif\ defined(\_\_INTEL\_COMPILER)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <mathimf.h>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifndef\ PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#if\ (defined(\_\_cpp\_rvalue\_references)\ \&\&\ \_\_cpp\_rvalue\_references\ >=\ 200610)\ ||\ (defined(\_MSC\_VER)\ \&\&\ \_MSC\_VER\ >=\ 1600)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ PICOJSON\_USE\_RVALUE\_REFERENCE\ 1}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ PICOJSON\_USE\_RVALUE\_REFERENCE\ 0}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#ifndef\ PICOJSON\_NOEXCEPT}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ PICOJSON\_NOEXCEPT\ noexcept}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ PICOJSON\_NOEXCEPT\ throw()}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ experimental\ support\ for\ int64\_t\ (see\ README.mkdn\ for\ detail)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \_\_STDC\_FORMAT\_MACROS}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ <cerrno>}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ >=\ 201103L}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#include\ <cinttypes>}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00083\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#include\ <inttypes.h>}}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ to\ disable\ the\ use\ of\ localeconv(3),\ set\ PICOJSON\_USE\_LOCALE\ to\ 0}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#ifndef\ PICOJSON\_USE\_LOCALE}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ PICOJSON\_USE\_LOCALE\ 1}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_LOCALE}}
+\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#include\ <locale.h>}}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#ifndef\ PICOJSON\_ASSERT}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ PICOJSON\_ASSERT(e)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \ \ if\ (!(e))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ \ \ throw\ std::runtime\_error(\#e);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \}\ while\ (0)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ SNPRINTF\ \_snprintf\_s}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#pragma\ warning(push)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#pragma\ warning(disable\ :\ 4244)\ }\textcolor{comment}{//\ conversion\ from\ int\ to\ char}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#pragma\ warning(disable\ :\ 4127)\ }\textcolor{comment}{//\ conditional\ expression\ is\ constant}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#pragma\ warning(disable\ :\ 4702)\ }\textcolor{comment}{//\ unreachable\ code}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#pragma\ warning(disable\ :\ 4706)\ }\textcolor{comment}{//\ assignment\ within\ conditional\ expression}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ SNPRINTF\ snprintf}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{namespace\ }picojson\ \{}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ null\_type,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ boolean\_type,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ number\_type,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ string\_type,}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ array\_type,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ object\_type}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ ,}
+\DoxyCodeLine{00129\ \ \ int64\_type}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00131\ \ \ \ \ \};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ INDENT\_WIDTH\ =\ 2\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpicojson_1_1null}{null}}\ \{\};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpicojson_1_1value}{value}}\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::vector<value>\ array;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::map<std::string,\ value>\ object;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionpicojson_1_1value_1_1__storage}{\_storage}}\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ boolean\_;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ number\_;}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ int64\_t\ int64\_;}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ *string\_;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ array\ *array\_;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ *object\_;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ type\_;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{unionpicojson_1_1value_1_1__storage}{\_storage}}\ u\_;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}();}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keywordtype}{int}\ type,\ \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keywordtype}{bool}\ b);}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(int64\_t\ i);}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keywordtype}{double}\ n);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keyword}{const}\ std::string\ \&s);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keyword}{const}\ array\ \&a);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{object}\ \&o);}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(std::string\ \&\&s);}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(array\ \&\&a);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keywordtype}{object}\ \&\&o);}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{\string~value}}();}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&x);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&x);}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&\&x)\ PICOJSON\_NOEXCEPT;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&operator=(\mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&\&x)\ PICOJSON\_NOEXCEPT;}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ swap(\mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&x)\ PICOJSON\_NOEXCEPT;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ is()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{const}\ T\ \&get()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ T\ \&get();}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ set(\textcolor{keyword}{const}\ T\ \&);}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ set(T\ \&\&);}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ evaluate\_as\_boolean()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&get(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&get(\textcolor{keyword}{const}\ std::string\ \&key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&get(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ \&get(\textcolor{keyword}{const}\ std::string\ \&key);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(\textcolor{keyword}{const}\ std::string\ \&key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ to\_str()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{void}\ serialize(Iter\ os,\ \textcolor{keywordtype}{bool}\ prettify\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ serialize(\textcolor{keywordtype}{bool}\ prettify\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(\textcolor{keyword}{const}\ T\ *);\ \textcolor{comment}{//\ intentionally\ defined\ to\ block\ implicit\ conversion\ of\ pointer\ to\ bool}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \_indent(Iter\ os,\ \textcolor{keywordtype}{int}\ indent);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{void}\ \_serialize(Iter\ os,\ \textcolor{keywordtype}{int}\ indent)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \_serialize(\textcolor{keywordtype}{int}\ indent)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00207\ \ \ \ \ \};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keyword}{typedef}\ value::array\ array;}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{typedef}\ value::object\ object;}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{inline}\ value::value()\ :\ type\_(null\_type),\ u\_()\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keywordtype}{int}\ type,\ \textcolor{keywordtype}{bool})\ :\ type\_(type),\ u\_()\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ INIT(p,\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ case\ p\#\#type:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ \ u\_.p\ =\ v;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ break}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(boolean\_,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(number\_,\ 0.0);}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(int64\_,\ 0);}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(string\_,\ \textcolor{keyword}{new}\ std::string());}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(array\_,\ \textcolor{keyword}{new}\ array());}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(object\_,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}());}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#undef\ INIT}}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keywordtype}{bool}\ b)\ :\ type\_(boolean\_type),\ u\_()\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ u\_.boolean\_\ =\ b;}
+\DoxyCodeLine{00237\ \ \ \ \ \}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(int64\_t\ i)\ :\ type\_(int64\_type),\ u\_()\ \{}
+\DoxyCodeLine{00241\ \ \ u\_.int64\_\ =\ i;}
+\DoxyCodeLine{00242\ \}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keywordtype}{double}\ n)\ :\ type\_(number\_type),\ u\_()\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{00247\ \#ifdef\ \_MSC\_VER}
+\DoxyCodeLine{00248\ !\_finite(n)}
+\DoxyCodeLine{00249\ \#elif\ \_\_cplusplus\ >=\ 201103L}
+\DoxyCodeLine{00250\ std::isnan(n)\ ||\ std::isinf(n)}
+\DoxyCodeLine{00251\ \#\textcolor{keywordflow}{else}}
+\DoxyCodeLine{00252\ isnan(n)\ ||\ isinf(n)}
+\DoxyCodeLine{00253\ \#endif}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::overflow\_error(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ u\_.number\_\ =\ n;}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keyword}{const}\ std::string\ \&s)\ :\ type\_(string\_type),\ u\_()\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ u\_.string\_\ =\ \textcolor{keyword}{new}\ std::string(s);}
+\DoxyCodeLine{00262\ \ \ \ \ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keyword}{const}\ array\ \&a)\ :\ type\_(array\_type),\ u\_()\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ u\_.array\_\ =\ \textcolor{keyword}{new}\ array(a);}
+\DoxyCodeLine{00266\ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keyword}{const}\ \textcolor{keywordtype}{object}\ \&o)\ :\ type\_(object\_type),\ u\_()\ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ u\_.object\_\ =\ \textcolor{keyword}{new}\ object(o);}
+\DoxyCodeLine{00270\ \ \ \ \ \}}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(std::string\ \&\&s)\ :\ type\_(string\_type),\ u\_()\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ u\_.string\_\ =\ \textcolor{keyword}{new}\ std::string(std::move(s));}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(array\ \&\&a)\ :\ type\_(array\_type),\ u\_()\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ u\_.array\_\ =\ \textcolor{keyword}{new}\ array(std::move(a));}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keywordtype}{object}\ \&\&o)\ :\ type\_(object\_type),\ u\_()\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ u\_.object\_\ =\ \textcolor{keyword}{new}\ object(std::move(o));}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s)\ :\ type\_(string\_type),\ u\_()\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ u\_.string\_\ =\ \textcolor{keyword}{new}\ std::string(s);}
+\DoxyCodeLine{00288\ \ \ \ \ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{size\_t}\ len)\ :\ type\_(string\_type),\ u\_()\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ u\_.string\_\ =\ \textcolor{keyword}{new}\ std::string(s,\ len);}
+\DoxyCodeLine{00292\ \ \ \ \ \}}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ value::clear()\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type\_)\ \{}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ DEINIT(p)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\ \ case\ p\#\#type:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\ \ \ \ delete\ u\_.p;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\ \ \ \ break}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ DEINIT(string\_);}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ DEINIT(array\_);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ DEINIT(object\_);}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#undef\ DEINIT}}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00307\ \ \ \ \ \}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keyword}{inline}\ value::\string~value()\ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{00311\ \ \ \ \ \}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(\textcolor{keyword}{const}\ value\ \&x)\ :\ type\_(x.type\_),\ u\_()\ \{}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type\_)\ \{}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ INIT(p,\ v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\ \ case\ p\#\#type:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\ \ \ \ u\_.p\ =\ v;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\ \ \ \ break}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(string\_,\ \textcolor{keyword}{new}\ std::string(*x.u\_.string\_));}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(array\_,\ \textcolor{keyword}{new}\ array(*x.u\_.array\_));}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ INIT(object\_,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}(*x.u\_.object\_));}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#undef\ INIT}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u\_\ =\ x.u\_;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{inline}\ value\ \&value::operator=(\textcolor{keyword}{const}\ value\ \&x)\ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&x)\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ value\ t(x);}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ swap(t);}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00335\ \ \ \ \ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{inline}\ value::value(value\ \&\&x)\ PICOJSON\_NOEXCEPT\ :\ type\_(null\_type),\ u\_()\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ swap(x);}
+\DoxyCodeLine{00340\ \ \ \ \ \}}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keyword}{inline}\ value\ \&value::operator=(value\ \&\&x)\ PICOJSON\_NOEXCEPT\ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ swap(x);}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ value::swap(value\ \&x)\ PICOJSON\_NOEXCEPT\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ std::swap(type\_,\ x.type\_);}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ std::swap(u\_,\ x.u\_);}
+\DoxyCodeLine{00349\ \ \ \ \ \}}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ IS(ctype,\ jtype)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\ \ template\ <>\ inline\ bool\ value::is<ctype>()\ const\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\ \ \ \ return\ type\_\ ==\ jtype\#\#\_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00355\ \ \ \ \ IS(null,\ null)}
+\DoxyCodeLine{00356\ \ \ \ \ IS(\textcolor{keywordtype}{bool},\ \textcolor{keywordtype}{boolean})}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00358\ \ \ \ \ IS(int64\_t,\ int64)}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00360\ \ \ \ \ IS(std::string,\ \textcolor{keywordtype}{string})}
+\DoxyCodeLine{00361\ \ \ \ \ IS(array,\ array)}
+\DoxyCodeLine{00362\ \ \ \ \ IS(\textcolor{keywordtype}{object},\ \textcolor{keywordtype}{object})}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#undef\ IS}}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ value::is<double>()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type\_\ ==\ number\_type}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ type\_\ ==\ int64\_type}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{00370\ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ GET(ctype,\ var)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\ \ template\ <>\ inline\ const\ ctype\ \&value::get<ctype>()\ const\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\ \ \ \ PICOJSON\_ASSERT("{}type\ mismatch!\ call\ is<type>()\ before\ get<type>()"{}\ \&\&\ is<ctype>());\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\ \ \ \ return\ var;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\ \ template\ <>\ inline\ ctype\ \&value::get<ctype>()\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\ \ \ \ PICOJSON\_ASSERT("{}type\ mismatch!\ call\ is<type>()\ before\ get<type>()"{}\ \&\&\ is<ctype>());\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\ \ \ \ return\ var;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00381\ \ \ \ \ GET(\textcolor{keywordtype}{bool},\ u\_.boolean\_)}
+\DoxyCodeLine{00382\ \ \ \ \ GET(std::\textcolor{keywordtype}{string},\ *u\_.string\_)}
+\DoxyCodeLine{00383\ \ \ \ \ GET(array,\ *u\_.array\_)}
+\DoxyCodeLine{00384\ \ \ \ \ GET(\textcolor{keywordtype}{object},\ *u\_.object\_)}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00386\ \ \ \ \ GET(\textcolor{keywordtype}{double},}
+\DoxyCodeLine{00387\ \ \ \ \ (type\_\ ==\ int64\_type\ \&\&\ (\textcolor{keyword}{const\_cast<}value\ *\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>type\_\ =\ number\_type,\ \textcolor{keyword}{const\_cast<}value\ *\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>u\_.number\_\ =\ u\_.int64\_),}
+\DoxyCodeLine{00388\ \ \ \ \ \ u\_.number\_))}
+\DoxyCodeLine{00389\ GET(int64\_t,\ u\_.int64\_)}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00391\ \ \ \ \ GET(\textcolor{keywordtype}{double},\ u\_.number\_)}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#undef\ GET}}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ SET(ctype,\ jtype,\ setter)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\ \ template\ <>\ inline\ void\ value::set<ctype>(const\ ctype\ \&\_val)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\ \ \ \ clear();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\ \ \ \ type\_\ =\ jtype\#\#\_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\ \ \ \ setter\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00401\ \ \ \ \ SET(\textcolor{keywordtype}{bool},\ \textcolor{keywordtype}{boolean},\ u\_.boolean\_\ =\ \_val;)}
+\DoxyCodeLine{00402\ \ \ \ \ SET(std::string,\ \textcolor{keywordtype}{string},\ u\_.string\_\ =\ \textcolor{keyword}{new}\ std::string(\_val);)}
+\DoxyCodeLine{00403\ \ \ \ \ SET(array,\ array,\ u\_.array\_\ =\ \textcolor{keyword}{new}\ array(\_val);)}
+\DoxyCodeLine{00404\ \ \ \ \ SET(\textcolor{keywordtype}{object},\ \textcolor{keywordtype}{object},\ u\_.object\_\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}(\_val);)}
+\DoxyCodeLine{00405\ \ \ \ \ SET(\textcolor{keywordtype}{double},\ number,\ u\_.number\_\ =\ \_val;)}
+\DoxyCodeLine{00406\ \#ifdef\ PICOJSON\_USE\_INT64}
+\DoxyCodeLine{00407\ \ \ \ \ SET(int64\_t,\ int64,\ u\_.int64\_\ =\ \_val;)}
+\DoxyCodeLine{00408\ \#endif}
+\DoxyCodeLine{00409\ \#undef\ SET}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \#\textcolor{keywordflow}{if}\ PICOJSON\_USE\_RVALUE\_REFERENCE}
+\DoxyCodeLine{00412\ \ \ \ \ \#define\ MOVESET(ctype,\ jtype,\ setter)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00413\ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ value::set<ctype>(ctype\ \&\&\ \_val)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00414\ \ \ \ \ clear();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00415\ \ \ \ \ type\_\ =\ jtype\#\#\_type;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00416\ \ \ \ \ setter\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00417\ \ \ \}}
+\DoxyCodeLine{00418\ \ \ \ \ MOVESET(std::string,\ \textcolor{keywordtype}{string},\ u\_.string\_\ =\ \textcolor{keyword}{new}\ std::string(std::move(\_val));)}
+\DoxyCodeLine{00419\ \ \ \ \ MOVESET(array,\ array,\ u\_.array\_\ =\ \textcolor{keyword}{new}\ array(std::move(\_val));)}
+\DoxyCodeLine{00420\ \ \ \ \ MOVESET(\textcolor{keywordtype}{object},\ \textcolor{keywordtype}{object},\ u\_.object\_\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}(std::move(\_val));)}
+\DoxyCodeLine{00421\ \#undef\ MOVESET}
+\DoxyCodeLine{00422\ \#endif}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ value::evaluate\_as\_boolean()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type\_)\ \{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ null\_type:}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ boolean\_type:}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ u\_.boolean\_;}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ number\_type:}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ u\_.number\_\ !=\ 0;}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ int64\_type:}
+\DoxyCodeLine{00434\ \ \ \ \ \textcolor{keywordflow}{return}\ u\_.int64\_\ !=\ 0;}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ string\_type:}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !u\_.string\_-\/>empty();}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ \ \ \ \ \}}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ value\ \&value::get(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ value\ s\_null;}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ PICOJSON\_ASSERT(is<array>());}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idx\ <\ u\_.array\_-\/>size()\ ?\ (*u\_.array\_)[idx]\ :\ s\_null;}
+\DoxyCodeLine{00447\ \ \ \ \ \}}
+\DoxyCodeLine{00448\ }
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keyword}{inline}\ value\ \&value::get(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx)\ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ value\ s\_null;}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ PICOJSON\_ASSERT(is<array>());}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idx\ <\ u\_.array\_-\/>size()\ ?\ (*u\_.array\_)[idx]\ :\ s\_null;}
+\DoxyCodeLine{00453\ \ \ \ \ \}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ value\ \&value::get(\textcolor{keyword}{const}\ std::string\ \&key)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ value\ s\_null;}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ PICOJSON\_ASSERT(is<object>());}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ object::const\_iterator\ i\ =\ u\_.object\_-\/>find(key);}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i\ !=\ u\_.object\_-\/>end()\ ?\ i-\/>second\ :\ s\_null;}
+\DoxyCodeLine{00460\ \ \ \ \ \}}
+\DoxyCodeLine{00461\ }
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keyword}{inline}\ value\ \&value::get(\textcolor{keyword}{const}\ std::string\ \&key)\ \{}
+\DoxyCodeLine{00463\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ value\ s\_null;}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ PICOJSON\_ASSERT(is<object>());}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ object::iterator\ i\ =\ u\_.object\_-\/>find(key);}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i\ !=\ u\_.object\_-\/>end()\ ?\ i-\/>second\ :\ s\_null;}
+\DoxyCodeLine{00467\ \ \ \ \ \}}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ value::contains(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ idx)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ PICOJSON\_ASSERT(is<array>());}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idx\ <\ u\_.array\_-\/>size();}
+\DoxyCodeLine{00472\ \ \ \ \ \}}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ value::contains(\textcolor{keyword}{const}\ std::string\ \&key)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ PICOJSON\_ASSERT(is<object>());}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ object::const\_iterator\ i\ =\ u\_.object\_-\/>find(key);}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i\ !=\ u\_.object\_-\/>end();}
+\DoxyCodeLine{00478\ \ \ \ \ \}}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ value::to\_str()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type\_)\ \{}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ null\_type:}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}null"{}};}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ boolean\_type:}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ u\_.boolean\_\ ?\ \textcolor{stringliteral}{"{}true"{}}\ :\ \textcolor{stringliteral}{"{}false"{}};}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ int64\_type:\ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keywordtype}{char}\ buf[\textcolor{keyword}{sizeof}(\textcolor{stringliteral}{"{}-\/9223372036854775808"{}})];}
+\DoxyCodeLine{00489\ \ \ \ \ SNPRINTF(buf,\ \textcolor{keyword}{sizeof}(buf),\ \textcolor{stringliteral}{"{}\%"{}}\ PRId64,\ u\_.int64\_);}
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{00491\ \ \ \}}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ number\_type:\ \{}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ buf[256];}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ tmp;}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SNPRINTF(buf,\ \textcolor{keyword}{sizeof}(buf),\ fabs(u\_.number\_)\ <\ (1ULL\ <<\ 53)\ \&\&\ modf(u\_.number\_,\ \&tmp)\ ==\ 0\ ?\ \textcolor{stringliteral}{"{}\%.f"{}}\ :\ \textcolor{stringliteral}{"{}\%.17g"{}},\ u\_.number\_);}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_LOCALE}}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *decimal\_point\ =\ localeconv()-\/>decimal\_point;}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(decimal\_point,\ \textcolor{stringliteral}{"{}."{}})\ !=\ 0)\ \{}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ decimal\_point\_len\ =\ strlen(decimal\_point);}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ *p\ =\ buf;\ *p\ !=\ \textcolor{charliteral}{'\(\backslash\)0'};\ ++p)\ \{}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strncmp(p,\ decimal\_point,\ decimal\_point\_len)\ ==\ 0)\ \{}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(buf,\ p)\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ (p\ +\ decimal\_point\_len);}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ string\_type:}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *u\_.string\_;}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ array\_type:}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}array"{}};}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ object\_type:}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}object"{}};}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PICOJSON\_ASSERT(0);}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_assume(0);}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string();}
+\DoxyCodeLine{00523\ \ \ \ \ \}}
+\DoxyCodeLine{00524\ }
+\DoxyCodeLine{00525\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{void}\ copy(\textcolor{keyword}{const}\ std::string\ \&s,\ Iter\ oi)\ \{}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ std::copy(s.begin(),\ s.end(),\ oi);}
+\DoxyCodeLine{00527\ \ \ \ \ \}}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpicojson_1_1serialize__str__char}{serialize\_str\_char}}\ \{}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ Iter\ oi;}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ operator()(\textcolor{keywordtype}{char}\ c)\ \{}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (c)\ \{}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ MAP(val,\ sym)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\ \ case\ val:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\ \ \ \ copy(sym,\ oi);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\ \ \ \ break}}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'"{}'},\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)\(\backslash\)"{}"{}});}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)"{}});}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'/'},\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)/"{}});}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'\(\backslash\)b'},\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)b"{}});}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'\(\backslash\)f'},\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)f"{}});}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'\(\backslash\)n'},\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)n"{}});}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'\(\backslash\)r'},\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)r"{}});}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'\(\backslash\)t'},\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)t"{}});}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#undef\ MAP}}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(c)\ <\ 0x20\ ||\ c\ ==\ 0x7f)\ \{}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ buf[7];}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SNPRINTF(buf,\ \textcolor{keyword}{sizeof}(buf),\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)u\%04x"{}},\ c\ \&\ 0xff);}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ copy(buf,\ buf\ +\ 6,\ oi);}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ c;}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00557\ \ \ \ \ \};}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{void}\ serialize\_str(\textcolor{keyword}{const}\ std::string\ \&s,\ Iter\ oi)\ \{}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'"{}'};}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ serialize\_str\_char<Iter>\ process\_char\ =\ \{oi\};}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ std::for\_each(s.begin(),\ s.end(),\ process\_char);}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'"{}'};}
+\DoxyCodeLine{00564\ \ \ \ \ \}}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{void}\ value::serialize(Iter\ oi,\ \textcolor{keywordtype}{bool}\ prettify)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_serialize(oi,\ prettify\ ?\ 0\ :\ -\/1);}
+\DoxyCodeLine{00568\ \ \ \ \ \}}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ value::serialize(\textcolor{keywordtype}{bool}\ prettify)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_serialize(prettify\ ?\ 0\ :\ -\/1);}
+\DoxyCodeLine{00572\ \ \ \ \ \}}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{void}\ value::\_indent(Iter\ oi,\ \textcolor{keywordtype}{int}\ indent)\ \{}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ indent\ *\ INDENT\_WIDTH;\ ++i)\ \{}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00579\ \ \ \ \ \}}
+\DoxyCodeLine{00580\ }
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{void}\ value::\_serialize(Iter\ oi,\ \textcolor{keywordtype}{int}\ indent)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type\_)\ \{}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ string\_type:}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ serialize\_str(*u\_.string\_,\ oi);}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ array\_type:\ \{}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'['};}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indent\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++indent;}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (array::const\_iterator\ i\ =\ u\_.array\_-\/>begin();\ i\ !=\ u\_.array\_-\/>end();\ ++i)\ \{}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ u\_.array\_-\/>begin())\ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{','};}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indent\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_indent(oi,\ indent);}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>\_serialize(oi,\ indent);}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indent\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/indent;}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!u\_.array\_-\/>empty())\ \{}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_indent(oi,\ indent);}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{']'};}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ object\_type:\ \{}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'\{'};}
+\DoxyCodeLine{00611\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indent\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++indent;}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (object::const\_iterator\ i\ =\ u\_.object\_-\/>begin();\ i\ !=\ u\_.object\_-\/>end();\ ++i)\ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ u\_.object\_-\/>begin())\ \{}
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{','};}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indent\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_indent(oi,\ indent);}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ serialize\_str(i-\/>first,\ oi);}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{':'};}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indent\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>second.\_serialize(oi,\ indent);}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indent\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/indent;}
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!u\_.object\_-\/>empty())\ \{}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_indent(oi,\ indent);}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'\}'};}
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ copy(to\_str(),\ oi);}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indent\ ==\ 0)\ \{}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ *oi++\ =\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00644\ \ \ \ \ \}}
+\DoxyCodeLine{00645\ }
+\DoxyCodeLine{00646\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ value::\_serialize(\textcolor{keywordtype}{int}\ indent)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ std::string\ s;}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \_serialize(std::back\_inserter(s),\ indent);}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ s;}
+\DoxyCodeLine{00650\ \ \ \ \ \}}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00652\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpicojson_1_1input}{input}}\ \{}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \ \ \ \ Iter\ cur\_,\ end\_;}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ consumed\_;}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ line\_;}
+\DoxyCodeLine{00657\ }
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1input}{input}}(\textcolor{keyword}{const}\ Iter\ \&first,\ \textcolor{keyword}{const}\ Iter\ \&last)\ :\ cur\_(first),\ end\_(last),\ consumed\_(\textcolor{keyword}{false}),\ line\_(1)\ \{}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getc()\ \{}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (consumed\_)\ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*cur\_\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ \{}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++line\_;}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++cur\_;}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cur\_\ ==\ end\_)\ \{}
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ consumed\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ consumed\_\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *cur\_\ \&\ 0xff;}
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ungetc()\ \{}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ consumed\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ Iter\ cur()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (consumed\_)\ \{}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ input<Iter>\ *self\ =\ \textcolor{keyword}{const\_cast<}input<Iter>\ *\textcolor{keyword}{>}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self-\/>consumed\_\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++self-\/>cur\_;}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cur\_;}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ line()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ line\_;}
+\DoxyCodeLine{00688\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ skip\_ws()\ \{}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ch\ =\ getc();}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(ch\ ==\ \textcolor{charliteral}{'\ '}\ ||\ ch\ ==\ \textcolor{charliteral}{'\(\backslash\)t'}\ ||\ ch\ ==\ \textcolor{charliteral}{'\(\backslash\)n'}\ ||\ ch\ ==\ \textcolor{charliteral}{'\(\backslash\)r'}))\ \{}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ungetc();}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ expect(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ expected)\ \{}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ skip\_ws();}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getc()\ !=\ expected)\ \{}
+\DoxyCodeLine{00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ungetc();}
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ match(\textcolor{keyword}{const}\ std::string\ \&pattern)\ \{}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string::const\_iterator\ pi(pattern.begin());\ pi\ !=\ pattern.end();\ ++pi)\ \{}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getc()\ !=\ *pi)\ \{}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ungetc();}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00715\ \ \ \ \ \};}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00717\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \_parse\_quadhex(input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uni\_ch\ =\ 0,\ hex;}
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \{}
+\DoxyCodeLine{00720\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((hex\ =\ in.getc())\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{charliteral}{'0'}\ <=\ hex\ \&\&\ hex\ <=\ \textcolor{charliteral}{'9'})\ \{}
+\DoxyCodeLine{00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hex\ -\/=\ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{charliteral}{'A'}\ <=\ hex\ \&\&\ hex\ <=\ \textcolor{charliteral}{'F'})\ \{}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hex\ -\/=\ \textcolor{charliteral}{'A'}\ -\/\ 0xa;}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{charliteral}{'a'}\ <=\ hex\ \&\&\ hex\ <=\ \textcolor{charliteral}{'f'})\ \{}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hex\ -\/=\ \textcolor{charliteral}{'a'}\ -\/\ 0xa;}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in.ungetc();}
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00733\ \ \ \ \ \ \ \ \ \ \ \ \ uni\_ch\ =\ uni\_ch\ *\ 16\ +\ hex;}
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00735\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ uni\_ch;}
+\DoxyCodeLine{00736\ \ \ \ \ \}}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00738\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ String,\ \textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \_parse\_codepoint(String\ \&out,\ input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{00739\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ uni\_ch;}
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((uni\_ch\ =\ \_parse\_quadhex(in))\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0xd800\ <=\ uni\_ch\ \&\&\ uni\_ch\ <=\ 0xdfff)\ \{}
+\DoxyCodeLine{00744\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (0xdc00\ <=\ uni\_ch)\ \{}
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ a\ second\ 16-\/bit\ of\ a\ surrogate\ pair\ appeared}}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ first\ 16-\/bit\ of\ surrogate\ pair,\ get\ the\ next\ one}}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (in.getc()\ !=\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}\ ||\ in.getc()\ !=\ \textcolor{charliteral}{'u'})\ \{}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in.ungetc();}
+\DoxyCodeLine{00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00753\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ second\ =\ \_parse\_quadhex(in);}
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(0xdc00\ <=\ second\ \&\&\ second\ <=\ 0xdfff))\ \{}
+\DoxyCodeLine{00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00757\ \ \ \ \ \ \ \ \ \ \ \ \ uni\_ch\ =\ ((uni\_ch\ -\/\ 0xd800)\ <<\ 10)\ |\ ((second\ -\/\ 0xdc00)\ \&\ 0x3ff);}
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \ \ \ \ uni\_ch\ +=\ 0x10000;}
+\DoxyCodeLine{00759\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uni\_ch\ <\ 0x80)\ \{}
+\DoxyCodeLine{00761\ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(uni\_ch));}
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00763\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uni\_ch\ <\ 0x800)\ \{}
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(0xc0\ |\ (uni\_ch\ >>\ 6)));}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (uni\_ch\ <\ 0x10000)\ \{}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(0xe0\ |\ (uni\_ch\ >>\ 12)));}
+\DoxyCodeLine{00768\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(0xf0\ |\ (uni\_ch\ >>\ 18)));}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(0x80\ |\ ((uni\_ch\ >>\ 12)\ \&\ 0x3f)));}
+\DoxyCodeLine{00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(0x80\ |\ ((uni\_ch\ >>\ 6)\ \&\ 0x3f)));}
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00774\ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(0x80\ |\ (uni\_ch\ \&\ 0x3f)));}
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00777\ \ \ \ \ \}}
+\DoxyCodeLine{00778\ }
+\DoxyCodeLine{00779\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ String,\ \textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \_parse\_string(String\ \&out,\ input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00781\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ch\ =\ in.getc();}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ch\ <\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{00783\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in.ungetc();}
+\DoxyCodeLine{00784\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ch\ ==\ \textcolor{charliteral}{'"{}'})\ \{}
+\DoxyCodeLine{00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00787\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ch\ ==\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'})\ \{}
+\DoxyCodeLine{00788\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((ch\ =\ in.getc())\ ==\ -\/1)\ \{}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (ch)\ \{}
+\DoxyCodeLine{00792\ \textcolor{preprocessor}{\#define\ MAP(sym,\ val)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00793\ \textcolor{preprocessor}{\ \ case\ sym:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00794\ \textcolor{preprocessor}{\ \ \ \ out.push\_back(val);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00795\ \textcolor{preprocessor}{\ \ \ \ break}}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'"{}'},\ \textcolor{charliteral}{'\(\backslash\)"{}'});}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'},\ \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'/'},\ \textcolor{charliteral}{'/'});}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'b'},\ \textcolor{charliteral}{'\(\backslash\)b'});}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'f'},\ \textcolor{charliteral}{'\(\backslash\)f'});}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'n'},\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'r'},\ \textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(\textcolor{charliteral}{'t'},\ \textcolor{charliteral}{'\(\backslash\)t'});}
+\DoxyCodeLine{00804\ \textcolor{preprocessor}{\#undef\ MAP}}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'u'}:}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_parse\_codepoint(out,\ in))\ \{}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00813\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(ch));}
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00818\ \ \ \ \ \}}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Context,\ \textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \_parse\_array(Context\ \&ctx,\ input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ctx.parse\_array\_start())\ \{}
+\DoxyCodeLine{00822\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00824\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ idx\ =\ 0;}
+\DoxyCodeLine{00825\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (in.expect(\textcolor{charliteral}{']'}))\ \{}
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ctx.parse\_array\_stop(idx);}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ctx.parse\_array\_item(in,\ idx))\ \{}
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ \ \ \ \ idx++;}
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (in.expect(\textcolor{charliteral}{','}));}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ in.expect(\textcolor{charliteral}{']'})\ \&\&\ ctx.parse\_array\_stop(idx);}
+\DoxyCodeLine{00835\ \ \ \ \ \}}
+\DoxyCodeLine{00836\ }
+\DoxyCodeLine{00837\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Context,\ \textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \_parse\_object(Context\ \&ctx,\ input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ctx.parse\_object\_start())\ \{}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (in.expect(\textcolor{charliteral}{'\}'}))\ \{}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00843\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{namespacenlohmann_1_1detail_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d}{key}};}
+\DoxyCodeLine{00846\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!in.expect(\textcolor{charliteral}{'"{}'})\ ||\ !\_parse\_string(key,\ in)\ ||\ !in.expect(\textcolor{charliteral}{':'}))\ \{}
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00848\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ctx.parse\_object\_item(in,\ key))\ \{}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00852\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (in.expect(\textcolor{charliteral}{','}));}
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ in.expect(\textcolor{charliteral}{'\}'});}
+\DoxyCodeLine{00854\ \ \ \ \ \}}
+\DoxyCodeLine{00855\ }
+\DoxyCodeLine{00856\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ std::string\ \_parse\_number(input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ std::string\ num\_str;}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ch\ =\ in.getc();}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{charliteral}{'0'}\ <=\ ch\ \&\&\ ch\ <=\ \textcolor{charliteral}{'9'})\ ||\ ch\ ==\ \textcolor{charliteral}{'+'}\ ||\ ch\ ==\ \textcolor{charliteral}{'-\/'}\ ||\ ch\ ==\ \textcolor{charliteral}{'e'}\ ||\ ch\ ==\ \textcolor{charliteral}{'E'})\ \{}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_str.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(ch));}
+\DoxyCodeLine{00862\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ch\ ==\ \textcolor{charliteral}{'.'})\ \{}
+\DoxyCodeLine{00863\ \textcolor{preprocessor}{\#if\ PICOJSON\_USE\_LOCALE}}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_str\ +=\ localeconv()-\/>decimal\_point;}
+\DoxyCodeLine{00865\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ num\_str.push\_back(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00869\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in.ungetc();}
+\DoxyCodeLine{00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00871\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00873\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ num\_str;}
+\DoxyCodeLine{00874\ \ \ \ \ \}}
+\DoxyCodeLine{00875\ }
+\DoxyCodeLine{00876\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Context,\ \textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \_parse(Context\ \&ctx,\ input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{00877\ \ \ \ \ \ \ \ \ in.skip\_ws();}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ch\ =\ in.getc();}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (ch)\ \{}
+\DoxyCodeLine{00880\ \textcolor{preprocessor}{\#define\ IS(ch,\ text,\ op)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00881\ \textcolor{preprocessor}{\ \ case\ ch:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00882\ \textcolor{preprocessor}{\ \ \ \ if\ (in.match(text)\ \&\&\ op)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00883\ \textcolor{preprocessor}{\ \ \ \ \ \ return\ true;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00884\ \textcolor{preprocessor}{\ \ \ \ \}\ else\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00885\ \textcolor{preprocessor}{\ \ \ \ \ \ return\ false;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00886\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \ \ \ \ IS(\textcolor{charliteral}{'n'},\ \textcolor{stringliteral}{"{}ull"{}},\ ctx.set\_null());}
+\DoxyCodeLine{00888\ \ \ \ \ \ \ \ \ \ \ \ \ IS(\textcolor{charliteral}{'f'},\ \textcolor{stringliteral}{"{}alse"{}},\ ctx.set\_bool(\textcolor{keyword}{false}));}
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \ \ \ \ IS(\textcolor{charliteral}{'t'},\ \textcolor{stringliteral}{"{}rue"{}},\ ctx.set\_bool(\textcolor{keyword}{true}));}
+\DoxyCodeLine{00890\ \textcolor{preprocessor}{\#undef\ IS}}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'"{}'}:}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ctx.parse\_string(in);}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'['}:}
+\DoxyCodeLine{00894\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse\_array(ctx,\ in);}
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'\{'}:}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse\_object(ctx,\ in);}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{charliteral}{'0'}\ <=\ ch\ \&\&\ ch\ <=\ \textcolor{charliteral}{'9'})\ ||\ ch\ ==\ \textcolor{charliteral}{'-\/'})\ \{}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ f;}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ *endp;}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ in.ungetc();}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ num\_str(\_parse\_number(in));}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (num\_str.empty())\ \{}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00906\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ errno\ =\ 0;}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ intmax\_t\ ival\ =\ strtoimax(num\_str.c\_str(),\ \&endp,\ 10);}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (errno\ ==\ 0\ \&\&\ std::numeric\_limits<int64\_t>::min()\ <=\ ival\ \&\&\ ival\ <=\ std::numeric\_limits<int64\_t>::max()\ \&\&}
+\DoxyCodeLine{00911\ \ \ \ \ \ \ \ \ \ \ \ \ endp\ ==\ num\_str.c\_str()\ +\ num\_str.size())\ \{}
+\DoxyCodeLine{00912\ \ \ \ \ \ \ \ \ \ \ ctx.set\_int64(ival);}
+\DoxyCodeLine{00913\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00914\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00916\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00917\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f\ =\ strtod(num\_str.c\_str(),\ \&endp);}
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (endp\ ==\ num\_str.c\_str()\ +\ num\_str.size())\ \{}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ctx.set\_number(f);}
+\DoxyCodeLine{00920\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00921\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00924\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00925\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00926\ \ \ \ \ \ \ \ \ in.ungetc();}
+\DoxyCodeLine{00927\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00928\ \ \ \ \ \}}
+\DoxyCodeLine{00929\ }
+\DoxyCodeLine{00930\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpicojson_1_1deny__parse__context}{deny\_parse\_context}}\ \{}
+\DoxyCodeLine{00931\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00932\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_null()\ \{}
+\DoxyCodeLine{00933\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00934\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00935\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_bool(\textcolor{keywordtype}{bool})\ \{}
+\DoxyCodeLine{00936\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00937\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00938\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00939\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_int64(int64\_t)\ \{}
+\DoxyCodeLine{00940\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00941\ \ \ \}}
+\DoxyCodeLine{00942\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00943\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_number(\textcolor{keywordtype}{double})\ \{}
+\DoxyCodeLine{00944\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00945\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00946\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_string(input<Iter>\ \&)\ \{}
+\DoxyCodeLine{00947\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00948\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00949\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_array\_start()\ \{}
+\DoxyCodeLine{00950\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00951\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00952\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_array\_item(input<Iter>\ \&,\ \textcolor{keywordtype}{size\_t})\ \{}
+\DoxyCodeLine{00953\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00954\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00955\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_array\_stop(\textcolor{keywordtype}{size\_t})\ \{}
+\DoxyCodeLine{00956\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00957\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00958\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_object\_start()\ \{}
+\DoxyCodeLine{00959\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00960\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00961\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_object\_item(input<Iter>\ \&,\ \textcolor{keyword}{const}\ std::string\ \&)\ \{}
+\DoxyCodeLine{00962\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00963\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00964\ \ \ \ \ \};}
+\DoxyCodeLine{00965\ }
+\DoxyCodeLine{00966\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpicojson_1_1default__parse__context}{default\_parse\_context}}\ \{}
+\DoxyCodeLine{00967\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00968\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1value}{value}}\ *out\_;}
+\DoxyCodeLine{00969\ }
+\DoxyCodeLine{00970\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00971\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1default__parse__context}{default\_parse\_context}}(\mbox{\hyperlink{classpicojson_1_1value}{value}}\ *out)\ :\ out\_(out)\ \{}
+\DoxyCodeLine{00972\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00973\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_null()\ \{}
+\DoxyCodeLine{00974\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *out\_\ =\ \mbox{\hyperlink{classpicojson_1_1value}{value}}();}
+\DoxyCodeLine{00975\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00976\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00977\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_bool(\textcolor{keywordtype}{bool}\ b)\ \{}
+\DoxyCodeLine{00978\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *out\_\ =\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(b);}
+\DoxyCodeLine{00979\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00980\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00981\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{00982\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_int64(int64\_t\ i)\ \{}
+\DoxyCodeLine{00983\ \ \ \ \ *out\_\ =\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(i);}
+\DoxyCodeLine{00984\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00985\ \ \ \}}
+\DoxyCodeLine{00986\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00987\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_number(\textcolor{keywordtype}{double}\ f)\ \{}
+\DoxyCodeLine{00988\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *out\_\ =\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(f);}
+\DoxyCodeLine{00989\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00990\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00991\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_string(input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{00992\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *out\_\ =\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(string\_type,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00993\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse\_string(out\_-\/>get<std::string>(),\ in);}
+\DoxyCodeLine{00994\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00995\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_array\_start()\ \{}
+\DoxyCodeLine{00996\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *out\_\ =\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(array\_type,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00997\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00998\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00999\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_array\_item(input<Iter>\ \&in,\ \textcolor{keywordtype}{size\_t})\ \{}
+\DoxyCodeLine{01000\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ array\ \&a\ =\ out\_-\/>get<array>();}
+\DoxyCodeLine{01001\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.push\_back(\mbox{\hyperlink{classpicojson_1_1value}{value}}());}
+\DoxyCodeLine{01002\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1default__parse__context}{default\_parse\_context}}\ ctx(\&a.back());}
+\DoxyCodeLine{01003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse(ctx,\ in);}
+\DoxyCodeLine{01004\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01005\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_array\_stop(\textcolor{keywordtype}{size\_t})\ \{}
+\DoxyCodeLine{01006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01007\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01008\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_object\_start()\ \{}
+\DoxyCodeLine{01009\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *out\_\ =\ \mbox{\hyperlink{classpicojson_1_1value}{value}}(object\_type,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{01010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01011\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_object\_item(input<Iter>\ \&in,\ \textcolor{keyword}{const}\ std::string\ \&key)\ \{}
+\DoxyCodeLine{01013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ \&o\ =\ out\_-\/>get<\textcolor{keywordtype}{object}>();}
+\DoxyCodeLine{01014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1default__parse__context}{default\_parse\_context}}\ ctx(\&o[key]);}
+\DoxyCodeLine{01015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse(ctx,\ in);}
+\DoxyCodeLine{01016\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01017\ }
+\DoxyCodeLine{01018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{01019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1default__parse__context}{default\_parse\_context}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classpicojson_1_1default__parse__context}{default\_parse\_context}}\ \&);}
+\DoxyCodeLine{01020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1default__parse__context}{default\_parse\_context}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classpicojson_1_1default__parse__context}{default\_parse\_context}}\ \&);}
+\DoxyCodeLine{01021\ \ \ \ \ \};}
+\DoxyCodeLine{01022\ }
+\DoxyCodeLine{01023\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpicojson_1_1null__parse__context}{null\_parse\_context}}\ \{}
+\DoxyCodeLine{01024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpicojson_1_1null__parse__context_1_1dummy__str}{dummy\_str}}\ \{}
+\DoxyCodeLine{01026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ push\_back(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{01027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01028\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{01029\ }
+\DoxyCodeLine{01030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classpicojson_1_1null__parse__context}{null\_parse\_context}}()\ \{}
+\DoxyCodeLine{01032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_null()\ \{}
+\DoxyCodeLine{01034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_bool(\textcolor{keywordtype}{bool})\ \{}
+\DoxyCodeLine{01037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01039\ \textcolor{preprocessor}{\#ifdef\ PICOJSON\_USE\_INT64}}
+\DoxyCodeLine{01040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_int64(int64\_t)\ \{}
+\DoxyCodeLine{01041\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01042\ \ \ \}}
+\DoxyCodeLine{01043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_number(\textcolor{keywordtype}{double})\ \{}
+\DoxyCodeLine{01045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_string(input<Iter>\ \&in)\ \{}
+\DoxyCodeLine{01048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dummy\_str\ s;}
+\DoxyCodeLine{01049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse\_string(s,\ in);}
+\DoxyCodeLine{01050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_array\_start()\ \{}
+\DoxyCodeLine{01052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_array\_item(input<Iter>\ \&in,\ \textcolor{keywordtype}{size\_t})\ \{}
+\DoxyCodeLine{01055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse(*\textcolor{keyword}{this},\ in);}
+\DoxyCodeLine{01056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_array\_stop(\textcolor{keywordtype}{size\_t})\ \{}
+\DoxyCodeLine{01058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ parse\_object\_start()\ \{}
+\DoxyCodeLine{01061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keywordtype}{bool}\ parse\_object\_item(input<Iter>\ \&in,\ \textcolor{keyword}{const}\ std::string\ \&)\ \{}
+\DoxyCodeLine{01064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse(*\textcolor{keyword}{this},\ in);}
+\DoxyCodeLine{01065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01066\ }
+\DoxyCodeLine{01067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{01068\ \ \ \ \ \ \ \ \ \ \ \ \ null\_parse\_context(\textcolor{keyword}{const}\ null\_parse\_context\ \&);}
+\DoxyCodeLine{01069\ \ \ \ \ \ \ \ \ \ \ \ \ null\_parse\_context\ \&operator=(\textcolor{keyword}{const}\ null\_parse\_context\ \&);}
+\DoxyCodeLine{01070\ \ \ \ \ \};}
+\DoxyCodeLine{01071\ }
+\DoxyCodeLine{01072\ \textcolor{comment}{//\ obsolete,\ use\ the\ version\ below}}
+\DoxyCodeLine{01073\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ std::string\ parse(value\ \&out,\ Iter\ \&pos,\ \textcolor{keyword}{const}\ Iter\ \&last)\ \{}
+\DoxyCodeLine{01074\ \ \ \ \ \ \ \ \ std::string\ err;}
+\DoxyCodeLine{01075\ \ \ \ \ \ \ \ \ pos\ =\ parse(out,\ pos,\ last,\ \&err);}
+\DoxyCodeLine{01076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{01077\ \ \ \ \ \}}
+\DoxyCodeLine{01078\ }
+\DoxyCodeLine{01079\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Context,\ \textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ Iter\ \_parse(Context\ \&ctx,\ \textcolor{keyword}{const}\ Iter\ \&first,\ \textcolor{keyword}{const}\ Iter\ \&last,\ std::string\ *err)\ \{}
+\DoxyCodeLine{01080\ \ \ \ \ \ \ \ \ input<Iter>\ in(first,\ last);}
+\DoxyCodeLine{01081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_parse(ctx,\ in)\ \&\&\ err\ !=\ NULL)\ \{}
+\DoxyCodeLine{01082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ buf[64];}
+\DoxyCodeLine{01083\ \ \ \ \ \ \ \ \ \ \ \ \ SNPRINTF(buf,\ \textcolor{keyword}{sizeof}(buf),\ \textcolor{stringliteral}{"{}syntax\ error\ at\ line\ \%d\ near:\ "{}},\ in.line());}
+\DoxyCodeLine{01084\ \ \ \ \ \ \ \ \ \ \ \ \ *err\ =\ buf;}
+\DoxyCodeLine{01085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{01086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ch\ =\ in.getc();}
+\DoxyCodeLine{01087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ch\ ==\ -\/1\ ||\ ch\ ==\ \textcolor{charliteral}{'\(\backslash\)n'})\ \{}
+\DoxyCodeLine{01088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{01089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ch\ >=\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{01090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ err-\/>push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}\textcolor{keyword}{>}(ch));}
+\DoxyCodeLine{01091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{01094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ in.cur();}
+\DoxyCodeLine{01095\ \ \ \ \ \}}
+\DoxyCodeLine{01096\ }
+\DoxyCodeLine{01097\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Iter>\ \textcolor{keyword}{inline}\ Iter\ parse(value\ \&out,\ \textcolor{keyword}{const}\ Iter\ \&first,\ \textcolor{keyword}{const}\ Iter\ \&last,\ std::string\ *err)\ \{}
+\DoxyCodeLine{01098\ \ \ \ \ \ \ \ \ default\_parse\_context\ ctx(\&out);}
+\DoxyCodeLine{01099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_parse(ctx,\ first,\ last,\ err);}
+\DoxyCodeLine{01100\ \ \ \ \ \}}
+\DoxyCodeLine{01101\ }
+\DoxyCodeLine{01102\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ parse(value\ \&out,\ \textcolor{keyword}{const}\ std::string\ \&s)\ \{}
+\DoxyCodeLine{01103\ \ \ \ \ \ \ \ \ std::string\ err;}
+\DoxyCodeLine{01104\ \ \ \ \ \ \ \ \ parse(out,\ s.begin(),\ s.end(),\ \&err);}
+\DoxyCodeLine{01105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{01106\ \ \ \ \ \}}
+\DoxyCodeLine{01107\ }
+\DoxyCodeLine{01108\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ parse(value\ \&out,\ std::istream\ \&is)\ \{}
+\DoxyCodeLine{01109\ \ \ \ \ \ \ \ \ std::string\ err;}
+\DoxyCodeLine{01110\ \ \ \ \ \ \ \ \ parse(out,\ std::istreambuf\_iterator<char>(is.rdbuf()),\ std::istreambuf\_iterator<char>(),\ \&err);}
+\DoxyCodeLine{01111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ err;}
+\DoxyCodeLine{01112\ \ \ \ \ \}}
+\DoxyCodeLine{01113\ }
+\DoxyCodeLine{01114\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpicojson_1_1last__error__t}{last\_error\_t}}\ \{\ \textcolor{keyword}{static}\ std::string\ s;\ \};}
+\DoxyCodeLine{01115\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::string\ \mbox{\hyperlink{structpicojson_1_1last__error__t}{last\_error\_t<T>::s}};}
+\DoxyCodeLine{01116\ }
+\DoxyCodeLine{01117\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ set\_last\_error(\textcolor{keyword}{const}\ std::string\ \&s)\ \{}
+\DoxyCodeLine{01118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structpicojson_1_1last__error__t}{last\_error\_t<bool>::s}}\ =\ s;}
+\DoxyCodeLine{01119\ \ \ \ \ \}}
+\DoxyCodeLine{01120\ }
+\DoxyCodeLine{01121\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::string\ \&get\_last\_error()\ \{}
+\DoxyCodeLine{01122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ last\_error\_t<bool>::s;}
+\DoxyCodeLine{01123\ \ \ \ \ \}}
+\DoxyCodeLine{01124\ }
+\DoxyCodeLine{01125\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ value\ \&x,\ \textcolor{keyword}{const}\ value\ \&y)\ \{}
+\DoxyCodeLine{01126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x.is<null>())}
+\DoxyCodeLine{01127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y.is<\mbox{\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985a37a6259cc0c1dae299a7866489dff0bd}{null}}>();}
+\DoxyCodeLine{01128\ \textcolor{preprocessor}{\#define\ PICOJSON\_CMP(type)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01129\ \textcolor{preprocessor}{\ \ if\ (x.is<type>())\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01130\ \textcolor{preprocessor}{\ \ return\ y.is<type>()\ \&\&\ x.get<type>()\ ==\ y.get<type>()}}
+\DoxyCodeLine{01131\ \ \ \ \ \ \ \ \ PICOJSON\_CMP(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{01132\ \ \ \ \ \ \ \ \ PICOJSON\_CMP(\textcolor{keywordtype}{double});}
+\DoxyCodeLine{01133\ \ \ \ \ \ \ \ \ PICOJSON\_CMP(std::string);}
+\DoxyCodeLine{01134\ \ \ \ \ \ \ \ \ PICOJSON\_CMP(array);}
+\DoxyCodeLine{01135\ \ \ \ \ \ \ \ \ PICOJSON\_CMP(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{01136\ \textcolor{preprocessor}{\#undef\ PICOJSON\_CMP}}
+\DoxyCodeLine{01137\ \ \ \ \ \ \ \ \ PICOJSON\_ASSERT(0);}
+\DoxyCodeLine{01138\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{01139\ \ \ \ \ \ \ \ \ \_\_assume(0);}
+\DoxyCodeLine{01140\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01142\ \ \ \ \ \}}
+\DoxyCodeLine{01143\ }
+\DoxyCodeLine{01144\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ value\ \&x,\ \textcolor{keyword}{const}\ value\ \&y)\ \{}
+\DoxyCodeLine{01145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(x\ ==\ y);}
+\DoxyCodeLine{01146\ \ \ \ \ \}}
+\DoxyCodeLine{01147\ \}}
+\DoxyCodeLine{01148\ }
+\DoxyCodeLine{01149\ \textcolor{preprocessor}{\#if\ !PICOJSON\_USE\_RVALUE\_REFERENCE}}
+\DoxyCodeLine{01150\ \textcolor{keyword}{namespace\ }std\ \{}
+\DoxyCodeLine{01151\ \ \ \ \ \textcolor{keyword}{template}\ <>\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ swap(\mbox{\hyperlink{classpicojson_1_1value}{picojson::value}}\ \&x,\ \mbox{\hyperlink{classpicojson_1_1value}{picojson::value}}\ \&y)\ \{}
+\DoxyCodeLine{01152\ \ \ \ \ \ \ \ \ x.swap(y);}
+\DoxyCodeLine{01153\ \ \ \ \ \}}
+\DoxyCodeLine{01154\ \}}
+\DoxyCodeLine{01155\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01156\ }
+\DoxyCodeLine{01157\ \textcolor{keyword}{inline}\ std::istream\ \&operator>>(std::istream\ \&is,\ \mbox{\hyperlink{classpicojson_1_1value}{picojson::value}}\ \&x)\ \{}
+\DoxyCodeLine{01158\ \ \ \ \ picojson::set\_last\_error(std::string());}
+\DoxyCodeLine{01159\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ err(picojson::parse(x,\ is));}
+\DoxyCodeLine{01160\ \ \ \ \ \textcolor{keywordflow}{if}\ (!err.empty())\ \{}
+\DoxyCodeLine{01161\ \ \ \ \ \ \ \ \ picojson::set\_last\_error(err);}
+\DoxyCodeLine{01162\ \ \ \ \ \ \ \ \ is.setstate(std::ios::failbit);}
+\DoxyCodeLine{01163\ \ \ \ \ \}}
+\DoxyCodeLine{01164\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{01165\ \}}
+\DoxyCodeLine{01166\ }
+\DoxyCodeLine{01167\ \textcolor{keyword}{inline}\ std::ostream\ \&operator<<(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classpicojson_1_1value}{picojson::value}}\ \&x)\ \{}
+\DoxyCodeLine{01168\ \ \ \ \ x.serialize(std::ostream\_iterator<char>(os));}
+\DoxyCodeLine{01169\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{01170\ \}}
+\DoxyCodeLine{01171\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{01172\ \textcolor{preprocessor}{\#pragma\ warning(pop)}}
+\DoxyCodeLine{01173\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01174\ }
+\DoxyCodeLine{01175\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

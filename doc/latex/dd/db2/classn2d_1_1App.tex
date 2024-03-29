@@ -1,0 +1,317 @@
+\doxysection{n2d\+::App Class Reference}
+\hypertarget{classn2d_1_1App}{}\label{classn2d_1_1App}\index{n2d::App@{n2d::App}}
+
+
+{\ttfamily \#include $<$App.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classn2d_1_1App_acb8cbf3e285b91d0170ffe87df5989c5}{App}} ()
+\item 
+\mbox{\hyperlink{classn2d_1_1App_a213d1f4357d0a2bec6ccd397c9a3025a}{App}} (std\+::string t\+\_\+name)
+\item 
+void \mbox{\hyperlink{classn2d_1_1App_aed298597b3fd48dbce526bb26c197c14}{Load}} (std\+::string)
+\item 
+void \mbox{\hyperlink{classn2d_1_1App_a1ab1f8a08f69bfeb44d36ff40cb45aeb}{Reset}} ()
+\item 
+int \mbox{\hyperlink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{Run}} ()
+\item 
+int \mbox{\hyperlink{classn2d_1_1App_af5db7263d4fe7c57c72b5038e8d65010}{Add\+Updatable}} (\mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}} \texorpdfstring{$\ast$}{*}tp\+\_\+obj)
+\item 
+\Hypertarget{classn2d_1_1App_a303fe6dcaa35300325e4f6cb26b93e72}\label{classn2d_1_1App_a303fe6dcaa35300325e4f6cb26b93e72} 
+int {\bfseries Add\+Drawable} (\mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}} \texorpdfstring{$\ast$}{*}tp\+\_\+obj)
+\item 
+\Hypertarget{classn2d_1_1App_a4622c65b721b1c055882feae9683007b}\label{classn2d_1_1App_a4622c65b721b1c055882feae9683007b} 
+int {\bfseries Add\+Interactive} (\mbox{\hyperlink{classn2d_1_1Interactive}{Interactive}} \texorpdfstring{$\ast$}{*})
+\item 
+\Hypertarget{classn2d_1_1App_ab75ce18914350bebec15c2785144eca9}\label{classn2d_1_1App_ab75ce18914350bebec15c2785144eca9} 
+bool {\bfseries Remove\+Interactive} (int)
+\item 
+\Hypertarget{classn2d_1_1App_a7afe0747e20c6b58a1a39eeb630273cf}\label{classn2d_1_1App_a7afe0747e20c6b58a1a39eeb630273cf} 
+int {\bfseries Add\+Texture} (std\+::string)
+\item 
+\Hypertarget{classn2d_1_1App_a63769a0945d67feeac0f1865356a5e34}\label{classn2d_1_1App_a63769a0945d67feeac0f1865356a5e34} 
+const sf\+::\+Texture \texorpdfstring{$\ast$}{*} {\bfseries Get\+Texture\+Ptr} (int)
+\item 
+\Hypertarget{classn2d_1_1App_a358476905ec8822edbdf988f19280f4e}\label{classn2d_1_1App_a358476905ec8822edbdf988f19280f4e} 
+void {\bfseries Set\+Screen\+Size} (float t\+\_\+width, float t\+\_\+height)
+\item 
+\Hypertarget{classn2d_1_1App_a045b15445f659d688aebb768e2e970fa}\label{classn2d_1_1App_a045b15445f659d688aebb768e2e970fa} 
+void {\bfseries Set\+Fullscreen} (bool t\+\_\+fullstreen=false)
+\item 
+\Hypertarget{classn2d_1_1App_af0f3aedfec29171dc39585ba6a28d9e5}\label{classn2d_1_1App_af0f3aedfec29171dc39585ba6a28d9e5} 
+void {\bfseries Set\+Vsync} (bool t\+\_\+vsync=true)
+\item 
+\Hypertarget{classn2d_1_1App_aea571c6db9061829f193f980bd05def4}\label{classn2d_1_1App_aea571c6db9061829f193f980bd05def4} 
+void {\bfseries Set\+FPS} (float t\+\_\+fps=-\/1.\+0f)
+\item 
+\Hypertarget{classn2d_1_1App_a0e2eb1a09d862945da4e805f98aa7232}\label{classn2d_1_1App_a0e2eb1a09d862945da4e805f98aa7232} 
+void {\bfseries Set\+Gravity} (float t\+\_\+x, float t\+\_\+y)
+\item 
+\Hypertarget{classn2d_1_1App_a143e4da850293268158d24a2695179e5}\label{classn2d_1_1App_a143e4da850293268158d24a2695179e5} 
+void {\bfseries Set\+Default\+Font} (std\+::string t\+\_\+font)
+\item 
+\Hypertarget{classn2d_1_1App_a73db31b4b77acb9df7e82327913c86bb}\label{classn2d_1_1App_a73db31b4b77acb9df7e82327913c86bb} 
+float {\bfseries Get\+FPS} ()
+\item 
+\Hypertarget{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2}\label{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2} 
+void {\bfseries Draw} (sf\+::\+Render\+Window \&)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+b2\+World \mbox{\hyperlink{classn2d_1_1App_a48ababdcabf46d6d25403dc028a8ab42}{world}} = b2\+World( b2\+Vec2( 0, 9.\+81f ))
+\item 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \mbox{\hyperlink{classn2d_1_1App_a8f5694e8980ac550a985f731482a4d61}{src}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1App_a48857f3b8937cd05e763c85049469442}\label{classn2d_1_1App_a48857f3b8937cd05e763c85049469442} 
+\mbox{\hyperlink{classn2d_1_1Logger}{Logger}} {\bfseries log}
+\item 
+json \mbox{\hyperlink{classn2d_1_1App_a6e5348f561acff350948f5f54d0c15e1}{m\+\_\+conf}}
+\item 
+std\+::string \mbox{\hyperlink{classn2d_1_1App_a3a196b524eeb7ba256cb81cded563998}{m\+\_\+name}}
+\item 
+glm\+::vec2 \mbox{\hyperlink{classn2d_1_1App_af9a9ce8898712a82401b17d01c4ccd74}{m\+\_\+window\+\_\+size}}
+\item 
+float \mbox{\hyperlink{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}{m\+\_\+fps}} = -\/1.\+0f
+\item 
+bool \mbox{\hyperlink{classn2d_1_1App_a027e05ba08acf62b5486903250d3d87b}{m\+\_\+fullscreen}} = false
+\item 
+bool \mbox{\hyperlink{classn2d_1_1App_aada7e9739c37d558d79b5cf2fbbd2d71}{m\+\_\+vsync}} = true
+\item 
+bool \mbox{\hyperlink{classn2d_1_1App_a4e0f33610b31059692f186216ad6fdf0}{m\+\_\+exit}} = false
+\item 
+sf\+::\+Clock \mbox{\hyperlink{classn2d_1_1App_acd5019ec2e98667dc126524a7956c664}{m\+\_\+clock}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{classn2d_1_1App_a9b3f0a4d1e7accc727a47e3e16de9c92}{m\+\_\+time}}
+\item 
+sf\+::\+Event \mbox{\hyperlink{classn2d_1_1App_a970b994d034d972f9ab4270ed6bfaccf}{m\+\_\+event}}
+\item 
+sf\+::\+View \mbox{\hyperlink{classn2d_1_1App_a23bf400fb32b9383680208da11f5469e}{m\+\_\+view}}
+\item 
+sf\+::\+Render\+Window \mbox{\hyperlink{classn2d_1_1App_abe342f1271e15e8156e31faf56d6a86d}{m\+\_\+window}}
+\item 
+int \mbox{\hyperlink{classn2d_1_1App_ad7f8c200c68e56333ef430e2388b3362}{m\+\_\+velocity\+\_\+iterations}} = 6
+\item 
+int \mbox{\hyperlink{classn2d_1_1App_a214c25bb18188d7596209c618bee288c}{m\+\_\+position\+\_\+iterations}} = 2
+\item 
+float \mbox{\hyperlink{classn2d_1_1App_af1b8ba367757a404c3f48a7bbad721b5}{m\+\_\+time\+\_\+step}} = 1 / 60.\+0f
+\item 
+b2\+Vec2 \mbox{\hyperlink{classn2d_1_1App_a7274d2700c1824b3b4267c38511e6d81}{m\+\_\+gravity}} = b2\+Vec2( 0, -\/9.\+81f )
+\item 
+std\+::list$<$ \mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classn2d_1_1App_a0cd5759714215cd361a9062ce6f83345}{m\+\_\+update\+\_\+list}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classn2d_1_1App_a272a4af4159f6e42c23ebd69e746f2bd}{m\+\_\+draw\+\_\+list}}
+\item 
+std\+::map$<$ int, \mbox{\hyperlink{classn2d_1_1Interactive}{Interactive}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classn2d_1_1App_a543fac5390ac4771441deb420f5bd114}{m\+\_\+interactive\+\_\+list}}
+\item 
+std\+::string \mbox{\hyperlink{classn2d_1_1App_ac4f0fd2c4f82a4be228b52730d74f19f}{m\+\_\+default\+\_\+font}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is MAIN application class. The Core. The Meritum. The thing. It do, what has to be done. Amen. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classn2d_1_1App_acb8cbf3e285b91d0170ffe87df5989c5}\label{classn2d_1_1App_acb8cbf3e285b91d0170ffe87df5989c5} 
+\index{n2d::App@{n2d::App}!App@{App}}
+\index{App@{App}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{App()}{App()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily App\+::\+App (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default constructor \Hypertarget{classn2d_1_1App_a213d1f4357d0a2bec6ccd397c9a3025a}\label{classn2d_1_1App_a213d1f4357d0a2bec6ccd397c9a3025a} 
+\index{n2d::App@{n2d::App}!App@{App}}
+\index{App@{App}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{App()}{App()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily App\+::\+App (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+name} & Path to configuration file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1App_af5db7263d4fe7c57c72b5038e8d65010}\label{classn2d_1_1App_af5db7263d4fe7c57c72b5038e8d65010} 
+\index{n2d::App@{n2d::App}!AddUpdatable@{AddUpdatable}}
+\index{AddUpdatable@{AddUpdatable}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{AddUpdatable()}{AddUpdatable()}}
+{\footnotesize\ttfamily int App\+::\+Add\+Updatable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}} \texorpdfstring{$\ast$}{*}}]{tp\+\_\+obj }\end{DoxyParamCaption})}
+
+Adding \doxylink{classn2d_1_1Updatable}{Updatable} object to list. 
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}tp\+\_\+obj} & Pointer to object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object index on list. 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1App_aed298597b3fd48dbce526bb26c197c14}\label{classn2d_1_1App_aed298597b3fd48dbce526bb26c197c14} 
+\index{n2d::App@{n2d::App}!Load@{Load}}
+\index{Load@{Load}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily void App\+::\+Load (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+conf\+\_\+file }\end{DoxyParamCaption})}
+
+Loading method. 
+\begin{DoxyParams}{Parameters}
+{\em Path} & to configuration file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1App_a1ab1f8a08f69bfeb44d36ff40cb45aeb}\label{classn2d_1_1App_a1ab1f8a08f69bfeb44d36ff40cb45aeb} 
+\index{n2d::App@{n2d::App}!Reset@{Reset}}
+\index{Reset@{Reset}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void App\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reset all properties to default state \Hypertarget{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}\label{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b} 
+\index{n2d::App@{n2d::App}!Run@{Run}}
+\index{Run@{Run}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily int App\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Runs the application. Main Loop. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classn2d_1_1App_acd5019ec2e98667dc126524a7956c664}\label{classn2d_1_1App_acd5019ec2e98667dc126524a7956c664} 
+\index{n2d::App@{n2d::App}!m\_clock@{m\_clock}}
+\index{m\_clock@{m\_clock}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_clock}{m\_clock}}
+{\footnotesize\ttfamily sf\+::\+Clock n2d\+::\+App\+::m\+\_\+clock\hspace{0.3cm}{\ttfamily [protected]}}
+
+Application timer \Hypertarget{classn2d_1_1App_a6e5348f561acff350948f5f54d0c15e1}\label{classn2d_1_1App_a6e5348f561acff350948f5f54d0c15e1} 
+\index{n2d::App@{n2d::App}!m\_conf@{m\_conf}}
+\index{m\_conf@{m\_conf}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_conf}{m\_conf}}
+{\footnotesize\ttfamily json n2d\+::\+App\+::m\+\_\+conf\hspace{0.3cm}{\ttfamily [protected]}}
+
+Application configuration. All \doxylink{classn2d_1_1App}{App} properties are in this file. \Hypertarget{classn2d_1_1App_ac4f0fd2c4f82a4be228b52730d74f19f}\label{classn2d_1_1App_ac4f0fd2c4f82a4be228b52730d74f19f} 
+\index{n2d::App@{n2d::App}!m\_default\_font@{m\_default\_font}}
+\index{m\_default\_font@{m\_default\_font}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_default\_font}{m\_default\_font}}
+{\footnotesize\ttfamily std\+::string n2d\+::\+App\+::m\+\_\+default\+\_\+font\hspace{0.3cm}{\ttfamily [protected]}}
+
+Need to delete this \Hypertarget{classn2d_1_1App_a272a4af4159f6e42c23ebd69e746f2bd}\label{classn2d_1_1App_a272a4af4159f6e42c23ebd69e746f2bd} 
+\index{n2d::App@{n2d::App}!m\_draw\_list@{m\_draw\_list}}
+\index{m\_draw\_list@{m\_draw\_list}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_draw\_list}{m\_draw\_list}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}}\texorpdfstring{$\ast$}{*}$>$ n2d\+::\+App\+::m\+\_\+draw\+\_\+list\hspace{0.3cm}{\ttfamily [protected]}}
+
+List of \doxylink{classn2d_1_1Drawable}{Drawable} objects. All of them are called in main loop. \Hypertarget{classn2d_1_1App_a970b994d034d972f9ab4270ed6bfaccf}\label{classn2d_1_1App_a970b994d034d972f9ab4270ed6bfaccf} 
+\index{n2d::App@{n2d::App}!m\_event@{m\_event}}
+\index{m\_event@{m\_event}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_event}{m\_event}}
+{\footnotesize\ttfamily sf\+::\+Event n2d\+::\+App\+::m\+\_\+event\hspace{0.3cm}{\ttfamily [protected]}}
+
+Application event handler \Hypertarget{classn2d_1_1App_a4e0f33610b31059692f186216ad6fdf0}\label{classn2d_1_1App_a4e0f33610b31059692f186216ad6fdf0} 
+\index{n2d::App@{n2d::App}!m\_exit@{m\_exit}}
+\index{m\_exit@{m\_exit}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_exit}{m\_exit}}
+{\footnotesize\ttfamily bool n2d\+::\+App\+::m\+\_\+exit = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+Application exit flag. Used to break main loop. \Hypertarget{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}\label{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59} 
+\index{n2d::App@{n2d::App}!m\_fps@{m\_fps}}
+\index{m\_fps@{m\_fps}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_fps}{m\_fps}}
+{\footnotesize\ttfamily float n2d\+::\+App\+::m\+\_\+fps = -\/1.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Window framerate. Value -\/1 means that VSYNC is ON \Hypertarget{classn2d_1_1App_a027e05ba08acf62b5486903250d3d87b}\label{classn2d_1_1App_a027e05ba08acf62b5486903250d3d87b} 
+\index{n2d::App@{n2d::App}!m\_fullscreen@{m\_fullscreen}}
+\index{m\_fullscreen@{m\_fullscreen}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_fullscreen}{m\_fullscreen}}
+{\footnotesize\ttfamily bool n2d\+::\+App\+::m\+\_\+fullscreen = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+Fullscreen yes/no flag \Hypertarget{classn2d_1_1App_a7274d2700c1824b3b4267c38511e6d81}\label{classn2d_1_1App_a7274d2700c1824b3b4267c38511e6d81} 
+\index{n2d::App@{n2d::App}!m\_gravity@{m\_gravity}}
+\index{m\_gravity@{m\_gravity}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_gravity}{m\_gravity}}
+{\footnotesize\ttfamily b2\+Vec2 n2d\+::\+App\+::m\+\_\+gravity = b2\+Vec2( 0, -\/9.\+81f )\hspace{0.3cm}{\ttfamily [protected]}}
+
+Default gravity vector, in case when there is no defined in configuration file. Used by Box2D system. \Hypertarget{classn2d_1_1App_a543fac5390ac4771441deb420f5bd114}\label{classn2d_1_1App_a543fac5390ac4771441deb420f5bd114} 
+\index{n2d::App@{n2d::App}!m\_interactive\_list@{m\_interactive\_list}}
+\index{m\_interactive\_list@{m\_interactive\_list}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_interactive\_list}{m\_interactive\_list}}
+{\footnotesize\ttfamily std\+::map$<$int,\mbox{\hyperlink{classn2d_1_1Interactive}{Interactive}}\texorpdfstring{$\ast$}{*}$>$ n2d\+::\+App\+::m\+\_\+interactive\+\_\+list\hspace{0.3cm}{\ttfamily [protected]}}
+
+List of \doxylink{classn2d_1_1Interactive}{Interactive} objects. All of them are called int main loop. \Hypertarget{classn2d_1_1App_a3a196b524eeb7ba256cb81cded563998}\label{classn2d_1_1App_a3a196b524eeb7ba256cb81cded563998} 
+\index{n2d::App@{n2d::App}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily std\+::string n2d\+::\+App\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+Application name \Hypertarget{classn2d_1_1App_a214c25bb18188d7596209c618bee288c}\label{classn2d_1_1App_a214c25bb18188d7596209c618bee288c} 
+\index{n2d::App@{n2d::App}!m\_position\_iterations@{m\_position\_iterations}}
+\index{m\_position\_iterations@{m\_position\_iterations}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_position\_iterations}{m\_position\_iterations}}
+{\footnotesize\ttfamily int n2d\+::\+App\+::m\+\_\+position\+\_\+iterations = 2\hspace{0.3cm}{\ttfamily [protected]}}
+
+Number of position calculation iterations. Used by Box2D system. \Hypertarget{classn2d_1_1App_a9b3f0a4d1e7accc727a47e3e16de9c92}\label{classn2d_1_1App_a9b3f0a4d1e7accc727a47e3e16de9c92} 
+\index{n2d::App@{n2d::App}!m\_time@{m\_time}}
+\index{m\_time@{m\_time}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_time}{m\_time}}
+{\footnotesize\ttfamily sf\+::\+Time n2d\+::\+App\+::m\+\_\+time\hspace{0.3cm}{\ttfamily [protected]}}
+
+Application time, calculated by m\+\_\+clock \Hypertarget{classn2d_1_1App_af1b8ba367757a404c3f48a7bbad721b5}\label{classn2d_1_1App_af1b8ba367757a404c3f48a7bbad721b5} 
+\index{n2d::App@{n2d::App}!m\_time\_step@{m\_time\_step}}
+\index{m\_time\_step@{m\_time\_step}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_time\_step}{m\_time\_step}}
+{\footnotesize\ttfamily float n2d\+::\+App\+::m\+\_\+time\+\_\+step = 1 / 60.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+Default, hardcoded time step, in case when some sh\texorpdfstring{$\ast$}{*}t happend to m\+\_\+clock, or m\+\_\+time. Also lock framerate to 60 FPS. \Hypertarget{classn2d_1_1App_a0cd5759714215cd361a9062ce6f83345}\label{classn2d_1_1App_a0cd5759714215cd361a9062ce6f83345} 
+\index{n2d::App@{n2d::App}!m\_update\_list@{m\_update\_list}}
+\index{m\_update\_list@{m\_update\_list}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_update\_list}{m\_update\_list}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}}\texorpdfstring{$\ast$}{*}$>$ n2d\+::\+App\+::m\+\_\+update\+\_\+list\hspace{0.3cm}{\ttfamily [protected]}}
+
+List of \doxylink{classn2d_1_1Updatable}{Updatable} objects. All of them ara called in main loop. \Hypertarget{classn2d_1_1App_ad7f8c200c68e56333ef430e2388b3362}\label{classn2d_1_1App_ad7f8c200c68e56333ef430e2388b3362} 
+\index{n2d::App@{n2d::App}!m\_velocity\_iterations@{m\_velocity\_iterations}}
+\index{m\_velocity\_iterations@{m\_velocity\_iterations}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_velocity\_iterations}{m\_velocity\_iterations}}
+{\footnotesize\ttfamily int n2d\+::\+App\+::m\+\_\+velocity\+\_\+iterations = 6\hspace{0.3cm}{\ttfamily [protected]}}
+
+Number of velocity calculation iterations. Used by Box2D system. \Hypertarget{classn2d_1_1App_a23bf400fb32b9383680208da11f5469e}\label{classn2d_1_1App_a23bf400fb32b9383680208da11f5469e} 
+\index{n2d::App@{n2d::App}!m\_view@{m\_view}}
+\index{m\_view@{m\_view}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_view}{m\_view}}
+{\footnotesize\ttfamily sf\+::\+View n2d\+::\+App\+::m\+\_\+view\hspace{0.3cm}{\ttfamily [protected]}}
+
+Drawing view \Hypertarget{classn2d_1_1App_aada7e9739c37d558d79b5cf2fbbd2d71}\label{classn2d_1_1App_aada7e9739c37d558d79b5cf2fbbd2d71} 
+\index{n2d::App@{n2d::App}!m\_vsync@{m\_vsync}}
+\index{m\_vsync@{m\_vsync}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_vsync}{m\_vsync}}
+{\footnotesize\ttfamily bool n2d\+::\+App\+::m\+\_\+vsync = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+VSYNC flag. If set on true, framerate is set on -\/1 \Hypertarget{classn2d_1_1App_abe342f1271e15e8156e31faf56d6a86d}\label{classn2d_1_1App_abe342f1271e15e8156e31faf56d6a86d} 
+\index{n2d::App@{n2d::App}!m\_window@{m\_window}}
+\index{m\_window@{m\_window}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_window}{m\_window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window n2d\+::\+App\+::m\+\_\+window\hspace{0.3cm}{\ttfamily [protected]}}
+
+Application main drawing window \Hypertarget{classn2d_1_1App_af9a9ce8898712a82401b17d01c4ccd74}\label{classn2d_1_1App_af9a9ce8898712a82401b17d01c4ccd74} 
+\index{n2d::App@{n2d::App}!m\_window\_size@{m\_window\_size}}
+\index{m\_window\_size@{m\_window\_size}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{m\_window\_size}{m\_window\_size}}
+{\footnotesize\ttfamily glm\+::vec2 n2d\+::\+App\+::m\+\_\+window\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+Window size \Hypertarget{classn2d_1_1App_a8f5694e8980ac550a985f731482a4d61}\label{classn2d_1_1App_a8f5694e8980ac550a985f731482a4d61} 
+\index{n2d::App@{n2d::App}!src@{src}}
+\index{src@{src}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{src}{src}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classn2d_1_1Resources}{Resources}} n2d\+::\+App\+::src}
+
+Top resources, that need to be shared in all application. IT IS NOT ALL RESOURCES! Each \doxylink{classn2d_1_1Map}{Map} has it\textquotesingle{}s own \doxylink{classn2d_1_1Resources}{Resources}, which are freed when map is unloaded. \Hypertarget{classn2d_1_1App_a48ababdcabf46d6d25403dc028a8ab42}\label{classn2d_1_1App_a48ababdcabf46d6d25403dc028a8ab42} 
+\index{n2d::App@{n2d::App}!world@{world}}
+\index{world@{world}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{world}{world}}
+{\footnotesize\ttfamily b2\+World n2d\+::\+App\+::world = b2\+World( b2\+Vec2( 0, 9.\+81f ))}
+
+Box2D physics world. It creates all physically simulated bodies. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/App.\+h\item 
+silnik/core/src/App.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,123 @@
+\doxysection{Enums.\+hpp}
+\hypertarget{Enums_8hpp_source}{}\label{Enums_8hpp_source}\index{silnik/core/lib/include/tileson/common/Enums.hpp@{silnik/core/lib/include/tileson/common/Enums.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ robin\ on\ 22.03.2020.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TILESON\_ENUMS\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TILESON\_ENUMS\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}EnumBitflags.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }tson}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Type\ :\ uint8\_t}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ Undefined\ =\ 0,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ =\ 1,\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ File\ =\ 2,\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ Int\ =\ 3,\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ Boolean\ =\ 4,\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ Float\ =\ 5,\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ String\ =\ 6,\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ Class\ =\ 7,\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ Enum\ =\ 8,\ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ Object\ =\ 9\ }
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{enum\ class}\ LayerType\ :\ uint8\_t}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ Undefined\ =\ 0,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ TileLayer\ =\ 1,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ ObjectGroup\ =\ 2,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ ImageLayer\ =\ 3,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ Group\ =\ 4}
+\DoxyCodeLine{00040\ \ \ \ \ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ParseStatus\ :\ uint8\_t}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ OK\ =\ 0,\ \textcolor{comment}{//OK\ unless\ otherwise\ stated}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ FileNotFound\ =\ 1,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ ParseError\ =\ 2,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ MissingData\ =\ 3,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ DecompressionError\ =\ 4}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ObjectType\ :\ uint8\_t}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ Undefined\ =\ 0,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ Object\ =\ 1,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ Ellipse\ =\ 2,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ Rectangle\ =\ 3,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ Point\ =\ 4,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ Polygon\ =\ 5,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ Polyline\ =\ 6,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ Text\ =\ 7,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ Template\ =\ 8}
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ FLIPPED\_HORIZONTALLY\_FLAG\ =\ 0x80000000;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ FLIPPED\_VERTICALLY\_FLAG\ \ \ =\ 0x40000000;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint32\_t\ FLIPPED\_DIAGONALLY\_FLAG\ \ \ =\ 0x20000000;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{enum\ class}\ TileFlipFlags\ :\ uint32\_t}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ None\ =\ 0,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ Diagonally\ =\ FLIPPED\_DIAGONALLY\_FLAG,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ Vertically\ =\ FLIPPED\_VERTICALLY\_FLAG,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ Horizontally\ =\ FLIPPED\_HORIZONTALLY\_FLAG}
+\DoxyCodeLine{00082\ \ \ \ \ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{enum\ class}\ ObjectAlignment\ :\ uint8\_t}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ Unspecified\ =\ 0,\ \ \ \ \textcolor{comment}{//unspecified}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ TopLeft\ =\ 1,\ \ \ \ \ \ \ \ \textcolor{comment}{//topleft}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ Top\ =\ 2,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//top}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ TopRight\ =\ 3,\ \ \ \ \ \ \ \textcolor{comment}{//topright}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ Left\ =\ 4,\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//left}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ Center\ =\ 5,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//center}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ Right\ =\ 6,\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//right}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ BottomLeft\ =\ 7,\ \ \ \ \ \textcolor{comment}{//bottomleft}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ Bottom\ =\ 8,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//bottom}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ BottomRight\ =\ 9\ \ \ \ \ \textcolor{comment}{//bottomright}}
+\DoxyCodeLine{00099\ \ \ \ \ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{enum\ class}\ TextAlignment\ :\ uint8\_t}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ Unresolved\ =\ 0,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ Left\ =\ 1,\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//left}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ Center\ =\ 2,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//center}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ Right\ =\ 3,\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//right}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ Justify\ =\ 4,\ \ \ \ \ \ \ \ \textcolor{comment}{//justify}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ Top\ =\ 5,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//top}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ Bottom\ =\ 6\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//bottom}}
+\DoxyCodeLine{00113\ \ \ \ \ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{enum\ class}\ TileRenderSize\ :\ uint8\_t}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ Undefined\ =\ 0,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ Tile\ =\ 1,\ \ \textcolor{comment}{//tile\ (default)}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ Grid\ =\ 2\ \ \ \textcolor{comment}{//grid}}
+\DoxyCodeLine{00123\ \ \ \ \ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{enum\ class}\ FillMode\ :\ uint8\_t}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ Undefined\ =\ 0,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ Stretch\ =\ 1,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//stretch\ (default)}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ PreserveAspectFit\ =\ 2\ \ \ \textcolor{comment}{//preserve-\/aspect-\/fit}}
+\DoxyCodeLine{00133\ \ \ \ \ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{enum\ class}\ EnumStorageType\ :\ uint8\_t}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ Unspecified\ =\ 0,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ Int\ =\ 1,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ String\ =\ 2}
+\DoxyCodeLine{00140\ \ \ \ \ \};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ ENABLE\_BITMASK\_OPERATORS(TileFlipFlags)}
+\DoxyCodeLine{00143\ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TILESON\_ENUMS\_HPP}}
+
+\end{DoxyCode}
