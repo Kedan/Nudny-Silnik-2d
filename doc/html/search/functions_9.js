@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['load_0',['Load',['../dd/db2/classn2d_1_1App.html#aed298597b3fd48dbce526bb26c197c14',1,'n2d::App::Load()'],['../d3/d40/classn2d_1_1JSONLoader.html#a26f753c46e66a1fdf02a192fb4db6445',1,'n2d::JSONLoader::Load()']]]
+  ['keydown_0',['KeyDown',['../d3/d90/classn2d_1_1Keyboard.html#a9ae16c0338320e988bdd0b42cba37f59',1,'n2d::Keyboard']]],
+  ['keyup_1',['KeyUp',['../d3/d90/classn2d_1_1Keyboard.html#a37c0df5c2fc2e3ec0bec2b5db866b8d4',1,'n2d::Keyboard']]]
 ];

@@ -29,7 +29,9 @@ Sprite::Sprite( const Sprite& t_sprite) {
 	SetFriction( t_sprite.fixture.friction );
 	SetTextureCoords( t_sprite.tex_coords );
 	SetSize( t_sprite.m_size.x, t_sprite.m_size.y );
-	SetVertices( t_sprite.m_vertices ); // ! before postion & rotation
+	if( t_sprite.m_vertices.size() > 2 ) {
+		SetVertices( t_sprite.m_vertices ); // ! before postion & rotation
+	}
 	SetPosition( t_sprite.position.x, t_sprite.position.y );
 	SetRotation( t_sprite.rotation );
 	SetColor( t_sprite.color );

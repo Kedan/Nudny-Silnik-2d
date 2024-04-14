@@ -1,5 +1,9 @@
 \doxysection{n2d\+::Event\+Driven\+State Class Reference}
 \hypertarget{classn2d_1_1EventDrivenState}{}\label{classn2d_1_1EventDrivenState}\index{n2d::EventDrivenState@{n2d::EventDrivenState}}
+
+
+{\ttfamily \#include $<$State.\+h$>$}
+
 Inheritance diagram for n2d\+::Event\+Driven\+State\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,15 +13,14 @@ Inheritance diagram for n2d\+::Event\+Driven\+State\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classn2d_1_1EventDrivenState_ae15d768f250311f827f4dafaac66c440}\label{classn2d_1_1EventDrivenState_ae15d768f250311f827f4dafaac66c440} 
-virtual void {\bfseries Dispatch} (sf\+::\+Event \&)=0
+virtual void \mbox{\hyperlink{classn2d_1_1EventDrivenState_ae15d768f250311f827f4dafaac66c440}{Dispatch}} (sf\+::\+Event \&)=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1State}{n2d\+::\+State}}}
 \begin{DoxyCompactItemize}
 \item 
-virtual void {\bfseries Enter} ()=0
+virtual void \mbox{\hyperlink{classn2d_1_1State_afa3d3f519995a25adc8e730a7d0da2d8}{Enter}} ()=0
 \item 
-virtual void {\bfseries Exit} ()=0
+virtual void \mbox{\hyperlink{classn2d_1_1State_abacf0161f7682e0f1ed94c1e66ecd410}{Exit}} ()=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
 \begin{DoxyCompactItemize}
@@ -32,6 +35,23 @@ virtual void \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91f
 \item 
 bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface. Anstract class. Keyboard-\/event driven state. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1EventDrivenState_ae15d768f250311f827f4dafaac66c440}\label{classn2d_1_1EventDrivenState_ae15d768f250311f827f4dafaac66c440} 
+\index{n2d::EventDrivenState@{n2d::EventDrivenState}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!n2d::EventDrivenState@{n2d::EventDrivenState}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}}
+{\footnotesize\ttfamily virtual void n2d\+::\+Event\+Driven\+State\+::\+Dispatch (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Check event, and switch to other state if necesery. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & sf\+::\+Event handler reference. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -1,4 +1,5 @@
 #define NUDNY_LOG_ON
+#define NUDNY_LOG_SAME_FILE
 
 #include "Log.h"
 
@@ -7,7 +8,9 @@ using namespace n2d;
 Logger::Logger(){}
 
 void Logger::SetFile( std::string t_filepath ) {
+#ifndef NUDNY_LOG_SAME_FILE
 	m_filename = t_filepath;
+#endif
 }
 
 Logger& Logger::Log( const std::string& t_s ) {
@@ -17,14 +20,16 @@ Logger& Logger::Log( const std::string& t_s ) {
 	return *this;
 }
 
-void Logger::Time() {
+Logger& Logger::Time() {
 #ifdef NUDNY_LOG_ON
 	out << n2d::Tool::GetCurrentDatetime() << " - ";
+	return *this;
 #endif
 }
 
 void Logger::Open() {
 #ifdef NUDNY_LOG_ON
+#ifndef NUDNY_LOG_SAME_FILE
 	if( !m_opened ) {
 		Clear();
 		out << "- - - - - - - - - - - - - - - - - - - - - - - -\n" << "Log begin\nat " << n2d::Tool::GetCurrentDatetime() << "\n-\n\n";
@@ -32,13 +37,16 @@ void Logger::Open() {
 		m_opened = true;
 	}
 #endif
+#endif
 }
 
 void Logger::Close() {
 #ifdef NUDNY_LOG_ON
+#ifndef NUDNY_LOG_SAME_FILE
 	out << "\n-\nlog end\nat " << n2d::Tool::GetCurrentDatetime() << "\n\n";
 	Flush();
 	m_opened = false;
+#endif
 #endif
 }	
 

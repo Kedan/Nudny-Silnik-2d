@@ -12,27 +12,34 @@
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <mutex>}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Interfaces.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Tool.h>}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Logger}{Logger}}\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_opened\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ m\_buffer;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ m\_filename\ =\ \textcolor{stringliteral}{"{}./logs/log"{}};}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ out;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Logger}{Logger}}();}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetFile(\ std::string\ );}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Logger}{Logger}}\&\ Log(\ \textcolor{keyword}{const}\ std::string\&\ t\_s\ );}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Time();}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Open();}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Close();}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Flush();}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Clear();}
-\DoxyCodeLine{00029\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Logger}}
-\DoxyCodeLine{00030\ \};\ \textcolor{comment}{//\ namespace\ }}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Logger}{Logger}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_opened\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ m\_buffer;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ m\_filename\ =\ \textcolor{stringliteral}{"{}./logs/log"{}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ \mbox{\hyperlink{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}{out}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Logger}{Logger}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Logger_ae6af3c2efbf27341e68d060e98b2c656}{SetFile}}(\ std::string\ );}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Logger}{Logger}}\&\ \mbox{\hyperlink{classn2d_1_1Logger_ae779abc3983fec19fdd165d8f9c78f75}{Log}}(\ \textcolor{keyword}{const}\ std::string\&\ t\_s\ );}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c}{Time}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Logger_a3fa16f8dd9abb4daaf36b0b3a23293f7}{Open}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Logger_ab13114d60ca5f1f69f2ba0f2f1a5bd19}{Close}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Logger_a9cb660368605951c1ea0978604cc48e4}{Flush}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Logger_a1191038d1044a1121e03cc267e9c681c}{Clear}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Logger}}
+\DoxyCodeLine{00067\ \};\ \textcolor{comment}{//\ namespace\ }}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -15,9 +15,10 @@
 namespace n2d {
 	class Tileset : public Drawable {
 		protected:
-			glm::vec2		m_grid_size;
-			Resources*		mp_resources;
-			std::map<int,Sprite> 	m_sprites;
+			glm::vec2			m_grid_size;
+			Resources*			mp_resources;
+			std::map<int,Sprite> 		m_sprites;
+			std::map<std::string,int> 	m_sprite_names;
 		public:
 			Logger			log;	
 			//glm::vec2		tilesize;
@@ -29,9 +30,10 @@ namespace n2d {
 			void 	SetResources( Resources& t_resources ) {
 				mp_resources = &t_resources;
 			}	
-			void		Load( tson::Tileset&, std::string="" );
-			void		Load( std::string, std::string );
+			bool		Load( tson::Tileset&, std::string="" );
+			bool		Load( std::string, std::string );
 			Sprite*		GetTile( int );
+			Sprite*		GetTile( std::string );
 			bool		IsTileExists( int );
 			void		Free();	
 			void		SetGridSize( glm::vec2 );

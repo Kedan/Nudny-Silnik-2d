@@ -1,10 +1,20 @@
 var searchData=
 [
-  ['text_0',['Text',['../df/d26/classn2d_1_1Text.html',1,'n2d']]],
-  ['tilelayer_1',['TileLayer',['../d4/d3f/classn2d_1_1TileLayer.html',1,'n2d']]],
-  ['tileset_2',['Tileset',['../dd/d87/classn2d_1_1Tileset.html',1,'n2d']]],
-  ['tool_3',['Tool',['../db/de9/classn2d_1_1Tool.html',1,'n2d']]],
-  ['transform_4',['Transform',['../db/de9/classn2d_1_1Tool.html#a5f55d746ca5f1fc3575fadb429a6ef24',1,'n2d::Tool']]],
-  ['transform_5',['transform',['../de/d92/classn2d_1_1Drawable.html#ab3aef1a4bfba84814535e443c9f1b98b',1,'n2d::Drawable']]],
-  ['translate_6',['Translate',['../db/de9/classn2d_1_1Tool.html#a5812b749e50273841851199229a55cc6',1,'n2d::Tool']]]
+  ['s2b_0',['s2b',['../db/de9/classn2d_1_1Tool.html#a0421036c16c6376cf05b2c9fb02acbf5',1,'n2d::Tool']]],
+  ['s2g_1',['s2g',['../db/de9/classn2d_1_1Tool.html#a4a695909cf60f34fd71b5cad07a53315',1,'n2d::Tool']]],
+  ['setdefaultfont_2',['SetDefaultFont',['../dd/db2/classn2d_1_1App.html#a143e4da850293268158d24a2695179e5',1,'n2d::App']]],
+  ['setfile_3',['SetFile',['../d4/db7/classn2d_1_1Logger.html#ae6af3c2efbf27341e68d060e98b2c656',1,'n2d::Logger']]],
+  ['setfps_4',['SetFPS',['../dd/db2/classn2d_1_1App.html#aea571c6db9061829f193f980bd05def4',1,'n2d::App']]],
+  ['setfullscreen_5',['SetFullscreen',['../dd/db2/classn2d_1_1App.html#a045b15445f659d688aebb768e2e970fa',1,'n2d::App']]],
+  ['setgravity_6',['SetGravity',['../dd/db2/classn2d_1_1App.html#a0e2eb1a09d862945da4e805f98aa7232',1,'n2d::App']]],
+  ['setscreensize_7',['SetScreenSize',['../dd/db2/classn2d_1_1App.html#a358476905ec8822edbdf988f19280f4e',1,'n2d::App']]],
+  ['setsprite_8',['SetSprite',['../d2/dfd/classn2d_1_1SpriteAnimation.html#a967f8704e177906eef85bfa1aac6f6c2',1,'n2d::SpriteAnimation']]],
+  ['setvsync_9',['SetVsync',['../dd/db2/classn2d_1_1App.html#af0f3aedfec29171dc39585ba6a28d9e5',1,'n2d::App']]],
+  ['shape_10',['Shape',['../db/d85/classn2d_1_1Shape.html',1,'n2d']]],
+  ['sprite_11',['Sprite',['../d2/de3/classn2d_1_1Sprite.html',1,'n2d']]],
+  ['spriteanimation_12',['SpriteAnimation',['../d2/dfd/classn2d_1_1SpriteAnimation.html',1,'n2d::SpriteAnimation'],['../d2/dfd/classn2d_1_1SpriteAnimation.html#a1502221691adadc2050702ef0d9bb139',1,'n2d::SpriteAnimation::SpriteAnimation()'],['../d2/dfd/classn2d_1_1SpriteAnimation.html#aa14583d8c864adcb2222a7fa7d98c4e5',1,'n2d::SpriteAnimation::SpriteAnimation(sf::Sprite &amp;)']]],
+  ['src_13',['src',['../dd/db2/classn2d_1_1App.html#a8f5694e8980ac550a985f731482a4d61',1,'n2d::App']]],
+  ['state_14',['State',['../d7/d91/classn2d_1_1State.html',1,'n2d']]],
+  ['statefactory_15',['StateFactory',['../dd/d83/classn2d_1_1StateFactory.html',1,'n2d']]],
+  ['stop_16',['Stop',['../d3/d34/classn2d_1_1Animated.html#aafa111136e06807badbd0886a2f762ae',1,'n2d::Animated::Stop()'],['../d3/d9a/classn2d_1_1FrameAnimation.html#a1c3eeced2e9fbe7b829f63a37bd6accf',1,'n2d::FrameAnimation::Stop()'],['../d4/dac/classn2d_1_1Circle.html#a097c679dccf60549e236e574de67ed64',1,'n2d::Circle::Stop()'],['../de/dfc/classn2d_1_1Poly.html#aa17a6645d2b46a625159dc22905e2f51',1,'n2d::Poly::Stop()'],['../df/d5f/classn2d_1_1Rect.html#aad7d6bc51600aad5b4864b4a15c53721',1,'n2d::Rect::Stop()'],['../d2/de3/classn2d_1_1Sprite.html#a690101a913549c037e7e186386738453',1,'n2d::Sprite::Stop()']]]
 ];

@@ -5,6 +5,7 @@
 #include <list>
 #include <glm/glm.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "box2d/box2d.h"
 #include "tileson/tileson.h"
 #include "Interfaces.h"
@@ -26,6 +27,7 @@ namespace n2d {
 			bool				m_assets_loaded;
 			std::vector<Layer*>		m_layers;
 			//Player*				mp_player;
+			sf::Music			m_music;
 		public:
 			glm::vec2			position;
 			Resources			src;
@@ -38,13 +40,10 @@ namespace n2d {
 			bool Load();
 			bool Load( std::string );
 			bool LoadAssets();
-			void Create( b2World& world );
+			void Create( b2World& );
 			void Free();	
 			void FreeAssets();
-			inline void SetEntityFactory( EntityFactory& t_entity_factory ) {
-				mp_entity_factory 		= &t_entity_factory;
-				mp_entity_factory->tileset 	= &tileset;
-			}
+			void SetEntityFactory( EntityFactory& t_entity_factory );
 			void Draw( sf::RenderWindow& );
 			void Draw( sf::RenderWindow&, sf::Transform& );
 			void Update( float );
@@ -60,9 +59,11 @@ namespace n2d {
 				return m_grid_size.y;
 			}
 		protected:
+			
 			bool LoadTilesets();
 			bool LoadImages();
 			bool LoadLayers();
+			bool LoadAudio();
 
 	}; // class Map
 }; // namespace n2d

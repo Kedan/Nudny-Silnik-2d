@@ -1,5 +1,6 @@
 set(nudny-silnik-core-headers
 	${CMAKE_CURRENT_LIST_DIR}/include/Interfaces.h 
+	${CMAKE_CURRENT_LIST_DIR}/include/Tool.h 
 	${CMAKE_CURRENT_LIST_DIR}/include/KeyMap.h 
 	${CMAKE_CURRENT_LIST_DIR}/include/Log.h 
 	${CMAKE_CURRENT_LIST_DIR}/include/State.h 
@@ -8,6 +9,8 @@ set(nudny-silnik-core-headers
 	${CMAKE_CURRENT_LIST_DIR}/include/Log.h 
 	${CMAKE_CURRENT_LIST_DIR}/include/Keyboard.h 
 	${CMAKE_CURRENT_LIST_DIR}/include/Resources.h
+	${CMAKE_CURRENT_LIST_DIR}/include/GameState.h
+	${CMAKE_CURRENT_LIST_DIR}/include/GameStateFactory.h
 )
 
 set(nudny-silnik-core-src

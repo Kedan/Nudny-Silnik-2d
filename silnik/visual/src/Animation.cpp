@@ -97,11 +97,17 @@ bool SpriteAnimation::IsTimeElapsed() {
 	return m_elapsed_time > m_frames[ m_current_frame ].duration;
 }
 
-void SpriteAnimation::Load( tson::Animation& t_animation, tson::Tileset& t_tileset ) {
+void SpriteAnimation::Load( tson::Animation& t_animation, tson::Tileset& t_tileset, glm::vec2 t_map_grid_size ) {
 	for( auto frame : t_animation.getFrames() ) {
-		tson::Tile* tile = t_tileset.getTile( frame.getTileId() );
-		tson::Rect rect = tile->getDrawingRect();
-		AddFrame( frame.getDuration() * 0.001f, glm::vec4( rect.x, rect.y, rect.width, rect.height ));
+		int first_GID		= t_tileset.getFirstgid();
+		int tile_ID		= frame.getTileId();
+		tson::Tile *tile	= t_tileset.getTile( first_GID + tile_ID - 1);
+		if( tile ) {
+			glm::vec4	draw_rect = Tool::GetDrawingRectG( tile->getDrawingRect(), t_map_grid_size );
+			AddFrame( frame.getDuration() * 0.001f, draw_rect );
+		} else {
+			std::cout << "SpriteAnimation::Load - tile from frame is nullptr\n";
+		}
 	}
 }
 

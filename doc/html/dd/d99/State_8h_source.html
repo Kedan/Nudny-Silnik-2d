@@ -88,32 +88,36 @@ $(function() { codefold.init(1); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define NUDNY_STATE_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d62/namespacen2d.html">n2d</a> {</div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="../../d7/d91/classn2d_1_1State.html">    5</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d7/d91/classn2d_1_1State.html">State</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> Enter()    = 0;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> Exit()     = 0;            </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    };</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="../../d7/d91/classn2d_1_1State.html">    8</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d7/d91/classn2d_1_1State.html">State</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d7/d91/classn2d_1_1State.html#afa3d3f519995a25adc8e730a7d0da2d8">   14</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d91/classn2d_1_1State.html#afa3d3f519995a25adc8e730a7d0da2d8">Enter</a>()    = 0;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d7/d91/classn2d_1_1State.html#abacf0161f7682e0f1ed94c1e66ecd410">   20</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d7/d91/classn2d_1_1State.html#abacf0161f7682e0f1ed94c1e66ecd410">Exit</a>()     = 0;            </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    };</div>
 </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../da/d44/classn2d_1_1EventDrivenState.html">   11</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../da/d44/classn2d_1_1EventDrivenState.html">EventDrivenState</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d7/d91/classn2d_1_1State.html">State</a>, <span class="keyword">public</span> <a class="code hl_class" href="../../d9/df1/classn2d_1_1Interactive.html">Interactive</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> Dispatch( sf::Event&amp; ) = 0;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    };</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../da/d44/classn2d_1_1EventDrivenState.html">   26</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../da/d44/classn2d_1_1EventDrivenState.html">EventDrivenState</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d7/d91/classn2d_1_1State.html">State</a>, <span class="keyword">public</span> <a class="code hl_class" href="../../d9/df1/classn2d_1_1Interactive.html">Interactive</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../da/d44/classn2d_1_1EventDrivenState.html#ae15d768f250311f827f4dafaac66c440">   32</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../da/d44/classn2d_1_1EventDrivenState.html#ae15d768f250311f827f4dafaac66c440">Dispatch</a>( sf::Event&amp; ) = 0;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    };</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}; <span class="comment">// namespace n2d</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassn2d_1_1EventDrivenState_html"><div class="ttname"><a href="../../da/d44/classn2d_1_1EventDrivenState.html">n2d::EventDrivenState</a></div><div class="ttdef"><b>Definition</b> State.h:11</div></div>
-<div class="ttc" id="aclassn2d_1_1Interactive_html"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html">n2d::Interactive</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:254</div></div>
-<div class="ttc" id="aclassn2d_1_1State_html"><div class="ttname"><a href="../../d7/d91/classn2d_1_1State.html">n2d::State</a></div><div class="ttdef"><b>Definition</b> State.h:5</div></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}; <span class="comment">// namespace n2d</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassn2d_1_1EventDrivenState_html"><div class="ttname"><a href="../../da/d44/classn2d_1_1EventDrivenState.html">n2d::EventDrivenState</a></div><div class="ttdef"><b>Definition</b> State.h:26</div></div>
+<div class="ttc" id="aclassn2d_1_1EventDrivenState_html_ae15d768f250311f827f4dafaac66c440"><div class="ttname"><a href="../../da/d44/classn2d_1_1EventDrivenState.html#ae15d768f250311f827f4dafaac66c440">n2d::EventDrivenState::Dispatch</a></div><div class="ttdeci">virtual void Dispatch(sf::Event &amp;)=0</div></div>
+<div class="ttc" id="aclassn2d_1_1Interactive_html"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html">n2d::Interactive</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:77</div></div>
+<div class="ttc" id="aclassn2d_1_1State_html"><div class="ttname"><a href="../../d7/d91/classn2d_1_1State.html">n2d::State</a></div><div class="ttdef"><b>Definition</b> State.h:8</div></div>
+<div class="ttc" id="aclassn2d_1_1State_html_abacf0161f7682e0f1ed94c1e66ecd410"><div class="ttname"><a href="../../d7/d91/classn2d_1_1State.html#abacf0161f7682e0f1ed94c1e66ecd410">n2d::State::Exit</a></div><div class="ttdeci">virtual void Exit()=0</div></div>
+<div class="ttc" id="aclassn2d_1_1State_html_afa3d3f519995a25adc8e730a7d0da2d8"><div class="ttname"><a href="../../d7/d91/classn2d_1_1State.html#afa3d3f519995a25adc8e730a7d0da2d8">n2d::State::Enter</a></div><div class="ttdeci">virtual void Enter()=0</div></div>
 <div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 16:34:43 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

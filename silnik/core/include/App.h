@@ -15,6 +15,8 @@
 #include "JSONLoader.h"
 #include "Resources.h"
 #include "Log.h"
+#include "GameState.h"
+#include "GameStateFactory.h"
 //#include "Map.h"
 
 // app class should be singleton
@@ -87,8 +89,13 @@ namespace n2d {
 			/** List of Interactive objects. All of them are called int main loop. */
 			std::map<int,Interactive*>	m_interactive_list;
 			
+			std::list<Creatable*>		m_creatable_list;
+
 			/** Need to delete this */
 			std::string		m_default_font;
+
+			GameState*		m_game_state;
+			GameStateFactory*	m_game_state_factory;	
 		public:
 			/** Box2D physics world. It creates all physically simulated bodies. */	
 			b2World			world = b2World( b2Vec2( 0, 9.81f ));
@@ -106,6 +113,9 @@ namespace n2d {
 			 * @param	t_name Path to configuration file. */
 			App( std::string t_name );
 			
+
+			~App();
+
 			/**
 			 * Loading method.
 			 * @param	Path to configuration file. 
@@ -128,46 +138,133 @@ namespace n2d {
 			 * @return	Object index on list.
 			 */
 			int 			AddUpdatable( Updatable* tp_obj );
-			int 			AddDrawable( Drawable* tp_obj );
-			int			AddInteractive( Interactive* );
-			bool			RemoveInteractive( int );
-			int	 		AddTexture( std::string );
-			const sf::Texture*	GetTexturePtr( int );
 
+			/**
+			 * Adding object to draw list.
+			 * @param	*tp_obj	Pointer to object.
+			 * @return	Object index on list.
+			 */
+			int 			AddDrawable( Drawable* tp_obj );
+
+			/**
+			 * Adding object to interactive list.
+			 * @param	*tp_obj	Pointer to object.
+			 * @return	Object index on list.
+			 */
+			int			AddInteractive( Interactive* );
+
+			/**
+			 * Remove object from interactive objects list 
+			 * @param	(int) object ID
+			 * @return	(bool) true if object found and removed.
+			 */
+			bool			RemoveInteractive( int );
+
+			/**
+			 * To delete. User n2d::Resource.
+			 */
+			int	 		AddTexture( std::string );
+
+			/**
+			 * To delete. Use n2d::Resource.
+			 */
+			const sf::Texture*	GetTexturePtr( int );
+			
+			/**
+			 * Set window size
+			 * @param - width
+			 * @param - height
+			 */
 			inline void SetScreenSize( float t_width, float t_height ) {
 				m_window_size = glm::vec2( t_width, t_height );
 			}
 
+			/**
+			 * Set full screen on/off
+			 */
 			inline void SetFullscreen( bool t_fullstreen = false ) {
 				m_fullscreen = t_fullstreen;
 			}
 
+			/**
+			 * Set VSYNC on/off.
+			 * @param	- if TRUE frame rate is set -1
+			 */
 			inline void SetVsync( bool t_vsync = true ) {
 				m_vsync = t_vsync;
 				if( m_vsync ) 
 					m_fps = -1;
 			}
 
+			/**
+			 * Set fixed frame rate. 
+			 * @param	- if value is begger than 0, VSYNC is off.
+			 */	
 			inline void SetFPS( float t_fps = -1.0f ) {
 				m_fps = t_fps;
 				if( m_fps > 0 )
 					m_vsync = false;
 			}
 
+			/**
+			 * Set gravity vector
+			 */
 			inline void SetGravity( float t_x, float t_y ) {
 				m_gravity.x = t_x;
 				m_gravity.y = t_y;
 			}
 
+			/**
+			 * To delete.
+			 */
 			inline void SetDefaultFont( std::string t_font ) {
 				m_default_font = t_font;
 			}
-
+				
+			/**
+			 * Manually set game state. 
+			 */
+			inline void SetGameState( GameState* t_game_state ) {
+				if( m_game_state != nullptr ) {
+					m_game_state->Exit( *this );
+					delete m_game_state;
+				}
+				ClearLists();
+				m_game_state = t_game_state;
+				m_game_state->Enter( *this );
+			}
+			
+			inline void SetGameStateFactory( GameStateFactory* t_game_state_factory ) {
+				m_game_state_factory = t_game_state_factory;
+			}	
+			/**
+			 * Get frame rate.
+			 */
 			inline float GetFPS(){
 				return m_fps;
 			}
 
+			/**
+			 * Main drawing method.
+			 * @param	- window hander. Default n2d::App::m_window;
+			 */
 			void Draw( sf::RenderWindow& );
+		protected:
+			/**
+			 * Check and update App::m_game_state
+			 */
+			void DispatchGameState();
+
+			/**
+			 * Clear engine lists: drawable, updatable, inveractive, creatable.
+			 * It does not destroys objects on list (pointers). Current App::m_game_state is responsible for that. It only clear lists
+			 */
+			void ClearLists();
+
+			/**
+			 * Load scenario form config.json. If defined any
+			 */
+			void LoadScenario();
 
 	};
 }; // namespace n2d

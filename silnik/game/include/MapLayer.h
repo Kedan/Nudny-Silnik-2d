@@ -3,6 +3,8 @@
 
 #include "tileson/tileson.h"
 #include "Interfaces.h"
+#include "Tool.h"
+#include "Log.h"
 #include "Resources.h"
 #include "Shape.h"
 #include "Circle.h"
@@ -17,7 +19,7 @@
 #include "Actor.h"
 
 namespace n2d {
-	class Layer : public Drawable, public Updatable, public Interactive {
+	class Layer : public Drawable, public Updatable, public Interactive { 
 		protected:
 			bool		m_loaded = false;
 			Resources*	mp_resources;
@@ -25,6 +27,7 @@ namespace n2d {
 			glm::vec2	m_grid_size;
 			void SetDefaultData( tson::Layer& );
 		public:
+			Logger		log;
 			int 		id;
 			std::string 	name;
 			bool		visible;

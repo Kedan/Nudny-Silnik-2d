@@ -2,7 +2,8 @@
 
 using namespace n2d;
 
-Layer::Layer() {}
+Layer::Layer() {
+}
 
 void Layer::SetDefaultData( tson::Layer& t_layer ) {
 	id	= t_layer.getId();
@@ -20,7 +21,9 @@ glm::vec2 Layer::GetCorrectTilePosition( tson::Vector2f t_obj_position, glm::vec
 	); 
 }
 
-ImageLayer::ImageLayer() {}
+ImageLayer::ImageLayer() {
+	LOG.Time() << "ImageLayer constructor\n";
+}
 
 void ImageLayer::Draw( sf::RenderWindow& t_window ) {
 	m_body.Draw( t_window );
@@ -35,9 +38,9 @@ void ImageLayer::Update( float t_dt ) {
 }
 
 bool ImageLayer::Load( std::string t_dir, tson::Layer& t_layer) {
+	LOG.Time() << "ImageLayer Load - begin\n";
 	if( mp_resources != nullptr && mp_tileset != nullptr ) {
-		SetDefaultData( t_layer );
-		
+		SetDefaultData( t_layer );	
 		std::string tmp = t_dir;
 		tmp.append( t_layer.getImage() );
 		m_texture_id	= mp_resources->LoadTexture( tmp );
@@ -47,7 +50,7 @@ bool ImageLayer::Load( std::string t_dir, tson::Layer& t_layer) {
 		glm::vec2 lyr_pos;
 		lyr_pos.x = position.x + t_layer.getOffset().x;
 		lyr_pos.y = position.y + t_layer.getOffset().y;
-	
+
 		m_body.SetPosition( position.x + t_layer.getOffset().x + tex_size.x/2, position.y + t_layer.getOffset().y + tex_size.y/2) ;
 		m_rect.SetTexture( mp_resources->GetTextureRef( m_texture_id ));
 		m_rect.SetSize( tex_size );
@@ -56,6 +59,7 @@ bool ImageLayer::Load( std::string t_dir, tson::Layer& t_layer) {
 		m_body.Add( &m_rect );
 		m_loaded = true;
 	}
+	LOG.Time() << "ImageLayer Load " << (m_loaded ? "OK" : "Failed") << "\n";
 	return m_loaded;
 }
 
@@ -68,7 +72,9 @@ void ImageLayer::Create( b2World& t_world ) {
 
 void ImageLayer::Events( sf::Event& t_event ) {}
 
-TileLayer::TileLayer() {}
+TileLayer::TileLayer() {
+	LOG.Time() << "TileLayer - constructor\n";
+}
 
 void TileLayer::Draw( sf::RenderWindow& t_window ) {
 	m_body.Draw( t_window );
@@ -83,12 +89,12 @@ void TileLayer::Update( float t_dt ) {
 }
 
 bool TileLayer::Load( std::string t_dir, tson::Layer& t_layer) {
-	//std::cout << "getTileSize(): " << t_layer.getTileSize().x << ", " << t_layer.getTileSize().y << "\n";
+	LOG.Time() << "TileLayer Load - begin. name=" << t_layer.getName() << "\n";
 	m_body.is_ground = true;
 	SetDefaultData( t_layer );
 	float w2,h2;
-	//w2 = mp_tileset->tilesize.x/2;
-	//h2 = mp_tileset->tilesize.y/2;
+	LOG.Time() << "TileLayer Load - Loadin objects ("<<t_layer.getTileObjects().size()<<"):\n";
+
 	for( auto& [pos,obj] : t_layer.getTileObjects() ) {
 		int GID = obj.getTile()->getGid();
 		if( mp_tileset->IsTileExists( GID )) {
@@ -96,24 +102,10 @@ bool TileLayer::Load( std::string t_dir, tson::Layer& t_layer) {
 			tson::Vector2i sp = obj.getTile()->getTileSize();
 			Sprite* s = mp_tileset->GetTile( GID );
 			glm::vec2	tile_size 	= s->GetSize(); 
-			
-			//glm::vec2 correct_pos( p.x, p.y );	
-			//if( tile_size.x != sp.x && tile_size.y != sp.y ) {
-				glm::vec2 correct_pos	= GetCorrectTilePosition( obj.getPosition(), s->GetSize() );
-		//	std::cout << "["<< correct_pos.x << ","<< correct_pos.y <<"]\n";
-		//	}
-			//int px	= (int)(tile_pos.x/tile_size.x);
-			//int py	= (int)(tile_pos.y/tile_size.y);
-		//	int px	= (int)(p.x/sp.x);
-		//	int py	= (int)(p.y/sp.y);
-
-		//	std::cout << "(" << p.x << "," << p.y << ")"
-		//		<< " (" << sp.x << " , " << sp.y << ") "
-		//		<< px <<" , " <<  py << "\n";
+			glm::vec2 correct_pos	= GetCorrectTilePosition( obj.getPosition(), s->GetSize() );
 
 			w2 = s->GetSize().x/2;
 			h2 = s->GetSize().y/2;
-			//s->SetPosition( p.x + w2, p.y + h2 );
 			s->SetPosition( correct_pos.x, correct_pos.y);
 			if( obj.getTile()->hasFlipFlags( tson::TileFlipFlags::Horizontally )) {
 				s->FlipHorizontal();
@@ -124,19 +116,24 @@ bool TileLayer::Load( std::string t_dir, tson::Layer& t_layer) {
 			if( obj.getTile()->hasFlipFlags( tson::TileFlipFlags::Diagonally )) {
 				s->FlipDiagonal();
 			}
+			
+			LOG << "\tTile GID:" << GID << "\tsize["<<tile_size.x<<","<<tile_size.y<<"]" << "\tpos["<<correct_pos.x<<","<<correct_pos.y<<"]\n";
+
 			s->Play();
 			m_tiles.push_back( s );
 			m_body.Add( s );
 			m_loaded = true;
 		} else {
-			std::cerr << "TileLayer::Load - Tile " << GID << " does not exist in tileset!\n";
+			LOG << "ERROR: \t\tTile " << GID << " not exists!\n";
 			m_loaded = false;
 		}
 	}
+	LOG.Time() << "TileLayer load - end(" << (m_loaded ? "OK" : "Failed") <<")\n";
 	return m_loaded;
 }
 
 void TileLayer::Create( b2World& t_world ) {
+	LOG.Time() << "TileLayer Create( world="<<&t_world<<")\n";
 	if( m_loaded ) {
 		m_body.SetPosition( position.x, position.y );
 		m_body.Create( t_world );
@@ -147,6 +144,7 @@ void TileLayer::Events( sf::Event& t_event ) {
 }
 
 EntityLayer::EntityLayer( EntityFactory* t_factory ) {
+	LOG.Time() << "EntityLayer constructor( entity_factory="<<&t_factory<<")\n";
 	mp_factory = t_factory;
 }
 
@@ -169,15 +167,21 @@ void EntityLayer::Update( float t_dt ) {
 }
 
 bool EntityLayer::Load( std::string t_dir, tson::Layer& t_layer) {
+	LOG.Time() << "EntityLayer Load -  begin\n";
+	LOG.Time() << "EntityLayer Load - Loading objects("<<t_layer.getObjects().size()<<")\n";
 	if( mp_factory != nullptr ) {
 		for( auto object : t_layer.getObjects() ) {
 			Entity* e = mp_factory->Create( object );
+			LOG << "\tEntity " << e << " " << object.getName() << "\n";
 			if( e != nullptr ) {
 				m_entities.push_back( e );
 			}
 		}
 		m_loaded = true;
+	} else {
+		LOG.Time() << "\tERROR: Layer factory pointer is nullptr!!\n";
 	}
+	LOG.Time() << "EntityLayer - Load end ("<< (m_loaded ? "ok" : "failed" ) <<")\n";
 	return m_loaded;
 }
 
@@ -193,7 +197,7 @@ void EntityLayer::Events( sf::Event& t_event ) {
 	}
 }
 
-Layer* LayerFactory::Create( tson::Layer& t_layer, EntityFactory* t_entity_factory ) {				
+Layer* LayerFactory::Create( tson::Layer& t_layer, EntityFactory* t_entity_factory ) {
 	Layer* result = nullptr;
 	switch( t_layer.getType() ) {
 		case tson::LayerType::ImageLayer:

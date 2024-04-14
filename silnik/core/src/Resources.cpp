@@ -3,12 +3,14 @@
 using namespace n2d;
 
 Resources::Resources() {
+	LOG.Time() << "Resources constructor\n";
 	Free();
 	m_textures.reserve(50);
+//	m_music.reserve(50);
 }
 
 int Resources::LoadTexture( std::string name ) {
-	//std::cout << "Resources::LoadTexture\n";
+	LOG.Time() << "Resources LoadTexture( "<<name<<" ) - begin\n";
 	int result = GetTextureId( name );
 	if( result < 0 ) { // texture not loaded
 		//sf::Texture t;
@@ -18,51 +20,14 @@ int Resources::LoadTexture( std::string name ) {
 			std::cerr << "Resources::LoadTexture - Couldn't load texture: " << name << std::endl;
 			m_textures.pop_back();
 			result = -1;
-		} else {
-			//m_textures.push_back( t );
-			//result = m_textures.size() - 1;
-			m_textureNames[ name ] = result;
-			sf::Texture* 	ptr0 	= GetTexturePtr( result );
-			sf::Texture* 	ptr1 	= GetTexturePtr( name );
-			sf::Texture& 	ref	= GetTextureRef( result );
-			sf::Texture	tex0	= GetTexture( result );
-			sf::Texture	tex1	= GetTexture( name );
-	//		std::cout 
-	//			<< "LOAD " 
-	//			<< name 
-	//			<< " "
-	//			<< result 
-	//			<< " vRef:" << &m_textures[ result ] 
-	//			<< " GetPtr:" << ptr0 << "|" << ptr1
-	//			<< " Get Ref:" << &ref
-	//			<< " Get Tex: " << &tex0  << "|" << &tex1
-	//			<<  "\n";
-			}
-	} 
-//	else {
-//		sf::Texture* 	ptr0 	= GetTexturePtr( result );
-//		sf::Texture* 	ptr1 	= GetTexturePtr( name );
-//		sf::Texture& 	ref	= GetTextureRef( result );
-//		sf::Texture	tex0	= GetTexture( result );
-//		sf::Texture	tex1	= GetTexture( name );
-//		std::cout 
-//			<< "GET" 
-//			<< name 
-//			<< "  " 
-//			<< result 
-//			<< " vRef:" << &m_textures[ result ] 
-//			<< " GetPtr:" << ptr0 << "|" << ptr1
-//			<< " Get Ref:" << &ref
-//			<< " Get Tex: " << &tex0  << "|" << &tex1
-//			<<  "\n";
-//	}
+		}
+	}
+	LOG.Time() << "Resources LoadTexture - end( "<<(result>-1?"ok":"failed")<<" )\n";
 	return result;
 }
-
 bool Resources::IsTextureLoaded( std::string name ) {
 	return m_textureNames.find( name ) == m_textureNames.end() ? false : true;	
 }
-
 sf::Texture* Resources::GetTexturePtr( int texture_id ) {
 	return &m_textures[ texture_id ];
 }
@@ -77,7 +42,6 @@ sf::Texture* Resources::GetTexturePtr( std::string name ) {
 int Resources::GetTextureId( std::string name ) {
 	return m_textureNames.find( name ) == m_textureNames.end() ?  -1 : m_textureNames[ name ];
 }
-
 const sf::Texture& Resources::GetTexture( int id ) {
 	return m_textures[ id ];
 }
@@ -93,6 +57,48 @@ const sf::Texture& Resources::GetTexture( std::string name ) {
 sf::Texture& Resources::GetTextureRef( int t_id ) {
 	return m_textures[ t_id ];
 }
+
+//int Resources::LoadMusic( std::string t_filepath ) {
+//	LOG.Time() << "Resources LoadMusic(" << t_filepath << ") - begin\n";
+//	int result = GetMusicId( t_filepath );
+//	if( result == -1 ) {
+//	//	m_music.push_back( sf::Music() );
+//	//	result = m_music.size() - 1;
+//	//	if( !m_music[ result ].openFromFile( t_filepath.c_str() )) {
+//	//		m_music.pop_back();
+//	//		result = -1;
+//	//	}
+//	}
+//	LOG.Time() << "Resources LoadTexture - end( "<<(result>-1?"ok":"failed")<<" )\n";
+//	return result;
+//}
+
+//int Resources::GetMusicId( std::string t_path ) {
+//	return m_musicNames.find( t_path ) == m_musicNames.end() ?  -1 : m_musicNames[ t_path ];
+//}
+//
+//
+//
+//
+//bool Resources::IsMusicLoaded( std::string t_filepath ) {
+//	return m_musicNames.find( t_filepath ) == m_musicNames.end() ? false : true;	
+//}
+//
+//const sf::Music& Resources::GetMusic( int t_id ) {
+//	try {
+//		return m_music[ t_id ];
+//	} catch( const std::exception& e) {
+//		LOG.Time() << "Resources GetMusic( ID: " << t_id << ") " << e.what() << "\n";
+//	}
+//}
+//
+//const sf::Music& Resources::GetMusic( std::string t_filepath ) {
+//	int id = -1;
+//	if( !IsMusicLoaded( t_filepath )) {
+//		id = LoadMusic( t_filepath );
+//	}
+//	return GetMusic( id );
+//}
 
 int Resources::LoadFont( std::string t_font_path ) {
 	sf::Font f;
@@ -144,4 +150,6 @@ void Resources::Free() {
 	m_textures.clear();
 	m_textureNames.clear();
 	m_fonts.clear();
+//	m_music.clear();
+//	m_musicNames.clear();
 }

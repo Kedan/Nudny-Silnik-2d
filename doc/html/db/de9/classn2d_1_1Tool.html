@@ -82,7 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../d9/d25/Interfaces_8h_source.html">Interfaces.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d0/d66/Tool_8h_source.html">Tool.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -114,6 +114,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a5f55d746ca5f1fc3575fadb429a6ef24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f7b117837b631dea354ba3e856620a5" id="r_a5f7b117837b631dea354ba3e856620a5"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f7b117837b631dea354ba3e856620a5">GetCurrentDatetime</a> ()</td></tr>
 <tr class="separator:a5f7b117837b631dea354ba3e856620a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906e3e4d7055545fb056e6aed50044de" id="r_a906e3e4d7055545fb056e6aed50044de"><td class="memItemLeft" align="right" valign="top">static tson::Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a906e3e4d7055545fb056e6aed50044de">GetDrawingRectT</a> (tson::Rect t_draw_rect, glm::vec2 t_grid_size)</td></tr>
+<tr class="separator:a906e3e4d7055545fb056e6aed50044de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a9b2d55abeecb710115608aa09d80f" id="r_a27a9b2d55abeecb710115608aa09d80f"><td class="memItemLeft" align="right" valign="top">static glm::vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27a9b2d55abeecb710115608aa09d80f">GetDrawingRectG</a> (tson::Rect t_rect, glm::vec2 t_grid_size)</td></tr>
+<tr class="separator:a27a9b2d55abeecb710115608aa09d80f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class contains some handy, static methods, used i.e. for type or coordinate systems conversions. </p>
@@ -379,6 +383,80 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a27a9b2d55abeecb710115608aa09d80f" name="a27a9b2d55abeecb710115608aa09d80f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a9b2d55abeecb710115608aa09d80f">&#9670;&#160;</a></span>GetDrawingRectG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static glm::vec4 n2d::Tool::GetDrawingRectG </td>
+          <td>(</td>
+          <td class="paramtype">tson::Rect</td>          <td class="paramname"><span class="paramname"><em>t_rect</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec2</td>          <td class="paramname"><span class="paramname"><em>t_grid_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Calculate correct value of tile drawing rect. Tileson gets wrong one, if use tiles with different sizes </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&amp;t_rect</td><td>- Tileson drawing rect tson::Tile::getDrawingRect() </td></tr>
+    <tr><td class="paramname">t_grid_size</td><td>- Tileson tile size read from tson::Map class -&gt; tson::Map::getTileSize(), converted to glm::vec2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- Corrected drawing rect </dd></dl>
+
+</div>
+</div>
+<a id="a906e3e4d7055545fb056e6aed50044de" name="a906e3e4d7055545fb056e6aed50044de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906e3e4d7055545fb056e6aed50044de">&#9670;&#160;</a></span>GetDrawingRectT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static tson::Rect n2d::Tool::GetDrawingRectT </td>
+          <td>(</td>
+          <td class="paramtype">tson::Rect</td>          <td class="paramname"><span class="paramname"><em>t_draw_rect</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec2</td>          <td class="paramname"><span class="paramname"><em>t_grid_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Calculate correct value of tile drawing rect. Tileson gets wrong one, if use tiles with different sizes </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&amp;t_rect</td><td>- Tileson drawing rect tson::Tile::getDrawingRect() </td></tr>
+    <tr><td class="paramname">t_grid_size</td><td>- Tileson tile size read from tson::Map class -&gt; tson::Map::getTileSize(), converted to glm::vec2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- Corrected drawing rect </dd></dl>
+
+</div>
+</div>
 <a id="aa4c6be03c9522a4020d406c3c6063f33" name="aa4c6be03c9522a4020d406c3c6063f33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4c6be03c9522a4020d406c3c6063f33">&#9670;&#160;</a></span>rad()</h2>
 
@@ -599,12 +677,12 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>silnik/core/include/<a class="el" href="../../d9/d25/Interfaces_8h_source.html">Interfaces.h</a></li>
+<li>silnik/core/include/<a class="el" href="../../d0/d66/Tool_8h_source.html">Tool.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 16:34:43 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

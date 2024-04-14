@@ -1,24 +1,60 @@
 \doxysection{n2d\+::Frame Class Reference}
 \hypertarget{classn2d_1_1Frame}{}\label{classn2d_1_1Frame}\index{n2d::Frame@{n2d::Frame}}
+
+
+{\ttfamily \#include $<$Animation.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classn2d_1_1Frame_ac42d51816ff365ce9fdefdb5cfd54caa}\label{classn2d_1_1Frame_ac42d51816ff365ce9fdefdb5cfd54caa} 
-{\bfseries Frame} (float t\+\_\+duration, glm\+::vec4 t\+\_\+draw\+\_\+rect)
+\mbox{\hyperlink{classn2d_1_1Frame_ac42d51816ff365ce9fdefdb5cfd54caa}{Frame}} (float t\+\_\+duration, glm\+::vec4 t\+\_\+draw\+\_\+rect)
 \item 
-\Hypertarget{classn2d_1_1Frame_a0ec8e6950c182a2b1cff9b647126f26a}\label{classn2d_1_1Frame_a0ec8e6950c182a2b1cff9b647126f26a} 
-\mbox{\hyperlink{classn2d_1_1Frame}{Frame}} \& {\bfseries operator=} (const \mbox{\hyperlink{classn2d_1_1Frame}{Frame}} \&)
+\mbox{\hyperlink{classn2d_1_1Frame}{Frame}} \& \mbox{\hyperlink{classn2d_1_1Frame_a0ec8e6950c182a2b1cff9b647126f26a}{operator=}} (const \mbox{\hyperlink{classn2d_1_1Frame}{Frame}} \&)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classn2d_1_1Frame_a984708e892671148977e6882393db5f1}\label{classn2d_1_1Frame_a984708e892671148977e6882393db5f1} 
-float {\bfseries duration}
+float \mbox{\hyperlink{classn2d_1_1Frame_a984708e892671148977e6882393db5f1}{duration}}
 \item 
-\Hypertarget{classn2d_1_1Frame_aae6a94197f6d71040048f2b401aef859}\label{classn2d_1_1Frame_aae6a94197f6d71040048f2b401aef859} 
-glm\+::vec4 {\bfseries draw\+\_\+rect}
+glm\+::vec4 \mbox{\hyperlink{classn2d_1_1Frame_aae6a94197f6d71040048f2b401aef859}{draw\+\_\+rect}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Signle frame class. Used in frame animations 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classn2d_1_1Frame_ac42d51816ff365ce9fdefdb5cfd54caa}\label{classn2d_1_1Frame_ac42d51816ff365ce9fdefdb5cfd54caa} 
+\index{n2d::Frame@{n2d::Frame}!Frame@{Frame}}
+\index{Frame@{Frame}!n2d::Frame@{n2d::Frame}}
+\doxysubsubsection{\texorpdfstring{Frame()}{Frame()}}
+{\footnotesize\ttfamily n2d\+::\+Frame\+::\+Frame (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+duration,  }\item[{glm\+::vec4}]{t\+\_\+draw\+\_\+rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Frame_a0ec8e6950c182a2b1cff9b647126f26a}\label{classn2d_1_1Frame_a0ec8e6950c182a2b1cff9b647126f26a} 
+\index{n2d::Frame@{n2d::Frame}!operator=@{operator=}}
+\index{operator=@{operator=}!n2d::Frame@{n2d::Frame}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classn2d_1_1Frame}{Frame}} \& Frame\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classn2d_1_1Frame}{Frame}} \&}]{t\+\_\+frame }\end{DoxyParamCaption})}
+
+Equality operator overloaded 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classn2d_1_1Frame_aae6a94197f6d71040048f2b401aef859}\label{classn2d_1_1Frame_aae6a94197f6d71040048f2b401aef859} 
+\index{n2d::Frame@{n2d::Frame}!draw\_rect@{draw\_rect}}
+\index{draw\_rect@{draw\_rect}!n2d::Frame@{n2d::Frame}}
+\doxysubsubsection{\texorpdfstring{draw\_rect}{draw\_rect}}
+{\footnotesize\ttfamily glm\+::vec4 n2d\+::\+Frame\+::draw\+\_\+rect}
+
+Drawind rect, texture coordinates \mbox{[} x, y, width, height \mbox{]}. tson\+::\+Drawing\+Rect equivalent, but in more universal format. \Hypertarget{classn2d_1_1Frame_a984708e892671148977e6882393db5f1}\label{classn2d_1_1Frame_a984708e892671148977e6882393db5f1} 
+\index{n2d::Frame@{n2d::Frame}!duration@{duration}}
+\index{duration@{duration}!n2d::Frame@{n2d::Frame}}
+\doxysubsubsection{\texorpdfstring{duration}{duration}}
+{\footnotesize\ttfamily float n2d\+::\+Frame\+::duration}
+
+\doxylink{classn2d_1_1Frame}{Frame} duration in seconds 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

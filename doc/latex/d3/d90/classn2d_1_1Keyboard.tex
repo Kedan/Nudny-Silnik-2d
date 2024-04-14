@@ -1,35 +1,115 @@
 \doxysection{n2d\+::Keyboard Class Reference}
 \hypertarget{classn2d_1_1Keyboard}{}\label{classn2d_1_1Keyboard}\index{n2d::Keyboard@{n2d::Keyboard}}
+
+
+{\ttfamily \#include $<$Keyboard.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classn2d_1_1Keyboard_ad6c1605f7eab3c075b0a401021b0e8b1}\label{classn2d_1_1Keyboard_ad6c1605f7eab3c075b0a401021b0e8b1} 
-void {\bfseries Clear} ()
+void \mbox{\hyperlink{classn2d_1_1Keyboard_ad6c1605f7eab3c075b0a401021b0e8b1}{Clear}} ()
 \item 
-\Hypertarget{classn2d_1_1Keyboard_a2ccdff7efc55b2e643ea0c2011a769b0}\label{classn2d_1_1Keyboard_a2ccdff7efc55b2e643ea0c2011a769b0} 
-void {\bfseries Dispatch} (sf\+::\+Event \&)
+void \mbox{\hyperlink{classn2d_1_1Keyboard_a2ccdff7efc55b2e643ea0c2011a769b0}{Dispatch}} (sf\+::\+Event \&)
 \item 
-\Hypertarget{classn2d_1_1Keyboard_a37c0df5c2fc2e3ec0bec2b5db866b8d4}\label{classn2d_1_1Keyboard_a37c0df5c2fc2e3ec0bec2b5db866b8d4} 
-void {\bfseries Key\+Up} (sf\+::\+Keyboard\+::\+Key)
+void \mbox{\hyperlink{classn2d_1_1Keyboard_a37c0df5c2fc2e3ec0bec2b5db866b8d4}{Key\+Up}} (sf\+::\+Keyboard\+::\+Key)
 \item 
-\Hypertarget{classn2d_1_1Keyboard_a9ae16c0338320e988bdd0b42cba37f59}\label{classn2d_1_1Keyboard_a9ae16c0338320e988bdd0b42cba37f59} 
-void {\bfseries Key\+Down} (sf\+::\+Keyboard\+::\+Key)
+void \mbox{\hyperlink{classn2d_1_1Keyboard_a9ae16c0338320e988bdd0b42cba37f59}{Key\+Down}} (sf\+::\+Keyboard\+::\+Key)
 \item 
-\Hypertarget{classn2d_1_1Keyboard_a672deaa2b31f1928758155da8ef7df65}\label{classn2d_1_1Keyboard_a672deaa2b31f1928758155da8ef7df65} 
-bool {\bfseries Was\+Pressed} (sf\+::\+Keyboard\+::\+Key)
+bool \mbox{\hyperlink{classn2d_1_1Keyboard_a672deaa2b31f1928758155da8ef7df65}{Was\+Pressed}} (sf\+::\+Keyboard\+::\+Key)
 \item 
-\Hypertarget{classn2d_1_1Keyboard_a2e3cc3bec2291efc44f377fe300c85bc}\label{classn2d_1_1Keyboard_a2e3cc3bec2291efc44f377fe300c85bc} 
-bool {\bfseries Was\+Released} (sf\+::\+Keyboard\+::\+Key)
+bool \mbox{\hyperlink{classn2d_1_1Keyboard_a2e3cc3bec2291efc44f377fe300c85bc}{Was\+Released}} (sf\+::\+Keyboard\+::\+Key)
 \item 
-\Hypertarget{classn2d_1_1Keyboard_af7843a3da6aeb2d5c0a355e0ceee8551}\label{classn2d_1_1Keyboard_af7843a3da6aeb2d5c0a355e0ceee8551} 
-bool {\bfseries Is\+Held} (sf\+::\+Keyboard\+::\+Key)
+bool \mbox{\hyperlink{classn2d_1_1Keyboard_af7843a3da6aeb2d5c0a355e0ceee8551}{Is\+Held}} (sf\+::\+Keyboard\+::\+Key)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classn2d_1_1Keyboard_a2f706e94b4a213ad1b871434965523ad}\label{classn2d_1_1Keyboard_a2f706e94b4a213ad1b871434965523ad} 
-static \mbox{\hyperlink{classn2d_1_1Keyboard}{Keyboard}} \texorpdfstring{$\ast$}{*} {\bfseries Instance} ()
+static \mbox{\hyperlink{classn2d_1_1Keyboard}{Keyboard}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1Keyboard_a2f706e94b4a213ad1b871434965523ad}{Instance}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Singleton. Responsible for recording keyboard events. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Keyboard_ad6c1605f7eab3c075b0a401021b0e8b1}\label{classn2d_1_1Keyboard_ad6c1605f7eab3c075b0a401021b0e8b1} 
+\index{n2d::Keyboard@{n2d::Keyboard}!Clear@{Clear}}
+\index{Clear@{Clear}!n2d::Keyboard@{n2d::Keyboard}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Keyboard\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear all key state. Resetting mehod called every new frame. \Hypertarget{classn2d_1_1Keyboard_a2ccdff7efc55b2e643ea0c2011a769b0}\label{classn2d_1_1Keyboard_a2ccdff7efc55b2e643ea0c2011a769b0} 
+\index{n2d::Keyboard@{n2d::Keyboard}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!n2d::Keyboard@{n2d::Keyboard}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}}
+{\footnotesize\ttfamily void Keyboard\+::\+Dispatch (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{t\+\_\+event }\end{DoxyParamCaption})}
+
+Handle events. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & event reference \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1Keyboard_a2f706e94b4a213ad1b871434965523ad}\label{classn2d_1_1Keyboard_a2f706e94b4a213ad1b871434965523ad} 
+\index{n2d::Keyboard@{n2d::Keyboard}!Instance@{Instance}}
+\index{Instance@{Instance}!n2d::Keyboard@{n2d::Keyboard}}
+\doxysubsubsection{\texorpdfstring{Instance()}{Instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classn2d_1_1Keyboard}{Keyboard}} \texorpdfstring{$\ast$}{*} Keyboard\+::\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Singleton. Return \doxylink{classn2d_1_1Keyboard}{n2d\+::\+Keyboard} class instance \Hypertarget{classn2d_1_1Keyboard_af7843a3da6aeb2d5c0a355e0ceee8551}\label{classn2d_1_1Keyboard_af7843a3da6aeb2d5c0a355e0ceee8551} 
+\index{n2d::Keyboard@{n2d::Keyboard}!IsHeld@{IsHeld}}
+\index{IsHeld@{IsHeld}!n2d::Keyboard@{n2d::Keyboard}}
+\doxysubsubsection{\texorpdfstring{IsHeld()}{IsHeld()}}
+{\footnotesize\ttfamily bool Keyboard\+::\+Is\+Held (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{t\+\_\+key }\end{DoxyParamCaption})}
+
+Return true of key is held for some time 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & key code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1Keyboard_a9ae16c0338320e988bdd0b42cba37f59}\label{classn2d_1_1Keyboard_a9ae16c0338320e988bdd0b42cba37f59} 
+\index{n2d::Keyboard@{n2d::Keyboard}!KeyDown@{KeyDown}}
+\index{KeyDown@{KeyDown}!n2d::Keyboard@{n2d::Keyboard}}
+\doxysubsubsection{\texorpdfstring{KeyDown()}{KeyDown()}}
+{\footnotesize\ttfamily void Keyboard\+::\+Key\+Down (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{t\+\_\+key }\end{DoxyParamCaption})}
+
+Register key down event, and save key code. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & key code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1Keyboard_a37c0df5c2fc2e3ec0bec2b5db866b8d4}\label{classn2d_1_1Keyboard_a37c0df5c2fc2e3ec0bec2b5db866b8d4} 
+\index{n2d::Keyboard@{n2d::Keyboard}!KeyUp@{KeyUp}}
+\index{KeyUp@{KeyUp}!n2d::Keyboard@{n2d::Keyboard}}
+\doxysubsubsection{\texorpdfstring{KeyUp()}{KeyUp()}}
+{\footnotesize\ttfamily void Keyboard\+::\+Key\+Up (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{t\+\_\+key }\end{DoxyParamCaption})}
+
+Register key up event, and save key code. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & key code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1Keyboard_a672deaa2b31f1928758155da8ef7df65}\label{classn2d_1_1Keyboard_a672deaa2b31f1928758155da8ef7df65} 
+\index{n2d::Keyboard@{n2d::Keyboard}!WasPressed@{WasPressed}}
+\index{WasPressed@{WasPressed}!n2d::Keyboard@{n2d::Keyboard}}
+\doxysubsubsection{\texorpdfstring{WasPressed()}{WasPressed()}}
+{\footnotesize\ttfamily bool Keyboard\+::\+Was\+Pressed (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{t\+\_\+key }\end{DoxyParamCaption})}
+
+Return true if key was pressed. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & key code \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1Keyboard_a2e3cc3bec2291efc44f377fe300c85bc}\label{classn2d_1_1Keyboard_a2e3cc3bec2291efc44f377fe300c85bc} 
+\index{n2d::Keyboard@{n2d::Keyboard}!WasReleased@{WasReleased}}
+\index{WasReleased@{WasReleased}!n2d::Keyboard@{n2d::Keyboard}}
+\doxysubsubsection{\texorpdfstring{WasReleased()}{WasReleased()}}
+{\footnotesize\ttfamily bool Keyboard\+::\+Was\+Released (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{t\+\_\+key }\end{DoxyParamCaption})}
+
+Return true if key was released. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & key code \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

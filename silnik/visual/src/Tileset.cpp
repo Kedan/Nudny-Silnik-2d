@@ -6,69 +6,56 @@ using namespace n2d;
 
 Tileset::Tileset() {
 	m_sprites.clear();
-	log.SetFile( "./logs/tileset.log" );
-	log.Open();
-	log.Flush();
+	LOG.Time() << "Tileset constructor\n";
+	LOG << "\n\nIMPORTANT!\n"
+		<< "\tTile must have to defined bounding figure!\n"
+		<< "\tIf not - segmentation foult occurs!\n"
+		<< "\tCheck tilesets in Tiled til\n"
+		<< "\tMust code exception for this!\n\n\n";
 }
 
 Tileset::~Tileset() {
-	log.Close();
-	log.Flush();
+	LOG.Time() << "Tileset descructor\n";
 }
 
-void Tileset::Load( tson::Tileset& t_tileset, std::string t_dir ) {
-	log.Time();
-	log.Log( "Tileset Load - begin\n" );
-	log.out << "\tName: " << t_tileset.getName() << "\n";
-	//m_sprites.clear();
+bool Tileset::Load( tson::Tileset& t_tileset, std::string t_dir ) {
+	LOG.Time() << "Tileset Load - begin. \tName: " << t_tileset.getName() << " " << "("<< t_tileset.getTiles().size() <<")\n";
 	if( m_grid_size.x != 0 && m_grid_size.y != 0 ) {
-		log.out << "\tMap grid size: [" << m_grid_size.x << ", " << m_grid_size.y << " ]\n";
+		LOG.Time() << "Tileset Load - \tMap grid size: [" << m_grid_size.x << ", " << m_grid_size.y << " ]\n";
 		std::string texture_path = t_dir;
 		texture_path.append( t_tileset.getImage() );
 		int texture_id = mp_resources->LoadTexture( texture_path );
 		if( texture_id > -1 ) {
 			int GID, w, h;
 			float w2,h2;
-			
 			tson::Rect draw_rect;
 			glm::vec2 tilesize;
-			
 			for( auto& tile : t_tileset.getTiles() ) {
 				GID = tile.getGid();
 				int animation_size = tile.getAnimation().size();
 				int tmp_i = 0;
 	
-				log.out << "\tTile GID: " << GID;
+				LOG << "\tTile GID: " << GID;
 				if( !IsTileExists( GID )) {
-					log.out << " not exist. Creating. ";
-				//	draw_rect 	= tile.getDrawingRect();
-					w		= tile.getTileSize().x;
-					h 		= tile.getTileSize().y;
-	
-			// drawing rect correction if tile size is different then grid size
 					draw_rect	= GetCorrectedDrawingRect( tile.getDrawingRect() );
 					tilesize	= GetCorrectTileSize( draw_rect, tile.getTileSize() );
 					w2 		= tilesize.x/2;
 					h2		= tilesize.y/2;
 					
-			//		w2 		= w/2;
-			//		h2		= h/2;
-			//		tilesize	= glm::vec2( w, h );
-					
-					log.out << "\tanimations: " <<animation_size;
-					log.out << "\ttson draw rect: [" << draw_rect.x << ", " <<  draw_rect.y << ", " << draw_rect.width << ", " << draw_rect.height << " ] ";
-					log.out << "\ttson tile size: [" << tilesize.x << ", "<< tilesize.y <<" ]\n"; 
+					LOG << "\tframes: " <<animation_size;
+					LOG << "\ttson draw rect: [" << draw_rect.x << ", " <<  draw_rect.y << ", " << draw_rect.width << ", " << draw_rect.height << " ] ";
+					LOG << "\ttson tile size: [" << tilesize.x << ", "<< tilesize.y <<" ] \tbounding_figures( "<<tile.getObjectgroup().getObjects().size()<<" )"; 
 					
 					m_sprites[GID] = Sprite();
 					m_sprites[GID].GID = GID;
 					m_sprites[GID].SetSize( tilesize.x, tilesize.y );
-					//m_sprites[GID].SetSize( tilesize.x, tilesize.y );
 					m_sprites[GID].SetTexture( mp_resources->GetTextureRef( texture_id ) );
 					m_sprites[GID].SetTextureCoords( draw_rect.x, draw_rect.y, draw_rect.width, draw_rect.height );
-					//m_sprites[GID].SetTextureCoords( draw_rect );
 					m_sprites[GID].collide = false;
 					for( auto o : tile.getObjectgroup().getObjects()) {
-						 if( o.getPolygons().size() > 2 ) {	
+						std::cout << "Obj TYpe " << o.getPosition().x << " " << o.getPosition().y << "\n";
+						// if object is polygon
+						if( o.getPolygons().size() > 2 ) {	
 							tson::Vector2i o_local_offset = o.getPosition();
 							std::vector<glm::vec2> tmp_v;
 							for( auto v : o.getPolygons() ) {
@@ -76,14 +63,32 @@ void Tileset::Load( tson::Tileset& t_tileset, std::string t_dir ) {
 							}
 							m_sprites[GID].collide = true;
 							m_sprites[GID].SetVertices( tmp_v );
+						} else if( o.isEllipse() ) {
 						} else {
-							std::vector<glm::vec2> tmp_v;
-							tmp_v.push_back( glm::vec2(-w2,-h2));
-							tmp_v.push_back( glm::vec2(-w2,h2));
-							tmp_v.push_back( glm::vec2(w2,h2));
-							tmp_v.push_back( glm::vec2(w2,-h2));
-							m_sprites[GID].collide = true;
-							m_sprites[GID].SetVertices( tmp_v );
+							tson::Vector2i tmp_size = o.getSize();
+							tson::Vector2i tmp_pos	= o.getPosition();
+							if( tmp_size.x != 0 && tmp_size.y != 0 ) {
+								float tw2 = tmp_size.x/2;
+								float th2 = tmp_size.y/2;
+
+								float tx = tmp_pos.x/2;
+								float ty = tmp_pos.y/2;
+										
+								std::vector<glm::vec2> tmp_v;
+								tmp_v.push_back( glm::vec2(-tw2 + tx, -th2 + ty));
+								tmp_v.push_back( glm::vec2(-tw2 + tx ,th2 + ty));
+								tmp_v.push_back( glm::vec2(tw2 + tx,th2 + ty ));
+								tmp_v.push_back( glm::vec2(tw2 + tx ,-th2 + ty));
+								m_sprites[GID].collide = true;
+								m_sprites[GID].SetVertices( tmp_v );
+							}
+						//	std::vector<glm::vec2> tmp_v;
+						//	tmp_v.push_back( glm::vec2(-w2,-h2));
+						//	tmp_v.push_back( glm::vec2(-w2,h2));
+						//	tmp_v.push_back( glm::vec2(w2,h2));
+						//	tmp_v.push_back( glm::vec2(w2,-h2));
+						//	m_sprites[GID].collide = true;
+						//	m_sprites[GID].SetVertices( tmp_v );
 						}			
 					}
 				       	if( tile.getObjectgroup().getObjects().size() == 0 ) {
@@ -97,23 +102,31 @@ void Tileset::Load( tson::Tileset& t_tileset, std::string t_dir ) {
 					}
 					// animation load
 					if( tile.getAnimation().size() > 0 ) {
-						m_sprites[GID].animation.Load( tile.getAnimation(), t_tileset );
+						m_sprites[GID].animation.Load( tile.getAnimation(), t_tileset, m_grid_size );
 					}
+				} else {
+					LOG << "\talready exists!";
+				}// if tile exists
+				if( !tile.getClassType().empty() ) {
+					m_sprite_names[ tile.getClassType() ] = GID;
 				}
+				LOG << "\n";
 			}
 		}
 	} else {
-		log.out<< "ERROR:\n"
-			<< "\tCalculateing tile position may go wrong id grid is 0!\n"
+		LOG.Time() << "WARNING:\n"
+			<< "\tCalculateing tile position may go wrong if grid is 0!\n"
 			<< "\tTileset::SetMapGrid() should be called befoer Tileset::Load!\n"
 			<< "\tCheck in Map::LoadTilesets()\n";
 	}
-	log.Log( "Tileset Load - end\n" );
-	log.Flush();
+	LOG.Time() << "Tileset Load - end\n";
+	return true;
 }
 
-void Tileset::Load( std::string t_filepath, std::string t_dir) {
+bool Tileset::Load( std::string t_filepath, std::string t_dir) {
 	// TODO
+	LOG.Time() <<" ERROR: Tileset Load( string, string )  - method not implemented yet!\n";
+	return true;
 }
 
 bool Tileset::IsTileExists( int t_GID ) {
@@ -126,7 +139,17 @@ Sprite* Tileset::GetTile( int t_GID ) {
 	return nullptr;
 }
 
+Sprite* Tileset::GetTile( std::string t_sprite_name ) {
+	if( m_sprite_names.find( t_sprite_name ) == m_sprite_names.end() ) {
+		LOG.Time() << "Tileset GetTile( "<<t_sprite_name<<" ) - couldnt find sprite by name. Try by GID.\n";
+		return nullptr;
+	}
+	int tmp_GID = m_sprite_names[ t_sprite_name ];
+	return GetTile( tmp_GID );
+}
+
 void Tileset::Free() {
+	LOG.Time() << "Tileset Free\n";
 	m_sprites.clear();
 }
 
@@ -150,19 +173,6 @@ tson::Rect Tileset::GetCorrectedDrawingRect( tson::Rect t_draw_rect ) {
 	r.width = t_draw_rect.width;
 	r.height = t_draw_rect.height;
 	return r;
-//	std::cout << "Tileset :: GetCorrectedDrawingRect - [ "
-//		<< r.x << ", "
-//		<< r.y << ", "
-//		<< r.z << ", "
-//		<< r.w << "] ";
-//	std::cout << " tile size: ["
-//		<< t_tile_size.x << ", " 
-//		<< t_tile_size.y << "] ";
-//	std::cout << "["
-//		<< t_draw_rect.x << ", "
-//		<< t_draw_rect.y << ", "
-//		<< t_draw_rect.width << ", "
-//		<< t_draw_rect.height << "]\n";
 }
 
 glm::vec2 Tileset::GetCorrectTileSize( tson::Rect t_draw_rect, tson::Vector2i t_tile_size ) {

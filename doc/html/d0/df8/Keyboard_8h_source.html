@@ -94,35 +94,51 @@ $(function() { codefold.init(1); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;KeyMap.h&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d62/namespacen2d.html">n2d</a> {</div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d3/d90/classn2d_1_1Keyboard.html">   11</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d3/d90/classn2d_1_1Keyboard.html">Keyboard</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <span class="keyword">static</span> <a class="code hl_class" href="../../d3/d90/classn2d_1_1Keyboard.html">Keyboard</a>*            m_instance;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <span class="keyword">static</span> std::mutex           m_mutex;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            std::map&lt;sf::Keyboard::Key,bool&gt;    m_held_keys;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            std::map&lt;sf::Keyboard::Key,bool&gt;    m_pressed_keys;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            std::map&lt;sf::Keyboard::Key,bool&gt;    m_released_keys;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keyword">static</span> <a class="code hl_class" href="../../d3/d90/classn2d_1_1Keyboard.html">Keyboard</a>* Instance();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keywordtype">void</span> Clear();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordtype">void</span> Dispatch( sf::Event&amp; );</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keywordtype">void</span> KeyUp( sf::Keyboard::Key );</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordtype">void</span> KeyDown( sf::Keyboard::Key );</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keywordtype">bool</span> WasPressed( sf::Keyboard::Key );</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordtype">bool</span> WasReleased( sf::Keyboard::Key );</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordtype">bool</span> IsHeld( sf::Keyboard::Key );</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="../../d3/d90/classn2d_1_1Keyboard.html">   15</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d3/d90/classn2d_1_1Keyboard.html">Keyboard</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keyword">static</span> <a class="code hl_class" href="../../d3/d90/classn2d_1_1Keyboard.html">Keyboard</a>*            m_instance;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keyword">static</span> std::mutex           m_mutex;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            std::map&lt;sf::Keyboard::Key,bool&gt;    m_held_keys;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            std::map&lt;sf::Keyboard::Key,bool&gt;    m_pressed_keys;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            std::map&lt;sf::Keyboard::Key,bool&gt;    m_released_keys;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keyword">static</span> <a class="code hl_class" href="../../d3/d90/classn2d_1_1Keyboard.html">Keyboard</a>* <a class="code hl_function" href="../../d3/d90/classn2d_1_1Keyboard.html#a2f706e94b4a213ad1b871434965523ad">Instance</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d90/classn2d_1_1Keyboard.html#ad6c1605f7eab3c075b0a401021b0e8b1">Clear</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d90/classn2d_1_1Keyboard.html#a2ccdff7efc55b2e643ea0c2011a769b0">Dispatch</a>( sf::Event&amp; );</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d90/classn2d_1_1Keyboard.html#a37c0df5c2fc2e3ec0bec2b5db866b8d4">KeyUp</a>( sf::Keyboard::Key );</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d90/classn2d_1_1Keyboard.html#a9ae16c0338320e988bdd0b42cba37f59">KeyDown</a>( sf::Keyboard::Key );</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d3/d90/classn2d_1_1Keyboard.html#a672deaa2b31f1928758155da8ef7df65">WasPressed</a>( sf::Keyboard::Key );</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d3/d90/classn2d_1_1Keyboard.html#a2e3cc3bec2291efc44f377fe300c85bc">WasReleased</a>( sf::Keyboard::Key );</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d3/d90/classn2d_1_1Keyboard.html#af7843a3da6aeb2d5c0a355e0ceee8551">IsHeld</a>( sf::Keyboard::Key );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    };</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassn2d_1_1Keyboard_html"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html">n2d::Keyboard</a></div><div class="ttdef"><b>Definition</b> Keyboard.h:11</div></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html">n2d::Keyboard</a></div><div class="ttdef"><b>Definition</b> Keyboard.h:15</div></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html_a2ccdff7efc55b2e643ea0c2011a769b0"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html#a2ccdff7efc55b2e643ea0c2011a769b0">n2d::Keyboard::Dispatch</a></div><div class="ttdeci">void Dispatch(sf::Event &amp;)</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:22</div></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html_a2e3cc3bec2291efc44f377fe300c85bc"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html#a2e3cc3bec2291efc44f377fe300c85bc">n2d::Keyboard::WasReleased</a></div><div class="ttdeci">bool WasReleased(sf::Keyboard::Key)</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:45</div></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html_a2f706e94b4a213ad1b871434965523ad"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html#a2f706e94b4a213ad1b871434965523ad">n2d::Keyboard::Instance</a></div><div class="ttdeci">static Keyboard * Instance()</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:9</div></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html_a37c0df5c2fc2e3ec0bec2b5db866b8d4"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html#a37c0df5c2fc2e3ec0bec2b5db866b8d4">n2d::Keyboard::KeyUp</a></div><div class="ttdeci">void KeyUp(sf::Keyboard::Key)</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:31</div></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html_a672deaa2b31f1928758155da8ef7df65"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html#a672deaa2b31f1928758155da8ef7df65">n2d::Keyboard::WasPressed</a></div><div class="ttdeci">bool WasPressed(sf::Keyboard::Key)</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:41</div></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html_a9ae16c0338320e988bdd0b42cba37f59"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html#a9ae16c0338320e988bdd0b42cba37f59">n2d::Keyboard::KeyDown</a></div><div class="ttdeci">void KeyDown(sf::Keyboard::Key)</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:36</div></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html_ad6c1605f7eab3c075b0a401021b0e8b1"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html#ad6c1605f7eab3c075b0a401021b0e8b1">n2d::Keyboard::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:17</div></div>
+<div class="ttc" id="aclassn2d_1_1Keyboard_html_af7843a3da6aeb2d5c0a355e0ceee8551"><div class="ttname"><a href="../../d3/d90/classn2d_1_1Keyboard.html#af7843a3da6aeb2d5c0a355e0ceee8551">n2d::Keyboard::IsHeld</a></div><div class="ttdeci">bool IsHeld(sf::Keyboard::Key)</div><div class="ttdef"><b>Definition</b> Keyboard.cpp:49</div></div>
 <div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 16:34:43 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

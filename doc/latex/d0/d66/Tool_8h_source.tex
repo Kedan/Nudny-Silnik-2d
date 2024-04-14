@@ -1,0 +1,145 @@
+\doxysection{Tool.\+h}
+\hypertarget{Tool_8h_source}{}\label{Tool_8h_source}\index{silnik/core/include/Tool.h@{silnik/core/include/Tool.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_TOOL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_TOOL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <box2d/box2d.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <tileson/tileson.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespacen2d_a05eb87428a9b7e50ba846fc175c53f05}{PIXEL\_TO\_BOX2D}}\ =\ 0.01f;}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespacen2d_a96018993161d9c674895a7974b577ff4}{BOX2D\_TO\_PIXEL}}\ =\ 100.0f;}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Tool}{Tool}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ b2Vec2\ \mbox{\hyperlink{classn2d_1_1Tool_a5e85df1d7d5d3b9f6efb4439d579cb23}{g2b}}(\ glm::vec2\ v,\ \textcolor{keywordtype}{float}\ s\ =\ \mbox{\hyperlink{namespacen2d_a05eb87428a9b7e50ba846fc175c53f05}{PIXEL\_TO\_BOX2D}}\ )\ \{\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b2Vec2(\ v.x*s,\ v.y*s\ );}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ b2Vec2\ \mbox{\hyperlink{classn2d_1_1Tool_a0421036c16c6376cf05b2c9fb02acbf5}{s2b}}(\ sf::Vector2f\ v,\ \textcolor{keywordtype}{float}\ s\ =\ \mbox{\hyperlink{namespacen2d_a05eb87428a9b7e50ba846fc175c53f05}{PIXEL\_TO\_BOX2D}}\ )\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b2Vec2(\ v.x*s,\ v.y*s\ );}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ glm::vec2\ \mbox{\hyperlink{classn2d_1_1Tool_a9ded990a42967f51c9a2114f1428e4ae}{b2g}}(\ b2Vec2\ v,\ \textcolor{keywordtype}{float}\ s\ =\ \mbox{\hyperlink{namespacen2d_a96018993161d9c674895a7974b577ff4}{BOX2D\_TO\_PIXEL}}\ )\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::vec2(\ v.x*s,\ v.y*s\ );}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ glm::vec2\ \mbox{\hyperlink{classn2d_1_1Tool_a4a695909cf60f34fd71b5cad07a53315}{s2g}}(\ sf::Vector2f\ v\ )\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::vec2(\ v.x,\ v.y\ );}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ sf::Vector2f\ \mbox{\hyperlink{classn2d_1_1Tool_ae8a9f69c3f23f57ce256508904bdffc4}{g2s}}(\ glm::vec2\ v\ )\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Vector2f(\ v.x,\ v.y\ );}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ sf::Vector2f\ \mbox{\hyperlink{classn2d_1_1Tool_a521b4791d5303e6413598dde215eaed5}{b2s}}(\ b2Vec2\ v\ )\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sf::Vector2f(\ v.x*\mbox{\hyperlink{namespacen2d_a96018993161d9c674895a7974b577ff4}{BOX2D\_TO\_PIXEL}},\ v.y*\mbox{\hyperlink{namespacen2d_a96018993161d9c674895a7974b577ff4}{BOX2D\_TO\_PIXEL}}\ );}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}(\ \textcolor{keywordtype}{float}\ deg\ )\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ deg\ *\ \ (3.1415f/180.0f);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1Tool_a827b485eda8ee14537ebb9fea2ed50b1}{ang}}(\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}\ )\ \{\ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}\ *\ 180.f\ /\ 3.1415f;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1Tool_aace20d06cc7db12432d14ad94b65bcf7}{Bf}}(\ \textcolor{keywordtype}{float}\ val\ )\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ val\ *\ \mbox{\hyperlink{namespacen2d_a05eb87428a9b7e50ba846fc175c53f05}{PIXEL\_TO\_BOX2D}};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1Tool_a845678732acc0204851c7ce1d9c4353c}{Bs}}(\ \textcolor{keywordtype}{float}\ val\ )\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ val\ *\ \mbox{\hyperlink{namespacen2d_a96018993161d9c674895a7974b577ff4}{BOX2D\_TO\_PIXEL}};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::vector<glm::vec2>\ \mbox{\hyperlink{classn2d_1_1Tool_aea54f2fbe559ab1ab3584f8db5afc428}{Rotate}}(\ std::vector<glm::vec2>\ t\_v,\ \textcolor{keywordtype}{float}\ t\_rotation\ )\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<glm::vec2>\ rv\ =\ t\_v;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ t\_rotation\ !=\ 0.0f\ )\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rv.clear();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}\ =\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{Tool::rad}}(\ t\_rotation\ );}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sin\ =\ glm::sin(\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}\ );}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cos\ =\ glm::cos(\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}\ );}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::mat2x2\ m(\ cos,\ -\/sin,\ sin,\ cos\ );}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\ \textcolor{keyword}{auto}\ w\ :\ t\_v\ )\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rv.push\_back(\ m\ *\ w\ );}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rv;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::vector<glm::vec2>\ \mbox{\hyperlink{classn2d_1_1Tool_a5812b749e50273841851199229a55cc6}{Translate}}(\ std::vector<glm::vec2>\ t\_v,\ glm::vec2\ t\_translation\ \ )\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<glm::vec2>\ rv;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\ \textcolor{keyword}{auto}\ w\ :\ t\_v\ )\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rv.push\_back(w+t\_translation);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rv;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ rotated\ and\ translated\ vertexes\ coordinates\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::vector<glm::vec2>\ \mbox{\hyperlink{classn2d_1_1Tool_a5f55d746ca5f1fc3575fadb429a6ef24}{Transform}}(\ std::vector<glm::vec2>\ t\_v,\ glm::vec2\ t\_translation,\ \textcolor{keywordtype}{float}\ t\_rotation\ )\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<glm::vec2>\ rv;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ t\_rotation\ !=\ 0\ )\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}\ =\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{Tool::rad}}(\ t\_rotation\ );}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sin\ =\ glm::sin(\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}\ );}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cos\ =\ glm::cos(\ \mbox{\hyperlink{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}{rad}}\ );}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::mat2x2\ m(\ cos,\ -\/sin,\ sin,\ cos\ );}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\ \textcolor{keyword}{auto}\ w\ :\ t\_v\ )\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ tmp\ =\ m\ *\ w;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ =\ tmp\ +\ t\_translation;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rv.push\_back(tmp);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\ \textcolor{keyword}{auto}\ w\ :\ t\_v\ )\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ tmp\ =\ w\ +\ t\_translation;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rv.push\_back(\ tmp\ );}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rv;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classn2d_1_1Tool_a5f7b117837b631dea354ba3e856620a5}{GetCurrentDatetime}}()\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ now\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ in\_time\_t\ =\ std::chrono::system\_clock::to\_time\_t(now);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ std::put\_time(std::localtime(\&in\_time\_t),\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%X"{}});}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ tson::Rect\ \mbox{\hyperlink{classn2d_1_1Tool_a906e3e4d7055545fb056e6aed50044de}{GetDrawingRectT}}(\ tson::Rect\ t\_draw\_rect,\ glm::vec2\ t\_grid\_size)\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tson::Rect\ r;}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ =\ t\_draw\_rect.x;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.y\ =\ t\_draw\_rect.y;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 1;}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ t\_grid\_size.x\ !=\ t\_draw\_rect.width\ )\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ (int)(t\_draw\_rect.x\ /\ t\_grid\_size.x);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.x\ =\ i\ *\ t\_draw\_rect.width;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ t\_grid\_size.y\ !=\ t\_draw\_rect.height\ )\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ (int)(t\_draw\_rect.y\ /\ t\_grid\_size.y);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.y\ =\ i\ *\ t\_draw\_rect.height;}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.width\ =\ t\_draw\_rect.width;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.height\ =\ t\_draw\_rect.height;}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r;}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ glm::vec4\ \mbox{\hyperlink{classn2d_1_1Tool_a27a9b2d55abeecb710115608aa09d80f}{GetDrawingRectG}}(\ tson::Rect\ t\_rect,\ glm::vec2\ t\_grid\_size)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tson::Rect\ r\ =\ \mbox{\hyperlink{classn2d_1_1Tool_a906e3e4d7055545fb056e6aed50044de}{GetDrawingRectT}}(\ t\_rect,\ t\_grid\_size\ );}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::vec4(\ r.x,\ r.y,\ r.width,\ r.height\ );}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Tool}}
+\DoxyCodeLine{00226\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

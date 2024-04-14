@@ -1,5 +1,9 @@
 \doxysection{n2d\+::State Class Reference}
 \hypertarget{classn2d_1_1State}{}\label{classn2d_1_1State}\index{n2d::State@{n2d::State}}
+
+
+{\ttfamily \#include $<$State.\+h$>$}
+
 Inheritance diagram for n2d\+::State\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,13 +13,29 @@ Inheritance diagram for n2d\+::State\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classn2d_1_1State_afa3d3f519995a25adc8e730a7d0da2d8}\label{classn2d_1_1State_afa3d3f519995a25adc8e730a7d0da2d8} 
-virtual void {\bfseries Enter} ()=0
+virtual void \mbox{\hyperlink{classn2d_1_1State_afa3d3f519995a25adc8e730a7d0da2d8}{Enter}} ()=0
 \item 
-\Hypertarget{classn2d_1_1State_abacf0161f7682e0f1ed94c1e66ecd410}\label{classn2d_1_1State_abacf0161f7682e0f1ed94c1e66ecd410} 
-virtual void {\bfseries Exit} ()=0
+virtual void \mbox{\hyperlink{classn2d_1_1State_abacf0161f7682e0f1ed94c1e66ecd410}{Exit}} ()=0
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Interface. Anstract class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1State_afa3d3f519995a25adc8e730a7d0da2d8}\label{classn2d_1_1State_afa3d3f519995a25adc8e730a7d0da2d8} 
+\index{n2d::State@{n2d::State}!Enter@{Enter}}
+\index{Enter@{Enter}!n2d::State@{n2d::State}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily virtual void n2d\+::\+State\+::\+Enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Defines what to do when state is created. Pre-\/execute instruction. Check \textquotesingle{}\doxylink{classn2d_1_1State}{State}\textquotesingle{} design pattern for more details. \Hypertarget{classn2d_1_1State_abacf0161f7682e0f1ed94c1e66ecd410}\label{classn2d_1_1State_abacf0161f7682e0f1ed94c1e66ecd410} 
+\index{n2d::State@{n2d::State}!Exit@{Exit}}
+\index{Exit@{Exit}!n2d::State@{n2d::State}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily virtual void n2d\+::\+State\+::\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Defines what to do, when state is exiting. Post-\/execution instructions. Check \textquotesingle{}\doxylink{classn2d_1_1State}{State}\textquotesingle{} design pattern for more details. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

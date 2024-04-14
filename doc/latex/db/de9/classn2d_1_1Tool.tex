@@ -2,7 +2,7 @@
 \hypertarget{classn2d_1_1Tool}{}\label{classn2d_1_1Tool}\index{n2d::Tool@{n2d::Tool}}
 
 
-{\ttfamily \#include $<$Interfaces.\+h$>$}
+{\ttfamily \#include $<$Tool.\+h$>$}
 
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -34,6 +34,10 @@ static std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classn2d_1_1Tool_a5812b
 static std\+::vector$<$ glm\+::vec2 $>$ \mbox{\hyperlink{classn2d_1_1Tool_a5f55d746ca5f1fc3575fadb429a6ef24}{Transform}} (std\+::vector$<$ glm\+::vec2 $>$ t\+\_\+v, glm\+::vec2 t\+\_\+translation, float t\+\_\+rotation)
 \item 
 static std\+::string \mbox{\hyperlink{classn2d_1_1Tool_a5f7b117837b631dea354ba3e856620a5}{Get\+Current\+Datetime}} ()
+\item 
+static tson\+::\+Rect \mbox{\hyperlink{classn2d_1_1Tool_a906e3e4d7055545fb056e6aed50044de}{Get\+Drawing\+RectT}} (tson\+::\+Rect t\+\_\+draw\+\_\+rect, glm\+::vec2 t\+\_\+grid\+\_\+size)
+\item 
+static glm\+::vec4 \mbox{\hyperlink{classn2d_1_1Tool_a27a9b2d55abeecb710115608aa09d80f}{Get\+Drawing\+RectG}} (tson\+::\+Rect t\+\_\+rect, glm\+::vec2 t\+\_\+grid\+\_\+size)
 \end{DoxyCompactItemize}
 
 
@@ -153,6 +157,38 @@ SFML vector
 Returns current Date/\+Time stamp \begin{DoxyReturn}{Returns}
 datetime string 
 \end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a27a9b2d55abeecb710115608aa09d80f}\label{classn2d_1_1Tool_a27a9b2d55abeecb710115608aa09d80f} 
+\index{n2d::Tool@{n2d::Tool}!GetDrawingRectG@{GetDrawingRectG}}
+\index{GetDrawingRectG@{GetDrawingRectG}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{GetDrawingRectG()}{GetDrawingRectG()}}
+{\footnotesize\ttfamily static glm\+::vec4 n2d\+::\+Tool\+::\+Get\+Drawing\+RectG (\begin{DoxyParamCaption}\item[{tson\+::\+Rect}]{t\+\_\+rect,  }\item[{glm\+::vec2}]{t\+\_\+grid\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Calculate correct value of tile drawing rect. Tileson gets wrong one, if use tiles with different sizes 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+rect} & -\/ Tileson drawing rect tson\+::\+Tile\+::get\+Drawing\+Rect() \\
+\hline
+{\em t\+\_\+grid\+\_\+size} & -\/ Tileson tile size read from tson\+::\+Map class -\/\texorpdfstring{$>$}{>} tson\+::\+Map\+::get\+Tile\+Size(), converted to glm\+::vec2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ Corrected drawing rect 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Tool_a906e3e4d7055545fb056e6aed50044de}\label{classn2d_1_1Tool_a906e3e4d7055545fb056e6aed50044de} 
+\index{n2d::Tool@{n2d::Tool}!GetDrawingRectT@{GetDrawingRectT}}
+\index{GetDrawingRectT@{GetDrawingRectT}!n2d::Tool@{n2d::Tool}}
+\doxysubsubsection{\texorpdfstring{GetDrawingRectT()}{GetDrawingRectT()}}
+{\footnotesize\ttfamily static tson\+::\+Rect n2d\+::\+Tool\+::\+Get\+Drawing\+RectT (\begin{DoxyParamCaption}\item[{tson\+::\+Rect}]{t\+\_\+draw\+\_\+rect,  }\item[{glm\+::vec2}]{t\+\_\+grid\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Calculate correct value of tile drawing rect. Tileson gets wrong one, if use tiles with different sizes 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+rect} & -\/ Tileson drawing rect tson\+::\+Tile\+::get\+Drawing\+Rect() \\
+\hline
+{\em t\+\_\+grid\+\_\+size} & -\/ Tileson tile size read from tson\+::\+Map class -\/\texorpdfstring{$>$}{>} tson\+::\+Map\+::get\+Tile\+Size(), converted to glm\+::vec2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ Corrected drawing rect 
+\end{DoxyReturn}
 \Hypertarget{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33}\label{classn2d_1_1Tool_aa4c6be03c9522a4020d406c3c6063f33} 
 \index{n2d::Tool@{n2d::Tool}!rad@{rad}}
 \index{rad@{rad}!n2d::Tool@{n2d::Tool}}
@@ -252,4 +288,4 @@ std\+::vector$<$glm\+::vec2$>$ -\/ vector of translated vertexes
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-silnik/core/include/Interfaces.\+h\end{DoxyCompactItemize}
+silnik/core/include/Tool.\+h\end{DoxyCompactItemize}

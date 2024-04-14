@@ -15,38 +15,45 @@
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}JSONLoader.h"{}}}
 \DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<sf::Font>\ \ \ \ \ \ \ m\_fonts;}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,int>\ \ \ m\_fontNames;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<sf::Texture>\ \ \ \ m\_textures;}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,int>\ \ \ m\_textureNames;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}();}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ LoadTexture(\ std::string\ );}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ IsTextureLoaded(\ std::string\ );}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ GetTextureId(\ std::string\ );}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Texture*\ \ \ \ \ \ \ \ GetTexturePtr(\ std::string\ );}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Texture*\ \ \ \ \ \ \ \ GetTexturePtr(\ \textcolor{keywordtype}{int}\ );}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Texture\&\ \ GetTexture(\ \textcolor{keywordtype}{int}\ );}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Texture\&\ \ GetTexture(\ std::string\ );}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Texture\&\ \ \ \ \ \ \ \ GetTextureRef(\ \textcolor{keywordtype}{int}\ );}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ LoadFont(\ std::string\ );}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ IsFontLoaded(\ std::string\ );}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ GetFontId(\ std::string\ );}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font*\ \ \ \ \ \ \ GetFontPtr(\ std::string\ );}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font*\ \ \ \ \ \ \ GetFontPtr(\ \textcolor{keywordtype}{int}\ );}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font\ \ \ \ \ \ \ \ GetFont(\ std::string\ );}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font\ \ \ \ \ \ \ \ GetFont(\ \textcolor{keywordtype}{int}\ );}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font\&\ \ \ \ \ \ \ GetFontRef(\ \textcolor{keywordtype}{int}\ );}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ Free();\ }
-\DoxyCodeLine{00043\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Resources}}
-\DoxyCodeLine{00044\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<sf::Font>\ \ \ \ \ \ \ m\_fonts;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,int>\ \ \ m\_fontNames;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<sf::Texture>\ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_aacb182e50caa8ed6eb976c13243e8912}{m\_textures}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,int>\ \ \ \mbox{\hyperlink{classn2d_1_1Resources_acd633fe3acdf4639d9cea4bd38354636}{m\_textureNames}};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_ab09435991b8c485f92e0aa1fd00828b9}{Resources}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_aed5924d556e534fde148145b80bcf212}{LoadTexture}}(\ std::string\ );}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_a07b80bc6673aefee1391459ebd5b6119}{IsTextureLoaded}}(\ std::string\ );}
 \DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_a0893c1868e9651a8f6978398ed4351d0}{GetTextureId}}(\ std::string\ );}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Texture*\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_a888e7d5eaa6f739bd03da3f4b846d706}{GetTexturePtr}}(\ std::string\ );}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Texture*\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_a888e7d5eaa6f739bd03da3f4b846d706}{GetTexturePtr}}(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Texture\&\ \ \mbox{\hyperlink{classn2d_1_1Resources_af6817690b018001e4aefe110dc6dd9fd}{GetTexture}}(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Texture\&\ \ \mbox{\hyperlink{classn2d_1_1Resources_af6817690b018001e4aefe110dc6dd9fd}{GetTexture}}(\ std::string\ );}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Texture\&\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_a00af08b89c3f6b94949f81e17d9269e6}{GetTextureRef}}(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ LoadFont(\ std::string\ );}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ IsFontLoaded(\ std::string\ );}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ GetFontId(\ std::string\ );}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font*\ \ \ \ \ \ \ GetFontPtr(\ std::string\ );}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font*\ \ \ \ \ \ \ GetFontPtr(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font\ \ \ \ \ \ \ \ GetFont(\ std::string\ );}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font\ \ \ \ \ \ \ \ GetFont(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Font\&\ \ \ \ \ \ \ GetFontRef(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_ad10c2a54cb28aaf76082169a7eaf42b6}{Free}}();\ }
+\DoxyCodeLine{00099\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Resources}}
+\DoxyCodeLine{00100\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

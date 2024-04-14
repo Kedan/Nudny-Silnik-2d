@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_MAIN
 
 #include<catch2/catch_test_macros.hpp>
-#include<Interfaces.h>
 #include<iostream>
+#include<Tool.h>
 
 TEST_CASE("Converting vectors","[classic]") {
 

@@ -95,234 +95,85 @@ $(function() { codefold.init(1); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d62/namespacen2d.html">n2d</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d7/d62/namespacen2d.html#a05eb87428a9b7e50ba846fc175c53f05">   22</a></span>    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a05eb87428a9b7e50ba846fc175c53f05">PIXEL_TO_BOX2D</a> = 0.01f;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../d7/d62/namespacen2d.html#a96018993161d9c674895a7974b577ff4">   27</a></span>    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a96018993161d9c674895a7974b577ff4">BOX2D_TO_PIXEL</a> = 100.0f;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html">   32</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../db/de9/classn2d_1_1Tool.html">Tool</a> {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a5e85df1d7d5d3b9f6efb4439d579cb23">   38</a></span>            <span class="keyword">static</span> b2Vec2 <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a5e85df1d7d5d3b9f6efb4439d579cb23">g2b</a>( glm::vec2 v, <span class="keywordtype">float</span> s = <a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a05eb87428a9b7e50ba846fc175c53f05">PIXEL_TO_BOX2D</a> ) { </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keywordflow">return</span> b2Vec2( v.x*s, v.y*s );</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            }</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../de/d92/classn2d_1_1Drawable.html">   23</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../de/d92/classn2d_1_1Drawable.html">Drawable</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../de/d92/classn2d_1_1Drawable.html#ab3aef1a4bfba84814535e443c9f1b98b">   28</a></span>            sf::Transform <a class="code hl_variable" href="../../de/d92/classn2d_1_1Drawable.html#ab3aef1a4bfba84814535e443c9f1b98b">transform</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="../../de/d92/classn2d_1_1Drawable.html#aa3781f68e3d19347787be3a4d7c90f35">   34</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d92/classn2d_1_1Drawable.html#aa3781f68e3d19347787be3a4d7c90f35">Draw</a>( sf::RenderWindow&amp; t_window ) = 0;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="../../de/d92/classn2d_1_1Drawable.html#aae7c8e4f5a45a83b1660b3e2ee74e821">   41</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d92/classn2d_1_1Drawable.html#aae7c8e4f5a45a83b1660b3e2ee74e821">Draw</a>( sf::RenderWindow&amp; t_window, sf::Transform&amp; t_transform ) = 0;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    };</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            </div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a0421036c16c6376cf05b2c9fb02acbf5">   46</a></span>            <span class="keyword">static</span> b2Vec2 <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a0421036c16c6376cf05b2c9fb02acbf5">s2b</a>( sf::Vector2f v, <span class="keywordtype">float</span> s = <a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a05eb87428a9b7e50ba846fc175c53f05">PIXEL_TO_BOX2D</a> ) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <span class="keywordflow">return</span> b2Vec2( v.x*s, v.y*s );</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../d1/d8a/classn2d_1_1Updatable.html">   49</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d1/d8a/classn2d_1_1Updatable.html">Updatable</a> {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">public</span>:         </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="../../d1/d8a/classn2d_1_1Updatable.html#afdd0bf94a4486b3a893ed560af5e22c6">   55</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d8a/classn2d_1_1Updatable.html#afdd0bf94a4486b3a893ed560af5e22c6">Update</a>( <span class="keywordtype">float</span> t_dt ) = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    };</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            </div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a9ded990a42967f51c9a2114f1428e4ae">   54</a></span>            <span class="keyword">static</span> glm::vec2 <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a9ded990a42967f51c9a2114f1428e4ae">b2g</a>( b2Vec2 v, <span class="keywordtype">float</span> s = <a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a96018993161d9c674895a7974b577ff4">BOX2D_TO_PIXEL</a> ) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">return</span> glm::vec2( v.x*s, v.y*s );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    </div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="};">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="../../d9/dda/classn2d_1_1Creatable.html">   63</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d9/dda/classn2d_1_1Creatable.html">Creatable</a> {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../d9/dda/classn2d_1_1Creatable.html#a58c8fe521854b6db80918d98f4dbd308">   69</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/dda/classn2d_1_1Creatable.html#a58c8fe521854b6db80918d98f4dbd308">Create</a>( b2World&amp; t_world ) = 0;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    };</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            </div>
-<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a4a695909cf60f34fd71b5cad07a53315">   61</a></span>            <span class="keyword">static</span> glm::vec2 <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a4a695909cf60f34fd71b5cad07a53315">s2g</a>( sf::Vector2f v ) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keywordflow">return</span> glm::vec2( v.x, v.y );</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="};">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d9/df1/classn2d_1_1Interactive.html">   77</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d9/df1/classn2d_1_1Interactive.html">Interactive</a> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">   82</a></span>            <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">m_interactive</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="../../d9/df1/classn2d_1_1Interactive.html#ad3b9767c1231506ad6933addaa186e4c">   88</a></span>            <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/df1/classn2d_1_1Interactive.html#ad3b9767c1231506ad6933addaa186e4c">IsInteractive</a>() {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">m_interactive</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            };</div>
 </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            </div>
-<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#ae8a9f69c3f23f57ce256508904bdffc4">   68</a></span>            <span class="keyword">static</span> sf::Vector2f <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#ae8a9f69c3f23f57ce256508904bdffc4">g2s</a>( glm::vec2 v ) {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="keywordflow">return</span> sf::Vector2f( v.x, v.y );</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../d9/df1/classn2d_1_1Interactive.html#a59a44b83273dd6c89269da91fad58f2e">   95</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/df1/classn2d_1_1Interactive.html#a59a44b83273dd6c89269da91fad58f2e">Events</a>( sf::Event&amp; t_event ) = 0;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    };</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            </div>
-<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a521b4791d5303e6413598dde215eaed5">   77</a></span>            <span class="keyword">static</span> sf::Vector2f <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a521b4791d5303e6413598dde215eaed5">b2s</a>( b2Vec2 v ) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">return</span> sf::Vector2f( v.x*<a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a96018993161d9c674895a7974b577ff4">BOX2D_TO_PIXEL</a>, v.y*<a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a96018993161d9c674895a7974b577ff4">BOX2D_TO_PIXEL</a> );</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="};">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html">  103</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d3/d34/classn2d_1_1Animated.html">Animated</a> {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#a07c4762576f95f53d5f6cda7d15ea337">  108</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#a07c4762576f95f53d5f6cda7d15ea337">Play</a>()     = 0;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#a5291e65867b18d0f6f429e2683a7c31e">  113</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#a5291e65867b18d0f6f429e2683a7c31e">Pause</a>()    = 0;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#aafa111136e06807badbd0886a2f762ae">  118</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#aafa111136e06807badbd0886a2f762ae">Stop</a>() = 0;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#a52e707da569f0c6c9fad24ebebebd6e7">  123</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#a52e707da569f0c6c9fad24ebebebd6e7">ClearAnimation</a>()       = 0;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#aca9c14d240d437b4112419d9d446addd">  129</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#aca9c14d240d437b4112419d9d446addd">Animate</a>( <span class="keywordtype">float</span> t_dt )  = 0;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    };</div>
 </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            </div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">   86</a></span>            <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a>( <span class="keywordtype">float</span> deg ) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">return</span> deg *  (3.1415f/180.0f);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            }</div>
-</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            </div>
-<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a827b485eda8ee14537ebb9fea2ed50b1">   95</a></span>            <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a827b485eda8ee14537ebb9fea2ed50b1">ang</a>( <span class="keywordtype">float</span> <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a> ) { </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a> * 180.f / 3.1415f;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
-</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            </div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#aace20d06cc7db12432d14ad94b65bcf7">  104</a></span>            <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aace20d06cc7db12432d14ad94b65bcf7">Bf</a>( <span class="keywordtype">float</span> val ) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <span class="keywordflow">return</span> val * <a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a05eb87428a9b7e50ba846fc175c53f05">PIXEL_TO_BOX2D</a>;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            }</div>
-</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            </div>
-<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a845678732acc0204851c7ce1d9c4353c">  113</a></span>            <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a845678732acc0204851c7ce1d9c4353c">Bs</a>( <span class="keywordtype">float</span> val ) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="keywordflow">return</span> val * <a class="code hl_variable" href="../../d7/d62/namespacen2d.html#a96018993161d9c674895a7974b577ff4">BOX2D_TO_PIXEL</a>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            }</div>
-</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            </div>
-<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#aea54f2fbe559ab1ab3584f8db5afc428">  123</a></span>            <span class="keyword">static</span> <span class="keyword">inline</span> std::vector&lt;glm::vec2&gt; <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aea54f2fbe559ab1ab3584f8db5afc428">Rotate</a>( std::vector&lt;glm::vec2&gt; t_v, <span class="keywordtype">float</span> t_rotation ) {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                std::vector&lt;glm::vec2&gt; rv = t_v;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                <span class="keywordflow">if</span>( t_rotation != 0.0f ) {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    rv.clear();</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                    <span class="keywordtype">float</span> <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a> = <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">Tool::rad</a>( t_rotation );</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    <span class="keywordtype">float</span> sin = glm::sin( <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a> );</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    <span class="keywordtype">float</span> cos = glm::cos( <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a> );</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    glm::mat2x2 m( cos, -sin, sin, cos );</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                    <span class="keywordflow">for</span>( <span class="keyword">auto</span> w : t_v ) {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                        rv.push_back( m * w );</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                <span class="keywordflow">return</span> rv;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            }</div>
-</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a5812b749e50273841851199229a55cc6">  144</a></span>            <span class="keyword">static</span> <span class="keyword">inline</span> std::vector&lt;glm::vec2&gt; <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a5812b749e50273841851199229a55cc6">Translate</a>( std::vector&lt;glm::vec2&gt; t_v, glm::vec2 t_translation  ) {                </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                std::vector&lt;glm::vec2&gt; rv;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                <span class="keywordflow">for</span>( <span class="keyword">auto</span> w : t_v ) {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                    rv.push_back(w+t_translation);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                }</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                <span class="keywordflow">return</span> rv;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            }</div>
-</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <span class="comment">// Calculate rotated and translated vertexes coordinates            </span></div>
-<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a5f55d746ca5f1fc3575fadb429a6ef24">  160</a></span>            <span class="keyword">static</span> <span class="keyword">inline</span> std::vector&lt;glm::vec2&gt; <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a5f55d746ca5f1fc3575fadb429a6ef24">Transform</a>( std::vector&lt;glm::vec2&gt; t_v, glm::vec2 t_translation, <span class="keywordtype">float</span> t_rotation ) {               </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                std::vector&lt;glm::vec2&gt; rv;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                <span class="keywordflow">if</span>( t_rotation != 0 ) {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    <span class="keywordtype">float</span> <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a> = <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">Tool::rad</a>( t_rotation );</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                    <span class="keywordtype">float</span> sin = glm::sin( <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a> );</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                    <span class="keywordtype">float</span> cos = glm::cos( <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">rad</a> );</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    glm::mat2x2 m( cos, -sin, sin, cos );</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                    <span class="keywordflow">for</span>( <span class="keyword">auto</span> w : t_v ) {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                        glm::vec2 tmp = m * w;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                        tmp = tmp + t_translation;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                        rv.push_back(tmp);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    }</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    <span class="keywordflow">for</span>( <span class="keyword">auto</span> w : t_v ) {</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                        glm::vec2 tmp = w + t_translation;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                        rv.push_back( tmp );</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                    }</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                }</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <span class="keywordflow">return</span> rv;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            }</div>
-</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            </div>
-<div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a5f7b117837b631dea354ba3e856620a5">  185</a></span>            <span class="keyword">static</span> std::string <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a5f7b117837b631dea354ba3e856620a5">GetCurrentDatetime</a>() {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                <span class="keyword">auto</span> in_time_t = std::chrono::system_clock::to_time_t(now);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                    std::stringstream ss;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                    ss &lt;&lt; std::put_time(std::localtime(&amp;in_time_t), <span class="stringliteral">&quot;%Y-%m-%d %X&quot;</span>);</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                    <span class="keywordflow">return</span> ss.str();</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            }</div>
-</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    };</div>
-</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    </div>
-<div class="foldopen" id="foldopen00200" data-start="{" data-end="};">
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="../../de/d92/classn2d_1_1Drawable.html">  200</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../de/d92/classn2d_1_1Drawable.html">Drawable</a> {</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="../../de/d92/classn2d_1_1Drawable.html#ab3aef1a4bfba84814535e443c9f1b98b">  205</a></span>            sf::Transform <a class="code hl_variable" href="../../de/d92/classn2d_1_1Drawable.html#ab3aef1a4bfba84814535e443c9f1b98b">transform</a>;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="../../de/d92/classn2d_1_1Drawable.html#aa3781f68e3d19347787be3a4d7c90f35">  211</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d92/classn2d_1_1Drawable.html#aa3781f68e3d19347787be3a4d7c90f35">Draw</a>( sf::RenderWindow&amp; t_window ) = 0;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="../../de/d92/classn2d_1_1Drawable.html#aae7c8e4f5a45a83b1660b3e2ee74e821">  218</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d92/classn2d_1_1Drawable.html#aae7c8e4f5a45a83b1660b3e2ee74e821">Draw</a>( sf::RenderWindow&amp; t_window, sf::Transform&amp; t_transform ) = 0;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    };</div>
-</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="foldopen" id="foldopen00226" data-start="{" data-end="};">
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="../../d1/d8a/classn2d_1_1Updatable.html">  226</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d1/d8a/classn2d_1_1Updatable.html">Updatable</a> {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keyword">public</span>:         </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="../../d1/d8a/classn2d_1_1Updatable.html#afdd0bf94a4486b3a893ed560af5e22c6">  232</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d8a/classn2d_1_1Updatable.html#afdd0bf94a4486b3a893ed560af5e22c6">Update</a>( <span class="keywordtype">float</span> t_dt ) = 0;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    };</div>
-</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    </div>
-<div class="foldopen" id="foldopen00240" data-start="{" data-end="};">
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="../../d9/dda/classn2d_1_1Creatable.html">  240</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d9/dda/classn2d_1_1Creatable.html">Creatable</a> {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="../../d9/dda/classn2d_1_1Creatable.html#a58c8fe521854b6db80918d98f4dbd308">  246</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/dda/classn2d_1_1Creatable.html#a58c8fe521854b6db80918d98f4dbd308">Create</a>( b2World&amp; t_world ) = 0;</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    };</div>
-</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    </div>
-<div class="foldopen" id="foldopen00254" data-start="{" data-end="};">
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="../../d9/df1/classn2d_1_1Interactive.html">  254</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d9/df1/classn2d_1_1Interactive.html">Interactive</a> {</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">  259</a></span>            <span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">m_interactive</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00265" data-start="{" data-end="}">
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="../../d9/df1/classn2d_1_1Interactive.html#ad3b9767c1231506ad6933addaa186e4c">  265</a></span>            <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d9/df1/classn2d_1_1Interactive.html#ad3b9767c1231506ad6933addaa186e4c">IsInteractive</a>() {</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">m_interactive</a>;</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            };</div>
-</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="../../d9/df1/classn2d_1_1Interactive.html#a59a44b83273dd6c89269da91fad58f2e">  272</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d9/df1/classn2d_1_1Interactive.html#a59a44b83273dd6c89269da91fad58f2e">Events</a>( sf::Event&amp; t_event ) = 0;</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    };</div>
-</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
-<div class="foldopen" id="foldopen00280" data-start="{" data-end="};">
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html">  280</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d3/d34/classn2d_1_1Animated.html">Animated</a> {</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#a07c4762576f95f53d5f6cda7d15ea337">  285</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#a07c4762576f95f53d5f6cda7d15ea337">Play</a>()     = 0;</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#a5291e65867b18d0f6f429e2683a7c31e">  290</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#a5291e65867b18d0f6f429e2683a7c31e">Pause</a>()    = 0;</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#aafa111136e06807badbd0886a2f762ae">  295</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#aafa111136e06807badbd0886a2f762ae">Stop</a>() = 0;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#a52e707da569f0c6c9fad24ebebebd6e7">  300</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#a52e707da569f0c6c9fad24ebebebd6e7">ClearAnimation</a>()       = 0;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="../../d3/d34/classn2d_1_1Animated.html#aca9c14d240d437b4112419d9d446addd">  306</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d3/d34/classn2d_1_1Animated.html#aca9c14d240d437b4112419d9d446addd">Animate</a>( <span class="keywordtype">float</span> t_dt )  = 0;</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    };</div>
-</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>}; <span class="comment">// namespace n2d</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassn2d_1_1Animated_html"><div class="ttname"><a href="../../d3/d34/classn2d_1_1Animated.html">n2d::Animated</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:280</div></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}; <span class="comment">// namespace n2d</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassn2d_1_1Animated_html"><div class="ttname"><a href="../../d3/d34/classn2d_1_1Animated.html">n2d::Animated</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:103</div></div>
 <div class="ttc" id="aclassn2d_1_1Animated_html_a07c4762576f95f53d5f6cda7d15ea337"><div class="ttname"><a href="../../d3/d34/classn2d_1_1Animated.html#a07c4762576f95f53d5f6cda7d15ea337">n2d::Animated::Play</a></div><div class="ttdeci">virtual void Play()=0</div></div>
 <div class="ttc" id="aclassn2d_1_1Animated_html_a5291e65867b18d0f6f429e2683a7c31e"><div class="ttname"><a href="../../d3/d34/classn2d_1_1Animated.html#a5291e65867b18d0f6f429e2683a7c31e">n2d::Animated::Pause</a></div><div class="ttdeci">virtual void Pause()=0</div></div>
 <div class="ttc" id="aclassn2d_1_1Animated_html_a52e707da569f0c6c9fad24ebebebd6e7"><div class="ttname"><a href="../../d3/d34/classn2d_1_1Animated.html#a52e707da569f0c6c9fad24ebebebd6e7">n2d::Animated::ClearAnimation</a></div><div class="ttdeci">virtual void ClearAnimation()=0</div></div>
 <div class="ttc" id="aclassn2d_1_1Animated_html_aafa111136e06807badbd0886a2f762ae"><div class="ttname"><a href="../../d3/d34/classn2d_1_1Animated.html#aafa111136e06807badbd0886a2f762ae">n2d::Animated::Stop</a></div><div class="ttdeci">virtual void Stop()=0</div></div>
 <div class="ttc" id="aclassn2d_1_1Animated_html_aca9c14d240d437b4112419d9d446addd"><div class="ttname"><a href="../../d3/d34/classn2d_1_1Animated.html#aca9c14d240d437b4112419d9d446addd">n2d::Animated::Animate</a></div><div class="ttdeci">virtual void Animate(float t_dt)=0</div></div>
-<div class="ttc" id="aclassn2d_1_1Creatable_html"><div class="ttname"><a href="../../d9/dda/classn2d_1_1Creatable.html">n2d::Creatable</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:240</div></div>
+<div class="ttc" id="aclassn2d_1_1Creatable_html"><div class="ttname"><a href="../../d9/dda/classn2d_1_1Creatable.html">n2d::Creatable</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:63</div></div>
 <div class="ttc" id="aclassn2d_1_1Creatable_html_a58c8fe521854b6db80918d98f4dbd308"><div class="ttname"><a href="../../d9/dda/classn2d_1_1Creatable.html#a58c8fe521854b6db80918d98f4dbd308">n2d::Creatable::Create</a></div><div class="ttdeci">virtual void Create(b2World &amp;t_world)=0</div></div>
-<div class="ttc" id="aclassn2d_1_1Drawable_html"><div class="ttname"><a href="../../de/d92/classn2d_1_1Drawable.html">n2d::Drawable</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:200</div></div>
+<div class="ttc" id="aclassn2d_1_1Drawable_html"><div class="ttname"><a href="../../de/d92/classn2d_1_1Drawable.html">n2d::Drawable</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:23</div></div>
 <div class="ttc" id="aclassn2d_1_1Drawable_html_aa3781f68e3d19347787be3a4d7c90f35"><div class="ttname"><a href="../../de/d92/classn2d_1_1Drawable.html#aa3781f68e3d19347787be3a4d7c90f35">n2d::Drawable::Draw</a></div><div class="ttdeci">virtual void Draw(sf::RenderWindow &amp;t_window)=0</div></div>
 <div class="ttc" id="aclassn2d_1_1Drawable_html_aae7c8e4f5a45a83b1660b3e2ee74e821"><div class="ttname"><a href="../../de/d92/classn2d_1_1Drawable.html#aae7c8e4f5a45a83b1660b3e2ee74e821">n2d::Drawable::Draw</a></div><div class="ttdeci">virtual void Draw(sf::RenderWindow &amp;t_window, sf::Transform &amp;t_transform)=0</div></div>
-<div class="ttc" id="aclassn2d_1_1Drawable_html_ab3aef1a4bfba84814535e443c9f1b98b"><div class="ttname"><a href="../../de/d92/classn2d_1_1Drawable.html#ab3aef1a4bfba84814535e443c9f1b98b">n2d::Drawable::transform</a></div><div class="ttdeci">sf::Transform transform</div><div class="ttdef"><b>Definition</b> Interfaces.h:205</div></div>
-<div class="ttc" id="aclassn2d_1_1Interactive_html"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html">n2d::Interactive</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:254</div></div>
+<div class="ttc" id="aclassn2d_1_1Drawable_html_ab3aef1a4bfba84814535e443c9f1b98b"><div class="ttname"><a href="../../de/d92/classn2d_1_1Drawable.html#ab3aef1a4bfba84814535e443c9f1b98b">n2d::Drawable::transform</a></div><div class="ttdeci">sf::Transform transform</div><div class="ttdef"><b>Definition</b> Interfaces.h:28</div></div>
+<div class="ttc" id="aclassn2d_1_1Interactive_html"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html">n2d::Interactive</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:77</div></div>
 <div class="ttc" id="aclassn2d_1_1Interactive_html_a59a44b83273dd6c89269da91fad58f2e"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html#a59a44b83273dd6c89269da91fad58f2e">n2d::Interactive::Events</a></div><div class="ttdeci">virtual void Events(sf::Event &amp;t_event)=0</div></div>
-<div class="ttc" id="aclassn2d_1_1Interactive_html_abf0ce80866a38d6ab7a51ba4494c622e"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">n2d::Interactive::m_interactive</a></div><div class="ttdeci">bool m_interactive</div><div class="ttdef"><b>Definition</b> Interfaces.h:259</div></div>
-<div class="ttc" id="aclassn2d_1_1Interactive_html_ad3b9767c1231506ad6933addaa186e4c"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html#ad3b9767c1231506ad6933addaa186e4c">n2d::Interactive::IsInteractive</a></div><div class="ttdeci">bool IsInteractive()</div><div class="ttdef"><b>Definition</b> Interfaces.h:265</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html">n2d::Tool</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:32</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a0421036c16c6376cf05b2c9fb02acbf5"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a0421036c16c6376cf05b2c9fb02acbf5">n2d::Tool::s2b</a></div><div class="ttdeci">static b2Vec2 s2b(sf::Vector2f v, float s=PIXEL_TO_BOX2D)</div><div class="ttdef"><b>Definition</b> Interfaces.h:46</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a4a695909cf60f34fd71b5cad07a53315"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a4a695909cf60f34fd71b5cad07a53315">n2d::Tool::s2g</a></div><div class="ttdeci">static glm::vec2 s2g(sf::Vector2f v)</div><div class="ttdef"><b>Definition</b> Interfaces.h:61</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a521b4791d5303e6413598dde215eaed5"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a521b4791d5303e6413598dde215eaed5">n2d::Tool::b2s</a></div><div class="ttdeci">static sf::Vector2f b2s(b2Vec2 v)</div><div class="ttdef"><b>Definition</b> Interfaces.h:77</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a5812b749e50273841851199229a55cc6"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a5812b749e50273841851199229a55cc6">n2d::Tool::Translate</a></div><div class="ttdeci">static std::vector&lt; glm::vec2 &gt; Translate(std::vector&lt; glm::vec2 &gt; t_v, glm::vec2 t_translation)</div><div class="ttdef"><b>Definition</b> Interfaces.h:144</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a5e85df1d7d5d3b9f6efb4439d579cb23"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a5e85df1d7d5d3b9f6efb4439d579cb23">n2d::Tool::g2b</a></div><div class="ttdeci">static b2Vec2 g2b(glm::vec2 v, float s=PIXEL_TO_BOX2D)</div><div class="ttdef"><b>Definition</b> Interfaces.h:38</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a5f55d746ca5f1fc3575fadb429a6ef24"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a5f55d746ca5f1fc3575fadb429a6ef24">n2d::Tool::Transform</a></div><div class="ttdeci">static std::vector&lt; glm::vec2 &gt; Transform(std::vector&lt; glm::vec2 &gt; t_v, glm::vec2 t_translation, float t_rotation)</div><div class="ttdef"><b>Definition</b> Interfaces.h:160</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a5f7b117837b631dea354ba3e856620a5"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a5f7b117837b631dea354ba3e856620a5">n2d::Tool::GetCurrentDatetime</a></div><div class="ttdeci">static std::string GetCurrentDatetime()</div><div class="ttdef"><b>Definition</b> Interfaces.h:185</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a827b485eda8ee14537ebb9fea2ed50b1"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a827b485eda8ee14537ebb9fea2ed50b1">n2d::Tool::ang</a></div><div class="ttdeci">static float ang(float rad)</div><div class="ttdef"><b>Definition</b> Interfaces.h:95</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a845678732acc0204851c7ce1d9c4353c"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a845678732acc0204851c7ce1d9c4353c">n2d::Tool::Bs</a></div><div class="ttdeci">static float Bs(float val)</div><div class="ttdef"><b>Definition</b> Interfaces.h:113</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_a9ded990a42967f51c9a2114f1428e4ae"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a9ded990a42967f51c9a2114f1428e4ae">n2d::Tool::b2g</a></div><div class="ttdeci">static glm::vec2 b2g(b2Vec2 v, float s=BOX2D_TO_PIXEL)</div><div class="ttdef"><b>Definition</b> Interfaces.h:54</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_aa4c6be03c9522a4020d406c3c6063f33"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33">n2d::Tool::rad</a></div><div class="ttdeci">static float rad(float deg)</div><div class="ttdef"><b>Definition</b> Interfaces.h:86</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_aace20d06cc7db12432d14ad94b65bcf7"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#aace20d06cc7db12432d14ad94b65bcf7">n2d::Tool::Bf</a></div><div class="ttdeci">static float Bf(float val)</div><div class="ttdef"><b>Definition</b> Interfaces.h:104</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_ae8a9f69c3f23f57ce256508904bdffc4"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#ae8a9f69c3f23f57ce256508904bdffc4">n2d::Tool::g2s</a></div><div class="ttdeci">static sf::Vector2f g2s(glm::vec2 v)</div><div class="ttdef"><b>Definition</b> Interfaces.h:68</div></div>
-<div class="ttc" id="aclassn2d_1_1Tool_html_aea54f2fbe559ab1ab3584f8db5afc428"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#aea54f2fbe559ab1ab3584f8db5afc428">n2d::Tool::Rotate</a></div><div class="ttdeci">static std::vector&lt; glm::vec2 &gt; Rotate(std::vector&lt; glm::vec2 &gt; t_v, float t_rotation)</div><div class="ttdef"><b>Definition</b> Interfaces.h:123</div></div>
-<div class="ttc" id="aclassn2d_1_1Updatable_html"><div class="ttname"><a href="../../d1/d8a/classn2d_1_1Updatable.html">n2d::Updatable</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:226</div></div>
+<div class="ttc" id="aclassn2d_1_1Interactive_html_abf0ce80866a38d6ab7a51ba4494c622e"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">n2d::Interactive::m_interactive</a></div><div class="ttdeci">bool m_interactive</div><div class="ttdef"><b>Definition</b> Interfaces.h:82</div></div>
+<div class="ttc" id="aclassn2d_1_1Interactive_html_ad3b9767c1231506ad6933addaa186e4c"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html#ad3b9767c1231506ad6933addaa186e4c">n2d::Interactive::IsInteractive</a></div><div class="ttdeci">bool IsInteractive()</div><div class="ttdef"><b>Definition</b> Interfaces.h:88</div></div>
+<div class="ttc" id="aclassn2d_1_1Updatable_html"><div class="ttname"><a href="../../d1/d8a/classn2d_1_1Updatable.html">n2d::Updatable</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:49</div></div>
 <div class="ttc" id="aclassn2d_1_1Updatable_html_afdd0bf94a4486b3a893ed560af5e22c6"><div class="ttname"><a href="../../d1/d8a/classn2d_1_1Updatable.html#afdd0bf94a4486b3a893ed560af5e22c6">n2d::Updatable::Update</a></div><div class="ttdeci">virtual void Update(float t_dt)=0</div></div>
 <div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:23</div></div>
-<div class="ttc" id="anamespacen2d_html_a05eb87428a9b7e50ba846fc175c53f05"><div class="ttname"><a href="../../d7/d62/namespacen2d.html#a05eb87428a9b7e50ba846fc175c53f05">n2d::PIXEL_TO_BOX2D</a></div><div class="ttdeci">const float PIXEL_TO_BOX2D</div><div class="ttdef"><b>Definition</b> Interfaces.h:22</div></div>
-<div class="ttc" id="anamespacen2d_html_a96018993161d9c674895a7974b577ff4"><div class="ttname"><a href="../../d7/d62/namespacen2d.html#a96018993161d9c674895a7974b577ff4">n2d::BOX2D_TO_PIXEL</a></div><div class="ttdeci">const float BOX2D_TO_PIXEL</div><div class="ttdef"><b>Definition</b> Interfaces.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 16:34:43 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

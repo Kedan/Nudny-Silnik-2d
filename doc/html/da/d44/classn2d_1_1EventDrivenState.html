@@ -81,6 +81,8 @@ $(function() {
   <div class="headertitle"><div class="title">n2d::EventDrivenState Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../dd/d99/State_8h_source.html">State.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for n2d::EventDrivenState:</div>
 <div class="dyncontent">
@@ -94,15 +96,12 @@ Inheritance diagram for n2d::EventDrivenState:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae15d768f250311f827f4dafaac66c440" id="r_ae15d768f250311f827f4dafaac66c440"><td class="memItemLeft" align="right" valign="top"><a id="ae15d768f250311f827f4dafaac66c440" name="ae15d768f250311f827f4dafaac66c440"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Dispatch</b> (sf::Event &amp;)=0</td></tr>
+<tr class="memitem:ae15d768f250311f827f4dafaac66c440" id="r_ae15d768f250311f827f4dafaac66c440"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae15d768f250311f827f4dafaac66c440">Dispatch</a> (sf::Event &amp;)=0</td></tr>
 <tr class="separator:ae15d768f250311f827f4dafaac66c440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classn2d_1_1State"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classn2d_1_1State')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d7/d91/classn2d_1_1State.html">n2d::State</a></td></tr>
-<tr class="memitem:afa3d3f519995a25adc8e730a7d0da2d8 inherit pub_methods_classn2d_1_1State" id="r_afa3d3f519995a25adc8e730a7d0da2d8"><td class="memItemLeft" align="right" valign="top">
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Enter</b> ()=0</td></tr>
+<tr class="memitem:afa3d3f519995a25adc8e730a7d0da2d8 inherit pub_methods_classn2d_1_1State" id="r_afa3d3f519995a25adc8e730a7d0da2d8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d91/classn2d_1_1State.html#afa3d3f519995a25adc8e730a7d0da2d8">Enter</a> ()=0</td></tr>
 <tr class="separator:afa3d3f519995a25adc8e730a7d0da2d8 inherit pub_methods_classn2d_1_1State"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abacf0161f7682e0f1ed94c1e66ecd410 inherit pub_methods_classn2d_1_1State" id="r_abacf0161f7682e0f1ed94c1e66ecd410"><td class="memItemLeft" align="right" valign="top">
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Exit</b> ()=0</td></tr>
+<tr class="memitem:abacf0161f7682e0f1ed94c1e66ecd410 inherit pub_methods_classn2d_1_1State" id="r_abacf0161f7682e0f1ed94c1e66ecd410"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d91/classn2d_1_1State.html#abacf0161f7682e0f1ed94c1e66ecd410">Exit</a> ()=0</td></tr>
 <tr class="separator:abacf0161f7682e0f1ed94c1e66ecd410 inherit pub_methods_classn2d_1_1State"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classn2d_1_1Interactive"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classn2d_1_1Interactive')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d9/df1/classn2d_1_1Interactive.html">n2d::Interactive</a></td></tr>
 <tr class="memitem:ad3b9767c1231506ad6933addaa186e4c inherit pub_methods_classn2d_1_1Interactive" id="r_ad3b9767c1231506ad6933addaa186e4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df1/classn2d_1_1Interactive.html#ad3b9767c1231506ad6933addaa186e4c">IsInteractive</a> ()</td></tr>
@@ -116,13 +115,47 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:abf0ce80866a38d6ab7a51ba4494c622e inherit pro_attribs_classn2d_1_1Interactive" id="r_abf0ce80866a38d6ab7a51ba4494c622e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df1/classn2d_1_1Interactive.html#abf0ce80866a38d6ab7a51ba4494c622e">m_interactive</a> = true</td></tr>
 <tr class="separator:abf0ce80866a38d6ab7a51ba4494c622e inherit pro_attribs_classn2d_1_1Interactive"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface. Anstract class. Keyboard-event driven state. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae15d768f250311f827f4dafaac66c440" name="ae15d768f250311f827f4dafaac66c440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae15d768f250311f827f4dafaac66c440">&#9670;&#160;</a></span>Dispatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void n2d::EventDrivenState::Dispatch </td>
+          <td>(</td>
+          <td class="paramtype">sf::Event &amp;</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Check event, and switch to other state if necesery. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td>sf::Event handler reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>silnik/core/include/<a class="el" href="../../dd/d99/State_8h_source.html">State.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 16:34:43 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

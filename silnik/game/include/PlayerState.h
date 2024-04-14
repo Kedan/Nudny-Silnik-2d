@@ -1,3 +1,29 @@
+/*
+ * 
+ * Pre-defined Player Ststes:
+ *
+ * 1. OnAir - abstract
+ * 2. OnGround - abstract
+ * 3. Idle
+ * 4. Walk
+ * 5. Run
+ * 6. Sprint
+ * 7. JumpBegin
+ * 8. Jump
+ * 9. JumpEnd
+ * 10. Crouch
+ * 11. CrouchWalk
+ * 12. Slide
+ * 13. Attack
+ * 14. AltAttack
+ * 15. Block
+ * 16. Hit
+ * 17. Die
+ * 18. Fall
+ * 19. Spell
+ *
+ */
+
 #ifndef NUDNY_PLAYER_STATE_H
 #define NUDNY_PLAYER_STATE_H
 
@@ -52,6 +78,12 @@ namespace n2d {
 			void		Events( sf::Event&, Player& );
 			void		Enter( Player& );
 			void		Exit( Player& );
+	};
+
+	class PlayerStateJumpBegin : public PlayerState {
+	};
+
+	class PlayerStateJumpEnd : public PlayerState {
 	};
 }; // namespace n2d
 

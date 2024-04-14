@@ -1,34 +1,30 @@
 \doxysection{n2d\+::Logger Class Reference}
 \hypertarget{classn2d_1_1Logger}{}\label{classn2d_1_1Logger}\index{n2d::Logger@{n2d::Logger}}
+
+
+{\ttfamily \#include $<$Log.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classn2d_1_1Logger_ae6af3c2efbf27341e68d060e98b2c656}\label{classn2d_1_1Logger_ae6af3c2efbf27341e68d060e98b2c656} 
-void {\bfseries Set\+File} (std\+::string)
+void \mbox{\hyperlink{classn2d_1_1Logger_ae6af3c2efbf27341e68d060e98b2c656}{Set\+File}} (std\+::string)
 \item 
-\Hypertarget{classn2d_1_1Logger_ae779abc3983fec19fdd165d8f9c78f75}\label{classn2d_1_1Logger_ae779abc3983fec19fdd165d8f9c78f75} 
-\mbox{\hyperlink{classn2d_1_1Logger}{Logger}} \& {\bfseries Log} (const std\+::string \&t\+\_\+s)
+\mbox{\hyperlink{classn2d_1_1Logger}{Logger}} \& \mbox{\hyperlink{classn2d_1_1Logger_ae779abc3983fec19fdd165d8f9c78f75}{Log}} (const std\+::string \&t\+\_\+s)
 \item 
-\Hypertarget{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c}\label{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c} 
-void {\bfseries Time} ()
+void \mbox{\hyperlink{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c}{Time}} ()
 \item 
-\Hypertarget{classn2d_1_1Logger_a3fa16f8dd9abb4daaf36b0b3a23293f7}\label{classn2d_1_1Logger_a3fa16f8dd9abb4daaf36b0b3a23293f7} 
-void {\bfseries Open} ()
+void \mbox{\hyperlink{classn2d_1_1Logger_a3fa16f8dd9abb4daaf36b0b3a23293f7}{Open}} ()
 \item 
-\Hypertarget{classn2d_1_1Logger_ab13114d60ca5f1f69f2ba0f2f1a5bd19}\label{classn2d_1_1Logger_ab13114d60ca5f1f69f2ba0f2f1a5bd19} 
-void {\bfseries Close} ()
+void \mbox{\hyperlink{classn2d_1_1Logger_ab13114d60ca5f1f69f2ba0f2f1a5bd19}{Close}} ()
 \item 
-\Hypertarget{classn2d_1_1Logger_a9cb660368605951c1ea0978604cc48e4}\label{classn2d_1_1Logger_a9cb660368605951c1ea0978604cc48e4} 
-void {\bfseries Flush} ()
+void \mbox{\hyperlink{classn2d_1_1Logger_a9cb660368605951c1ea0978604cc48e4}{Flush}} ()
 \item 
-\Hypertarget{classn2d_1_1Logger_a1191038d1044a1121e03cc267e9c681c}\label{classn2d_1_1Logger_a1191038d1044a1121e03cc267e9c681c} 
-void {\bfseries Clear} ()
+void \mbox{\hyperlink{classn2d_1_1Logger_a1191038d1044a1121e03cc267e9c681c}{Clear}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}\label{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b} 
-std\+::ostringstream {\bfseries out}
+std\+::ostringstream \mbox{\hyperlink{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}{out}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -43,6 +39,68 @@ std\+::ostringstream {\bfseries m\+\_\+buffer}
 std\+::string {\bfseries m\+\_\+filename} = "{}./logs/log"{}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Makeing logs. As simple, as handy and useful. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1Logger_a1191038d1044a1121e03cc267e9c681c}\label{classn2d_1_1Logger_a1191038d1044a1121e03cc267e9c681c} 
+\index{n2d::Logger@{n2d::Logger}!Clear@{Clear}}
+\index{Clear@{Clear}!n2d::Logger@{n2d::Logger}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Logger\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Clear log buffers \Hypertarget{classn2d_1_1Logger_ab13114d60ca5f1f69f2ba0f2f1a5bd19}\label{classn2d_1_1Logger_ab13114d60ca5f1f69f2ba0f2f1a5bd19} 
+\index{n2d::Logger@{n2d::Logger}!Close@{Close}}
+\index{Close@{Close}!n2d::Logger@{n2d::Logger}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void Logger\+::\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Close log, put some footer into \doxylink{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}{n2d\+::\+Logger\+::out} steam. If you use logger in yout own class, call this method once -\/ in destructor \Hypertarget{classn2d_1_1Logger_a9cb660368605951c1ea0978604cc48e4}\label{classn2d_1_1Logger_a9cb660368605951c1ea0978604cc48e4} 
+\index{n2d::Logger@{n2d::Logger}!Flush@{Flush}}
+\index{Flush@{Flush}!n2d::Logger@{n2d::Logger}}
+\doxysubsubsection{\texorpdfstring{Flush()}{Flush()}}
+{\footnotesize\ttfamily void Logger\+::\+Flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save and clear the log. Write \doxylink{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}{n2d\+::\+Logger\+::out} stream into file, than clear it. When I use \doxylink{classn2d_1_1Logger}{n2d\+::\+Logger}, I call this method at the end of method. \Hypertarget{classn2d_1_1Logger_ae779abc3983fec19fdd165d8f9c78f75}\label{classn2d_1_1Logger_ae779abc3983fec19fdd165d8f9c78f75} 
+\index{n2d::Logger@{n2d::Logger}!Log@{Log}}
+\index{Log@{Log}!n2d::Logger@{n2d::Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classn2d_1_1Logger}{Logger}} \& Logger\+::\+Log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{t\+\_\+s }\end{DoxyParamCaption})}
+
+To delete. Use \doxylink{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}{n2d\+::\+Logger\+::out} stream. \Hypertarget{classn2d_1_1Logger_a3fa16f8dd9abb4daaf36b0b3a23293f7}\label{classn2d_1_1Logger_a3fa16f8dd9abb4daaf36b0b3a23293f7} 
+\index{n2d::Logger@{n2d::Logger}!Open@{Open}}
+\index{Open@{Open}!n2d::Logger@{n2d::Logger}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily void Logger\+::\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Opens log, put some header into \doxylink{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}{n2d\+::\+Logger\+::out} stream. If you use logger in your own class, call this method once in constructor. \Hypertarget{classn2d_1_1Logger_ae6af3c2efbf27341e68d060e98b2c656}\label{classn2d_1_1Logger_ae6af3c2efbf27341e68d060e98b2c656} 
+\index{n2d::Logger@{n2d::Logger}!SetFile@{SetFile}}
+\index{SetFile@{SetFile}!n2d::Logger@{n2d::Logger}}
+\doxysubsubsection{\texorpdfstring{SetFile()}{SetFile()}}
+{\footnotesize\ttfamily void Logger\+::\+Set\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+filepath }\end{DoxyParamCaption})}
+
+Set log file path. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & file path \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c}\label{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c} 
+\index{n2d::Logger@{n2d::Logger}!Time@{Time}}
+\index{Time@{Time}!n2d::Logger@{n2d::Logger}}
+\doxysubsubsection{\texorpdfstring{Time()}{Time()}}
+{\footnotesize\ttfamily void Logger\+::\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Put human-\/readanle datetime stamp into \doxylink{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}{n2d\+::\+Logger\+::out}. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}\label{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b} 
+\index{n2d::Logger@{n2d::Logger}!out@{out}}
+\index{out@{out}!n2d::Logger@{n2d::Logger}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily std\+::ostringstream n2d\+::\+Logger\+::out}
+
+Steam where all comments are hold. Use like std\+::cout. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
