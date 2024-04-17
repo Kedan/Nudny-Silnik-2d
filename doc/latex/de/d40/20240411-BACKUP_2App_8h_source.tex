@@ -1,0 +1,152 @@
+\doxysection{App.\+h}
+\hypertarget{20240411-BACKUP_2App_8h_source}{}\label{20240411-BACKUP_2App_8h_source}\index{silnik/core/include/20240411-\/BACKUP/App.h@{silnik/core/include/20240411-\/BACKUP/App.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_APP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_APP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SFML/Window.hpp>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <SFML/Network.hpp>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}box2d/box2d.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}tileson/tileson.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Interfaces.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}JSONLoader.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Resources.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Log.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Game.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\#include\ "{}Map.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ app\ class\ should\ be\ singleton}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ or\ resource\ manager\ should\ be\ singleton}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1App}{App}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Logger}{Logger}}\ log;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ json\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a6e5348f561acff350948f5f54d0c15e1}{m\_conf}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a3a196b524eeb7ba256cb81cded563998}{m\_name}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_af9a9ce8898712a82401b17d01c4ccd74}{m\_window\_size}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}{m\_fps}}\ \ \ \ \ \ =\ -\/1.0f;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a027e05ba08acf62b5486903250d3d87b}{m\_fullscreen}}\ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_aada7e9739c37d558d79b5cf2fbbd2d71}{m\_vsync}}\ \ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a4e0f33610b31059692f186216ad6fdf0}{m\_exit}}\ \ \ \ \ \ \ \ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Clock\ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_acd5019ec2e98667dc126524a7956c664}{m\_clock}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Time\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a9b3f0a4d1e7accc727a47e3e16de9c92}{m\_time}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Event\ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a970b994d034d972f9ab4270ed6bfaccf}{m\_event}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ sf::View\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a23bf400fb32b9383680208da11f5469e}{m\_view}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ sf::RenderWindow\ \ \ \ \mbox{\hyperlink{classn2d_1_1App_abe342f1271e15e8156e31faf56d6a86d}{m\_window}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ad7f8c200c68e56333ef430e2388b3362}{m\_velocity\_iterations}}\ \ =\ 6;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a214c25bb18188d7596209c618bee288c}{m\_position\_iterations}}\ \ =\ 2;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_af1b8ba367757a404c3f48a7bbad721b5}{m\_time\_step}}\ \ \ \ \ \ =\ 1\ /\ 60.0f;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ b2Vec2\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a7274d2700c1824b3b4267c38511e6d81}{m\_gravity}}\ \ \ \ \ \ =\ b2Vec2(\ 0,\ -\/9.81f\ );}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ std::list<Updatable*>\ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ac45cfc1b3f0ea996f1de89b2b67c52db}{m\_update\_list}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ std::list<Drawable*>\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a93883febe1d179307a742b15cef46a96}{m\_draw\_list}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<int,Interactive*>\ \ \mbox{\hyperlink{classn2d_1_1App_a8ab4514bc68481c1de02ddefcf10678d}{m\_interactive\_list}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ std::list<Creatable*>\ \ \ \ \ \ \ m\_creatable\_list;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ac4f0fd2c4f82a4be228b52730d74f19f}{m\_default\_font}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Game}{n2d::Game}}\ \ \ \ \ \ m\_game;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateFactory}{GameStateFactory}}*\ \ \ mp\_game\_factory;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ b2World\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a48ababdcabf46d6d25403dc028a8ab42}{world}}\ =\ b2World(\ b2Vec2(\ 0,\ 9.81f\ ));}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a8f5694e8980ac550a985f731482a4d61}{src}};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_acb8cbf3e285b91d0170ffe87df5989c5}{App}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_acb8cbf3e285b91d0170ffe87df5989c5}{App}}(\ std::string\ t\_name\ );}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App}{\string~App}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_aed298597b3fd48dbce526bb26c197c14}{Load}}(\ std::string\ );}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a1ab1f8a08f69bfeb44d36ff40cb45aeb}{Reset}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{Run}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_af5db7263d4fe7c57c72b5038e8d65010}{AddUpdatable}}(\ \mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}}*\ tp\_obj\ );}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a303fe6dcaa35300325e4f6cb26b93e72}{AddDrawable}}(\ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}}*\ tp\_obj\ );}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a4622c65b721b1c055882feae9683007b}{AddInteractive}}(\ \mbox{\hyperlink{classn2d_1_1Interactive}{Interactive}}*\ );}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ab75ce18914350bebec15c2785144eca9}{RemoveInteractive}}(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a7afe0747e20c6b58a1a39eeb630273cf}{AddTexture}}(\ std::string\ );}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ sf::Texture*\ \ \mbox{\hyperlink{classn2d_1_1App_a63769a0945d67feeac0f1865356a5e34}{GetTexturePtr}}(\ \textcolor{keywordtype}{int}\ );}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a358476905ec8822edbdf988f19280f4e}{SetScreenSize}}(\ \textcolor{keywordtype}{float}\ t\_width,\ \textcolor{keywordtype}{float}\ t\_height\ )\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_af9a9ce8898712a82401b17d01c4ccd74}{m\_window\_size}}\ =\ glm::vec2(\ t\_width,\ t\_height\ );}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a045b15445f659d688aebb768e2e970fa}{SetFullscreen}}(\ \textcolor{keywordtype}{bool}\ t\_fullstreen\ =\ \textcolor{keyword}{false}\ )\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a027e05ba08acf62b5486903250d3d87b}{m\_fullscreen}}\ =\ t\_fullstreen;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_af0f3aedfec29171dc39585ba6a28d9e5}{SetVsync}}(\ \textcolor{keywordtype}{bool}\ t\_vsync\ =\ \textcolor{keyword}{true}\ )\ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_aada7e9739c37d558d79b5cf2fbbd2d71}{m\_vsync}}\ =\ t\_vsync;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{classn2d_1_1App_aada7e9739c37d558d79b5cf2fbbd2d71}{m\_vsync}}\ )\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}{m\_fps}}\ =\ -\/1;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_aea571c6db9061829f193f980bd05def4}{SetFPS}}(\ \textcolor{keywordtype}{float}\ t\_fps\ =\ -\/1.0f\ )\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}{m\_fps}}\ =\ t\_fps;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \mbox{\hyperlink{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}{m\_fps}}\ >\ 0\ )}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_aada7e9739c37d558d79b5cf2fbbd2d71}{m\_vsync}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a0e2eb1a09d862945da4e805f98aa7232}{SetGravity}}(\ \textcolor{keywordtype}{float}\ t\_x,\ \textcolor{keywordtype}{float}\ t\_y\ )\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a7274d2700c1824b3b4267c38511e6d81}{m\_gravity}}.x\ =\ t\_x;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_a7274d2700c1824b3b4267c38511e6d81}{m\_gravity}}.y\ =\ t\_y;}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a143e4da850293268158d24a2695179e5}{SetDefaultFont}}(\ std::string\ t\_font\ )\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ac4f0fd2c4f82a4be228b52730d74f19f}{m\_default\_font}}\ =\ t\_font;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ SetGameFactory(\ \mbox{\hyperlink{classn2d_1_1GameStateFactory}{GameStateFactory}}\&\ t\_game\_state\_factory\ )\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game.SetGameStateFactory(\ t\_game\_state\_factory\ );}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1App_a73db31b4b77acb9df7e82327913c86bb}{GetFPS}}()\{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}{m\_fps}};}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2}{Draw}}(\ sf::RenderWindow\&\ );}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \};}
+\DoxyCodeLine{00242\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -43,16 +43,16 @@ bool ImageLayer::Load( std::string t_dir, tson::Layer& t_layer) {
 		SetDefaultData( t_layer );	
 		std::string tmp = t_dir;
 		tmp.append( t_layer.getImage() );
-		m_texture_id	= mp_resources->LoadTexture( tmp );
+		m_texture_id = mp_resources->textures.Load( tmp );
 		glm::vec2 tex_size;
-		tex_size.x = mp_resources->GetTexturePtr( m_texture_id )->getSize().x;
-		tex_size.y = mp_resources->GetTexturePtr( m_texture_id )->getSize().y;
+		tex_size.x = mp_resources->textures.GetPtr( m_texture_id )->getSize().x;
+		tex_size.y = mp_resources->textures.GetPtr( m_texture_id )->getSize().y;
 		glm::vec2 lyr_pos;
 		lyr_pos.x = position.x + t_layer.getOffset().x;
 		lyr_pos.y = position.y + t_layer.getOffset().y;
 
 		m_body.SetPosition( position.x + t_layer.getOffset().x + tex_size.x/2, position.y + t_layer.getOffset().y + tex_size.y/2) ;
-		m_rect.SetTexture( mp_resources->GetTextureRef( m_texture_id ));
+		m_rect.SetTexture( mp_resources->textures.GetRef( m_texture_id ));
 		m_rect.SetSize( tex_size );
 		m_rect.SetOrigin( tex_size.x/2, tex_size.y/2 );
 		m_rect.SetPosition(0,0);

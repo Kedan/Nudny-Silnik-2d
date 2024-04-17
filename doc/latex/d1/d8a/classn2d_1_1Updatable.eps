@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 88.495575
+%%BoundingBox: 0 0 500 78.662735
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 5.650000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 6.356250 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
 /rows 4 def
-/cols 8 def
+/cols 9 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -178,6 +178,7 @@ boxfont setfont
 (n2d::Entity) cw
 (n2d::Layer) cw
 (n2d::Map) cw
+(n2d::Model) cw
 (n2d::Text) cw
 (n2d::Actor) cw
 (n2d::Inventory) cw
@@ -198,12 +199,13 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (n2d::Updatable) 4.500000 3.000000 box
+ (n2d::Updatable) 5.000000 3.000000 box
  (n2d::Body) 0.000000 2.000000 box
  (n2d::Entity) 1.500000 2.000000 box
  (n2d::Layer) 4.500000 2.000000 box
  (n2d::Map) 5.500000 2.000000 box
- (n2d::Text) 6.500000 2.000000 box
+ (n2d::Model) 6.500000 2.000000 box
+ (n2d::Text) 7.500000 2.000000 box
  (n2d::Actor) 0.500000 1.000000 box
  (n2d::Inventory) 1.500000 1.000000 box
  (n2d::Item) 2.500000 1.000000 box
@@ -216,9 +218,9 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 solid
-1 4.500000 2.250000 out
+1 5.000000 2.250000 out
 solid
-0.000000 6.500000 3.000000 conn
+0.000000 7.500000 3.000000 conn
 solid
 0 0.000000 2.750000 in
 solid
@@ -237,6 +239,8 @@ solid
 0 5.500000 2.750000 in
 solid
 0 6.500000 2.750000 in
+solid
+0 7.500000 2.750000 in
 solid
 0 0.500000 1.750000 in
 solid

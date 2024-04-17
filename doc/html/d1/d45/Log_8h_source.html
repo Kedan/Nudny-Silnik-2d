@@ -102,7 +102,7 @@ $(function() { codefold.init(1); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keywordtype">bool</span> m_opened = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            std::ostringstream m_buffer;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            std::string m_filename = <span class="stringliteral">&quot;./logs/log&quot;</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            std::string m_filename = <span class="stringliteral">&quot;./log&quot;</span>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d4/db7/classn2d_1_1Logger.html#a81684b9e90254c2314f486bbf1eab15b">   24</a></span>            std::ostringstream <a class="code hl_variable" href="../../d4/db7/classn2d_1_1Logger.html#a81684b9e90254c2314f486bbf1eab15b">out</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <a class="code hl_class" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a>();</div>
@@ -111,7 +111,7 @@ $(function() { codefold.init(1); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_class" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a>&amp; <a class="code hl_function" href="../../d4/db7/classn2d_1_1Logger.html#ae779abc3983fec19fdd165d8f9c78f75">Log</a>( <span class="keyword">const</span> std::string&amp; t_s );</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/db7/classn2d_1_1Logger.html#a5d0a7315b6054a568ff758d36494521c">Time</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_class" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a>&amp; <a class="code hl_function" href="../../d4/db7/classn2d_1_1Logger.html#aec43227d91e2ebcd804d9752148d0f1c">Time</a>();</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/db7/classn2d_1_1Logger.html#a3fa16f8dd9abb4daaf36b0b3a23293f7">Open</a>();</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
@@ -120,25 +120,34 @@ $(function() { codefold.init(1); });
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/db7/classn2d_1_1Logger.html#a9cb660368605951c1ea0978604cc48e4">Flush</a>();</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/db7/classn2d_1_1Logger.html#a1191038d1044a1121e03cc267e9c681c">Clear</a>();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }; <span class="comment">// class Logger</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <a class="code hl_class" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a>&amp;  operator&lt;&lt;( T t_msg  ) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <a class="code hl_variable" href="../../d4/db7/classn2d_1_1Logger.html#a81684b9e90254c2314f486bbf1eab15b">out</a> &lt;&lt; t_msg;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <a class="code hl_function" href="../../d4/db7/classn2d_1_1Logger.html#a9cb660368605951c1ea0978604cc48e4">Flush</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }; <span class="comment">// class Logger</span></div>
 </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}; <span class="comment">// namespace </span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">static</span> Logger LOG;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}; <span class="comment">// namespace </span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassn2d_1_1Logger_html"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html">n2d::Logger</a></div><div class="ttdef"><b>Definition</b> Log.h:17</div></div>
-<div class="ttc" id="aclassn2d_1_1Logger_html_a1191038d1044a1121e03cc267e9c681c"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#a1191038d1044a1121e03cc267e9c681c">n2d::Logger::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition</b> Log.cpp:58</div></div>
-<div class="ttc" id="aclassn2d_1_1Logger_html_a3fa16f8dd9abb4daaf36b0b3a23293f7"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#a3fa16f8dd9abb4daaf36b0b3a23293f7">n2d::Logger::Open</a></div><div class="ttdeci">void Open()</div><div class="ttdef"><b>Definition</b> Log.cpp:26</div></div>
-<div class="ttc" id="aclassn2d_1_1Logger_html_a5d0a7315b6054a568ff758d36494521c"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#a5d0a7315b6054a568ff758d36494521c">n2d::Logger::Time</a></div><div class="ttdeci">void Time()</div><div class="ttdef"><b>Definition</b> Log.cpp:20</div></div>
+<div class="ttc" id="aclassn2d_1_1Logger_html_a1191038d1044a1121e03cc267e9c681c"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#a1191038d1044a1121e03cc267e9c681c">n2d::Logger::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition</b> Log.cpp:66</div></div>
+<div class="ttc" id="aclassn2d_1_1Logger_html_a3fa16f8dd9abb4daaf36b0b3a23293f7"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#a3fa16f8dd9abb4daaf36b0b3a23293f7">n2d::Logger::Open</a></div><div class="ttdeci">void Open()</div><div class="ttdef"><b>Definition</b> Log.cpp:30</div></div>
 <div class="ttc" id="aclassn2d_1_1Logger_html_a81684b9e90254c2314f486bbf1eab15b"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#a81684b9e90254c2314f486bbf1eab15b">n2d::Logger::out</a></div><div class="ttdeci">std::ostringstream out</div><div class="ttdef"><b>Definition</b> Log.h:24</div></div>
-<div class="ttc" id="aclassn2d_1_1Logger_html_a9cb660368605951c1ea0978604cc48e4"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#a9cb660368605951c1ea0978604cc48e4">n2d::Logger::Flush</a></div><div class="ttdeci">void Flush()</div><div class="ttdef"><b>Definition</b> Log.cpp:45</div></div>
-<div class="ttc" id="aclassn2d_1_1Logger_html_ab13114d60ca5f1f69f2ba0f2f1a5bd19"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#ab13114d60ca5f1f69f2ba0f2f1a5bd19">n2d::Logger::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdef"><b>Definition</b> Log.cpp:37</div></div>
-<div class="ttc" id="aclassn2d_1_1Logger_html_ae6af3c2efbf27341e68d060e98b2c656"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#ae6af3c2efbf27341e68d060e98b2c656">n2d::Logger::SetFile</a></div><div class="ttdeci">void SetFile(std::string)</div><div class="ttdef"><b>Definition</b> Log.cpp:9</div></div>
-<div class="ttc" id="aclassn2d_1_1Logger_html_ae779abc3983fec19fdd165d8f9c78f75"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#ae779abc3983fec19fdd165d8f9c78f75">n2d::Logger::Log</a></div><div class="ttdeci">Logger &amp; Log(const std::string &amp;t_s)</div><div class="ttdef"><b>Definition</b> Log.cpp:13</div></div>
-<div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:23</div></div>
+<div class="ttc" id="aclassn2d_1_1Logger_html_a9cb660368605951c1ea0978604cc48e4"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#a9cb660368605951c1ea0978604cc48e4">n2d::Logger::Flush</a></div><div class="ttdeci">void Flush()</div><div class="ttdef"><b>Definition</b> Log.cpp:53</div></div>
+<div class="ttc" id="aclassn2d_1_1Logger_html_ab13114d60ca5f1f69f2ba0f2f1a5bd19"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#ab13114d60ca5f1f69f2ba0f2f1a5bd19">n2d::Logger::Close</a></div><div class="ttdeci">void Close()</div><div class="ttdef"><b>Definition</b> Log.cpp:43</div></div>
+<div class="ttc" id="aclassn2d_1_1Logger_html_ae6af3c2efbf27341e68d060e98b2c656"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#ae6af3c2efbf27341e68d060e98b2c656">n2d::Logger::SetFile</a></div><div class="ttdeci">void SetFile(std::string)</div><div class="ttdef"><b>Definition</b> Log.cpp:10</div></div>
+<div class="ttc" id="aclassn2d_1_1Logger_html_ae779abc3983fec19fdd165d8f9c78f75"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#ae779abc3983fec19fdd165d8f9c78f75">n2d::Logger::Log</a></div><div class="ttdeci">Logger &amp; Log(const std::string &amp;t_s)</div><div class="ttdef"><b>Definition</b> Log.cpp:16</div></div>
+<div class="ttc" id="aclassn2d_1_1Logger_html_aec43227d91e2ebcd804d9752148d0f1c"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html#aec43227d91e2ebcd804d9752148d0f1c">n2d::Logger::Time</a></div><div class="ttdeci">Logger &amp; Time()</div><div class="ttdef"><b>Definition</b> Log.cpp:23</div></div>
+<div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Sun Apr 14 2024 13:22:56 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

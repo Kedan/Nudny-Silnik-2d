@@ -1,0 +1,64 @@
+\doxysection{n2d\+::Game\+State Class Reference}
+\hypertarget{classn2d_1_1GameState}{}\label{classn2d_1_1GameState}\index{n2d::GameState@{n2d::GameState}}
+
+
+{\ttfamily \#include $<$Game\+State.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1GameState_adefb526fc34feccda9747649cec86d82}{Enter}} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&)=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1GameState_ad54dd7fe3d704b1a9d1f54b16a220c25}{Exit}} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&)=0
+\item 
+virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1GameState_a6d95d37c5cc51c02db565c7a7ad7bfc6}{Dispatch}} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&, sf\+::\+Event \&)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Game state class. Interface. Abstract class. The game may be in many different states, i.\+e.\+: in menu, play cinematic, loading level, waiting for connection etc. Every game/state MUST inherits from \doxylink{classn2d_1_1GameState}{n2d\+::\+Game\+State}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1GameState_a6d95d37c5cc51c02db565c7a7ad7bfc6}\label{classn2d_1_1GameState_a6d95d37c5cc51c02db565c7a7ad7bfc6} 
+\index{n2d::GameState@{n2d::GameState}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!n2d::GameState@{n2d::GameState}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} n2d\+::\+Game\+State\+::\+Dispatch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classn2d_1_1App}{App}} \&}]{,  }\item[{sf\+::\+Event \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Method that check if game/state should change. 
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classn2d_1_1App}{n2d\+::\+App}} & -\/ reference \\
+\hline
+{\em sf\+::\+Event} & -\/ reference ( passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} method in main loop) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ pointer to new \doxylink{classn2d_1_1GameState}{Game\+State} if state should change. nullptr if state stays the same. 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1GameState_adefb526fc34feccda9747649cec86d82}\label{classn2d_1_1GameState_adefb526fc34feccda9747649cec86d82} 
+\index{n2d::GameState@{n2d::GameState}!Enter@{Enter}}
+\index{Enter@{Enter}!n2d::GameState@{n2d::GameState}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily virtual void n2d\+::\+Game\+State\+::\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classn2d_1_1App}{App}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Method called right after game state is created. When you implement this, remember it should do some things\+: load resources, maps, create objects and all nesesery thing game need to run. IT MUST put alla drawable, updatable and interactive objects into \doxylink{classn2d_1_1App}{n2d\+::\+App} lists!... Well, actuallu it doesnt have to. It\textquotesingle{}s not like it\textquotesingle{}s gonna crash, or something. But if you dont fill those lists -\/ all you see on screen, will be deep, beautyfull and mysterious, 24-\/bit blackness... 
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classn2d_1_1App}{n2d\+::\+App}} & instance reference \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1GameState_ad54dd7fe3d704b1a9d1f54b16a220c25}\label{classn2d_1_1GameState_ad54dd7fe3d704b1a9d1f54b16a220c25} 
+\index{n2d::GameState@{n2d::GameState}!Exit@{Exit}}
+\index{Exit@{Exit}!n2d::GameState@{n2d::GameState}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily virtual void n2d\+::\+Game\+State\+::\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classn2d_1_1App}{App}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Method that is called right before destructor is called. If you want to do some stuff ( like free resources, or play some custom animation ) when game/state is ending -\/ do it here. DO NOT remove drawable, updatable, interactive objects from \doxylink{namespacen2d}{n2d}\+:\doxylink{classn2d_1_1App}{App} lists. \doxylink{classn2d_1_1App}{n2d\+::\+App} do it for you automatically. 
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classn2d_1_1App}{n2d\+::\+App}} & instance reference \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/Game\+State.\+h\end{DoxyCompactItemize}

@@ -8,6 +8,7 @@ set(nudny-silnik-core-headers
 	${CMAKE_CURRENT_LIST_DIR}/include/JSONLoader.h 
 	${CMAKE_CURRENT_LIST_DIR}/include/Log.h 
 	${CMAKE_CURRENT_LIST_DIR}/include/Keyboard.h 
+	${CMAKE_CURRENT_LIST_DIR}/include/Resource.h 
 	${CMAKE_CURRENT_LIST_DIR}/include/Resources.h
 	${CMAKE_CURRENT_LIST_DIR}/include/GameState.h
 	${CMAKE_CURRENT_LIST_DIR}/include/GameStateFactory.h

@@ -1,0 +1,29 @@
+\doxysection{Game.\+h}
+\hypertarget{core_2include_220240411-BACKUP_2Game_8h_source}{}\label{core_2include_220240411-BACKUP_2Game_8h_source}\index{silnik/core/include/20240411-\/BACKUP/Game.h@{silnik/core/include/20240411-\/BACKUP/Game.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_GAME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_GAME\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}JSONLoader.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Game}{Game}}\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ json*\ \ \ \ \ \ \ \ \ \ \ mp\_conf;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<Game>\ \ \ mp\_state;}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Game}{Game}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Reset();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Load(\ json\&\ t\_conf\ );}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Draw(\ sf::RenderWindow\&\ );}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Update(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ );}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Events(\ sf::Event\&\ );}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

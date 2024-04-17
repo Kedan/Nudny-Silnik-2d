@@ -7,100 +7,103 @@
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}tileson/tileson.h"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Interfaces.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Resources.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Shape.h"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Circle.h"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Rect.h"{}}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Poly.h"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Sprite.h"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Body.h"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Entity.h"{}}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Animation.h"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Tileset.h"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}EntityFactory.h"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Actor.h"{}}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Layer}{Layer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Interactive}{Interactive}}\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ m\_loaded\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}*\ mp\_resources;}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}*\ mp\_tileset;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ m\_grid\_size;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetDefaultData(\ tson::Layer\&\ );}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ id;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ name;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ visible;}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ position;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}();}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Load(\ std::string,\ tson::Layer\&\ )\ =\ 0;}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ )\ =\ 0;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetResources(\ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\&\ t\_resources\ )\ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mp\_resources\ =\ \&t\_resources;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetTileset(\ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}\&\ t\_tileset)\ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mp\_tileset\ =\ \&t\_tileset;}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Tool.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Log.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Resources.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Shape.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Circle.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Rect.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Poly.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Sprite.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Body.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Entity.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Animation.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Tileset.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}EntityFactory.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Actor.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Layer}{Layer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Interactive}{Interactive}}\ \{\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ m\_loaded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}*\ mp\_resources;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}*\ mp\_tileset;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ m\_grid\_size;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetDefaultData(\ tson::Layer\&\ );}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Logger}{Logger}}\ \ \ \ \ \ \ \ log;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ id;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ name;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ visible;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ position;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Load(\ std::string,\ tson::Layer\&\ )\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ )\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetResources(\ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\&\ t\_resources\ )\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mp\_resources\ =\ \&t\_resources;}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGrid(\ glm::vec2\ t\_grid\_size\ )\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_grid\_size\ =\ t\_grid\_size;}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \mbox{\hyperlink{classn2d_1_1Layer_a85bbb84d883e5aa29b9c1030c6c19419}{GetCorrectTilePosition}}(\ tson::Vector2f\ t\_obj\_position,\ glm::vec2\ t\_tile\_size\ );}
-\DoxyCodeLine{00057\ \ \ \ \ \};\textcolor{comment}{//\ class\ Layer}}
-\DoxyCodeLine{00058\ \ \ \ \ }
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1ImageLayer}{ImageLayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_texture\_id;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect}{Rect}}\ \ \ \ m\_rect;}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Body}{Body}}\ \ \ \ m\_body;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ImageLayer}{ImageLayer}}();}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1ImageLayer_a98ea2de019524488b11d0a4ca9ea81a6}{Draw}}(\ sf::RenderWindow\&\ );}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1ImageLayer_a98ea2de019524488b11d0a4ca9ea81a6}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1ImageLayer_a0094d9bf98f5c999aa3d826ee5e8b7bb}{Update}}(\ \textcolor{keywordtype}{float}\ );}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Load(\ std::string,\ tson::Layer\&);}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ );}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1ImageLayer_aee7a8e4f03fe395977bc86d338969334}{Events}}(\ sf::Event\&\ );}
-\DoxyCodeLine{00072\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Image\ Layer}}
-\DoxyCodeLine{00073\ \ \ \ \ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1TileLayer}{TileLayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}\ \{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_pos\_correction;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Sprite*>\ \ \ \ m\_tiles;}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Body}{Body}}\ \ \ \ \ \ \ \ \ \ \ \ m\_body;}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1TileLayer}{TileLayer}}();}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1TileLayer_a4e3cf7d673de1e031e4e3394c3b09600}{Draw}}(\ sf::RenderWindow\&\ );}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1TileLayer_a4e3cf7d673de1e031e4e3394c3b09600}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1TileLayer_ae667923d142d443aed7258446470f26a}{Update}}(\ \textcolor{keywordtype}{float}\ );}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Load(\ std::string,\ tson::Layer\&);}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ );}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1TileLayer_a57f46360da0015bb98d5c45971442b1c}{Events}}(\ sf::Event\&\ );}
-\DoxyCodeLine{00087\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Tile\ Layer}}
-\DoxyCodeLine{00088\ \textcolor{comment}{//\ \ \ \ \ }}
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1EntityLayer}{EntityLayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}\ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_pos\_correction;}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1EntityFactory}{EntityFactory}}*\ \ \ \ \ mp\_factory;}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Entity*>\ \ \ \ m\_entities;}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1EntityLayer}{EntityLayer}}(\ \mbox{\hyperlink{classn2d_1_1EntityFactory}{EntityFactory}}*\ );}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1EntityLayer_a3ea3aeec79682b761f33f3d2d566978f}{Draw}}(\ sf::RenderWindow\&\ );}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1EntityLayer_a3ea3aeec79682b761f33f3d2d566978f}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1EntityLayer_ac49a4b36a400457d2eb66373ca4d0b4a}{Update}}(\ \textcolor{keywordtype}{float}\ );}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Load(\ std::string,\ tson::Layer\&\ );}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ );}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1EntityLayer_a032f0d9921d6134624d6938df04f95ec}{Events}}(\ sf::Event\&\ );}
-\DoxyCodeLine{00102\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Entity\ Layer}}
-\DoxyCodeLine{00103\ \ \ \ \ }
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1LayerFactory}{LayerFactory}}\ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1LayerFactory}{LayerFactory}}()\{\};}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}*\ Create(\ tson::Layer\&\ t\_layer,\ \mbox{\hyperlink{classn2d_1_1EntityFactory}{EntityFactory}}*\ t\_entity\_factory\ );}
-\DoxyCodeLine{00108\ \ \ \ \ \};}
-\DoxyCodeLine{00109\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetTileset(\ \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}}\&\ t\_tileset)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mp\_tileset\ =\ \&t\_tileset;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ SetGrid(\ glm::vec2\ t\_grid\_size\ )\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_grid\_size\ =\ t\_grid\_size;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \mbox{\hyperlink{classn2d_1_1Layer_a85bbb84d883e5aa29b9c1030c6c19419}{GetCorrectTilePosition}}(\ tson::Vector2f\ t\_obj\_position,\ glm::vec2\ t\_tile\_size\ );}
+\DoxyCodeLine{00060\ \ \ \ \ \};\textcolor{comment}{//\ class\ Layer}}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1ImageLayer}{ImageLayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_texture\_id;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Rect}{Rect}}\ \ \ \ m\_rect;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Body}{Body}}\ \ \ \ m\_body;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ImageLayer}{ImageLayer}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1ImageLayer_a98ea2de019524488b11d0a4ca9ea81a6}{Draw}}(\ sf::RenderWindow\&\ );}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1ImageLayer_a98ea2de019524488b11d0a4ca9ea81a6}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1ImageLayer_a0094d9bf98f5c999aa3d826ee5e8b7bb}{Update}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Load(\ std::string,\ tson::Layer\&);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ );}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1ImageLayer_aee7a8e4f03fe395977bc86d338969334}{Events}}(\ sf::Event\&\ );}
+\DoxyCodeLine{00075\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Image\ Layer}}
+\DoxyCodeLine{00076\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1TileLayer}{TileLayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_pos\_correction;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Sprite*>\ \ \ \ m\_tiles;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Body}{Body}}\ \ \ \ \ \ \ \ \ \ \ \ m\_body;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1TileLayer}{TileLayer}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1TileLayer_a4e3cf7d673de1e031e4e3394c3b09600}{Draw}}(\ sf::RenderWindow\&\ );}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1TileLayer_a4e3cf7d673de1e031e4e3394c3b09600}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1TileLayer_ae667923d142d443aed7258446470f26a}{Update}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Load(\ std::string,\ tson::Layer\&);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ );}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1TileLayer_a57f46360da0015bb98d5c45971442b1c}{Events}}(\ sf::Event\&\ );}
+\DoxyCodeLine{00090\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Tile\ Layer}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ \ \ \ \ }}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1EntityLayer}{EntityLayer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_pos\_correction;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1EntityFactory}{EntityFactory}}*\ \ \ \ \ mp\_factory;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Entity*>\ \ \ \ m\_entities;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1EntityLayer}{EntityLayer}}(\ \mbox{\hyperlink{classn2d_1_1EntityFactory}{EntityFactory}}*\ );}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1EntityLayer_a3ea3aeec79682b761f33f3d2d566978f}{Draw}}(\ sf::RenderWindow\&\ );}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1EntityLayer_a3ea3aeec79682b761f33f3d2d566978f}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1EntityLayer_ac49a4b36a400457d2eb66373ca4d0b4a}{Update}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Load(\ std::string,\ tson::Layer\&\ );}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Create(\ b2World\&\ );}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1EntityLayer_a032f0d9921d6134624d6938df04f95ec}{Events}}(\ sf::Event\&\ );}
+\DoxyCodeLine{00105\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Entity\ Layer}}
+\DoxyCodeLine{00106\ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1LayerFactory}{LayerFactory}}\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1LayerFactory}{LayerFactory}}()\{\};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Layer}{Layer}}*\ Create(\ tson::Layer\&\ t\_layer,\ \mbox{\hyperlink{classn2d_1_1EntityFactory}{EntityFactory}}*\ t\_entity\_factory\ );}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

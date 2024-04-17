@@ -247,16 +247,17 @@ $(function() { codefold.init(1); });
 <div class="foldopen" id="foldopen00219" data-start="{" data-end="}">
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="../../db/de9/classn2d_1_1Tool.html#a27a9b2d55abeecb710115608aa09d80f">  219</a></span>            <span class="keyword">static</span> glm::vec4 <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a27a9b2d55abeecb710115608aa09d80f">GetDrawingRectG</a>( tson::Rect t_rect, glm::vec2 t_grid_size) {</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                tson::Rect r = <a class="code hl_function" href="../../db/de9/classn2d_1_1Tool.html#a906e3e4d7055545fb056e6aed50044de">GetDrawingRectT</a>( t_rect, t_grid_size );</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                <span class="keywordflow">return</span> glm::vec4( r.x, r.y, r.width, r.height );</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                glm::vec4 a = glm::vec4( r.x, r.y, r.width, r.height );</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                <span class="keywordflow">return</span> a;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            }</div>
 </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }; <span class="comment">// class Tool</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    }; <span class="comment">// class Tool</span></div>
 </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>}; <span class="comment">// namespace n2d</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>}; <span class="comment">// namespace n2d</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassn2d_1_1Tool_html"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html">n2d::Tool</a></div><div class="ttdef"><b>Definition</b> Tool.h:26</div></div>
 <div class="ttc" id="aclassn2d_1_1Tool_html_a0421036c16c6376cf05b2c9fb02acbf5"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a0421036c16c6376cf05b2c9fb02acbf5">n2d::Tool::s2b</a></div><div class="ttdeci">static b2Vec2 s2b(sf::Vector2f v, float s=PIXEL_TO_BOX2D)</div><div class="ttdef"><b>Definition</b> Tool.h:40</div></div>
 <div class="ttc" id="aclassn2d_1_1Tool_html_a27a9b2d55abeecb710115608aa09d80f"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#a27a9b2d55abeecb710115608aa09d80f">n2d::Tool::GetDrawingRectG</a></div><div class="ttdeci">static glm::vec4 GetDrawingRectG(tson::Rect t_rect, glm::vec2 t_grid_size)</div><div class="ttdef"><b>Definition</b> Tool.h:219</div></div>
@@ -274,13 +275,13 @@ $(function() { codefold.init(1); });
 <div class="ttc" id="aclassn2d_1_1Tool_html_aace20d06cc7db12432d14ad94b65bcf7"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#aace20d06cc7db12432d14ad94b65bcf7">n2d::Tool::Bf</a></div><div class="ttdeci">static float Bf(float val)</div><div class="ttdef"><b>Definition</b> Tool.h:98</div></div>
 <div class="ttc" id="aclassn2d_1_1Tool_html_ae8a9f69c3f23f57ce256508904bdffc4"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#ae8a9f69c3f23f57ce256508904bdffc4">n2d::Tool::g2s</a></div><div class="ttdeci">static sf::Vector2f g2s(glm::vec2 v)</div><div class="ttdef"><b>Definition</b> Tool.h:62</div></div>
 <div class="ttc" id="aclassn2d_1_1Tool_html_aea54f2fbe559ab1ab3584f8db5afc428"><div class="ttname"><a href="../../db/de9/classn2d_1_1Tool.html#aea54f2fbe559ab1ab3584f8db5afc428">n2d::Tool::Rotate</a></div><div class="ttdeci">static std::vector&lt; glm::vec2 &gt; Rotate(std::vector&lt; glm::vec2 &gt; t_v, float t_rotation)</div><div class="ttdef"><b>Definition</b> Tool.h:117</div></div>
-<div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:23</div></div>
+<div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:25</div></div>
 <div class="ttc" id="anamespacen2d_html_a05eb87428a9b7e50ba846fc175c53f05"><div class="ttname"><a href="../../d7/d62/namespacen2d.html#a05eb87428a9b7e50ba846fc175c53f05">n2d::PIXEL_TO_BOX2D</a></div><div class="ttdeci">const float PIXEL_TO_BOX2D</div><div class="ttdef"><b>Definition</b> Tool.h:16</div></div>
 <div class="ttc" id="anamespacen2d_html_a96018993161d9c674895a7974b577ff4"><div class="ttname"><a href="../../d7/d62/namespacen2d.html#a96018993161d9c674895a7974b577ff4">n2d::BOX2D_TO_PIXEL</a></div><div class="ttdeci">const float BOX2D_TO_PIXEL</div><div class="ttdef"><b>Definition</b> Tool.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Sun Apr 14 2024 13:22:56 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

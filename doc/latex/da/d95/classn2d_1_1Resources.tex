@@ -25,8 +25,11 @@ const sf\+::\+Texture \& \mbox{\hyperlink{classn2d_1_1Resources_a9feaad8716b8b0a
 \item 
 sf\+::\+Texture \& \mbox{\hyperlink{classn2d_1_1Resources_a00af08b89c3f6b94949f81e17d9269e6}{Get\+Texture\+Ref}} (int)
 \item 
-\Hypertarget{classn2d_1_1Resources_af67bb3e5f722c284a2886c4be375756c}\label{classn2d_1_1Resources_af67bb3e5f722c284a2886c4be375756c} 
-int {\bfseries Load\+Font} (std\+::string)
+int \mbox{\hyperlink{classn2d_1_1Resources_a9bdb4f2e9893cdc58434b84725af1f08}{Load\+Music}} (std\+::string)
+\item 
+int \mbox{\hyperlink{classn2d_1_1Resources_a94c72cca4a2e2fbc303440dbc6d5ae18}{Get\+Music\+Id}} (std\+::string)
+\item 
+int \mbox{\hyperlink{classn2d_1_1Resources_af67bb3e5f722c284a2886c4be375756c}{Load\+Font}} (std\+::string)
 \item 
 \Hypertarget{classn2d_1_1Resources_a814cb3ad3a8dd33d7e8a34846c43720e}\label{classn2d_1_1Resources_a814cb3ad3a8dd33d7e8a34846c43720e} 
 bool {\bfseries Is\+Font\+Loaded} (std\+::string)
@@ -85,7 +88,21 @@ Default constructor
 \doxysubsubsection{\texorpdfstring{Free()}{Free()}}
 {\footnotesize\ttfamily void Resources\+::\+Free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Free all assets \Hypertarget{classn2d_1_1Resources_af6817690b018001e4aefe110dc6dd9fd}\label{classn2d_1_1Resources_af6817690b018001e4aefe110dc6dd9fd} 
+Free all assets \Hypertarget{classn2d_1_1Resources_a94c72cca4a2e2fbc303440dbc6d5ae18}\label{classn2d_1_1Resources_a94c72cca4a2e2fbc303440dbc6d5ae18} 
+\index{n2d::Resources@{n2d::Resources}!GetMusicId@{GetMusicId}}
+\index{GetMusicId@{GetMusicId}!n2d::Resources@{n2d::Resources}}
+\doxysubsubsection{\texorpdfstring{GetMusicId()}{GetMusicId()}}
+{\footnotesize\ttfamily int n2d\+::\+Resources\+::\+Get\+Music\+Id (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})}
+
+Returns music ID if you pass path to file. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & path to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ texture ID. Returns -\/1 if image not loaded. 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Resources_af6817690b018001e4aefe110dc6dd9fd}\label{classn2d_1_1Resources_af6817690b018001e4aefe110dc6dd9fd} 
 \index{n2d::Resources@{n2d::Resources}!GetTexture@{GetTexture}}
 \index{GetTexture@{GetTexture}!n2d::Resources@{n2d::Resources}}
 \doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -168,6 +185,50 @@ Return true if image already loaded
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 -\/ (bool) 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Resources_af67bb3e5f722c284a2886c4be375756c}\label{classn2d_1_1Resources_af67bb3e5f722c284a2886c4be375756c} 
+\index{n2d::Resources@{n2d::Resources}!LoadFont@{LoadFont}}
+\index{LoadFont@{LoadFont}!n2d::Resources@{n2d::Resources}}
+\doxysubsubsection{\texorpdfstring{LoadFont()}{LoadFont()}}
+{\footnotesize\ttfamily int Resources\+::\+Load\+Font (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+font\+\_\+path }\end{DoxyParamCaption})}
+
+Return true if music already loaded 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & path to music file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ (bool) Returns music by ID. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & music ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ music reference Returns music by file path. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & relative music path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ music reference 
+\end{DoxyReturn}
+\Hypertarget{classn2d_1_1Resources_a9bdb4f2e9893cdc58434b84725af1f08}\label{classn2d_1_1Resources_a9bdb4f2e9893cdc58434b84725af1f08} 
+\index{n2d::Resources@{n2d::Resources}!LoadMusic@{LoadMusic}}
+\index{LoadMusic@{LoadMusic}!n2d::Resources@{n2d::Resources}}
+\doxysubsubsection{\texorpdfstring{LoadMusic()}{LoadMusic()}}
+{\footnotesize\ttfamily int n2d\+::\+Resources\+::\+Load\+Music (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})}
+
+Load music. Music is different than sound. Music is lika stream, sound is from buffer. Check SFML documentation. 
+\begin{DoxyParams}{Parameters}
+{\em -\/} & path to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ created music id. Returns -\/1 when loading failed. 
 \end{DoxyReturn}
 \Hypertarget{classn2d_1_1Resources_aed5924d556e534fde148145b80bcf212}\label{classn2d_1_1Resources_aed5924d556e534fde148145b80bcf212} 
 \index{n2d::Resources@{n2d::Resources}!LoadTexture@{LoadTexture}}

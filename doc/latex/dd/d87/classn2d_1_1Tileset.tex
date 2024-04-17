@@ -18,14 +18,17 @@ void {\bfseries operator=} (const \mbox{\hyperlink{classn2d_1_1Tileset}{Tileset}
 \Hypertarget{classn2d_1_1Tileset_a8ab7859eee1bce076863abfa9155ca01}\label{classn2d_1_1Tileset_a8ab7859eee1bce076863abfa9155ca01} 
 void {\bfseries Set\+Resources} (\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \&t\+\_\+resources)
 \item 
-\Hypertarget{classn2d_1_1Tileset_a4497d535e1fc121895c8f89dc0ece2f8}\label{classn2d_1_1Tileset_a4497d535e1fc121895c8f89dc0ece2f8} 
-void {\bfseries Load} (tson\+::\+Tileset \&, std\+::string="{}"{})
+\Hypertarget{classn2d_1_1Tileset_a8efd242a6ca535b54347146f2053c7ec}\label{classn2d_1_1Tileset_a8efd242a6ca535b54347146f2053c7ec} 
+bool {\bfseries Load} (tson\+::\+Tileset \&, std\+::string="{}"{})
 \item 
-\Hypertarget{classn2d_1_1Tileset_afc0e680463b717dfe1e1fa43d5d77f56}\label{classn2d_1_1Tileset_afc0e680463b717dfe1e1fa43d5d77f56} 
-void {\bfseries Load} (std\+::string, std\+::string)
+\Hypertarget{classn2d_1_1Tileset_a4666045e14dff202d71def15e2da87b9}\label{classn2d_1_1Tileset_a4666045e14dff202d71def15e2da87b9} 
+bool {\bfseries Load} (std\+::string, std\+::string)
 \item 
 \Hypertarget{classn2d_1_1Tileset_a31ed3b30664674163d9b950e2c342e81}\label{classn2d_1_1Tileset_a31ed3b30664674163d9b950e2c342e81} 
 \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Tile} (int)
+\item 
+\Hypertarget{classn2d_1_1Tileset_a115e37ef5f9529ae541f315a4609b974}\label{classn2d_1_1Tileset_a115e37ef5f9529ae541f315a4609b974} 
+\mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Tile} (std\+::string)
 \item 
 \Hypertarget{classn2d_1_1Tileset_a6a380f41cdbb90712a96796e30e4feb8}\label{classn2d_1_1Tileset_a6a380f41cdbb90712a96796e30e4feb8} 
 bool {\bfseries Is\+Tile\+Exists} (int)
@@ -66,6 +69,9 @@ glm\+::vec2 {\bfseries m\+\_\+grid\+\_\+size}
 \item 
 \Hypertarget{classn2d_1_1Tileset_a24c0854362609960988420c76959cdba}\label{classn2d_1_1Tileset_a24c0854362609960988420c76959cdba} 
 std\+::map$<$ int, \mbox{\hyperlink{classn2d_1_1Sprite}{Sprite}} $>$ {\bfseries m\+\_\+sprites}
+\item 
+\Hypertarget{classn2d_1_1Tileset_a814b2ab78ff754ecbbe4af1baad32bc8}\label{classn2d_1_1Tileset_a814b2ab78ff754ecbbe4af1baad32bc8} 
+std\+::map$<$ std\+::string, int $>$ {\bfseries m\+\_\+sprite\+\_\+names}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
 \begin{DoxyCompactItemize}

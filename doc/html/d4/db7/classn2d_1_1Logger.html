@@ -92,8 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae6af3c2efbf27341e68d060e98b2c656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae779abc3983fec19fdd165d8f9c78f75" id="r_ae779abc3983fec19fdd165d8f9c78f75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae779abc3983fec19fdd165d8f9c78f75">Log</a> (const std::string &amp;t_s)</td></tr>
 <tr class="separator:ae779abc3983fec19fdd165d8f9c78f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0a7315b6054a568ff758d36494521c" id="r_a5d0a7315b6054a568ff758d36494521c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d0a7315b6054a568ff758d36494521c">Time</a> ()</td></tr>
-<tr class="separator:a5d0a7315b6054a568ff758d36494521c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec43227d91e2ebcd804d9752148d0f1c" id="r_aec43227d91e2ebcd804d9752148d0f1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec43227d91e2ebcd804d9752148d0f1c">Time</a> ()</td></tr>
+<tr class="separator:aec43227d91e2ebcd804d9752148d0f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fa16f8dd9abb4daaf36b0b3a23293f7" id="r_a3fa16f8dd9abb4daaf36b0b3a23293f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fa16f8dd9abb4daaf36b0b3a23293f7">Open</a> ()</td></tr>
 <tr class="separator:a3fa16f8dd9abb4daaf36b0b3a23293f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab13114d60ca5f1f69f2ba0f2f1a5bd19" id="r_ab13114d60ca5f1f69f2ba0f2f1a5bd19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab13114d60ca5f1f69f2ba0f2f1a5bd19">Close</a> ()</td></tr>
@@ -102,6 +102,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9cb660368605951c1ea0978604cc48e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1191038d1044a1121e03cc267e9c681c" id="r_a1191038d1044a1121e03cc267e9c681c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1191038d1044a1121e03cc267e9c681c">Clear</a> ()</td></tr>
 <tr class="separator:a1191038d1044a1121e03cc267e9c681c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0a788dc3561c2b07b4eb67e616dd2a" id="r_aec0a788dc3561c2b07b4eb67e616dd2a"><td class="memTemplParams" colspan="2"><a id="aec0a788dc3561c2b07b4eb67e616dd2a" name="aec0a788dc3561c2b07b4eb67e616dd2a"></a>
+template&lt;class T &gt; </td></tr>
+<tr class="memitem:aec0a788dc3561c2b07b4eb67e616dd2a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (T t_msg)</td></tr>
+<tr class="separator:aec0a788dc3561c2b07b4eb67e616dd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -117,7 +121,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_opened</b> = false<
 std::ostringstream&#160;</td><td class="memItemRight" valign="bottom"><b>m_buffer</b></td></tr>
 <tr class="separator:a469f3a5fadd18df808eed732fe86fe8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ebf330848fc479ee15beb747d6a5511" id="r_a3ebf330848fc479ee15beb747d6a5511"><td class="memItemLeft" align="right" valign="top"><a id="a3ebf330848fc479ee15beb747d6a5511" name="a3ebf330848fc479ee15beb747d6a5511"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_filename</b> = &quot;./logs/log&quot;</td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_filename</b> = &quot;./log&quot;</td></tr>
 <tr class="separator:a3ebf330848fc479ee15beb747d6a5511"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -236,14 +240,14 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_filename</b>
 
 </div>
 </div>
-<a id="a5d0a7315b6054a568ff758d36494521c" name="a5d0a7315b6054a568ff758d36494521c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d0a7315b6054a568ff758d36494521c">&#9670;&#160;</a></span>Time()</h2>
+<a id="aec43227d91e2ebcd804d9752148d0f1c" name="aec43227d91e2ebcd804d9752148d0f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec43227d91e2ebcd804d9752148d0f1c">&#9670;&#160;</a></span>Time()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Logger::Time </td>
+          <td class="memname"><a class="el" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a> &amp; Logger::Time </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -277,7 +281,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_filename</b>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Sun Apr 14 2024 13:22:56 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

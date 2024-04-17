@@ -11,7 +11,7 @@ void \mbox{\hyperlink{classn2d_1_1Logger_ae6af3c2efbf27341e68d060e98b2c656}{Set\
 \item 
 \mbox{\hyperlink{classn2d_1_1Logger}{Logger}} \& \mbox{\hyperlink{classn2d_1_1Logger_ae779abc3983fec19fdd165d8f9c78f75}{Log}} (const std\+::string \&t\+\_\+s)
 \item 
-void \mbox{\hyperlink{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c}{Time}} ()
+\mbox{\hyperlink{classn2d_1_1Logger}{Logger}} \& \mbox{\hyperlink{classn2d_1_1Logger_aec43227d91e2ebcd804d9752148d0f1c}{Time}} ()
 \item 
 void \mbox{\hyperlink{classn2d_1_1Logger_a3fa16f8dd9abb4daaf36b0b3a23293f7}{Open}} ()
 \item 
@@ -20,6 +20,9 @@ void \mbox{\hyperlink{classn2d_1_1Logger_ab13114d60ca5f1f69f2ba0f2f1a5bd19}{Clos
 void \mbox{\hyperlink{classn2d_1_1Logger_a9cb660368605951c1ea0978604cc48e4}{Flush}} ()
 \item 
 void \mbox{\hyperlink{classn2d_1_1Logger_a1191038d1044a1121e03cc267e9c681c}{Clear}} ()
+\item 
+\Hypertarget{classn2d_1_1Logger_aec0a788dc3561c2b07b4eb67e616dd2a}\label{classn2d_1_1Logger_aec0a788dc3561c2b07b4eb67e616dd2a} 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{classn2d_1_1Logger}{Logger}} \& {\bfseries operator$<$$<$} (T t\+\_\+msg)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
@@ -36,7 +39,7 @@ bool {\bfseries m\+\_\+opened} = false
 std\+::ostringstream {\bfseries m\+\_\+buffer}
 \item 
 \Hypertarget{classn2d_1_1Logger_a3ebf330848fc479ee15beb747d6a5511}\label{classn2d_1_1Logger_a3ebf330848fc479ee15beb747d6a5511} 
-std\+::string {\bfseries m\+\_\+filename} = "{}./logs/log"{}
+std\+::string {\bfseries m\+\_\+filename} = "{}./log"{}
 \end{DoxyCompactItemize}
 
 
@@ -85,11 +88,11 @@ Set log file path.
 {\em -\/} & file path \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c}\label{classn2d_1_1Logger_a5d0a7315b6054a568ff758d36494521c} 
+\Hypertarget{classn2d_1_1Logger_aec43227d91e2ebcd804d9752148d0f1c}\label{classn2d_1_1Logger_aec43227d91e2ebcd804d9752148d0f1c} 
 \index{n2d::Logger@{n2d::Logger}!Time@{Time}}
 \index{Time@{Time}!n2d::Logger@{n2d::Logger}}
 \doxysubsubsection{\texorpdfstring{Time()}{Time()}}
-{\footnotesize\ttfamily void Logger\+::\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classn2d_1_1Logger}{Logger}} \& Logger\+::\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Put human-\/readanle datetime stamp into \doxylink{classn2d_1_1Logger_a81684b9e90254c2314f486bbf1eab15b}{n2d\+::\+Logger\+::out}. 
 

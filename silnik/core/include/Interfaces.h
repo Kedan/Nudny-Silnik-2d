@@ -94,13 +94,8 @@ namespace n2d {
 			 */ 
 			virtual void Events( sf::Event& t_event ) = 0;
 	};
-
-	/**
-	 * Interface.
-	 * Abstrac class.
-	 * If something sopose to be played animated, should implements Animated interface.
-	 */
-	class Animated {
+	
+	class Playable 	{
 		public:
 			/**
 			 * Play method.
@@ -116,7 +111,15 @@ namespace n2d {
 			 * Stop methos. Rewind animation to first frame.
 			 */
 			virtual void Stop()	= 0;
+	};
 
+	/**
+	 * Interface.
+	 * Abstrac class.
+	 * If something sopose to be played animated, should implements Animated interface.
+	 */
+	class Animated : public Playable {
+		public:
 			/**
 			 * Delete all frames
 			 */ 
@@ -127,6 +130,11 @@ namespace n2d {
 			 * @param	t_dt	- time tick, passed in n2d::App::Run() from sf::Clock and sf::Time class
 			 */
 			virtual void Animate( float t_dt ) 	= 0;
+	};
+
+	class Audible : public Playable {
+		public:
+			virtual void SetVolume( float ) = 0;
 	};
 
 	/**

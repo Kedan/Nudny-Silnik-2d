@@ -89,139 +89,143 @@ $(function() { codefold.init(1); });
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;tileson/tileson.h&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Interfaces.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Resources.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Shape.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Circle.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Rect.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Poly.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Sprite.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;Body.h&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;Entity.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;Animation.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;Tileset.h&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;EntityFactory.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;Actor.h&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d62/namespacen2d.html">n2d</a> {</div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="../../d0/d72/classn2d_1_1Layer.html">   20</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d92/classn2d_1_1Drawable.html">Drawable</a>, <span class="keyword">public</span> <a class="code hl_class" href="../../d1/d8a/classn2d_1_1Updatable.html">Updatable</a>, <span class="keyword">public</span> <a class="code hl_class" href="../../d9/df1/classn2d_1_1Interactive.html">Interactive</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keywordtype">bool</span>        m_loaded = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_class" href="../../da/d95/classn2d_1_1Resources.html">Resources</a>*  mp_resources;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_class" href="../../dd/d87/classn2d_1_1Tileset.html">Tileset</a>*    mp_tileset;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            glm::vec2   m_grid_size;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <span class="keywordtype">void</span> SetDefaultData( tson::Layer&amp; );</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordtype">int</span>         id;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            std::string     name;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordtype">bool</span>        visible;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            glm::vec2   position;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a>();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Load( std::string, tson::Layer&amp; ) = 0;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> Create( b2World&amp; ) = 0;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordtype">void</span> SetResources( <a class="code hl_class" href="../../da/d95/classn2d_1_1Resources.html">Resources</a>&amp; t_resources ) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                mp_resources = &amp;t_resources;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            };</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordtype">void</span> SetTileset( <a class="code hl_class" href="../../dd/d87/classn2d_1_1Tileset.html">Tileset</a>&amp; t_tileset) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                mp_tileset = &amp;t_tileset;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;Tool.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;Log.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Resources.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Shape.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Circle.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Rect.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;Poly.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;Sprite.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;Body.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;Entity.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;Animation.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;Tileset.h&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;EntityFactory.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;Actor.h&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/d62/namespacen2d.html">n2d</a> {</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d0/d72/classn2d_1_1Layer.html">   22</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../de/d92/classn2d_1_1Drawable.html">Drawable</a>, <span class="keyword">public</span> <a class="code hl_class" href="../../d1/d8a/classn2d_1_1Updatable.html">Updatable</a>, <span class="keyword">public</span> <a class="code hl_class" href="../../d9/df1/classn2d_1_1Interactive.html">Interactive</a> { </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordtype">bool</span>        m_loaded = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <a class="code hl_class" href="../../da/d95/classn2d_1_1Resources.html">Resources</a>*  mp_resources;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <a class="code hl_class" href="../../dd/d87/classn2d_1_1Tileset.html">Tileset</a>*    mp_tileset;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            glm::vec2   m_grid_size;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordtype">void</span> SetDefaultData( tson::Layer&amp; );</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <a class="code hl_class" href="../../d4/db7/classn2d_1_1Logger.html">Logger</a>      log;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordtype">int</span>         id;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            std::string     name;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordtype">bool</span>        visible;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            glm::vec2   position;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Load( std::string, tson::Layer&amp; ) = 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> Create( b2World&amp; ) = 0;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordtype">void</span> SetResources( <a class="code hl_class" href="../../da/d95/classn2d_1_1Resources.html">Resources</a>&amp; t_resources ) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                mp_resources = &amp;t_resources;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            };</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordtype">void</span> SetGrid( glm::vec2 t_grid_size ) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                m_grid_size = t_grid_size;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            glm::vec2 <a class="code hl_function" href="../../d0/d72/classn2d_1_1Layer.html#a85bbb84d883e5aa29b9c1030c6c19419">GetCorrectTilePosition</a>( tson::Vector2f t_obj_position, glm::vec2 t_tile_size );</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    };<span class="comment">// class Layer</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordtype">void</span> SetTileset( <a class="code hl_class" href="../../dd/d87/classn2d_1_1Tileset.html">Tileset</a>&amp; t_tileset) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                mp_tileset = &amp;t_tileset;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            };</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordtype">void</span> SetGrid( glm::vec2 t_grid_size ) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                m_grid_size = t_grid_size;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            glm::vec2 <a class="code hl_function" href="../../d0/d72/classn2d_1_1Layer.html#a85bbb84d883e5aa29b9c1030c6c19419">GetCorrectTilePosition</a>( tson::Vector2f t_obj_position, glm::vec2 t_tile_size );</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    };<span class="comment">// class Layer</span></div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
-<div class="foldopen" id="foldopen00059" data-start="{" data-end="};">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../d8/d3b/classn2d_1_1ImageLayer.html">   59</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d8/d3b/classn2d_1_1ImageLayer.html">ImageLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a> {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordtype">int</span> m_texture_id;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_class" href="../../df/d5f/classn2d_1_1Rect.html">Rect</a>    m_rect;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <a class="code hl_class" href="../../d6/d5e/classn2d_1_1Body.html">Body</a>    m_body;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_class" href="../../d8/d3b/classn2d_1_1ImageLayer.html">ImageLayer</a>();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d3b/classn2d_1_1ImageLayer.html#a98ea2de019524488b11d0a4ca9ea81a6">Draw</a>( sf::RenderWindow&amp; );</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d3b/classn2d_1_1ImageLayer.html#a98ea2de019524488b11d0a4ca9ea81a6">Draw</a>( sf::RenderWindow&amp;, sf::Transform&amp; );</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d3b/classn2d_1_1ImageLayer.html#a0094d9bf98f5c999aa3d826ee5e8b7bb">Update</a>( <span class="keywordtype">float</span> );</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordtype">bool</span> Load( std::string, tson::Layer&amp;);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordtype">void</span> Create( b2World&amp; );</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d3b/classn2d_1_1ImageLayer.html#aee7a8e4f03fe395977bc86d338969334">Events</a>( sf::Event&amp; );</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }; <span class="comment">// class Image Layer</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="../../d8/d3b/classn2d_1_1ImageLayer.html">   62</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d8/d3b/classn2d_1_1ImageLayer.html">ImageLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a> {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordtype">int</span> m_texture_id;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_class" href="../../df/d5f/classn2d_1_1Rect.html">Rect</a>    m_rect;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <a class="code hl_class" href="../../d6/d5e/classn2d_1_1Body.html">Body</a>    m_body;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <a class="code hl_class" href="../../d8/d3b/classn2d_1_1ImageLayer.html">ImageLayer</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d3b/classn2d_1_1ImageLayer.html#a98ea2de019524488b11d0a4ca9ea81a6">Draw</a>( sf::RenderWindow&amp; );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d3b/classn2d_1_1ImageLayer.html#a98ea2de019524488b11d0a4ca9ea81a6">Draw</a>( sf::RenderWindow&amp;, sf::Transform&amp; );</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d3b/classn2d_1_1ImageLayer.html#a0094d9bf98f5c999aa3d826ee5e8b7bb">Update</a>( <span class="keywordtype">float</span> );</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordtype">bool</span> Load( std::string, tson::Layer&amp;);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordtype">void</span> Create( b2World&amp; );</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d3b/classn2d_1_1ImageLayer.html#aee7a8e4f03fe395977bc86d338969334">Events</a>( sf::Event&amp; );</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }; <span class="comment">// class Image Layer</span></div>
 </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
-<div class="foldopen" id="foldopen00074" data-start="{" data-end="};">
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../d4/d3f/classn2d_1_1TileLayer.html">   74</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d4/d3f/classn2d_1_1TileLayer.html">TileLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a> {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            glm::vec2       m_pos_correction;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            std::vector&lt;Sprite*&gt;    m_tiles;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <a class="code hl_class" href="../../d6/d5e/classn2d_1_1Body.html">Body</a>            m_body;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <a class="code hl_class" href="../../d4/d3f/classn2d_1_1TileLayer.html">TileLayer</a>();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d3f/classn2d_1_1TileLayer.html#a4e3cf7d673de1e031e4e3394c3b09600">Draw</a>( sf::RenderWindow&amp; );</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d3f/classn2d_1_1TileLayer.html#a4e3cf7d673de1e031e4e3394c3b09600">Draw</a>( sf::RenderWindow&amp;, sf::Transform&amp; );</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d3f/classn2d_1_1TileLayer.html#ae667923d142d443aed7258446470f26a">Update</a>( <span class="keywordtype">float</span> );</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordtype">bool</span> Load( std::string, tson::Layer&amp;);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordtype">void</span> Create( b2World&amp; );</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d3f/classn2d_1_1TileLayer.html#a57f46360da0015bb98d5c45971442b1c">Events</a>( sf::Event&amp; );</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }; <span class="comment">// class Tile Layer</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="};">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="../../d4/d3f/classn2d_1_1TileLayer.html">   77</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d4/d3f/classn2d_1_1TileLayer.html">TileLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            glm::vec2       m_pos_correction;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            std::vector&lt;Sprite*&gt;    m_tiles;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <a class="code hl_class" href="../../d6/d5e/classn2d_1_1Body.html">Body</a>            m_body;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <a class="code hl_class" href="../../d4/d3f/classn2d_1_1TileLayer.html">TileLayer</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d3f/classn2d_1_1TileLayer.html#a4e3cf7d673de1e031e4e3394c3b09600">Draw</a>( sf::RenderWindow&amp; );</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d3f/classn2d_1_1TileLayer.html#a4e3cf7d673de1e031e4e3394c3b09600">Draw</a>( sf::RenderWindow&amp;, sf::Transform&amp; );</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d3f/classn2d_1_1TileLayer.html#ae667923d142d443aed7258446470f26a">Update</a>( <span class="keywordtype">float</span> );</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordtype">bool</span> Load( std::string, tson::Layer&amp;);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordtype">void</span> Create( b2World&amp; );</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d3f/classn2d_1_1TileLayer.html#a57f46360da0015bb98d5c45971442b1c">Events</a>( sf::Event&amp; );</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }; <span class="comment">// class Tile Layer</span></div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//     </span></div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="};">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="../../d1/d26/classn2d_1_1EntityLayer.html">   89</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d1/d26/classn2d_1_1EntityLayer.html">EntityLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a> {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            glm::vec2       m_pos_correction;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <a class="code hl_class" href="../../d0/d9b/classn2d_1_1EntityFactory.html">EntityFactory</a>*      mp_factory;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            std::vector&lt;Entity*&gt;    m_entities;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <a class="code hl_class" href="../../d1/d26/classn2d_1_1EntityLayer.html">EntityLayer</a>( <a class="code hl_class" href="../../d0/d9b/classn2d_1_1EntityFactory.html">EntityFactory</a>* );</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d26/classn2d_1_1EntityLayer.html#a3ea3aeec79682b761f33f3d2d566978f">Draw</a>( sf::RenderWindow&amp; );</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d26/classn2d_1_1EntityLayer.html#a3ea3aeec79682b761f33f3d2d566978f">Draw</a>( sf::RenderWindow&amp;, sf::Transform&amp; );</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d26/classn2d_1_1EntityLayer.html#ac49a4b36a400457d2eb66373ca4d0b4a">Update</a>( <span class="keywordtype">float</span> );</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordtype">bool</span> Load( std::string, tson::Layer&amp; );</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordtype">void</span> Create( b2World&amp; );</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d26/classn2d_1_1EntityLayer.html#a032f0d9921d6134624d6938df04f95ec">Events</a>( sf::Event&amp; );</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }; <span class="comment">// class Entity Layer</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">//     </span></div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="};">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../d1/d26/classn2d_1_1EntityLayer.html">   92</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d1/d26/classn2d_1_1EntityLayer.html">EntityLayer</a> : <span class="keyword">public</span> <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a> {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            glm::vec2       m_pos_correction;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <a class="code hl_class" href="../../d0/d9b/classn2d_1_1EntityFactory.html">EntityFactory</a>*      mp_factory;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            std::vector&lt;Entity*&gt;    m_entities;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            <a class="code hl_class" href="../../d1/d26/classn2d_1_1EntityLayer.html">EntityLayer</a>( <a class="code hl_class" href="../../d0/d9b/classn2d_1_1EntityFactory.html">EntityFactory</a>* );</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d26/classn2d_1_1EntityLayer.html#a3ea3aeec79682b761f33f3d2d566978f">Draw</a>( sf::RenderWindow&amp; );</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d26/classn2d_1_1EntityLayer.html#a3ea3aeec79682b761f33f3d2d566978f">Draw</a>( sf::RenderWindow&amp;, sf::Transform&amp; );</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d26/classn2d_1_1EntityLayer.html#ac49a4b36a400457d2eb66373ca4d0b4a">Update</a>( <span class="keywordtype">float</span> );</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordtype">bool</span> Load( std::string, tson::Layer&amp; );</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordtype">void</span> Create( b2World&amp; );</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/d26/classn2d_1_1EntityLayer.html#a032f0d9921d6134624d6938df04f95ec">Events</a>( sf::Event&amp; );</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }; <span class="comment">// class Entity Layer</span></div>
 </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    </div>
-<div class="foldopen" id="foldopen00104" data-start="{" data-end="};">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../d3/d49/classn2d_1_1LayerFactory.html">  104</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d3/d49/classn2d_1_1LayerFactory.html">LayerFactory</a> {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <a class="code hl_class" href="../../d3/d49/classn2d_1_1LayerFactory.html">LayerFactory</a>(){};</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a>* Create( tson::Layer&amp; t_layer, <a class="code hl_class" href="../../d0/d9b/classn2d_1_1EntityFactory.html">EntityFactory</a>* t_entity_factory );</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    };</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="};">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../d3/d49/classn2d_1_1LayerFactory.html">  107</a></span>    <span class="keyword">class </span><a class="code hl_class" href="../../d3/d49/classn2d_1_1LayerFactory.html">LayerFactory</a> {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <a class="code hl_class" href="../../d3/d49/classn2d_1_1LayerFactory.html">LayerFactory</a>(){};</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <a class="code hl_class" href="../../d0/d72/classn2d_1_1Layer.html">Layer</a>* Create( tson::Layer&amp; t_layer, <a class="code hl_class" href="../../d0/d9b/classn2d_1_1EntityFactory.html">EntityFactory</a>* t_entity_factory );</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    };</div>
 </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}; <span class="comment">// namespace n2d</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}; <span class="comment">// namespace n2d</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassn2d_1_1Body_html"><div class="ttname"><a href="../../d6/d5e/classn2d_1_1Body.html">n2d::Body</a></div><div class="ttdef"><b>Definition</b> Body.h:12</div></div>
 <div class="ttc" id="aclassn2d_1_1Drawable_html"><div class="ttname"><a href="../../de/d92/classn2d_1_1Drawable.html">n2d::Drawable</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:23</div></div>
 <div class="ttc" id="aclassn2d_1_1EntityFactory_html"><div class="ttname"><a href="../../d0/d9b/classn2d_1_1EntityFactory.html">n2d::EntityFactory</a></div><div class="ttdef"><b>Definition</b> EntityFactory.h:7</div></div>
-<div class="ttc" id="aclassn2d_1_1EntityLayer_html"><div class="ttname"><a href="../../d1/d26/classn2d_1_1EntityLayer.html">n2d::EntityLayer</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:89</div></div>
-<div class="ttc" id="aclassn2d_1_1EntityLayer_html_a032f0d9921d6134624d6938df04f95ec"><div class="ttname"><a href="../../d1/d26/classn2d_1_1EntityLayer.html#a032f0d9921d6134624d6938df04f95ec">n2d::EntityLayer::Events</a></div><div class="ttdeci">void Events(sf::Event &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:190</div></div>
-<div class="ttc" id="aclassn2d_1_1EntityLayer_html_a3ea3aeec79682b761f33f3d2d566978f"><div class="ttname"><a href="../../d1/d26/classn2d_1_1EntityLayer.html#a3ea3aeec79682b761f33f3d2d566978f">n2d::EntityLayer::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:153</div></div>
-<div class="ttc" id="aclassn2d_1_1EntityLayer_html_ac49a4b36a400457d2eb66373ca4d0b4a"><div class="ttname"><a href="../../d1/d26/classn2d_1_1EntityLayer.html#ac49a4b36a400457d2eb66373ca4d0b4a">n2d::EntityLayer::Update</a></div><div class="ttdeci">void Update(float)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:165</div></div>
-<div class="ttc" id="aclassn2d_1_1ImageLayer_html"><div class="ttname"><a href="../../d8/d3b/classn2d_1_1ImageLayer.html">n2d::ImageLayer</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:59</div></div>
-<div class="ttc" id="aclassn2d_1_1ImageLayer_html_a0094d9bf98f5c999aa3d826ee5e8b7bb"><div class="ttname"><a href="../../d8/d3b/classn2d_1_1ImageLayer.html#a0094d9bf98f5c999aa3d826ee5e8b7bb">n2d::ImageLayer::Update</a></div><div class="ttdeci">void Update(float)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:33</div></div>
-<div class="ttc" id="aclassn2d_1_1ImageLayer_html_a98ea2de019524488b11d0a4ca9ea81a6"><div class="ttname"><a href="../../d8/d3b/classn2d_1_1ImageLayer.html#a98ea2de019524488b11d0a4ca9ea81a6">n2d::ImageLayer::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:25</div></div>
-<div class="ttc" id="aclassn2d_1_1ImageLayer_html_aee7a8e4f03fe395977bc86d338969334"><div class="ttname"><a href="../../d8/d3b/classn2d_1_1ImageLayer.html#aee7a8e4f03fe395977bc86d338969334">n2d::ImageLayer::Events</a></div><div class="ttdeci">void Events(sf::Event &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:69</div></div>
+<div class="ttc" id="aclassn2d_1_1EntityLayer_html"><div class="ttname"><a href="../../d1/d26/classn2d_1_1EntityLayer.html">n2d::EntityLayer</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:92</div></div>
+<div class="ttc" id="aclassn2d_1_1EntityLayer_html_a032f0d9921d6134624d6938df04f95ec"><div class="ttname"><a href="../../d1/d26/classn2d_1_1EntityLayer.html#a032f0d9921d6134624d6938df04f95ec">n2d::EntityLayer::Events</a></div><div class="ttdeci">void Events(sf::Event &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:194</div></div>
+<div class="ttc" id="aclassn2d_1_1EntityLayer_html_a3ea3aeec79682b761f33f3d2d566978f"><div class="ttname"><a href="../../d1/d26/classn2d_1_1EntityLayer.html#a3ea3aeec79682b761f33f3d2d566978f">n2d::EntityLayer::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:151</div></div>
+<div class="ttc" id="aclassn2d_1_1EntityLayer_html_ac49a4b36a400457d2eb66373ca4d0b4a"><div class="ttname"><a href="../../d1/d26/classn2d_1_1EntityLayer.html#ac49a4b36a400457d2eb66373ca4d0b4a">n2d::EntityLayer::Update</a></div><div class="ttdeci">void Update(float)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:163</div></div>
+<div class="ttc" id="aclassn2d_1_1ImageLayer_html"><div class="ttname"><a href="../../d8/d3b/classn2d_1_1ImageLayer.html">n2d::ImageLayer</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:62</div></div>
+<div class="ttc" id="aclassn2d_1_1ImageLayer_html_a0094d9bf98f5c999aa3d826ee5e8b7bb"><div class="ttname"><a href="../../d8/d3b/classn2d_1_1ImageLayer.html#a0094d9bf98f5c999aa3d826ee5e8b7bb">n2d::ImageLayer::Update</a></div><div class="ttdeci">void Update(float)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:36</div></div>
+<div class="ttc" id="aclassn2d_1_1ImageLayer_html_a98ea2de019524488b11d0a4ca9ea81a6"><div class="ttname"><a href="../../d8/d3b/classn2d_1_1ImageLayer.html#a98ea2de019524488b11d0a4ca9ea81a6">n2d::ImageLayer::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:28</div></div>
+<div class="ttc" id="aclassn2d_1_1ImageLayer_html_aee7a8e4f03fe395977bc86d338969334"><div class="ttname"><a href="../../d8/d3b/classn2d_1_1ImageLayer.html#aee7a8e4f03fe395977bc86d338969334">n2d::ImageLayer::Events</a></div><div class="ttdeci">void Events(sf::Event &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:73</div></div>
 <div class="ttc" id="aclassn2d_1_1Interactive_html"><div class="ttname"><a href="../../d9/df1/classn2d_1_1Interactive.html">n2d::Interactive</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:77</div></div>
-<div class="ttc" id="aclassn2d_1_1LayerFactory_html"><div class="ttname"><a href="../../d3/d49/classn2d_1_1LayerFactory.html">n2d::LayerFactory</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:104</div></div>
-<div class="ttc" id="aclassn2d_1_1Layer_html"><div class="ttname"><a href="../../d0/d72/classn2d_1_1Layer.html">n2d::Layer</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:20</div></div>
-<div class="ttc" id="aclassn2d_1_1Layer_html_a85bbb84d883e5aa29b9c1030c6c19419"><div class="ttname"><a href="../../d0/d72/classn2d_1_1Layer.html#a85bbb84d883e5aa29b9c1030c6c19419">n2d::Layer::GetCorrectTilePosition</a></div><div class="ttdeci">glm::vec2 GetCorrectTilePosition(tson::Vector2f t_obj_position, glm::vec2 t_tile_size)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:15</div></div>
+<div class="ttc" id="aclassn2d_1_1LayerFactory_html"><div class="ttname"><a href="../../d3/d49/classn2d_1_1LayerFactory.html">n2d::LayerFactory</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:107</div></div>
+<div class="ttc" id="aclassn2d_1_1Layer_html"><div class="ttname"><a href="../../d0/d72/classn2d_1_1Layer.html">n2d::Layer</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:22</div></div>
+<div class="ttc" id="aclassn2d_1_1Layer_html_a85bbb84d883e5aa29b9c1030c6c19419"><div class="ttname"><a href="../../d0/d72/classn2d_1_1Layer.html#a85bbb84d883e5aa29b9c1030c6c19419">n2d::Layer::GetCorrectTilePosition</a></div><div class="ttdeci">glm::vec2 GetCorrectTilePosition(tson::Vector2f t_obj_position, glm::vec2 t_tile_size)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:16</div></div>
+<div class="ttc" id="aclassn2d_1_1Logger_html"><div class="ttname"><a href="../../d4/db7/classn2d_1_1Logger.html">n2d::Logger</a></div><div class="ttdef"><b>Definition</b> Log.h:17</div></div>
 <div class="ttc" id="aclassn2d_1_1Rect_html"><div class="ttname"><a href="../../df/d5f/classn2d_1_1Rect.html">n2d::Rect</a></div><div class="ttdef"><b>Definition</b> Rect.h:7</div></div>
-<div class="ttc" id="aclassn2d_1_1Resources_html"><div class="ttname"><a href="../../da/d95/classn2d_1_1Resources.html">n2d::Resources</a></div><div class="ttdef"><b>Definition</b> Resources.h:17</div></div>
-<div class="ttc" id="aclassn2d_1_1TileLayer_html"><div class="ttname"><a href="../../d4/d3f/classn2d_1_1TileLayer.html">n2d::TileLayer</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:74</div></div>
-<div class="ttc" id="aclassn2d_1_1TileLayer_html_a4e3cf7d673de1e031e4e3394c3b09600"><div class="ttname"><a href="../../d4/d3f/classn2d_1_1TileLayer.html#a4e3cf7d673de1e031e4e3394c3b09600">n2d::TileLayer::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:73</div></div>
-<div class="ttc" id="aclassn2d_1_1TileLayer_html_a57f46360da0015bb98d5c45971442b1c"><div class="ttname"><a href="../../d4/d3f/classn2d_1_1TileLayer.html#a57f46360da0015bb98d5c45971442b1c">n2d::TileLayer::Events</a></div><div class="ttdeci">void Events(sf::Event &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:146</div></div>
-<div class="ttc" id="aclassn2d_1_1TileLayer_html_ae667923d142d443aed7258446470f26a"><div class="ttname"><a href="../../d4/d3f/classn2d_1_1TileLayer.html#ae667923d142d443aed7258446470f26a">n2d::TileLayer::Update</a></div><div class="ttdeci">void Update(float)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:81</div></div>
+<div class="ttc" id="aclassn2d_1_1Resources_html"><div class="ttname"><a href="../../da/d95/classn2d_1_1Resources.html">n2d::Resources</a></div><div class="ttdef"><b>Definition</b> Resources.h:19</div></div>
+<div class="ttc" id="aclassn2d_1_1TileLayer_html"><div class="ttname"><a href="../../d4/d3f/classn2d_1_1TileLayer.html">n2d::TileLayer</a></div><div class="ttdef"><b>Definition</b> MapLayer.h:77</div></div>
+<div class="ttc" id="aclassn2d_1_1TileLayer_html_a4e3cf7d673de1e031e4e3394c3b09600"><div class="ttname"><a href="../../d4/d3f/classn2d_1_1TileLayer.html#a4e3cf7d673de1e031e4e3394c3b09600">n2d::TileLayer::Draw</a></div><div class="ttdeci">void Draw(sf::RenderWindow &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:79</div></div>
+<div class="ttc" id="aclassn2d_1_1TileLayer_html_a57f46360da0015bb98d5c45971442b1c"><div class="ttname"><a href="../../d4/d3f/classn2d_1_1TileLayer.html#a57f46360da0015bb98d5c45971442b1c">n2d::TileLayer::Events</a></div><div class="ttdeci">void Events(sf::Event &amp;)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:143</div></div>
+<div class="ttc" id="aclassn2d_1_1TileLayer_html_ae667923d142d443aed7258446470f26a"><div class="ttname"><a href="../../d4/d3f/classn2d_1_1TileLayer.html#ae667923d142d443aed7258446470f26a">n2d::TileLayer::Update</a></div><div class="ttdeci">void Update(float)</div><div class="ttdef"><b>Definition</b> MapLayer.cpp:87</div></div>
 <div class="ttc" id="aclassn2d_1_1Tileset_html"><div class="ttname"><a href="../../dd/d87/classn2d_1_1Tileset.html">n2d::Tileset</a></div><div class="ttdef"><b>Definition</b> Tileset.h:16</div></div>
 <div class="ttc" id="aclassn2d_1_1Updatable_html"><div class="ttname"><a href="../../d1/d8a/classn2d_1_1Updatable.html">n2d::Updatable</a></div><div class="ttdef"><b>Definition</b> Interfaces.h:49</div></div>
-<div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:23</div></div>
+<div class="ttc" id="anamespacen2d_html"><div class="ttname"><a href="../../d7/d62/namespacen2d.html">n2d</a></div><div class="ttdef"><b>Definition</b> App.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Sun Apr 14 2024 13:22:56 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

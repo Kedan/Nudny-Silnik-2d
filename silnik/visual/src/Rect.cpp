@@ -119,8 +119,8 @@ void Rect::SetColor( sf::Color color ) {
 
 void Rect::SetTexture( int id ) {
 	texture_id = id;
-	shape.setTexture( mp_resources->GetTexturePtr( texture_id) );
-	SetTextureCoords(0,0, mp_resources->GetTexturePtr( texture_id )->getSize().x, mp_resources->GetTexturePtr( texture_id )->getSize().y );
+	shape.setTexture( mp_resources->textures.GetPtr( texture_id) );
+	SetTextureCoords(0,0, mp_resources->textures.GetPtr( texture_id )->getSize().x, mp_resources->textures.GetPtr( texture_id )->getSize().y );
 }
 
 void Rect::SetTexture( sf::Texture& t_texture ) {
@@ -128,14 +128,15 @@ void Rect::SetTexture( sf::Texture& t_texture ) {
 }
 
 void Rect::SetTexture( std::string texture_path ) {
-	texture_id = mp_resources->LoadTexture( texture_path );
+	texture_id = mp_resources->textures.Load( texture_path );
+	texture_id = mp_resources->textures.Load( texture_path );
 	SetTexture( texture_id );
 }
 
 void Rect::SetTextureCoords( glm::vec4 coords ) {
 	if( texture_id > -1 && coords[0]==0 && coords[1]==0 && coords[2] == 0 && coords[3]==0 ) {
-		coords[2] = mp_resources->GetTexture( texture_id ).getSize().x;
-		coords[3] = mp_resources->GetTexture( texture_id ).getSize().y;
+		coords[2] = mp_resources->textures.Get( texture_id ).getSize().x;
+		coords[3] = mp_resources->textures.Get( texture_id ).getSize().y;
 	}
 	tex_coords = coords;
 	shape.setTextureRect( sf::IntRect( tex_coords[0], tex_coords[1], tex_coords[2], tex_coords[3] ));

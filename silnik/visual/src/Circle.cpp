@@ -101,7 +101,7 @@ void Circle::SetColor( sf::Color color ) {
 
 void Circle::SetTexture( int id ) {
 	texture_id = id;
-	shape.setTexture( mp_resources->GetTexturePtr( texture_id ));
+	shape.setTexture( mp_resources->textures.GetPtr( texture_id ));
 }
 
 void Circle::SetTexture( sf::Texture& t_texture ) {
@@ -109,8 +109,8 @@ void Circle::SetTexture( sf::Texture& t_texture ) {
 }
 
 void Circle::SetTexture( std::string texture_path ) {
-	if( !mp_resources->IsTextureLoaded( texture_path ) ) {
-		texture_id = mp_resources->LoadTexture( texture_path );
+	if( !mp_resources->textures.IsLoaded( texture_path ) ) {
+		texture_id = mp_resources->textures.Load( texture_path );
 	}
 	if( texture_id >= 0 ) {
 		SetTexture( texture_id );
@@ -120,8 +120,8 @@ void Circle::SetTexture( std::string texture_path ) {
 
 void Circle::SetTextureCoords( glm::vec4 coords ) {
 	if( texture_id > -1 && coords[0]==0 && coords[1]==0 && coords[2] == 0 && coords[3]==0 ) {
-		coords[2] = mp_resources->GetTexture( texture_id ).getSize().x;
-		coords[3] = mp_resources->GetTexture( texture_id ).getSize().y;
+		coords[2] = mp_resources->textures.GetRef( texture_id ).getSize().x;
+		coords[3] = mp_resources->textures.GetRef( texture_id ).getSize().y;
 	}
 	tex_coords = coords;
 	shape.setTextureRect( sf::IntRect( tex_coords[0], tex_coords[1], tex_coords[2], tex_coords[3] ));

@@ -105,8 +105,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9feaad8716b8b0a2d612796cb6264b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00af08b89c3f6b94949f81e17d9269e6" id="r_a00af08b89c3f6b94949f81e17d9269e6"><td class="memItemLeft" align="right" valign="top">sf::Texture &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00af08b89c3f6b94949f81e17d9269e6">GetTextureRef</a> (int)</td></tr>
 <tr class="separator:a00af08b89c3f6b94949f81e17d9269e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af67bb3e5f722c284a2886c4be375756c" id="r_af67bb3e5f722c284a2886c4be375756c"><td class="memItemLeft" align="right" valign="top"><a id="af67bb3e5f722c284a2886c4be375756c" name="af67bb3e5f722c284a2886c4be375756c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>LoadFont</b> (std::string)</td></tr>
+<tr class="memitem:a9bdb4f2e9893cdc58434b84725af1f08" id="r_a9bdb4f2e9893cdc58434b84725af1f08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bdb4f2e9893cdc58434b84725af1f08">LoadMusic</a> (std::string)</td></tr>
+<tr class="separator:a9bdb4f2e9893cdc58434b84725af1f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c72cca4a2e2fbc303440dbc6d5ae18" id="r_a94c72cca4a2e2fbc303440dbc6d5ae18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94c72cca4a2e2fbc303440dbc6d5ae18">GetMusicId</a> (std::string)</td></tr>
+<tr class="separator:a94c72cca4a2e2fbc303440dbc6d5ae18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af67bb3e5f722c284a2886c4be375756c" id="r_af67bb3e5f722c284a2886c4be375756c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af67bb3e5f722c284a2886c4be375756c">LoadFont</a> (std::string)</td></tr>
 <tr class="separator:af67bb3e5f722c284a2886c4be375756c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a814cb3ad3a8dd33d7e8a34846c43720e" id="r_a814cb3ad3a8dd33d7e8a34846c43720e"><td class="memItemLeft" align="right" valign="top"><a id="a814cb3ad3a8dd33d7e8a34846c43720e" name="a814cb3ad3a8dd33d7e8a34846c43720e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsFontLoaded</b> (std::string)</td></tr>
@@ -182,6 +185,30 @@ std::map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bo
       </table>
 </div><div class="memdoc">
 <p>Free all assets </p>
+
+</div>
+</div>
+<a id="a94c72cca4a2e2fbc303440dbc6d5ae18" name="a94c72cca4a2e2fbc303440dbc6d5ae18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c72cca4a2e2fbc303440dbc6d5ae18">&#9670;&#160;</a></span>GetMusicId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int n2d::Resources::GetMusicId </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns music ID if you pass path to file. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td>path to file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- texture ID. Returns -1 if image not loaded. </dd></dl>
 
 </div>
 </div>
@@ -345,6 +372,68 @@ std::map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bo
 
 </div>
 </div>
+<a id="af67bb3e5f722c284a2886c4be375756c" name="af67bb3e5f722c284a2886c4be375756c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67bb3e5f722c284a2886c4be375756c">&#9670;&#160;</a></span>LoadFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Resources::LoadFont </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>t_font_path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return true if music already loaded </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td>path to music file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- (bool) Returns music by ID. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td>music ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- music reference Returns music by file path. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td>relative music path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- music reference </dd></dl>
+
+</div>
+</div>
+<a id="a9bdb4f2e9893cdc58434b84725af1f08" name="a9bdb4f2e9893cdc58434b84725af1f08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bdb4f2e9893cdc58434b84725af1f08">&#9670;&#160;</a></span>LoadMusic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int n2d::Resources::LoadMusic </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Load music. Music is different than sound. Music is lika stream, sound is from buffer. Check SFML documentation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td>path to file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>- created music id. Returns -1 when loading failed. </dd></dl>
+
+</div>
+</div>
 <a id="aed5924d556e534fde148145b80bcf212" name="aed5924d556e534fde148145b80bcf212"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed5924d556e534fde148145b80bcf212">&#9670;&#160;</a></span>LoadTexture()</h2>
 
@@ -423,7 +512,7 @@ std::map&lt; std::string, int &gt;&#160;</td><td class="memItemRight" valign="bo
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 29 2024 19:27:35 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+Generated on Sun Apr 14 2024 13:22:57 for Nudny Silnik 2d by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
 </small></address>
 </body>
 </html>

@@ -15,6 +15,7 @@ Map::Map( std::string t_file_path ) {
 }
 
 Map::~Map() {
+	Free();
 	LOG.Time() << "Map destrucor\n";  
 }
 
@@ -85,7 +86,7 @@ bool Map::LoadImages() {
 			case tson::LayerType::ImageLayer: {
 				std::string tmp = m_dir;
 				tmp.append( layer.getImage() );
-				src.LoadTexture( tmp );
+				src.textures.Load( tmp );
 			} 
 			break;
 		}	
@@ -115,11 +116,10 @@ bool Map::LoadAudio() {
 	LOG.Time() << "Map Load Audio\n";
 	tson::PropertyCollection collection = mp_map->getProperties();
 	for( const auto&[ key, value ] : collection.getProperties() ) {
-	//	if( value.getName() == "music" ) {
-	//		if( m_music.openFromFile( value.getValue<std::string>() )) {
-	//			//m_music.play();
-	//		}
-	//	}	
+		if( value.getName() == "music" ) {
+			m_music_path = value.getValue<std::string>();
+			m_music_id	= src.music.Load( value.getValue<std::string>());
+		}	
 	}
 	LOG.Time() << "Map Load Audio - end\n";
 	return true;
@@ -129,12 +129,14 @@ void Map::Create( b2World& t_world ) {
 	for( auto layer : m_layers ) {
 		layer->Create( t_world );
 	}
-	//m_music.play();
 	LOG.Time() << "Map Create layer. world="<<&t_world<<"\n";
+	src.music.Get( m_music_id)->play();
+	LOG.Time() << "Map Create: music["<<m_music_id<<"] play\n";
 }	
 
 void Map::Free() {
 	LOG.Time() << "Map Free\n";
+	src.music.Get( m_music_id )->stop();
 	mp_entity_factory = nullptr;
 }
 
@@ -172,5 +174,8 @@ void Map::Events( sf::Event& t_event ) {
 	//player.Events( t_event );
 	for( auto layer : m_layers ) {
 		layer->Events( t_event );
+	}
+	if( Keyboard::Instance()->WasPressed( sf::Keyboard::P )) {
+		src.music.Get( m_music_id )->pause();
 	}
 }

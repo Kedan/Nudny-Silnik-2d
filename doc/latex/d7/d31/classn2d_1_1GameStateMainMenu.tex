@@ -1,0 +1,88 @@
+\doxysection{n2d\+::Game\+State\+Main\+Menu Class Reference}
+\hypertarget{classn2d_1_1GameStateMainMenu}{}\label{classn2d_1_1GameStateMainMenu}\index{n2d::GameStateMainMenu@{n2d::GameStateMainMenu}}
+Inheritance diagram for n2d\+::Game\+State\+Main\+Menu\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.514970cm]{d7/d31/classn2d_1_1GameStateMainMenu}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} {\bfseries Dispatch} (sf\+::\+Event \&)=0
+\item 
+virtual void {\bfseries Reset} ()=0
+\item 
+virtual void {\bfseries Load} (json \&t\+\_\+conf)=0
+\item 
+void {\bfseries Set\+Game\+State\+Factory} (\mbox{\hyperlink{classn2d_1_1GameStateFactory}{Game\+State\+Factory}} \&t\+\_\+factory)
+\item 
+virtual void {\bfseries Enter} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&)=0
+\item 
+virtual void {\bfseries Exit} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&)=0
+\item 
+virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} {\bfseries Dispatch} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&, sf\+::\+Event \&)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1State}{n2d\+::\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1State_afa3d3f519995a25adc8e730a7d0da2d8}{Enter}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1State_abacf0161f7682e0f1ed94c1e66ecd410}{Exit}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window)=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window, sf\+::\+Transform \&t\+\_\+transform)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Updatable}{n2d\+::\+Updatable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Updatable_afdd0bf94a4486b3a893ed560af5e22c6}{Update}} (float t\+\_\+dt)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}{Events}} (sf\+::\+Event \&t\+\_\+event)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+b2\+World {\bfseries world}
+\item 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} {\bfseries src}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Next\+Game\+State} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries m\+\_\+id}
+\item 
+json {\bfseries m\+\_\+conf}
+\item 
+\mbox{\hyperlink{classn2d_1_1GameStateFactory}{Game\+State\+Factory}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+factory}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/20240411-\/\+BACKUP/Game\+State.\+h\end{DoxyCompactItemize}

@@ -47,11 +47,11 @@ void Sprite::SetTexture( sf::Texture& t_texture ) {
 
 void Sprite::SetTexture( int id ) {
 	texture_id = id;
-	sprite.setTexture( mp_resources->GetTextureRef( texture_id ));
+	sprite.setTexture( mp_resources->textures.GetCRef( texture_id ));
 }
 void Sprite::SetTexture( std::string texture_path ) {
-	if( !mp_resources->IsTextureLoaded( texture_path ) ) {
-		texture_id = mp_resources->LoadTexture( texture_path );
+	if( !mp_resources->textures.IsLoaded( texture_path ) ) {
+		texture_id = mp_resources->textures.Load( texture_path );
 	}
 	if( texture_id >= 0 ) {
 		SetTexture( texture_id );
@@ -88,8 +88,8 @@ void Sprite::AddBodyCoords( float x, float y, float r ) {
 }
 void Sprite::SetTextureCoords( glm::vec4 coords ) {
 	if( texture_id > -1 && coords[0]==0 && coords[1]==0 && coords[2] == 0 && coords[3]==0 ) {
-		coords[2] = mp_resources->GetTexture( texture_id ).getSize().x;
-		coords[3] = mp_resources->GetTexture( texture_id ).getSize().y;
+		coords[2] = mp_resources->textures.GetRef( texture_id ).getSize().x;
+		coords[3] = mp_resources->textures.GetRef( texture_id ).getSize().y;
 	}
 	tex_coords = coords;
 	sprite.setTextureRect( sf::IntRect( tex_coords[0], tex_coords[1], tex_coords[2], tex_coords[3] ));

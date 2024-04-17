@@ -27,6 +27,7 @@ namespace n2d {
 	 * This is MAIN application class. The Core. The Meritum. The thing. 
 	 * It do, what has to be done.
 	 * Amen.
+	 * It is also context for n2d::GameState class ( state machine )
 	 */ 
 	class App {
 		protected:
@@ -225,10 +226,11 @@ namespace n2d {
 			 * Manually set game state. 
 			 */
 			inline void SetGameState( GameState* t_game_state ) {
+				LOG.Time() << "\t Change game state from " << m_game_state << " to " << t_game_state <<"\n";
 				if( m_game_state != nullptr ) {
 					m_game_state->Exit( *this );
-					delete m_game_state;
-				}
+				}			
+				delete m_game_state;
 				ClearLists();
 				m_game_state = t_game_state;
 				m_game_state->Enter( *this );

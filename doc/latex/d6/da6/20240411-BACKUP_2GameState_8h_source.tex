@@ -1,0 +1,88 @@
+\doxysection{Game\+State.\+h}
+\hypertarget{20240411-BACKUP_2GameState_8h_source}{}\label{20240411-BACKUP_2GameState_8h_source}\index{silnik/core/include/20240411-\/BACKUP/GameState.h@{silnik/core/include/20240411-\/BACKUP/GameState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_GAME\_STATE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_GAME\_STATE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}State.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }Game;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }GameStateFactory;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1GameState}{GameState}}\ :\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1State}{State}},\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}},\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}},\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Interactive}{Interactive}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ m\_id;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ json\ \ \ \ \ \ \ \ \ \ \ \ m\_conf;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateFactory}{GameStateFactory}}*\ \ \ mp\_factory;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ b2World\ \ \ \ \ \ \ \ \ world;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\ \ \ \ \ \ src;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}*\ Dispatch(\ sf::Event\&\ )\ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Reset()\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ Load(\ json\&\ t\_conf\ )\ \ \ \ \ \ \ \ =\ 0;\ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ virtual\ void\ \ \ \ \ \ \ \ Create()\ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ virtual\ void\ \ \ \ \ \ \ \ Update(\ float\ )\ \ \ \ \ \ \ \ \ =\ 0;}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ virtual\ void\ \ \ \ \ \ \ \ Draw(\ sf::RenderWindow\&\ )\ \ \ =\ 0;}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ virtual\ void\ \ \ \ \ \ \ \ Events(\ sf::Event\&\ )\ \ \ \ \ \ \ \ =\ 0;}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ virtual\ void\ \ \ \ \ \ \ \ Enter()\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ virtual\ void\ \ \ \ \ \ \ \ Exit()\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetGameStateFactory(\ \mbox{\hyperlink{classn2d_1_1GameStateFactory}{GameStateFactory}}\&\ t\_factory\ );}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}*\ \ \ \ \ GetNextGameState();}
+\DoxyCodeLine{00042\ \ \ \ \ \};}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ proste,\ interaktywne\ animacje}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ fade\ in,\ wyswietlenia,\ oczekiwanie\ na\ reakcje,\ lub\ uplyw\ czasu,\ fade\ out}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ nastepny\ stan}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1GameStateLogo}{GameStateLogo}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateLogo}{GameStateLogo}}()\{\};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}*\ Dispatch(\ sf::Event\&\ );}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateLogo_a5d1a537de73890dc44c285ec912a0d2f}{Update}}(\ \textcolor{keywordtype}{float}\ );}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateLogo_ad512333f6641975914c11bd6857cc7a0}{Draw}}(\ sf::RenderWindow\&\ );}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateLogo_a64be777b87898cd0f18a123f17ce4c5d}{Draw}}(\ sf::RenderWindow\&,\ sf::Transform\&\ );}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateLogo_a9c1e950ba0ce8b2eea5b967186f29c44}{Events}}(\ sf::Event\&\ );}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateLogo_ab4af9b1e3a5331eadcad730b6d3ec839}{Enter}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateLogo_a7383c7e4343962cc19196895c0ac1b7b}{Exit}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ IsTimeElapsed();}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ stan\ posredni\ wyswiatlany\ gdy\ laduje\ sie\ stan\ "{}glowny"{}}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ fade\ in,\ pokaz\ cos\ malego\ fajnego,\ jak\ zaladuje\ sie\ to\ co\ chcemy,\ fade\ out}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ pokaz\ zaladowany\ stan}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1GameStateLoader}{GameStateLoader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ mocno\ interaktywny\ stan.\ }}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ jak\ zbudowac/zaimplementowac\ menu?}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ sterowanie\ silnikiem}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1GameStateMainMenu}{GameStateMainMenu}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ prosty\ stan\ -\/\ wyswieltanie\ mpg}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ interaktwywny\ na\ Esc}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1GameStateCinematic}{GameStateCinematic}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ Wlasciwa\ gra.\ Gameplay}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ Tu\ sie\ dzieje\ magja}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1GameStatePlay}{GameStatePlay}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//\ wyswietlanie\ literek}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1GameStateCredits}{GameStateCredits}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \};\ \ }
+\DoxyCodeLine{00086\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

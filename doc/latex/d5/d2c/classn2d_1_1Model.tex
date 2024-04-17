@@ -1,0 +1,124 @@
+\doxysection{n2d\+::Model Class Reference}
+\hypertarget{classn2d_1_1Model}{}\label{classn2d_1_1Model}\index{n2d::Model@{n2d::Model}}
+Inheritance diagram for n2d\+::Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.553398cm]{d5/d2c/classn2d_1_1Model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Model_a142a1f9475d85f9bf4931e63bdabecda}\label{classn2d_1_1Model_a142a1f9475d85f9bf4931e63bdabecda} 
+void {\bfseries Register} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&t\+\_\+app)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window)=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{Draw}} (sf\+::\+Render\+Window \&t\+\_\+window, sf\+::\+Transform \&t\+\_\+transform)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Updatable}{n2d\+::\+Updatable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Updatable_afdd0bf94a4486b3a893ed560af5e22c6}{Update}} (float t\+\_\+dt)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Creatable}{n2d\+::\+Creatable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Creatable_a58c8fe521854b6db80918d98f4dbd308}{Create}} (b2\+World \&t\+\_\+world)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Animated}{n2d\+::\+Animated}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_a07c4762576f95f53d5f6cda7d15ea337}{Play}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_a5291e65867b18d0f6f429e2683a7c31e}{Pause}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_aafa111136e06807badbd0886a2f762ae}{Stop}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_a52e707da569f0c6c9fad24ebebebd6e7}{Clear\+Animation}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classn2d_1_1Animated_aca9c14d240d437b4112419d9d446addd}{Animate}} (float t\+\_\+dt)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Physical}{n2d\+::\+Physical}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Set\+Position} (float, float)=0
+\item 
+virtual void {\bfseries Set\+Velocity} (float, float)=0
+\item 
+virtual void {\bfseries Set\+Rotation} (float)=0
+\item 
+virtual void {\bfseries Set\+Angular\+Velocity} (float, float)=0
+\item 
+virtual void {\bfseries Set\+Size} (float, float)=0
+\item 
+virtual void {\bfseries Set\+Scale} (float, float)=0
+\item 
+virtual glm\+::vec2 {\bfseries Get\+Position} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Colored}{n2d\+::\+Colored}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Set\+Color} (float, float, float, float)=0
+\item 
+virtual void {\bfseries Set\+Alpha} (float)=0
+\item 
+virtual void {\bfseries Set\+Visible} (bool)=0
+\item 
+virtual float {\bfseries Get\+Alpha} ()=0
+\item 
+virtual glm\+::vec4 {\bfseries Get\+Color} ()=0
+\item 
+virtual glm\+::vec4 {\bfseries Get\+RGBA} ()=0
+\item 
+virtual glm\+::vec3 {\bfseries Get\+RGB} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Textured}{n2d\+::\+Textured}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Set\+Texture} (sf\+::\+Texture \&)=0
+\item 
+virtual void {\bfseries Set\+Texture\+Coords} (float, float, float, float)=0
+\item 
+virtual sf\+::\+Texture \& {\bfseries Get\+Texture} ()=0
+\item 
+virtual glm\+::vec4 {\bfseries Get\+Texture\+Coords} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Model_a8d569d3d010b92b1c81ef37f62e31667}\label{classn2d_1_1Model_a8d569d3d010b92b1c81ef37f62e31667} 
+int {\bfseries m\+\_\+id}
+\item 
+\Hypertarget{classn2d_1_1Model_ac7725a37afd6cd0285068b5a79a9d2b5}\label{classn2d_1_1Model_ac7725a37afd6cd0285068b5a79a9d2b5} 
+std\+::string {\bfseries m\+\_\+name}
+\item 
+\Hypertarget{classn2d_1_1Model_a3c9484e986b60790931aacb3c73053fe}\label{classn2d_1_1Model_a3c9484e986b60790931aacb3c73053fe} 
+glm\+::vec2 {\bfseries m\+\_\+position}
+\item 
+\Hypertarget{classn2d_1_1Model_a323a75a64cf4882848746eff4c6887fe}\label{classn2d_1_1Model_a323a75a64cf4882848746eff4c6887fe} 
+float {\bfseries m\+\_\+rotation}
+\item 
+\Hypertarget{classn2d_1_1Model_a1bd52fb253785760e432fea36a810d7c}\label{classn2d_1_1Model_a1bd52fb253785760e432fea36a810d7c} 
+glm\+::vec2 {\bfseries m\+\_\+velocity}
+\item 
+\Hypertarget{classn2d_1_1Model_abfadb1b1e9d5aa83611b4d2c9a042c8d}\label{classn2d_1_1Model_abfadb1b1e9d5aa83611b4d2c9a042c8d} 
+glm\+::vec2 {\bfseries m\+\_\+angular\+\_\+velocity}
+\item 
+\Hypertarget{classn2d_1_1Model_a70f9afb6f3b78693b4f8c3028a74451b}\label{classn2d_1_1Model_a70f9afb6f3b78693b4f8c3028a74451b} 
+std\+::vector$<$ \mbox{\hyperlink{classn2d_1_1Body}{Body}} $>$ {\bfseries m\+\_\+bodies}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/visual/include/Model.\+h\item 
+silnik/visual/src/Model.\+cpp\end{DoxyCompactItemize}

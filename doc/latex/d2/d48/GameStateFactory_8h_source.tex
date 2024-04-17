@@ -1,0 +1,27 @@
+\doxysection{Game\+State\+Factory.\+h}
+\hypertarget{GameStateFactory_8h_source}{}\label{GameStateFactory_8h_source}\index{silnik/core/include/GameStateFactory.h@{silnik/core/include/GameStateFactory.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_GAME\_STATE\_FACTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_GAME\_STATE\_FACTORY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GameState.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1GameStateFactory}{GameStateFactory}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ json\ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateFactory_ad44125c18502f8509a549c17a9446870}{m\_scenario}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateFactory_a4acc8e517921a4bcaa09059a0e7d7635}{SetScenario}}(\ json\ t\_scenario\ )\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateFactory_ad44125c18502f8509a549c17a9446870}{m\_scenario}}\ =\ t\_scenario;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}*\ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateFactory_a0f871a9a33af3f877797ad6ef786e78f}{CreateFromScenario}}(\ \textcolor{keywordtype}{int}\ t\_game\_state\_id\ )\ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}*\ \ \ \ \ \mbox{\hyperlink{classn2d_1_1GameStateFactory_ae4bb1312f32fbddc50b1b68e7a07f420}{Create}}(\ \textcolor{keywordtype}{int}\ t\_game\_state\_type\ )\ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00042\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ GameStateFactory;}}
+\DoxyCodeLine{00043\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

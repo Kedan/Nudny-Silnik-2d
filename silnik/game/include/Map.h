@@ -14,6 +14,7 @@
 #include "EntityFactory.h"
 #include "MapLayer.h"
 #include "Actor.h"
+#include "Keyboard.h"
 
 namespace n2d {
 	class Map : public Updatable, public Drawable, public Interactive {
@@ -27,7 +28,9 @@ namespace n2d {
 			bool				m_assets_loaded;
 			std::vector<Layer*>		m_layers;
 			//Player*				mp_player;
-			sf::Music			m_music;
+
+			int				m_music_id;
+			std::string			m_music_path;
 		public:
 			glm::vec2			position;
 			Resources			src;

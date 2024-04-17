@@ -54,8 +54,41 @@
 \DoxyCodeLine{00124\ }
 \DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Animated_aca9c14d240d437b4112419d9d446addd}{Animate}}(\ \textcolor{keywordtype}{float}\ t\_dt\ )\ \ \ =\ 0;}
 \DoxyCodeLine{00130\ \ \ \ \ \};}
-\DoxyCodeLine{00131\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Physical}{Physical}}\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \textcolor{comment}{//\ virtual\ setters}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetPosition(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetVelocity(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetRotation(\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetAngularVelocity(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetSize(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetScale(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \textcolor{comment}{//\ virtual\ getters}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec2\ \ \ GetPosition();}
+\DoxyCodeLine{00148\ \ \ \ \ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Colored}{Colored}}\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetColor(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetAlpha(\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetVisible(\ \textcolor{keywordtype}{bool}\ )\ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ GetAlpha()\ \ =\ 0;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetColor()\ \ =\ 0;}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetRGBA()\ \ \ =\ 0;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec3\ \ \ GetRGB()\ \ \ \ =\ 0;}
+\DoxyCodeLine{00160\ \ \ \ \ \};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Textured}{Textured}}\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetTexture(\ sf::Texture\&\ )\ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetTextureCoords(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ sf::Texture\&\ \ \ \ GetTexture()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetTextureCoords()\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00168\ \ \ \ \ \};}
+\DoxyCodeLine{00169\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

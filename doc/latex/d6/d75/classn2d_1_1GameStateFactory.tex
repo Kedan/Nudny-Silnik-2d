@@ -1,0 +1,73 @@
+\doxysection{n2d\+::Game\+State\+Factory Class Reference}
+\hypertarget{classn2d_1_1GameStateFactory}{}\label{classn2d_1_1GameStateFactory}\index{n2d::GameStateFactory@{n2d::GameStateFactory}}
+
+
+{\ttfamily \#include $<$Game\+State\+Factory.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classn2d_1_1GameStateFactory_a4acc8e517921a4bcaa09059a0e7d7635}{Set\+Scenario}} (json t\+\_\+scenario)
+\item 
+virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1GameStateFactory_a0f871a9a33af3f877797ad6ef786e78f}{Create\+From\+Scenario}} (int t\+\_\+game\+\_\+state\+\_\+id)=0
+\item 
+virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1GameStateFactory_ae4bb1312f32fbddc50b1b68e7a07f420}{Create}} (int t\+\_\+game\+\_\+state\+\_\+type)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+json \mbox{\hyperlink{classn2d_1_1GameStateFactory_ad44125c18502f8509a549c17a9446870}{m\+\_\+scenario}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Creates game state objects depending on passed parameter. You need pass it to \doxylink{classn2d_1_1App}{n2d\+::\+App} instance. \doxylink{classn2d_1_1App}{n2d\+::\+App} creates 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1GameStateFactory_ae4bb1312f32fbddc50b1b68e7a07f420}\label{classn2d_1_1GameStateFactory_ae4bb1312f32fbddc50b1b68e7a07f420} 
+\index{n2d::GameStateFactory@{n2d::GameStateFactory}!Create@{Create}}
+\index{Create@{Create}!n2d::GameStateFactory@{n2d::GameStateFactory}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} n2d\+::\+Game\+State\+Factory\+::\+Create (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+game\+\_\+state\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Create game state based on game state TYPE. 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+game\+\_\+state\+\_\+type} & -\/ game state type represented by int. You can, and propably will, use your own enum. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1GameStateFactory_a0f871a9a33af3f877797ad6ef786e78f}\label{classn2d_1_1GameStateFactory_a0f871a9a33af3f877797ad6ef786e78f} 
+\index{n2d::GameStateFactory@{n2d::GameStateFactory}!CreateFromScenario@{CreateFromScenario}}
+\index{CreateFromScenario@{CreateFromScenario}!n2d::GameStateFactory@{n2d::GameStateFactory}}
+\doxysubsubsection{\texorpdfstring{CreateFromScenario()}{CreateFromScenario()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} n2d\+::\+Game\+State\+Factory\+::\+Create\+From\+Scenario (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+game\+\_\+state\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Create game state from scenario. 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+game\+\_\+state\+\_\+id} & -\/ game state ID (int) in scenario \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classn2d_1_1GameStateFactory_a4acc8e517921a4bcaa09059a0e7d7635}\label{classn2d_1_1GameStateFactory_a4acc8e517921a4bcaa09059a0e7d7635} 
+\index{n2d::GameStateFactory@{n2d::GameStateFactory}!SetScenario@{SetScenario}}
+\index{SetScenario@{SetScenario}!n2d::GameStateFactory@{n2d::GameStateFactory}}
+\doxysubsubsection{\texorpdfstring{SetScenario()}{SetScenario()}}
+{\footnotesize\ttfamily void n2d\+::\+Game\+State\+Factory\+::\+Set\+Scenario (\begin{DoxyParamCaption}\item[{json}]{t\+\_\+scenario }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set scenerio ( sequence of game states ). 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+scenerio} & -\/ json file \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classn2d_1_1GameStateFactory_ad44125c18502f8509a549c17a9446870}\label{classn2d_1_1GameStateFactory_ad44125c18502f8509a549c17a9446870} 
+\index{n2d::GameStateFactory@{n2d::GameStateFactory}!m\_scenario@{m\_scenario}}
+\index{m\_scenario@{m\_scenario}!n2d::GameStateFactory@{n2d::GameStateFactory}}
+\doxysubsubsection{\texorpdfstring{m\_scenario}{m\_scenario}}
+{\footnotesize\ttfamily json n2d\+::\+Game\+State\+Factory\+::m\+\_\+scenario\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sequence of game states in json file. It doesn\textquotesingle{}t matter whats inside. That depend on you. You may pass anything you want, but remember you should be able to create some game state object, based on this file, so IMO it should have at least "{}type"{} field, definig game state type. I suggest also attributes like\+: game duration, max score, list of resources, path to game logic script etc... 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/Game\+State\+Factory.\+h\end{DoxyCompactItemize}

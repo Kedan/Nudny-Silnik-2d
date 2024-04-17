@@ -1,0 +1,41 @@
+\doxysection{Model.\+h}
+\hypertarget{Model_8h_source}{}\label{Model_8h_source}\index{silnik/visual/include/Model.h@{silnik/visual/include/Model.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_SILNIK\_2D\_MODEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_SILNIK\_2D\_MODEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Interfaces.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Body.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Model}{Model}}\ :}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}},}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Updatable}{Updatable}},}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Creatable}{Creatable}},}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Animated}{Animated}},}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Physical}{Physical}},}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Colored}{Colored}},}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Textured}{Textured}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ m\_id;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \ \ \ \ \ \ \ \ m\_name;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_position;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ m\_rotation;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_velocity;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec2\ \ \ \ \ \ \ m\_angular\_velocity;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Body>\ \ \ m\_bodies;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::vector<Joint>\ \ \ \ m\_joints;}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Model}{Model}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Model}{\string~Model}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Register(\ \mbox{\hyperlink{classn2d_1_1App}{App}}\&\ t\_app\ );}
+\DoxyCodeLine{00032\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Model}}
+\DoxyCodeLine{00033\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

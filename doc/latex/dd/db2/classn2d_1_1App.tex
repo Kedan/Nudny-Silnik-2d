@@ -41,6 +41,11 @@ void \mbox{\hyperlink{classn2d_1_1App_a0e2eb1a09d862945da4e805f98aa7232}{Set\+Gr
 \item 
 void \mbox{\hyperlink{classn2d_1_1App_a143e4da850293268158d24a2695179e5}{Set\+Default\+Font}} (std\+::string t\+\_\+font)
 \item 
+void \mbox{\hyperlink{classn2d_1_1App_a31686a9b05b7c056106a58904de10454}{Set\+Game\+State}} (\mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*}t\+\_\+game\+\_\+state)
+\item 
+\Hypertarget{classn2d_1_1App_a16fb30d8f27a280e12d8e81405d43c7d}\label{classn2d_1_1App_a16fb30d8f27a280e12d8e81405d43c7d} 
+void {\bfseries Set\+Game\+State\+Factory} (\mbox{\hyperlink{classn2d_1_1GameStateFactory}{Game\+State\+Factory}} \texorpdfstring{$\ast$}{*}t\+\_\+game\+\_\+state\+\_\+factory)
+\item 
 float \mbox{\hyperlink{classn2d_1_1App_a73db31b4b77acb9df7e82327913c86bb}{Get\+FPS}} ()
 \item 
 void \mbox{\hyperlink{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2}{Draw}} (sf\+::\+Render\+Window \&)
@@ -51,6 +56,15 @@ void \mbox{\hyperlink{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2}{Draw}} 
 b2\+World \mbox{\hyperlink{classn2d_1_1App_a48ababdcabf46d6d25403dc028a8ab42}{world}} = b2\+World( b2\+Vec2( 0, 9.\+81f ))
 \item 
 \mbox{\hyperlink{classn2d_1_1Resources}{Resources}} \mbox{\hyperlink{classn2d_1_1App_a8f5694e8980ac550a985f731482a4d61}{src}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classn2d_1_1App_a7b88d2cc96329459b88616727efb09ba}{Dispatch\+Game\+State}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1App_ac0d1c16c55bf66ed3b82282d16dce307}{Clear\+Lists}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1App_ab0dc890ec223bc9f86f368d0b093f9bf}{Load\+Scenario}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -96,12 +110,21 @@ std\+::list$<$ \mbox{\hyperlink{classn2d_1_1Drawable}{Drawable}} \texorpdfstring
 \item 
 std\+::map$<$ int, \mbox{\hyperlink{classn2d_1_1Interactive}{Interactive}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classn2d_1_1App_a543fac5390ac4771441deb420f5bd114}{m\+\_\+interactive\+\_\+list}}
 \item 
+\Hypertarget{classn2d_1_1App_a4a1151c6bb7d4d37bbbba685fc5f8c17}\label{classn2d_1_1App_a4a1151c6bb7d4d37bbbba685fc5f8c17} 
+std\+::list$<$ \mbox{\hyperlink{classn2d_1_1Creatable}{Creatable}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+creatable\+\_\+list}
+\item 
 std\+::string \mbox{\hyperlink{classn2d_1_1App_ac4f0fd2c4f82a4be228b52730d74f19f}{m\+\_\+default\+\_\+font}}
+\item 
+\Hypertarget{classn2d_1_1App_a83dfa46fd3c148730c58e13bad45f201}\label{classn2d_1_1App_a83dfa46fd3c148730c58e13bad45f201} 
+\mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+game\+\_\+state}
+\item 
+\Hypertarget{classn2d_1_1App_a6514adeae1556e7b9ad4ea4398d7cbb0}\label{classn2d_1_1App_a6514adeae1556e7b9ad4ea4398d7cbb0} 
+\mbox{\hyperlink{classn2d_1_1GameStateFactory}{Game\+State\+Factory}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+game\+\_\+state\+\_\+factory}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This is MAIN application class. The Core. The Meritum. The thing. It do, what has to be done. Amen. 
+This is MAIN application class. The Core. The Meritum. The thing. It do, what has to be done. Amen. It is also context for \doxylink{classn2d_1_1GameState}{n2d\+::\+Game\+State} class ( state machine ) 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classn2d_1_1App_acb8cbf3e285b91d0170ffe87df5989c5}\label{classn2d_1_1App_acb8cbf3e285b91d0170ffe87df5989c5} 
@@ -172,7 +195,19 @@ Adding \doxylink{classn2d_1_1Updatable}{Updatable} object to list.
 \begin{DoxyReturn}{Returns}
 Object index on list. 
 \end{DoxyReturn}
-\Hypertarget{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2}\label{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2} 
+\Hypertarget{classn2d_1_1App_ac0d1c16c55bf66ed3b82282d16dce307}\label{classn2d_1_1App_ac0d1c16c55bf66ed3b82282d16dce307} 
+\index{n2d::App@{n2d::App}!ClearLists@{ClearLists}}
+\index{ClearLists@{ClearLists}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{ClearLists()}{ClearLists()}}
+{\footnotesize\ttfamily void App\+::\+Clear\+Lists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Clear engine lists\+: drawable, updatable, inveractive, creatable. It does not destroys objects on list (pointers). Current App\+::m\+\_\+game\+\_\+state is responsible for that. It only clear lists \Hypertarget{classn2d_1_1App_a7b88d2cc96329459b88616727efb09ba}\label{classn2d_1_1App_a7b88d2cc96329459b88616727efb09ba} 
+\index{n2d::App@{n2d::App}!DispatchGameState@{DispatchGameState}}
+\index{DispatchGameState@{DispatchGameState}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{DispatchGameState()}{DispatchGameState()}}
+{\footnotesize\ttfamily void App\+::\+Dispatch\+Game\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Check and update App\+::m\+\_\+game\+\_\+state \Hypertarget{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2}\label{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2} 
 \index{n2d::App@{n2d::App}!Draw@{Draw}}
 \index{Draw@{Draw}!n2d::App@{n2d::App}}
 \doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
@@ -206,7 +241,13 @@ Loading method.
 {\em Path} & to configuration file. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classn2d_1_1App_ab75ce18914350bebec15c2785144eca9}\label{classn2d_1_1App_ab75ce18914350bebec15c2785144eca9} 
+\Hypertarget{classn2d_1_1App_ab0dc890ec223bc9f86f368d0b093f9bf}\label{classn2d_1_1App_ab0dc890ec223bc9f86f368d0b093f9bf} 
+\index{n2d::App@{n2d::App}!LoadScenario@{LoadScenario}}
+\index{LoadScenario@{LoadScenario}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{LoadScenario()}{LoadScenario()}}
+{\footnotesize\ttfamily void App\+::\+Load\+Scenario (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Load scenario form config.\+json. If defined any \Hypertarget{classn2d_1_1App_ab75ce18914350bebec15c2785144eca9}\label{classn2d_1_1App_ab75ce18914350bebec15c2785144eca9} 
 \index{n2d::App@{n2d::App}!RemoveInteractive@{RemoveInteractive}}
 \index{RemoveInteractive@{RemoveInteractive}!n2d::App@{n2d::App}}
 \doxysubsubsection{\texorpdfstring{RemoveInteractive()}{RemoveInteractive()}}
@@ -255,7 +296,13 @@ Set fixed frame rate.
 \doxysubsubsection{\texorpdfstring{SetFullscreen()}{SetFullscreen()}}
 {\footnotesize\ttfamily void n2d\+::\+App\+::\+Set\+Fullscreen (\begin{DoxyParamCaption}\item[{bool}]{t\+\_\+fullstreen = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Set full screen on/off \Hypertarget{classn2d_1_1App_a0e2eb1a09d862945da4e805f98aa7232}\label{classn2d_1_1App_a0e2eb1a09d862945da4e805f98aa7232} 
+Set full screen on/off \Hypertarget{classn2d_1_1App_a31686a9b05b7c056106a58904de10454}\label{classn2d_1_1App_a31686a9b05b7c056106a58904de10454} 
+\index{n2d::App@{n2d::App}!SetGameState@{SetGameState}}
+\index{SetGameState@{SetGameState}!n2d::App@{n2d::App}}
+\doxysubsubsection{\texorpdfstring{SetGameState()}{SetGameState()}}
+{\footnotesize\ttfamily void n2d\+::\+App\+::\+Set\+Game\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*}}]{t\+\_\+game\+\_\+state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Manually set game state. \Hypertarget{classn2d_1_1App_a0e2eb1a09d862945da4e805f98aa7232}\label{classn2d_1_1App_a0e2eb1a09d862945da4e805f98aa7232} 
 \index{n2d::App@{n2d::App}!SetGravity@{SetGravity}}
 \index{SetGravity@{SetGravity}!n2d::App@{n2d::App}}
 \doxysubsubsection{\texorpdfstring{SetGravity()}{SetGravity()}}

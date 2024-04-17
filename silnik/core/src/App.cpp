@@ -95,11 +95,13 @@ bool App::RemoveInteractive( int t_id ) {
 }
 
 int App::AddTexture( std::string t_name ) {
- 	return src.LoadTexture( t_name );
+ 	//return src.LoadTexture( t_name );
+	return src.textures.Load( t_name );
 }
 
 const sf::Texture* App::GetTexturePtr( int t_texture_id ) {
-	return src.GetTexturePtr( t_texture_id );
+	//return src.GetTexturePtr( t_texture_id );
+	return src.textures.GetPtr( t_texture_id );
 }	
 
 int App::Run() {
@@ -139,6 +141,7 @@ int App::Run() {
 }
 
 void App::DispatchGameState() {
+	LOG.Time() << "App DispatchGameState()\n";
 	if( m_game_state && m_game_state_factory ) {	
 		GameState* tmp_game_state = m_game_state->Dispatch( *this, m_event );
 		if( tmp_game_state != nullptr ) {

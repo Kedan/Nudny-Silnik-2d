@@ -24,7 +24,7 @@ bool Tileset::Load( tson::Tileset& t_tileset, std::string t_dir ) {
 		LOG.Time() << "Tileset Load - \tMap grid size: [" << m_grid_size.x << ", " << m_grid_size.y << " ]\n";
 		std::string texture_path = t_dir;
 		texture_path.append( t_tileset.getImage() );
-		int texture_id = mp_resources->LoadTexture( texture_path );
+		int texture_id = mp_resources->textures.Load( texture_path );
 		if( texture_id > -1 ) {
 			int GID, w, h;
 			float w2,h2;
@@ -49,7 +49,7 @@ bool Tileset::Load( tson::Tileset& t_tileset, std::string t_dir ) {
 					m_sprites[GID] = Sprite();
 					m_sprites[GID].GID = GID;
 					m_sprites[GID].SetSize( tilesize.x, tilesize.y );
-					m_sprites[GID].SetTexture( mp_resources->GetTextureRef( texture_id ) );
+					m_sprites[GID].SetTexture( mp_resources->textures.GetRef( texture_id ) );
 					m_sprites[GID].SetTextureCoords( draw_rect.x, draw_rect.y, draw_rect.width, draw_rect.height );
 					m_sprites[GID].collide = false;
 					for( auto o : tile.getObjectgroup().getObjects()) {

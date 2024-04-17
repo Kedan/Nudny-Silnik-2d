@@ -1,0 +1,181 @@
+\doxysection{n2d\+::Game\+State\+Logo Class Reference}
+\hypertarget{classn2d_1_1GameStateLogo}{}\label{classn2d_1_1GameStateLogo}\index{n2d::GameStateLogo@{n2d::GameStateLogo}}
+Inheritance diagram for n2d\+::Game\+State\+Logo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{da/d49/classn2d_1_1GameStateLogo}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classn2d_1_1GameStateLogo_a0e239c652cb4bec2391dfbe226f2f40c}{Dispatch}} (sf\+::\+Event \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1GameStateLogo_a5d1a537de73890dc44c285ec912a0d2f}{Update}} (float)
+\item 
+void \mbox{\hyperlink{classn2d_1_1GameStateLogo_ad512333f6641975914c11bd6857cc7a0}{Draw}} (sf\+::\+Render\+Window \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1GameStateLogo_a64be777b87898cd0f18a123f17ce4c5d}{Draw}} (sf\+::\+Render\+Window \&, sf\+::\+Transform \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1GameStateLogo_a9c1e950ba0ce8b2eea5b967186f29c44}{Events}} (sf\+::\+Event \&)
+\item 
+void \mbox{\hyperlink{classn2d_1_1GameStateLogo_ab4af9b1e3a5331eadcad730b6d3ec839}{Enter}} ()
+\item 
+void \mbox{\hyperlink{classn2d_1_1GameStateLogo_a7383c7e4343962cc19196895c0ac1b7b}{Exit}} ()
+\item 
+\Hypertarget{classn2d_1_1GameStateLogo_af4b9f05b4a3d03081ad06c3c7f67a9fa}\label{classn2d_1_1GameStateLogo_af4b9f05b4a3d03081ad06c3c7f67a9fa} 
+bool {\bfseries Is\+Time\+Elapsed} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Reset} ()=0
+\item 
+virtual void {\bfseries Load} (json \&t\+\_\+conf)=0
+\item 
+void {\bfseries Set\+Game\+State\+Factory} (\mbox{\hyperlink{classn2d_1_1GameStateFactory}{Game\+State\+Factory}} \&t\+\_\+factory)
+\item 
+virtual void {\bfseries Enter} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&)=0
+\item 
+virtual void {\bfseries Exit} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&)=0
+\item 
+virtual \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} {\bfseries Dispatch} (\mbox{\hyperlink{classn2d_1_1App}{App}} \&, sf\+::\+Event \&)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_ad3b9767c1231506ad6933addaa186e4c}{Is\+Interactive}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Data Fields inherited from \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+b2\+World {\bfseries world}
+\item 
+\mbox{\hyperlink{classn2d_1_1Resources}{Resources}} {\bfseries src}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Next\+Game\+State} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries m\+\_\+id}
+\item 
+json {\bfseries m\+\_\+conf}
+\item 
+\mbox{\hyperlink{classn2d_1_1GameStateFactory}{Game\+State\+Factory}} \texorpdfstring{$\ast$}{*} {\bfseries mp\+\_\+factory}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Drawable}{n2d\+::\+Drawable}}}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Transform \mbox{\hyperlink{classn2d_1_1Drawable_ab3aef1a4bfba84814535e443c9f1b98b}{transform}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Interactive}{n2d\+::\+Interactive}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classn2d_1_1Interactive_abf0ce80866a38d6ab7a51ba4494c622e}{m\+\_\+interactive}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1GameStateLogo_a0e239c652cb4bec2391dfbe226f2f40c}\label{classn2d_1_1GameStateLogo_a0e239c652cb4bec2391dfbe226f2f40c} 
+\index{n2d::GameStateLogo@{n2d::GameStateLogo}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!n2d::GameStateLogo@{n2d::GameStateLogo}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classn2d_1_1GameState}{Game\+State}} \texorpdfstring{$\ast$}{*} n2d\+::\+Game\+State\+Logo\+::\+Dispatch (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1GameState}{n2d\+::\+Game\+State}}.
+
+\Hypertarget{classn2d_1_1GameStateLogo_ad512333f6641975914c11bd6857cc7a0}\label{classn2d_1_1GameStateLogo_ad512333f6641975914c11bd6857cc7a0} 
+\index{n2d::GameStateLogo@{n2d::GameStateLogo}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::GameStateLogo@{n2d::GameStateLogo}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void n2d\+::\+Game\+State\+Logo\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aa3781f68e3d19347787be3a4d7c90f35}{n2d\+::\+Drawable}}.
+
+\Hypertarget{classn2d_1_1GameStateLogo_a64be777b87898cd0f18a123f17ce4c5d}\label{classn2d_1_1GameStateLogo_a64be777b87898cd0f18a123f17ce4c5d} 
+\index{n2d::GameStateLogo@{n2d::GameStateLogo}!Draw@{Draw}}
+\index{Draw@{Draw}!n2d::GameStateLogo@{n2d::GameStateLogo}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void n2d\+::\+Game\+State\+Logo\+::\+Draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{t\+\_\+window,  }\item[{sf\+::\+Transform \&}]{t\+\_\+transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Drawing method 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+window} & -\/ render window reference \\
+\hline
+{\em \&t\+\_\+transform} & -\/ additional transformations reference \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Drawable_aae7c8e4f5a45a83b1660b3e2ee74e821}{n2d\+::\+Drawable}}.
+
+\Hypertarget{classn2d_1_1GameStateLogo_ab4af9b1e3a5331eadcad730b6d3ec839}\label{classn2d_1_1GameStateLogo_ab4af9b1e3a5331eadcad730b6d3ec839} 
+\index{n2d::GameStateLogo@{n2d::GameStateLogo}!Enter@{Enter}}
+\index{Enter@{Enter}!n2d::GameStateLogo@{n2d::GameStateLogo}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily void n2d\+::\+Game\+State\+Logo\+::\+Enter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Defines what to do when state is created. Pre-\/execute instruction. Check \textquotesingle{}\doxylink{classn2d_1_1State}{State}\textquotesingle{} design pattern for more details. 
+
+Implements \mbox{\hyperlink{classn2d_1_1State_afa3d3f519995a25adc8e730a7d0da2d8}{n2d\+::\+State}}.
+
+\Hypertarget{classn2d_1_1GameStateLogo_a9c1e950ba0ce8b2eea5b967186f29c44}\label{classn2d_1_1GameStateLogo_a9c1e950ba0ce8b2eea5b967186f29c44} 
+\index{n2d::GameStateLogo@{n2d::GameStateLogo}!Events@{Events}}
+\index{Events@{Events}!n2d::GameStateLogo@{n2d::GameStateLogo}}
+\doxysubsubsection{\texorpdfstring{Events()}{Events()}}
+{\footnotesize\ttfamily void n2d\+::\+Game\+State\+Logo\+::\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{t\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Event handling method. 
+\begin{DoxyParams}{Parameters}
+{\em \&t\+\_\+event} & -\/ SFML event reference, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} method \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}{n2d\+::\+Interactive}}.
+
+\Hypertarget{classn2d_1_1GameStateLogo_a7383c7e4343962cc19196895c0ac1b7b}\label{classn2d_1_1GameStateLogo_a7383c7e4343962cc19196895c0ac1b7b} 
+\index{n2d::GameStateLogo@{n2d::GameStateLogo}!Exit@{Exit}}
+\index{Exit@{Exit}!n2d::GameStateLogo@{n2d::GameStateLogo}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily void n2d\+::\+Game\+State\+Logo\+::\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Defines what to do, when state is exiting. Post-\/execution instructions. Check \textquotesingle{}\doxylink{classn2d_1_1State}{State}\textquotesingle{} design pattern for more details. 
+
+Implements \mbox{\hyperlink{classn2d_1_1State_abacf0161f7682e0f1ed94c1e66ecd410}{n2d\+::\+State}}.
+
+\Hypertarget{classn2d_1_1GameStateLogo_a5d1a537de73890dc44c285ec912a0d2f}\label{classn2d_1_1GameStateLogo_a5d1a537de73890dc44c285ec912a0d2f} 
+\index{n2d::GameStateLogo@{n2d::GameStateLogo}!Update@{Update}}
+\index{Update@{Update}!n2d::GameStateLogo@{n2d::GameStateLogo}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void n2d\+::\+Game\+State\+Logo\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Update method 
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+dt} & -\/ time tick, passed in \doxylink{classn2d_1_1App_aa8bd47ced86a1df5e047fcbb1cc6eb8b}{n2d\+::\+App\+::\+Run()} from sf\+::\+Clock and sf\+::\+Time class \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Updatable_afdd0bf94a4486b3a893ed560af5e22c6}{n2d\+::\+Updatable}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/20240411-\/\+BACKUP/Game\+State.\+h\item 
+silnik/core/src/20240411-\/\+BACKUP/Game\+State.\+cpp\end{DoxyCompactItemize}
