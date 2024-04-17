@@ -5,161 +5,25 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NUDNY\_RESOURCES\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NUDNY\_RESOURCES\_H}}
 \DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <mutex>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SFML/Audio.hpp>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}box2d/box2d.h"{}}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}tileson/tileson.h"{}}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}JSONLoader.h"{}}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Log.h"{}}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Resource.h"{}}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::vector<sf::Font>\ \ \ \ \ \ \ m\_fonts;}}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::map<std::string,int>\ \ \ m\_fontNames;}}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ }}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ /**\ Textures\ container\ */}}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::vector<sf::Texture>\ \ \ \ m\_textures;}}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ /**\ Keep\ texture\ name\ -\/\ ID\ pairs\ */}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::map<std::string,int>\ \ \ m\_textureNames;}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::vector<std::shared\_ptr<sf::Music>>\ m\_music;}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::map<std::string,int>\ \ \ m\_musicNames;}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::vector<sf::SoundBuffer>\ \ \ \ m\_sound\_buffers;}}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ std::map<std::string,int>\ \ \ m\_sound\_map;}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ ResourceSFMLTexture\ \ \ \ \ textures;}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ ResourceSFMLMusic\ \ \ \ \ \ \ music;}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ ResourceSFMLSeoundBuffer\ \ \ \ sound\_buffer;}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ResourceSFML}{ResourceSFML<sf::Texture>}}\ \ textures;}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ResourceSFML}{ResourceSFML<sf::SoundBuffer>}}\ \ sound\_buffers;}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ResourceSFML}{ResourceSFML<sf::Font>}}\ \ \ \ \ \ \ \ fonts;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ResourceSFMLMusic}{ResourceSFMLMusic}}\ \ \ \ \ \ music;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_ab09435991b8c485f92e0aa1fd00828b9}{Resources}}();}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_a5b75a9c6c6f5530ef807cce41cef81ee}{\string~Resources}}();}
-\DoxyCodeLine{00056\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00057\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00058\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Load\ texture.}}
-\DoxyCodeLine{00059\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ path\ to\ image}}
-\DoxyCodeLine{00060\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ created\ texture\ id.\ Returns\ -\/1\ when\ loading\ failed.}}
-\DoxyCodeLine{00061\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00062\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ \ \ \ \ \ \ \ \ LoadTexture(\ std::string\ );}}
-\DoxyCodeLine{00063\ \textcolor{comment}{//}}
-\DoxyCodeLine{00064\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Return\ true\ if\ image\ already\ loaded\ }}
-\DoxyCodeLine{00066\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ path\ to\ image}}
-\DoxyCodeLine{00067\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ (bool)}}
-\DoxyCodeLine{00068\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00069\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ bool\ \ \ \ \ \ \ \ \ \ \ \ IsTextureLoaded(\ std::string\ );}}
-\DoxyCodeLine{00070\ \textcolor{comment}{//}}
-\DoxyCodeLine{00071\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00072\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Returns\ texture\ ID\ if\ you\ pass\ path\ to\ image.}}
-\DoxyCodeLine{00073\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ path\ to\ image}}
-\DoxyCodeLine{00074\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ texture\ ID.\ Returns\ -\/1\ if\ image\ not\ loaded.}}
-\DoxyCodeLine{00075\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00076\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ \ \ \ \ \ \ \ \ \ \ \ \ GetTextureId(\ std::string\ );}}
-\DoxyCodeLine{00077\ \textcolor{comment}{//\ \ \ \ \ \ }}
-\DoxyCodeLine{00078\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00079\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Returns\ pointer\ to\ texture}}
-\DoxyCodeLine{00080\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ path\ to\ image}}
-\DoxyCodeLine{00081\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00082\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::Texture*\ \ \ \ \ \ \ \ GetTexturePtr(\ std::string\ );}}
-\DoxyCodeLine{00083\ \textcolor{comment}{//}}
-\DoxyCodeLine{00084\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00085\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Returns\ texture\ pointer}}
-\DoxyCodeLine{00086\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ texture\ ID}}
-\DoxyCodeLine{00087\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00088\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::Texture*\ \ \ \ \ \ \ \ GetTexturePtr(\ int\ );}}
-\DoxyCodeLine{00089\ \textcolor{comment}{//}}
-\DoxyCodeLine{00090\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00091\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Returns\ texure\ reference\ by\ ID.\ }}
-\DoxyCodeLine{00092\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Texture\ reference\ is\ used\ by\ SFML\ Sprites.}}
-\DoxyCodeLine{00093\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ texture\ ID}}
-\DoxyCodeLine{00094\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ texture\ reference}}
-\DoxyCodeLine{00095\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00096\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ const\ sf::Texture\&\ \ GetTexture(\ int\ );}}
-\DoxyCodeLine{00097\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00098\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00099\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Returns\ texure\ reference\ by\ image\ path.\ }}
-\DoxyCodeLine{00100\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Texture\ reference\ is\ used\ by\ SFML\ Sprites.}}
-\DoxyCodeLine{00101\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ image\ path}}
-\DoxyCodeLine{00102\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ texture\ reference}}
-\DoxyCodeLine{00103\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00104\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ sf::Texture\&\ \ GetTexture(\ std::string\ );}}
-\DoxyCodeLine{00105\ \textcolor{comment}{//}}
-\DoxyCodeLine{00106\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00107\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ To\ delete?}}
-\DoxyCodeLine{00108\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00109\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::Texture\&\ \ \ \ \ \ \ \ GetTextureRef(\ int\ );}}
-\DoxyCodeLine{00110\ \textcolor{comment}{//}}
-\DoxyCodeLine{00111\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00112\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Load\ music.\ Music\ is\ different\ than\ sound.\ Music\ is\ lika\ stream,\ sound\ is\ from\ buffer.\ Check\ SFML\ documentation.}}
-\DoxyCodeLine{00113\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ path\ to\ file}}
-\DoxyCodeLine{00114\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ created\ music\ id.\ Returns\ -\/1\ when\ loading\ failed.}}
-\DoxyCodeLine{00115\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00116\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ \ \ \ \ \ \ \ \ LoadMusic(\ std::string\ );}}
-\DoxyCodeLine{00117\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00118\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00119\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Returns\ music\ ID\ if\ you\ pass\ path\ to\ file.}}
-\DoxyCodeLine{00120\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ path\ to\ file}}
-\DoxyCodeLine{00121\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ texture\ ID.\ Returns\ -\/1\ if\ image\ not\ loaded.}}
-\DoxyCodeLine{00122\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00123\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ \ \ \ \ \ \ \ \ \ \ \ \ GetMusicId(\ std::string\ );}}
-\DoxyCodeLine{00124\ \textcolor{comment}{//}}
-\DoxyCodeLine{00125\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00126\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Return\ true\ if\ music\ already\ loaded\ }}
-\DoxyCodeLine{00127\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ path\ to\ music\ file}}
-\DoxyCodeLine{00128\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ (bool)}}
-\DoxyCodeLine{00129\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00130\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ bool\ \ \ \ \ \ \ \ \ \ \ \ IsMusicLoaded(\ std::string\ );}}
-\DoxyCodeLine{00131\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00132\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00133\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Returns\ music\ by\ ID.\ }}
-\DoxyCodeLine{00134\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ music\ ID}}
-\DoxyCodeLine{00135\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ music\ reference}}
-\DoxyCodeLine{00136\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00137\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::shared\_ptr<sf::Music>\ \ GetMusic(\ int\ t\_id\ );}}
-\DoxyCodeLine{00138\ \textcolor{comment}{//}}
-\DoxyCodeLine{00139\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00140\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Returns\ music\ by\ file\ path.\ }}
-\DoxyCodeLine{00141\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @param\ \ \ -\/\ relative\ music\ path}}
-\DoxyCodeLine{00142\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ @return\ \ -\/\ music\ reference}}
-\DoxyCodeLine{00143\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00144\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::shared\_ptr<sf::Music>\ \ GetMusic(\ std::string\ t\_filepath\ );}}
-\DoxyCodeLine{00145\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00146\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ \ \ \ \ \ \ \ \ LoadSound(\ std::string\ );}}
-\DoxyCodeLine{00147\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ \ \ \ \ \ \ \ \ GetSoundId(\ std::string\ );}}
-\DoxyCodeLine{00148\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ bool\ \ \ \ \ \ \ \ \ \ \ \ IsSoundLoaded(\ std::string\ );}}
-\DoxyCodeLine{00149\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::SoundBuffer\ \ \ \ \ GetSoundBuffer(\ int\ );}}
-\DoxyCodeLine{00150\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::SoundBuffer\ \ \ \ \ GetSoundBuffer(\ std::string\ );}}
-\DoxyCodeLine{00151\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00152\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ \ \ \ \ \ \ \ \ LoadFont(\ std::string\ );}}
-\DoxyCodeLine{00153\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ bool\ \ \ \ \ \ \ \ \ \ \ \ IsFontLoaded(\ std::string\ );}}
-\DoxyCodeLine{00154\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ int\ \ \ \ \ \ \ \ \ GetFontId(\ std::string\ );}}
-\DoxyCodeLine{00155\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::Font*\ \ \ \ \ \ \ GetFontPtr(\ std::string\ );}}
-\DoxyCodeLine{00156\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::Font*\ \ \ \ \ \ \ GetFontPtr(\ int\ );}}
-\DoxyCodeLine{00157\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::Font\ \ \ \ \ \ \ \ GetFont(\ std::string\ );}}
-\DoxyCodeLine{00158\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::Font\ \ \ \ \ \ \ \ GetFont(\ int\ );}}
-\DoxyCodeLine{00159\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ sf::Font\&\ \ \ \ \ \ \ GetFontRef(\ int\ );}}
-\DoxyCodeLine{00160\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ }}
-\DoxyCodeLine{00161\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ /**}}
-\DoxyCodeLine{00162\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ *\ Free\ all\ assets}}
-\DoxyCodeLine{00163\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ Free();\ }
-\DoxyCodeLine{00165\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Resources}}
-\DoxyCodeLine{00166\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
-\DoxyCodeLine{00167\ }
-\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Resource.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacen2d}{n2d}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Resources}{Resources}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ResourceSFML}{ResourceSFML<sf::Texture>}}\ \ textures;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ResourceSFML}{ResourceSFML<sf::SoundBuffer>}}\ \ sound\_buffers;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ResourceSFML}{ResourceSFML<sf::Font>}}\ \ \ \ \ \ \ \ fonts;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1ResourceSFMLMusic}{ResourceSFMLMusic}}\ \ \ \ \ \ music;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_ab09435991b8c485f92e0aa1fd00828b9}{Resources}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1Resources_a5b75a9c6c6f5530ef807cce41cef81ee}{\string~Resources}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Resources_ad10c2a54cb28aaf76082169a7eaf42b6}{Free}}();\ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \};\ \textcolor{comment}{//\ class\ Resources}}
+\DoxyCodeLine{00033\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
