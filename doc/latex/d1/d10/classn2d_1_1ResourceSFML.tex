@@ -1,0 +1,87 @@
+\doxysection{n2d\+::Resource\+SFML\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classn2d_1_1ResourceSFML}{}\label{classn2d_1_1ResourceSFML}\index{n2d::ResourceSFML$<$ T $>$@{n2d::ResourceSFML$<$ T $>$}}
+Inheritance diagram for n2d\+::Resource\+SFML\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/d10/classn2d_1_1ResourceSFML}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classn2d_1_1ResourceSFML_ab04b451111aa5ed4cccc2ca0abc611b3}{Reserve\+Data}} ()
+\item 
+bool \mbox{\hyperlink{classn2d_1_1ResourceSFML_a33599c4ac7f40d9e8256100254a8ce90}{Load\+Data}} (int t\+\_\+id, std\+::string t\+\_\+filepath)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Get\+Id\+Or\+Load} (std\+::string t\+\_\+filepath)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Reserve\+Memory} (int t\+\_\+size)
+\item 
+int {\bfseries Load} (std\+::string t\+\_\+filepath)
+\item 
+bool {\bfseries Is\+Loaded} (std\+::string t\+\_\+filepath)
+\item 
+int {\bfseries Get\+Id} (std\+::string t\+\_\+filepath)
+\item 
+T {\bfseries Get} (int t\+\_\+id)
+\item 
+T {\bfseries Get} (std\+::string t\+\_\+filepath)
+\item 
+T \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr} (int t\+\_\+id)
+\item 
+T \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr} (std\+::string t\+\_\+filepath)
+\item 
+T \& {\bfseries Get\+Ref} (int t\+\_\+id)
+\item 
+T \& {\bfseries Get\+Ref} (std\+::string t\+\_\+filepath)
+\item 
+const T \& {\bfseries Get\+CRef} (int t\+\_\+id)
+\item 
+const T \& {\bfseries Get\+CRef} (std\+::string t\+\_\+filepath)
+\item 
+void {\bfseries Free} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ T $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ {\bfseries m\+\_\+data}
+\item 
+std\+::map$<$ std\+::string, int $>$ {\bfseries m\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1ResourceSFML_a33599c4ac7f40d9e8256100254a8ce90}\label{classn2d_1_1ResourceSFML_a33599c4ac7f40d9e8256100254a8ce90} 
+\index{n2d::ResourceSFML$<$ T $>$@{n2d::ResourceSFML$<$ T $>$}!LoadData@{LoadData}}
+\index{LoadData@{LoadData}!n2d::ResourceSFML$<$ T $>$@{n2d::ResourceSFML$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{LoadData()}{LoadData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classn2d_1_1ResourceSFML}{n2d\+::\+Resource\+SFML}}$<$ T $>$\+::\+Load\+Data (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+id,  }\item[{std\+::string}]{t\+\_\+filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ T $>$}}.
+
+\Hypertarget{classn2d_1_1ResourceSFML_ab04b451111aa5ed4cccc2ca0abc611b3}\label{classn2d_1_1ResourceSFML_ab04b451111aa5ed4cccc2ca0abc611b3} 
+\index{n2d::ResourceSFML$<$ T $>$@{n2d::ResourceSFML$<$ T $>$}!ReserveData@{ReserveData}}
+\index{ReserveData@{ReserveData}!n2d::ResourceSFML$<$ T $>$@{n2d::ResourceSFML$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ReserveData()}{ReserveData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classn2d_1_1ResourceSFML}{n2d\+::\+Resource\+SFML}}$<$ T $>$\+::\+Reserve\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/Resource.\+h\end{DoxyCompactItemize}

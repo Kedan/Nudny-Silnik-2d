@@ -1,0 +1,76 @@
+\doxysection{n2d\+::Resource\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classn2d_1_1Resource}{}\label{classn2d_1_1Resource}\index{n2d::Resource$<$ T $>$@{n2d::Resource$<$ T $>$}}
+Inheritance diagram for n2d\+::Resource\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.138211cm]{db/de8/classn2d_1_1Resource}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Resource_a4185646c0826c9eef4d446d120dfa750}\label{classn2d_1_1Resource_a4185646c0826c9eef4d446d120dfa750} 
+void {\bfseries Reserve\+Memory} (int t\+\_\+size)
+\item 
+\Hypertarget{classn2d_1_1Resource_a42162a135c6431150636bbf51711ff29}\label{classn2d_1_1Resource_a42162a135c6431150636bbf51711ff29} 
+int {\bfseries Load} (std\+::string t\+\_\+filepath)
+\item 
+\Hypertarget{classn2d_1_1Resource_ae91c5dca98c76b07469f88f268502f6f}\label{classn2d_1_1Resource_ae91c5dca98c76b07469f88f268502f6f} 
+bool {\bfseries Is\+Loaded} (std\+::string t\+\_\+filepath)
+\item 
+\Hypertarget{classn2d_1_1Resource_a76b6104950e55a2ada110062a36679b8}\label{classn2d_1_1Resource_a76b6104950e55a2ada110062a36679b8} 
+int {\bfseries Get\+Id} (std\+::string t\+\_\+filepath)
+\item 
+\Hypertarget{classn2d_1_1Resource_a8ae37786f56effca23dce07ed2d3647d}\label{classn2d_1_1Resource_a8ae37786f56effca23dce07ed2d3647d} 
+T {\bfseries Get} (int t\+\_\+id)
+\item 
+\Hypertarget{classn2d_1_1Resource_a6663de6debfaa2b4d45b29593ff34412}\label{classn2d_1_1Resource_a6663de6debfaa2b4d45b29593ff34412} 
+T {\bfseries Get} (std\+::string t\+\_\+filepath)
+\item 
+\Hypertarget{classn2d_1_1Resource_a024e3b9ba9fef96b852eac61bd48c5ae}\label{classn2d_1_1Resource_a024e3b9ba9fef96b852eac61bd48c5ae} 
+T \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr} (int t\+\_\+id)
+\item 
+\Hypertarget{classn2d_1_1Resource_a542453dc72658ec0a1260d2c62238a3b}\label{classn2d_1_1Resource_a542453dc72658ec0a1260d2c62238a3b} 
+T \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr} (std\+::string t\+\_\+filepath)
+\item 
+\Hypertarget{classn2d_1_1Resource_a5a6a57818f457d16ab62c85c516eb377}\label{classn2d_1_1Resource_a5a6a57818f457d16ab62c85c516eb377} 
+T \& {\bfseries Get\+Ref} (int t\+\_\+id)
+\item 
+\Hypertarget{classn2d_1_1Resource_abff6ef6fefc01f240c0c030decc1b942}\label{classn2d_1_1Resource_abff6ef6fefc01f240c0c030decc1b942} 
+T \& {\bfseries Get\+Ref} (std\+::string t\+\_\+filepath)
+\item 
+\Hypertarget{classn2d_1_1Resource_a0f9342e03a8209302180ca375b8bcb96}\label{classn2d_1_1Resource_a0f9342e03a8209302180ca375b8bcb96} 
+const T \& {\bfseries Get\+CRef} (int t\+\_\+id)
+\item 
+\Hypertarget{classn2d_1_1Resource_aee045fb1acfffd83b511bba36578f60c}\label{classn2d_1_1Resource_aee045fb1acfffd83b511bba36578f60c} 
+const T \& {\bfseries Get\+CRef} (std\+::string t\+\_\+filepath)
+\item 
+\Hypertarget{classn2d_1_1Resource_a14c8b655f3606a1776b6cd6b14290d44}\label{classn2d_1_1Resource_a14c8b655f3606a1776b6cd6b14290d44} 
+void {\bfseries Free} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Resource_a964eeb3554bd752399585ec0c897173b}\label{classn2d_1_1Resource_a964eeb3554bd752399585ec0c897173b} 
+int {\bfseries Get\+Id\+Or\+Load} (std\+::string t\+\_\+filepath)
+\item 
+\Hypertarget{classn2d_1_1Resource_a533a16e097d6ec3c12cf4b552365d36e}\label{classn2d_1_1Resource_a533a16e097d6ec3c12cf4b552365d36e} 
+virtual bool {\bfseries Load\+Data} (int t\+\_\+id, std\+::string t\+\_\+filepath)=0
+\item 
+\Hypertarget{classn2d_1_1Resource_ae5fb19c5727564cdb6cb52ad8519e3e4}\label{classn2d_1_1Resource_ae5fb19c5727564cdb6cb52ad8519e3e4} 
+virtual void {\bfseries Reserve\+Data} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classn2d_1_1Resource_a3721fd8d11881530a08bffb8ef63c225}\label{classn2d_1_1Resource_a3721fd8d11881530a08bffb8ef63c225} 
+std\+::vector$<$ T $>$ {\bfseries m\+\_\+data}
+\item 
+\Hypertarget{classn2d_1_1Resource_ab65f185dcf854fffb1601a1bb67f6321}\label{classn2d_1_1Resource_ab65f185dcf854fffb1601a1bb67f6321} 
+std\+::map$<$ std\+::string, int $>$ {\bfseries m\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/Resource.\+h\end{DoxyCompactItemize}

@@ -135,33 +135,34 @@
 \DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a31686a9b05b7c056106a58904de10454}{SetGameState}}(\ \mbox{\hyperlink{classn2d_1_1GameState}{GameState}}*\ t\_game\_state\ )\ \{}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ m\_game\_state\ !=\ \textcolor{keyword}{nullptr}\ )\ \{}
-\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game\_state-\/>\mbox{\hyperlink{classn2d_1_1GameState_ad54dd7fe3d704b1a9d1f54b16a220c25}{Exit}}(\ *\textcolor{keyword}{this}\ );}
-\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ m\_game\_state;}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ac0d1c16c55bf66ed3b82282d16dce307}{ClearLists}}();}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game\_state\ =\ t\_game\_state;}
-\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game\_state-\/>\mbox{\hyperlink{classn2d_1_1GameState_adefb526fc34feccda9747649cec86d82}{Enter}}(\ *\textcolor{keyword}{this}\ );}
-\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ SetGameStateFactory(\ \mbox{\hyperlink{classn2d_1_1GameStateFactory}{GameStateFactory}}*\ t\_game\_state\_factory\ )\ \{}
-\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game\_state\_factory\ =\ t\_game\_state\_factory;}
-\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ }
-\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1App_a73db31b4b77acb9df7e82327913c86bb}{GetFPS}}()\{}
-\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}{m\_fps}};}
-\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00247\ }
-\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2}{Draw}}(\ sf::RenderWindow\&\ );}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a7b88d2cc96329459b88616727efb09ba}{DispatchGameState}}();}
-\DoxyCodeLine{00258\ }
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_ac0d1c16c55bf66ed3b82282d16dce307}{ClearLists}}();}
-\DoxyCodeLine{00264\ }
-\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_ab0dc890ec223bc9f86f368d0b093f9bf}{LoadScenario}}();}
-\DoxyCodeLine{00269\ }
-\DoxyCodeLine{00270\ \ \ \ \ \};}
-\DoxyCodeLine{00271\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
-\DoxyCodeLine{00272\ }
-\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LOG.Time()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\ Change\ game\ state\ from\ "{}}\ <<\ m\_game\_state\ <<\ \textcolor{stringliteral}{"{}\ to\ "{}}\ <<\ t\_game\_state\ <<\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ m\_game\_state\ !=\ \textcolor{keyword}{nullptr}\ )\ \{}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game\_state-\/>\mbox{\hyperlink{classn2d_1_1GameState_ad54dd7fe3d704b1a9d1f54b16a220c25}{Exit}}(\ *\textcolor{keyword}{this}\ );}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ m\_game\_state;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classn2d_1_1App_ac0d1c16c55bf66ed3b82282d16dce307}{ClearLists}}();}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game\_state\ =\ t\_game\_state;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game\_state-\/>\mbox{\hyperlink{classn2d_1_1GameState_adefb526fc34feccda9747649cec86d82}{Enter}}(\ *\textcolor{keyword}{this}\ );}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ SetGameStateFactory(\ \mbox{\hyperlink{classn2d_1_1GameStateFactory}{GameStateFactory}}*\ t\_game\_state\_factory\ )\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_game\_state\_factory\ =\ t\_game\_state\_factory;}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classn2d_1_1App_a73db31b4b77acb9df7e82327913c86bb}{GetFPS}}()\{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classn2d_1_1App_ac51f8356f574faacf56202cc81924d59}{m\_fps}};}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a057ec8037337db1dd3aa3199af57c9e2}{Draw}}(\ sf::RenderWindow\&\ );}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_a7b88d2cc96329459b88616727efb09ba}{DispatchGameState}}();}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_ac0d1c16c55bf66ed3b82282d16dce307}{ClearLists}}();}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1App_ab0dc890ec223bc9f86f368d0b093f9bf}{LoadScenario}}();}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \};}
+\DoxyCodeLine{00272\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

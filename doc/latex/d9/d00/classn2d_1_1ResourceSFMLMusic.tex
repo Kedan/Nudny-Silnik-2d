@@ -1,0 +1,85 @@
+\doxysection{n2d\+::Resource\+SFMLMusic Class Reference}
+\hypertarget{classn2d_1_1ResourceSFMLMusic}{}\label{classn2d_1_1ResourceSFMLMusic}\index{n2d::ResourceSFMLMusic@{n2d::ResourceSFMLMusic}}
+Inheritance diagram for n2d\+::Resource\+SFMLMusic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d00/classn2d_1_1ResourceSFMLMusic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classn2d_1_1ResourceSFMLMusic_a7915fe2fde774a9afe9fdd7da39e74d5}{Reserve\+Data}} ()
+\item 
+bool \mbox{\hyperlink{classn2d_1_1ResourceSFMLMusic_a35497a0c8e36f89223943d4c67987e26}{Load\+Data}} (int t\+\_\+id, std\+::string t\+\_\+filepath)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Get\+Id\+Or\+Load} (std\+::string t\+\_\+filepath)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Reserve\+Memory} (int t\+\_\+size)
+\item 
+int {\bfseries Load} (std\+::string t\+\_\+filepath)
+\item 
+bool {\bfseries Is\+Loaded} (std\+::string t\+\_\+filepath)
+\item 
+int {\bfseries Get\+Id} (std\+::string t\+\_\+filepath)
+\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ {\bfseries Get} (int t\+\_\+id)
+\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ {\bfseries Get} (std\+::string t\+\_\+filepath)
+\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr} (int t\+\_\+id)
+\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr} (std\+::string t\+\_\+filepath)
+\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ \& {\bfseries Get\+Ref} (int t\+\_\+id)
+\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ \& {\bfseries Get\+Ref} (std\+::string t\+\_\+filepath)
+\item 
+const std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ \& {\bfseries Get\+CRef} (int t\+\_\+id)
+\item 
+const std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ \& {\bfseries Get\+CRef} (std\+::string t\+\_\+filepath)
+\item 
+void {\bfseries Free} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ $>$ {\bfseries m\+\_\+data}
+\item 
+std\+::map$<$ std\+::string, int $>$ {\bfseries m\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classn2d_1_1ResourceSFMLMusic_a35497a0c8e36f89223943d4c67987e26}\label{classn2d_1_1ResourceSFMLMusic_a35497a0c8e36f89223943d4c67987e26} 
+\index{n2d::ResourceSFMLMusic@{n2d::ResourceSFMLMusic}!LoadData@{LoadData}}
+\index{LoadData@{LoadData}!n2d::ResourceSFMLMusic@{n2d::ResourceSFMLMusic}}
+\doxysubsubsection{\texorpdfstring{LoadData()}{LoadData()}}
+{\footnotesize\ttfamily bool n2d\+::\+Resource\+SFMLMusic\+::\+Load\+Data (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+id,  }\item[{std\+::string}]{t\+\_\+filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ $>$}}.
+
+\Hypertarget{classn2d_1_1ResourceSFMLMusic_a7915fe2fde774a9afe9fdd7da39e74d5}\label{classn2d_1_1ResourceSFMLMusic_a7915fe2fde774a9afe9fdd7da39e74d5} 
+\index{n2d::ResourceSFMLMusic@{n2d::ResourceSFMLMusic}!ReserveData@{ReserveData}}
+\index{ReserveData@{ReserveData}!n2d::ResourceSFMLMusic@{n2d::ResourceSFMLMusic}}
+\doxysubsubsection{\texorpdfstring{ReserveData()}{ReserveData()}}
+{\footnotesize\ttfamily void n2d\+::\+Resource\+SFMLMusic\+::\+Reserve\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classn2d_1_1Resource}{n2d\+::\+Resource$<$ std\+::shared\+\_\+ptr$<$ sf\+::\+Music $>$ $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+silnik/core/include/Resource.\+h\end{DoxyCompactItemize}

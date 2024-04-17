@@ -41,54 +41,62 @@
 \DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Interactive_a59a44b83273dd6c89269da91fad58f2e}{Events}}(\ sf::Event\&\ t\_event\ )\ =\ 0;}
 \DoxyCodeLine{00096\ \ \ \ \ \};}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Animated}{Animated}}\ \{}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Animated_a07c4762576f95f53d5f6cda7d15ea337}{Play}}()\ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00097\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Playable}{Playable}}\ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Playable_af7ef7c17bfc4ae2f5189518bbb4fc76f}{Play}}()\ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Playable_ad9cfc521f30d5b0fa0c20787a7bffe80}{Pause}}()\ \ \ =\ 0;}
 \DoxyCodeLine{00109\ }
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Animated_a5291e65867b18d0f6f429e2683a7c31e}{Pause}}()\ \ \ =\ 0;}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Animated_aafa111136e06807badbd0886a2f762ae}{Stop}}()\ =\ 0;}
-\DoxyCodeLine{00119\ }
-\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Animated_a52e707da569f0c6c9fad24ebebebd6e7}{ClearAnimation}}()\ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Animated_aca9c14d240d437b4112419d9d446addd}{Animate}}(\ \textcolor{keywordtype}{float}\ t\_dt\ )\ \ \ =\ 0;}
-\DoxyCodeLine{00130\ \ \ \ \ \};}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Physical}{Physical}}\ \{}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \textcolor{comment}{//\ virtual\ setters}}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetPosition(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetVelocity(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetRotation(\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetAngularVelocity(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetSize(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetScale(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00145\ }
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \textcolor{comment}{//\ virtual\ getters}}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec2\ \ \ GetPosition();}
-\DoxyCodeLine{00148\ \ \ \ \ \};}
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Colored}{Colored}}\ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetColor(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetAlpha(\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetVisible(\ \textcolor{keywordtype}{bool}\ )\ \ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ GetAlpha()\ \ =\ 0;}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetColor()\ \ =\ 0;}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetRGBA()\ \ \ =\ 0;}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec3\ \ \ GetRGB()\ \ \ \ =\ 0;}
-\DoxyCodeLine{00160\ \ \ \ \ \};}
-\DoxyCodeLine{00161\ }
-\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Textured}{Textured}}\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Playable_a0a4f27a3103979165d07ef5c5b0709d6}{Stop}}()\ =\ 0;}
+\DoxyCodeLine{00114\ \ \ \ \ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Animated}{Animated}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Playable}{Playable}}\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Animated_a52e707da569f0c6c9fad24ebebebd6e7}{ClearAnimation}}()\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classn2d_1_1Animated_aca9c14d240d437b4112419d9d446addd}{Animate}}(\ \textcolor{keywordtype}{float}\ t\_dt\ )\ \ \ =\ 0;}
+\DoxyCodeLine{00133\ \ \ \ \ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Audible}{Audible}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classn2d_1_1Playable}{Playable}}\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetVolume(\ \textcolor{keywordtype}{float}\ )\ =\ 0;}
+\DoxyCodeLine{00138\ \ \ \ \ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Physical}{Physical}}\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \textcolor{comment}{//\ virtual\ setters}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetPosition(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetVelocity(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetRotation(\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetAngularVelocity(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetSize(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetScale(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:\ \textcolor{comment}{//\ virtual\ getters}}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec2\ \ \ GetPosition();}
+\DoxyCodeLine{00156\ \ \ \ \ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Colored}{Colored}}\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetColor(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetAlpha(\ \textcolor{keywordtype}{float}\ )\ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetVisible(\ \textcolor{keywordtype}{bool}\ )\ \ \ \ \ \ \ \ \ \ =\ 0;}
 \DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetTexture(\ sf::Texture\&\ )\ \ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetTextureCoords(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ sf::Texture\&\ \ \ \ GetTexture()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetTextureCoords()\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ GetAlpha()\ \ =\ 0;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetColor()\ \ =\ 0;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetRGBA()\ \ \ =\ 0;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec3\ \ \ GetRGB()\ \ \ \ =\ 0;}
 \DoxyCodeLine{00168\ \ \ \ \ \};}
-\DoxyCodeLine{00169\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classn2d_1_1Textured}{Textured}}\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetTexture(\ sf::Texture\&\ )\ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ SetTextureCoords(\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float},\ \textcolor{keywordtype}{float}\ )\ \ =\ 0;}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ sf::Texture\&\ \ \ \ GetTexture()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec4\ \ \ GetTextureCoords()\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00176\ \ \ \ \ \};}
+\DoxyCodeLine{00177\ \};\ \textcolor{comment}{//\ namespace\ n2d}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,21 +1,4 @@
 var searchData=
 [
-  ['r_0',['r',['../db/d6c/classtson_1_1Color.html#af3fcb996a66d8c0301eca603d3710a95',1,'tson::Color']]],
-  ['r_20s_20i_20o_20n_201_204_200_1',['T I L E S O N   V E R S I O N   1 . 4 . 0',['..//store/projekty/nudny/silnik/lib/nudny/silnik/core/lib/include/tileson/tileson.h#autotoc_md29',1,'']]],
-  ['r_20s_20i_20o_20n_201_204_200_20m_20i_20n_20i_20m_20a_20l_2',['T I L E S O N   V E R S I O N   1 . 4 . 0   ( M I N I M A L )',['..//store/projekty/nudny/silnik/lib/nudny/silnik/core/lib/include/tileson/tileson_min.h#autotoc_md30',1,'']]],
-  ['r_20w_20a_20r_20d_20d_20e_20c_20l_20a_20r_20a_20t_20i_20o_20n_20s_3',['T I L E S O N   F O R W A R D   D E C L A R A T I O N S',['../de/d9d/classtson_1_1Map.html#autotoc_md28',1,'']]],
-  ['rad_4',['rad',['../db/de9/classn2d_1_1Tool.html#aa4c6be03c9522a4020d406c3c6063f33',1,'n2d::Tool']]],
-  ['rbegin_5',['rbegin',['../d9/dcc/classnlohmann_1_1basic__json.html#aff8e38cd973bc94557fa8d36433c0e4c',1,'nlohmann::basic_json::rbegin() noexcept'],['../d9/dcc/classnlohmann_1_1basic__json.html#aab1329f44c8301b7679962726a043549',1,'nlohmann::basic_json::rbegin() const noexcept'],['../d1/d72/classbasic__json.html#ac8c2b82d885e4765ad078f475c777320',1,'basic_json::rbegin() noexcept'],['../d1/d72/classbasic__json.html#a9eb8bf73439e55c11983f51de32614b5',1,'basic_json::rbegin() const noexcept']]],
-  ['rect_6',['Rect',['../df/d5f/classn2d_1_1Rect.html',1,'n2d::Rect'],['../dc/d05/classtson_1_1Rect.html',1,'tson::Rect']]],
-  ['reference_7',['reference',['../d1/d7c/classnlohmann_1_1detail_1_1iter__impl.html#a74cce35a1f0bface88d549052f402a60',1,'nlohmann::detail::iter_impl::reference'],['../de/d74/classnlohmann_1_1detail_1_1json__reverse__iterator.html#a42f51a69bac7b2aebb613b2164e457f1',1,'nlohmann::detail::json_reverse_iterator::reference'],['../d9/dcc/classnlohmann_1_1basic__json.html#a220ae98554a76205fb7f8822d36b2d5a',1,'nlohmann::basic_json::reference'],['../d7/d0e/classdetail_1_1iter__impl.html#a2556d48dc31f24b540f07c9b93b11202',1,'detail::iter_impl::reference'],['../df/d8f/classdetail_1_1json__reverse__iterator.html#a81a4d0a61246d4ece37fd14eacfadda0',1,'detail::json_reverse_iterator::reference'],['../d1/d72/classbasic__json.html#aa95f366d506aca733799e4c310927b5d',1,'basic_json::reference']]],
-  ['remove_8',['remove',['../de/df5/classtson_1_1DecompressorContainer.html#a5409d867cb2c54efd7894641b01ea6b0',1,'tson::DecompressorContainer']]],
-  ['rend_9',['rend',['../d9/dcc/classnlohmann_1_1basic__json.html#a7a328b29b290cc300345376c54f618cb',1,'nlohmann::basic_json::rend() noexcept'],['../d9/dcc/classnlohmann_1_1basic__json.html#a2e4cbf41d593d41847b90aea55e5e84d',1,'nlohmann::basic_json::rend() const noexcept'],['../d1/d72/classbasic__json.html#aaf8366e38224d6bb07c9ef7b21d96553',1,'basic_json::rend() noexcept'],['../d1/d72/classbasic__json.html#aeeda19c8edb0398ba1c04575b077391d',1,'basic_json::rend() const noexcept']]],
-  ['replace_10',['replace',['../dc/df0/namespacenlohmann_1_1detail.html#a5a76b60b26dc8c47256a996d18d967dfa9dde360102c103867bd2f45872f1129c',1,'nlohmann::detail::replace'],['../dd/d39/namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a9dde360102c103867bd2f45872f1129c',1,'detail::replace']]],
-  ['replace_5fsubstring_11',['replace_substring',['../dc/df0/namespacenlohmann_1_1detail.html#aceff996baf082d6dc1873ad176d10609',1,'nlohmann::detail::replace_substring()'],['../dd/d39/namespacedetail.html#a6fd295e53b1dd4f46e235e6afee26d5e',1,'detail::replace_substring()']]],
-  ['reset_12',['Reset',['../dd/db2/classn2d_1_1App.html#a1ab1f8a08f69bfeb44d36ff40cb45aeb',1,'n2d::App']]],
-  ['reset_13',['reset',['../d6/dd0/classtson_1_1Animation.html#acaa4109d25c6a21f69007f4daf0f5b19',1,'tson::Animation']]],
-  ['resources_14',['Resources',['../da/d95/classn2d_1_1Resources.html',1,'n2d']]],
-  ['reverse_5fiterator_15',['reverse_iterator',['../d9/dcc/classnlohmann_1_1basic__json.html#a5b8c0ebedd920b507f4f7ff4e19bf3c6',1,'nlohmann::basic_json::reverse_iterator'],['../d1/d72/classbasic__json.html#ac639cd1b4238d158286e7e21b5829709',1,'basic_json::reverse_iterator']]],
-  ['rotate_16',['Rotate',['../db/de9/classn2d_1_1Tool.html#aea54f2fbe559ab1ab3584f8db5afc428',1,'n2d::Tool']]],
-  ['run_17',['Run',['../dd/db2/classn2d_1_1App.html#aa8bd47ced86a1df5e047fcbb1cc6eb8b',1,'n2d::App']]]
+  ['_7eresources_0',['~Resources',['../da/d95/classn2d_1_1Resources.html#a5b75a9c6c6f5530ef807cce41cef81ee',1,'n2d::Resources']]]
 ];
